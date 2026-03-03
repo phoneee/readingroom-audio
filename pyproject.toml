@@ -3,20 +3,20 @@ name = "readingroom-audio"
 version = "0.1.0"
 description = "Audio enhancement pipeline for Reading Room BKK YouTube recordings (429 videos, 341 hours)"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12, <3.14"
 dependencies = [
     "soundfile",
     "torch",
     "torchaudio",
+    "torchcodec",
 ]
 
 [project.optional-dependencies]
+# For pip install readingroom-audio[enhance] (package consumers)
 enhance = [
-    "clearvoice",
     "deepfilternet",
     "demucs",
     "MPSENet",
-    "resemble-enhance",
     "speechbrain",
 ]
 score = [
@@ -25,12 +25,33 @@ score = [
 viz = [
     "altair",
     "pandas",
+    "polars",
     "scipy",
     "numpy",
+    "vl-convert-python",
 ]
-all = [
-    "readingroom-audio[enhance,score,viz]",
+# NOTE: clearvoice and resemble-enhance have conflicting librosa pins.
+# Install ONE of them manually: uv pip install clearvoice
+# Or: uv pip install resemble-enhance --prerelease=allow
+
+[dependency-groups]
+dev = [
+    "deepfilternet",
+    "demucs",
+    "MPSENet",
+    "speechbrain",
+    "torchcodec",
+    "torchmetrics[audio]",
+    "altair",
+    "pandas",
+    "polars",
+    "scipy",
+    "numpy",
+    "vl-convert-python",
 ]
+
+[tool.uv]
+default-groups = ["dev"]
 
 [build-system]
 requires = ["hatchling"]

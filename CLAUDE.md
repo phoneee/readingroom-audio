@@ -29,6 +29,7 @@ python -m readingroom_audio.benchmark extract   [--duration 45]
 python -m readingroom_audio.benchmark baseline
 python -m readingroom_audio.benchmark enhance   [--pipelines ...]
 python -m readingroom_audio.benchmark analyze
+python -m readingroom_audio.benchmark export    [--output-dir ...] [--n-samples 3]
 
 # Listening test
 python -m readingroom_audio.listening_test run-all
@@ -72,6 +73,19 @@ python -m readingroom_audio benchmark run-all
 - **Downloaded**: `data/audio/raw/*.m4a` (128kbps AAC from YouTube, ~19GB)
 - **Enhanced**: `data/audio/enhanced_final/{pipeline}/*.flac` (lossless, ~70GB per pipeline)
 - **Video mux**: `data/video/muxed/{pipeline}/*.mp4`
+
+### data/events/ ownership
+
+`data/events/` (161 JSON files, ~1.3MB) is **generated** by `readingroom-retrospective/scripts/extract_events.py` and **consumed** by `readingroom-audio` (download.py, sampling.py). The files are committed directly in readingroom-audio because:
+
+1. Audio pipeline needs them at runtime (video IDs, event metadata for stratified sampling)
+2. Avoids runtime dependency on readingroom-retrospective
+3. Events change rarely (161 events are the complete historical record 2010–2019)
+
+**Sync protocol**: When events are regenerated in readingroom-retrospective, manually copy to readingroom-audio:
+```bash
+cp readingroom-retrospective/data/events/*.json readingroom-audio/data/events/
+```
 
 ## Dependencies
 
