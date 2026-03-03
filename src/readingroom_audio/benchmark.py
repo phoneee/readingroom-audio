@@ -1982,8 +1982,11 @@ def cmd_export(output_dir: str | None = None, n_samples: int = 3):
 
 # ── Phase: preview ──────────────────────────────────────────────────
 
-def cmd_preview(output_dir: str | None = None, n_samples: int = 20):
-    """Generate HTML audio preview page for benchmark results."""
+def cmd_preview(output_dir: str | None = None, n_samples: int = 0):
+    """Generate HTML audio preview page for benchmark results.
+
+    n_samples=0 (default) means include all benchmarked segments.
+    """
     results = _load_results()
     if not results:
         print("No results found. Run 'enhance' first.")
@@ -1996,13 +1999,20 @@ def cmd_preview(output_dir: str | None = None, n_samples: int = 20):
 
     out = Path(output_dir) if output_dir else (ROOT / "docs" / "audio-preview")
 
-    # Include export's representative segments (lowest/median/highest)
-    anchor_sids = _select_representative_segments(segments, n=3)
-
-    # 1. Select diverse segments including anchors
-    preview_sids = _select_preview_segments(
-        segments, n=n_samples, include_sids=anchor_sids,
-    )
+    # n_samples=0 → all segments
+    if n_samples <= 0:
+        preview_sids = sorted(
+            [s["segment_id"] for s in segments],
+            key=lambda sid: next(
+                (s["scores"].get("original", {}).get("dnsmos_ovrl", 0)
+                 for s in segments if s["segment_id"] == sid), 0,
+            ),
+        )
+    else:
+        anchor_sids = _select_representative_segments(segments, n=3)
+        preview_sids = _select_preview_segments(
+            segments, n=n_samples, include_sids=anchor_sids,
+        )
     if not preview_sids:
         print("No segments with scores available.")
         return
@@ -2019,8 +2029,6 @@ def cmd_preview(output_dir: str | None = None, n_samples: int = 20):
         }
 
     print(f"Preview: {len(preview_sids)} segments, {len(pipeline_names)} pipelines")
-    print(f"  Anchors:  {anchor_sids}")
-    print(f"  Segments: {preview_sids}")
     print(f"  Output:   {out}\n")
 
     # 3. Encode WAV→MP3 (skip cached)
@@ -2795,8 +2803,8 @@ Available pipelines:
     p_preview = subparsers.add_parser("preview", help="Generate HTML audio preview page")
     p_preview.add_argument("--output-dir", type=str, default=None,
                            help="Output directory (default: docs/audio-preview)")
-    p_preview.add_argument("--n-samples", type=int, default=20,
-                           help="Number of preview segments (default: 8)")
+    p_preview.add_argument("--n-samples", type=int, default=0,
+                           help="Number of preview segments (0=all)")
 
     # sensitivity
     p_sens = subparsers.add_parser("sensitivity", help="Multi-seed sensitivity analysis")
