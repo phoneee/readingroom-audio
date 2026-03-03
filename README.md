@@ -35,7 +35,7 @@ Pipeline means with 95% bootstrap CIs across all metrics.
 
 > Full benchmark with 9 pipelines, statistical tests, and audio samples:
 > **[Benchmark Report](https://phoneee.github.io/readingroom-audio/benchmark-report/)** ·
-> **[Audio Preview](https://phoneee.github.io/readingroom-audio/audio-preview/)** (8 segments × 9 pipelines with seekbar)
+> **[Audio Preview](https://phoneee.github.io/readingroom-audio/audio-preview/)** (12 segments × 9 pipelines with seekbar)
 
 ## Quick Start
 

@@ -50,18 +50,6 @@ Distribution of DNSMOS OVRL scores across all segments for each pipeline.
 
 ![Score Distribution](images/pipeline_boxplot.png)
 
-## UTMOS Score Distribution
-
-UTMOS (UTokyo-SaruLab MOS predictor) distribution across pipelines.
-
-![UTMOS Score Distribution](images/utmos_boxplot.png)
-
-## Baseline Quality Histogram
-
-Distribution of original recording quality (DNSMOS OVRL) across the 40 benchmark segments.
-
-![Baseline Quality Histogram](images/baseline_histogram.png)
-
 ## Signal vs Background Tradeoff
 
 Each point is one segment. Upper-right corner = best (high signal quality + high background suppression).
@@ -92,17 +80,11 @@ Pipeline means with 95% bootstrap confidence intervals across all metrics.
 
 ![Confidence Intervals](images/ci_forest_plot.png)
 
-## Pairwise Statistical Significance
-
-Wilcoxon signed-rank test results (Bonferroni corrected) between all pipeline pairs.
-
-![Pairwise Significance](images/pairwise_significance.png)
-
 ## Audio Comparison
 
 Representative segments selected for diversity: lowest, median, and highest original DNSMOS OVRL.
 
-### Segment: `E034_CiPEvCzTxag` (other/early) — Baseline OVRL: 1.09
+### [Seeing the Invisible (Godzilla)](https://www.youtube.com/watch?v=CiPEvCzTxag) (other/early) — Baseline OVRL: 1.09
 
 | Pipeline | OVRL | SIG | BAK | Audio |
 |----------|------|-----|-----|-------|
@@ -116,7 +98,7 @@ Representative segments selected for diversity: lowest, median, and highest orig
 | mossformer2_48k | 2.43 | 2.74 | 3.80 | <audio controls src="audio/E034_CiPEvCzTxag/mossformer2_48k.mp3"></audio> |
 | mossformergan_16k | 2.56 | 2.94 | 3.84 | <audio controls src="audio/E034_CiPEvCzTxag/mossformergan_16k.mp3"></audio> |
 
-### Segment: `E127_aV073AHsIZQ` (definitions/late) — Baseline OVRL: 1.14
+### [Right Here, Right Now: Austerity](https://www.youtube.com/watch?v=aV073AHsIZQ) (definitions/late) — Baseline OVRL: 1.14
 
 | Pipeline | OVRL | SIG | BAK | Audio |
 |----------|------|-----|-----|-------|
@@ -130,7 +112,7 @@ Representative segments selected for diversity: lowest, median, and highest orig
 | mossformer2_48k | 2.62 | 3.09 | 3.52 | <audio controls src="audio/E127_aV073AHsIZQ/mossformer2_48k.mp3"></audio> |
 | mossformergan_16k | 2.80 | 3.29 | 3.59 | <audio controls src="audio/E127_aV073AHsIZQ/mossformergan_16k.mp3"></audio> |
 
-### Segment: `E101_hMVeKeST0dk` (screening/middle) — Baseline OVRL: 1.54
+### [sign de nuit bangkok](https://www.youtube.com/watch?v=hMVeKeST0dk) (screening/middle) — Baseline OVRL: 1.54
 
 | Pipeline | OVRL | SIG | BAK | Audio |
 |----------|------|-----|-----|-------|
