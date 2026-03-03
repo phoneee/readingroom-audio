@@ -7,6 +7,8 @@ Avoids intros/outros and silence-heavy sections for more reliable scoring.
 import torch
 import torchaudio
 
+from .utils import load_audio, save_audio
+
 
 _VAD_MODEL = None
 _VAD_UTILS = None
@@ -52,7 +54,7 @@ def find_best_segment(
     Returns:
         (start_sec, end_sec, speech_ratio)
     """
-    wav, sr = torchaudio.load(wav_path)
+    wav, sr = load_audio(wav_path)
     wav = wav.mean(dim=0)  # mono
 
     # Resample to 16kHz for VAD
@@ -130,7 +132,7 @@ def extract_segment(
     Returns:
         Path to extracted segment.
     """
-    wav, orig_sr = torchaudio.load(input_path)
+    wav, orig_sr = load_audio(input_path)
     wav = wav.mean(dim=0)  # mono
 
     start_sample = int(start_sec * orig_sr)
@@ -142,5 +144,5 @@ def extract_segment(
         segment = torchaudio.functional.resample(segment, orig_sr, sr)
 
     # Save as mono WAV
-    torchaudio.save(output_path, segment.unsqueeze(0), sr)
+    save_audio(output_path, segment.unsqueeze(0), sr)
     return output_path

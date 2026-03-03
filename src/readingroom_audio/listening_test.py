@@ -310,7 +310,7 @@ def cmd_enhance(pipeline_names: list[str] | None = None):
 # ── Phase: score ────────────────────────────────────────────────────
 
 def cmd_score():
-    """Score all segments with DNSMOS (fast, no NISQA/UTMOS)."""
+    """Score all segments with DNSMOS, NISQA, and UTMOS."""
     manifest = _load_manifest()
     if not manifest:
         print("No manifest found. Run 'select' first.")
@@ -334,7 +334,7 @@ def cmd_score():
         if "original" not in scores[sid]:
             print(f"  [{i}/{total}] {sid} [original] scoring...", end=" ", flush=True)
             try:
-                s = score_segment(str(segment_path), metrics=["dnsmos"])
+                s = score_segment(str(segment_path), metrics=None)
                 scores[sid]["original"] = s
                 print(f"OVRL={s.get('dnsmos_ovrl', '?'):.2f}")
             except Exception as e:
@@ -355,7 +355,7 @@ def cmd_score():
 
             print(f"  [{i}/{total}] {sid} [{pipe_name}] scoring...", end=" ", flush=True)
             try:
-                s = score_segment(str(enhanced_path), metrics=["dnsmos"])
+                s = score_segment(str(enhanced_path), metrics=None)
                 scores[sid][pipe_name] = s
                 print(f"OVRL={s.get('dnsmos_ovrl', '?'):.2f}")
             except Exception as e:
@@ -458,19 +458,24 @@ def _generate_html(
     # Compute summary stats
     summary = {}
     for pipe_name in active_pipelines:
-        values = []
+        ovrl_values = []
+        utmos_values = []
         for entry in manifest:
             sid = entry["segment_id"]
             seg_scores = scores.get(sid, {}).get(pipe_name, {})
             ovrl = seg_scores.get("dnsmos_ovrl")
             if ovrl is not None and "error" not in seg_scores:
-                values.append(ovrl)
-        if values:
+                ovrl_values.append(ovrl)
+            utmos = seg_scores.get("utmos_score")
+            if utmos is not None:
+                utmos_values.append(utmos)
+        if ovrl_values:
             summary[pipe_name] = {
-                "mean": sum(values) / len(values),
-                "min": min(values),
-                "max": max(values),
-                "n": len(values),
+                "mean": sum(ovrl_values) / len(ovrl_values),
+                "min": min(ovrl_values),
+                "max": max(ovrl_values),
+                "n": len(ovrl_values),
+                "mean_utmos": sum(utmos_values) / len(utmos_values) if utmos_values else None,
             }
 
     # Build sample cards
@@ -520,14 +525,13 @@ def _generate_html(
 </header>
 
 <section id="summary">
-  <h2>Summary — Mean DNSMOS Scores</h2>
+  <h2>Summary — Mean Scores</h2>
   <table class="summary-table">
     <thead>
       <tr>
         <th>Pipeline</th>
         <th>Mean OVRL</th>
-        <th>SIG</th>
-        <th>BAK</th>
+        <th>UTMOS</th>
         <th>Range</th>
         <th>n</th>
         <th class="bar-cell">Distribution</th>
@@ -595,9 +599,12 @@ def _render_sample_card(
         sig = ps.get("dnsmos_sig")
         bak = ps.get("dnsmos_bak")
 
+        utmos = ps.get("utmos_score")
+
         ovrl_str = f"{ovrl:.2f}" if ovrl is not None else "—"
         sig_str = f"{sig:.2f}" if sig is not None else "—"
         bak_str = f"{bak:.2f}" if bak is not None else "—"
+        utmos_str = f"{utmos:.2f}" if utmos is not None else "—"
         bar_width = (ovrl / 5.0 * 100) if ovrl else 0
 
         pipe_label = html.escape(pipe_name)
@@ -612,6 +619,7 @@ def _render_sample_card(
         <td class="score">{ovrl_str}</td>
         <td class="score">{sig_str}</td>
         <td class="score">{bak_str}</td>
+        <td class="score">{utmos_str}</td>
         <td class="bar-cell"><div class="bar" style="width:{bar_width:.0f}%"></div></td>
       </tr>""")
 
@@ -640,6 +648,7 @@ def _render_sample_card(
           <th>OVRL</th>
           <th>SIG</th>
           <th>BAK</th>
+          <th>UTMOS</th>
           <th class="bar-cell">Score</th>
         </tr>
       </thead>
@@ -656,8 +665,6 @@ def _render_sample_card(
 
 def _render_summary_table(summary: dict, active_pipelines: list[str]) -> str:
     """Render summary table rows."""
-    # Compute mean SIG and BAK per pipeline from scores file
-    # We already have OVRL in summary; also need SIG/BAK
     rows = []
     # Sort by mean OVRL descending
     sorted_pipes = sorted(
@@ -670,6 +677,7 @@ def _render_summary_table(summary: dict, active_pipelines: list[str]) -> str:
     for pipe_name in sorted_pipes:
         s = summary.get(pipe_name, {})
         mean_ovrl = s.get("mean", 0)
+        mean_utmos = s.get("mean_utmos")
         min_ovrl = s.get("min", 0)
         max_ovrl = s.get("max", 0)
         n = s.get("n", 0)
@@ -677,12 +685,12 @@ def _render_summary_table(summary: dict, active_pipelines: list[str]) -> str:
         is_best = mean_ovrl == best_mean and mean_ovrl > 0
         desc = html.escape(PIPELINE_DESCRIPTIONS.get(pipe_name, ""))
         pipe_label = html.escape(pipe_name)
+        utmos_str = f"{mean_utmos:.3f}" if mean_utmos is not None else "—"
 
         rows.append(f"""      <tr class="{'best-row' if is_best else ''}" title="{desc}">
         <td class="pipe-name">{pipe_label}</td>
         <td class="score"><strong>{mean_ovrl:.3f}</strong></td>
-        <td class="score">—</td>
-        <td class="score">—</td>
+        <td class="score">{utmos_str}</td>
         <td class="score">{min_ovrl:.2f}–{max_ovrl:.2f}</td>
         <td class="score">{n}</td>
         <td class="bar-cell"><div class="bar summary-bar" style="width:{bar_width:.0f}%"></div></td>
@@ -1070,7 +1078,7 @@ Sub-commands:
   download  Download audio for selected samples
   extract   Extract speech-active segments using VAD
   enhance   Run enhancement pipelines
-  score     Score all segments with DNSMOS
+  score     Score all segments with DNSMOS, NISQA, and UTMOS
   build     Encode MP3s + generate HTML page
   run-all   Run all phases sequentially
 
@@ -1101,7 +1109,7 @@ Default pipelines:
     )
 
     # score
-    subparsers.add_parser("score", help="Score all segments with DNSMOS")
+    subparsers.add_parser("score", help="Score all segments (DNSMOS, NISQA, UTMOS)")
 
     # build
     subparsers.add_parser("build", help="Encode MP3s + generate HTML")

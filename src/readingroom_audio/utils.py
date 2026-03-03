@@ -5,6 +5,40 @@ import os
 import subprocess
 from pathlib import Path
 
+import numpy as np
+import soundfile as sf
+import torch
+
+
+def load_audio(path: str) -> tuple[torch.Tensor, int]:
+    """Load audio file as torch Tensor.
+
+    Uses soundfile directly (torchaudio 2.10+ removed backend support
+    and requires torchcodec which may not be installed).
+
+    Returns:
+        (waveform, sample_rate) — waveform shape: (channels, samples).
+    """
+    data, sr = sf.read(path, dtype="float32", always_2d=True)
+    # soundfile returns (samples, channels), torch expects (channels, samples)
+    tensor = torch.from_numpy(data.T)
+    return tensor, sr
+
+
+def save_audio(path: str, waveform: torch.Tensor, sample_rate: int):
+    """Save torch Tensor as audio file.
+
+    Args:
+        path: Output file path (.wav, .flac, etc.).
+        waveform: Shape (channels, samples) or (samples,).
+        sample_rate: Sample rate in Hz.
+    """
+    if waveform.dim() == 1:
+        waveform = waveform.unsqueeze(0)
+    # (channels, samples) -> (samples, channels) for soundfile
+    data = waveform.cpu().numpy().T
+    sf.write(path, data, sample_rate)
+
 
 def ensure_wav(input_path: str, output_wav: str, sr: int = 48000) -> str:
     """Convert any audio file to WAV at specified sample rate.
@@ -57,13 +91,13 @@ def get_project_root() -> Path:
     raise RuntimeError("Could not find project root (no pyproject.toml found)")
 
 
-def encode_flac(input_wav: str, output_flac: str, compression_level: int = 8):
+def encode_flac(input_wav: str, output_flac: str, compression_level: int = 5):
     """Encode WAV to FLAC (lossless, ~60% smaller than WAV).
 
     Args:
         input_wav: Path to input WAV file.
         output_flac: Path to output FLAC file.
-        compression_level: FLAC compression level 0-12 (8 = higher compression).
+        compression_level: FLAC compression level 0-12 (5 = good speed/size trade-off).
     """
     Path(output_flac).parent.mkdir(parents=True, exist_ok=True)
     cmd = [

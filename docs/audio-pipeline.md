@@ -70,22 +70,80 @@ This pipeline aims to improve audio quality for archival purposes and potential 
 
 ## Quality Metrics
 
+All metrics are **non-intrusive** (no-reference) — essential because clean originals don't exist for YouTube archival sources. Full-reference metrics (PESQ, POLQA, ViSQOL, WARP-Q) are not applicable.
+
+### Why these three metrics?
+
+The combination of DNSMOS + NISQA + UTMOS provides complementary coverage:
+
+| Metric | Strength | Weakness for our use case |
+|--------|----------|--------------------------|
+| DNSMOS | Decomposed SIG/BAK/OVRL — diagnoses speech distortion vs. residual noise | BAK sub-score penalizes preserved ambient (laughter, room sound) |
+| NISQA | Detects coloration, discontinuity artifacts from neural enhancement | Designed for telecom degradation, not archival audio |
+| UTMOS | Highest correlation with human MOS (URGENT 2024 challenge) | Single score, no diagnostic decomposition |
+
+**Key insight for our archival use case**: DNSMOS BAK improvement should be treated as an **over-suppression warning signal**, not a success signal. A large BAK delta (e.g., >1.0) combined with SIG decrease likely means the pipeline is stripping ambient character alongside noise.
+
+### Recommended interpretation
+
+```
+Primary quality signal:    UTMOS (best human correlation, holistic)
+Diagnostic decomposition:  NISQA (noisiness, coloration, discontinuity)
+Speech distortion guard:   DNSMOS SIG (catch speech artifacts)
+Over-suppression detector: DNSMOS BAK delta (large increase = possible over-processing)
+```
+
 ### DNSMOS (Deep Noise Suppression MOS)
-Non-intrusive metric based on ITU-T P.808. Scores 1–5:
-- **P808**: Overall quality prediction
-- **SIG**: Speech signal quality (distortion, naturalness)
-- **BAK**: Background noise quality (suppression effectiveness)
-- **OVRL**: Overall quality (combines signal + background)
+
+Microsoft's P.808/P.835 predictor, trained on DNS Challenge crowdsourced ratings. Scores 1–5:
+- **P808**: Overall quality prediction (single composite)
+- **SIG**: Speech signal quality — distortion, naturalness of speech itself
+- **BAK**: Background noise quality — how quiet/unobtrusive the background is
+- **OVRL**: Overall quality — combines signal + background perception
+
+**Strengths**: De facto standard in speech enhancement; decomposed scores diagnose trade-offs; fast inference.
+
+**Limitations**: Trained on English telephony/conferencing data. BAK structurally rewards silence — a system that aggressively removes all non-speech (including desirable ambient) scores higher. Per-clip predictions are noisy; reliable comparison requires averaging over many samples. URGENT 2024 Challenge found DNSMOS has lower rank correlation (KRCC) with human MOS than UTMOS/SCOREQ.
 
 ### NISQA (Non-Intrusive Speech Quality Assessment)
-Predicts MOS and sub-dimensions:
+
+TU Berlin's CNN-Self-Attention model, trained on crowdsourced MOS across communication channels.
 - **MOS**: Overall quality (1–5)
-- **Noisiness**: Background noise level
-- **Discontinuity**: Temporal artifacts
-- **Coloration**: Spectral distortion
+- **Noisiness**: Perceived noise level (tracks perceptual noise without penalizing pleasant ambient)
+- **Discontinuity**: Temporal artifacts — catches dropouts and clipping from neural processing
+- **Coloration**: Spectral distortion — detects muffled/tinny artifacts from enhancement
 - **Loudness**: Volume perception
 
-**Known issue**: NISQA fails on audio >10 seconds with "Maximum number of mel spectrogram windows exceeded." Needs chunked scoring implementation.
+**Known issue**: Internal mel spectrogram overflows on audio >10 seconds. **Fixed** in `score.py` via 9-second chunked scoring with averaging.
+
+**Strengths**: Multi-dimensional decomposition uniquely useful for detecting enhancement artifacts. URGENT 2024: "NISQA tends to be more consistent with MOS in terms of both ranks and values" vs. DNSMOS.
+
+### UTMOS (UTokyo-SaruLab MOS Prediction)
+
+Ensemble of fine-tuned SSL models (wav2vec 2.0, HuBERT) for general perceptual quality.
+- **Score**: Single MOS value (1–5)
+
+**Strengths**: Highest correlation with human ratings among all tested metrics at URGENT 2024 Speech Enhancement Challenge. Strong generalization across speech codecs, TTS, and enhancement tasks.
+
+**Limitations**: Single score with no sub-dimension breakdown. Heavier inference (SSL backbone). Originally designed for TTS evaluation.
+
+### Metrics not used (and why)
+
+| Metric | Type | Why excluded |
+|--------|------|-------------|
+| PESQ (P.862) | Full-reference | Requires clean original — not available |
+| POLQA (P.863) | Full-reference | Same — successor to PESQ |
+| ViSQOL | Full-reference | Google's perceptual metric — same limitation |
+| WARP-Q | Full-reference | Designed for neural codecs but still needs reference |
+| SpeechLMScore | No-reference | Low discriminative power between enhancement methods (URGENT 2024) |
+| SCOREQ | No-reference | Strong performer at URGENT 2024 but not yet in torchmetrics; candidate for future addition |
+
+### References
+
+- [DNSMOS P.835](https://arxiv.org/abs/2110.01763) — Reddy et al., 2021
+- [NISQA v2.0](https://github.com/gabrielmittag/NISQA) — Mittag et al., TU Berlin
+- [UTMOS](https://arxiv.org/abs/2204.02152) — Saeki et al., UTokyo
+- [URGENT 2024 Challenge](https://arxiv.org/html/2506.01611v1) — Comparative evaluation of all metrics
 
 ## Pilot Results
 
@@ -277,10 +335,22 @@ analyze  → benchmark_results.json + benchmark_report.md + charts/
 
 ### Statistical Analysis
 
-1. **Friedman test** — non-parametric repeated-measures across 8 pipelines on DNSMOS OVRL
+Tests are run for each metric independently (DNSMOS OVRL, UTMOS, NISQA MOS):
+
+1. **Friedman test** — non-parametric repeated-measures across pipelines per metric
 2. **Post-hoc Wilcoxon** signed-rank with Bonferroni correction (28 pairs, α≈0.0018)
-3. **Per-stratum** — same tests per series_group to detect content-type interactions
-4. **Effect sizes** — rank-biserial correlation
+3. **Bootstrap 95% CIs** — 10,000 resamples on pipeline means (percentile method)
+4. **Cross-metric agreement** — Spearman ρ between improvement deltas across metric pairs
+5. **Per-stratum** — same tests per series_group to detect content-type interactions
+6. **Effect sizes** — rank-biserial correlation (practical significance: |r| > 0.3)
+
+| Test | Purpose | Threshold |
+|------|---------|-----------|
+| Friedman | Overall pipeline differences | p < 0.05 |
+| Wilcoxon (post-hoc) | Pairwise comparisons | Bonferroni-corrected α |
+| Bootstrap CI | Uncertainty on means | 95% percentile interval |
+| Spearman ρ | Cross-metric agreement | \|ρ\| < 0.4 → weak agreement warning |
+| Rank-biserial r | Effect size | \|r\| > 0.3 → practical significance |
 
 ### Benchmark Commands
 
@@ -299,6 +369,9 @@ uv run python -m readingroom_audio.benchmark extract
 uv run python -m readingroom_audio.benchmark baseline
 uv run python -m readingroom_audio.benchmark enhance
 uv run python -m readingroom_audio.benchmark analyze
+
+# Multi-seed sensitivity analysis
+uv run python -m readingroom_audio.benchmark sensitivity --target-n 40 --seeds 42 123 456 789 1337
 ```
 
 ### Outputs
@@ -307,6 +380,69 @@ uv run python -m readingroom_audio.benchmark analyze
 - `data/audio/benchmark_results.json` — all pipeline scores per segment
 - `data/audio/benchmark_report.md` — statistical analysis report
 - `data/audio/benchmark_charts/` — Altair HTML visualizations
+
+## Evaluation Methodology
+
+### Bias Mitigation
+
+#### 1. Metric Selection Bias
+
+Using a single metric risks confirmation bias — the chosen metric may favor certain artifacts
+while missing others. This evaluation uses three complementary non-intrusive metrics:
+
+- **UTMOS** (primary quality): Highest correlation with human MOS in URGENT 2024 challenge.
+  Single holistic score, less susceptible to component-level artifacts.
+- **DNSMOS** (diagnostic): P.808-based; decomposes into SIG (speech), BAK (background), OVRL (overall).
+  Useful for detecting speech distortion vs background improvement trade-offs.
+- **NISQA** (artifact decomposition): Noisiness, discontinuity, coloration, loudness.
+  Catches specific artifact types (musical noise, tonal shift) that holistic metrics may miss.
+
+Cross-metric agreement (Spearman ρ between improvement deltas) is computed automatically.
+Weak agreement (|ρ| < 0.4) triggers a warning — pipelines should be evaluated per-metric
+rather than relying on any single ranking.
+
+#### 2. Sample Selection Bias
+
+The 429-video population is heterogeneous (Thai/English, talks/performances, 2010–2019 equipment).
+Stratified sampling by `series_group` and `era` ensures the benchmark sample (n=40) reflects this
+diversity proportionally. Multi-seed sensitivity analysis (`benchmark sensitivity`) tests whether
+pipeline rankings are stable across different random samples.
+
+#### 3. Confirmation Bias (BAK Trap)
+
+DNSMOS BAK measures background "cleanliness" — higher BAK means less background noise. For
+archival audio where ambient atmosphere matters, a large BAK delta with negative SIG delta
+signals over-suppression (noise removed, but speech quality degraded and room character lost).
+The evaluation explicitly flags BAK delta > 1.0 combined with SIG delta < 0 as a warning.
+
+#### 4. Multiple Comparisons
+
+With 8 pipelines and 3 metrics, naive pairwise testing inflates false discovery rate. Bonferroni
+correction is applied to Wilcoxon post-hoc tests, and practical significance requires both
+statistical significance (corrected p-value) and meaningful effect size (rank-biserial |r| > 0.3).
+
+### Limitations and Known Biases
+
+1. **Language bias**: All three metrics (DNSMOS, NISQA, UTMOS) are trained primarily on English
+   speech. ~40% of the Reading Room content is Thai — metric calibration may differ for Thai
+   speech, particularly for tonal distinctions.
+
+2. **VAD segment bias**: Benchmark segments are extracted using Silero VAD, which selects
+   speech-dense regions. This underrepresents non-speech content (music, ambient sections)
+   and may over-weight speech quality in the evaluation.
+
+3. **No subjective validation at scale**: The 3-file pilot included subjective listening
+   comparison, but the 40-sample benchmark relies entirely on objective metrics.
+   No formal listening test (MUSHRA, AB preference) has been conducted at scale.
+
+4. **Single-pass scoring**: Each segment is scored once per metric with no measurement
+   reliability check (test-retest). DNSMOS and NISQA are deterministic, but UTMOS may
+   have minor variance from model loading state.
+
+5. **Temporal equipment evolution**: Recording equipment changed between 2010–2019.
+   Earlier recordings may have fundamentally different noise profiles that some pipelines
+   handle better than others. The `era` stratification partially addresses this but
+   doesn't fully control for equipment-specific effects.
 
 ## How to Run
 
@@ -348,8 +484,10 @@ uv run python -m readingroom_audio.compare \
 
 Open `notebooks/audio_comparison.ipynb` for:
 - Visual comparison of DNSMOS scores across pipelines
-- Radar charts for multi-dimensional quality assessment
-- Audio playback widgets for A/B listening tests
+- Multi-dimensional quality profile (line chart across SIG/BAK/OVRL/P.808)
+- Per-file heatmaps and improvement-over-baseline charts
+- Audio playback widgets for A/B listening tests (30s preview)
+- Statistical analysis of benchmark data (when available): box plots, bootstrap CIs, cross-metric scatter, sample representativeness
 
 ## Decision Log
 
@@ -366,3 +504,10 @@ Open `notebooks/audio_comparison.ipynb` for:
 | 2026-03-03 | Expand to 21 pipelines | Test more variations (DeepFilter attenuation sweep, htdemucs_ft, GAN models, super-resolution, new packages) to find truly best approach |
 | 2026-03-03 | Add batch processing | Enable processing all 429 videos once winning pipeline is determined |
 | 2026-03-03 | FLAC output for batch | Lossless compression (~60% smaller than WAV) for archival output |
+| 2026-03-03 | Documented metric rationale | DNSMOS BAK penalizes ambient; UTMOS recommended as primary quality signal; see Quality Metrics section |
+| 2026-03-03 | Score model caching | Cache DNSMOS/NISQA/UTMOS models at module level (like enhance.py) — saves ~7 min over 429 videos |
+| 2026-03-03 | FLAC compression 8→5 | ~3% larger files but significantly faster encoding for batch processing |
+| 2026-03-03 | Multi-metric analysis | Run Friedman/Wilcoxon for DNSMOS OVRL, UTMOS, and NISQA MOS independently — avoids single-metric confirmation bias |
+| 2026-03-03 | Bootstrap 95% CIs | Report uncertainty on pipeline means (10K resamples) — bare means without CIs invite over-interpretation |
+| 2026-03-03 | Cross-metric agreement | Spearman ρ between improvement deltas flags when metrics disagree on pipeline ranking |
+| 2026-03-03 | Multi-seed sensitivity | Test sampling stability across 5 seeds — ensures pipeline rankings aren't artifacts of a single random draw |

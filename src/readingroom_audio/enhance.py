@@ -8,9 +8,38 @@ import os
 import shutil
 import subprocess
 import sys
+import types
+from dataclasses import dataclass
 from pathlib import Path
 
 import soundfile as sf
+
+from .utils import load_audio, save_audio
+
+
+# ── DeepFilterNet compatibility shim ─────────────────────────────────
+# df/io.py imports torchaudio.backend.common.AudioMetaData which was
+# removed in torchaudio 2.1+.  Inject a minimal stand-in so df can
+# import without patching venv files (survives uv sync).
+
+if "torchaudio.backend.common" not in sys.modules:
+
+    @dataclass
+    class _AudioMetaData:
+        sample_rate: int = 0
+        num_frames: int = 0
+        num_channels: int = 0
+        bits_per_sample: int = 0
+        encoding: str = ""
+
+    _common = types.ModuleType("torchaudio.backend.common")
+    _common.AudioMetaData = _AudioMetaData
+    sys.modules["torchaudio.backend.common"] = _common
+
+    if "torchaudio.backend" not in sys.modules:
+        _backend = types.ModuleType("torchaudio.backend")
+        _backend.common = _common
+        sys.modules["torchaudio.backend"] = _backend
 
 
 # ── Model cache ─────────────────────────────────────────────────────
@@ -87,13 +116,16 @@ def enhance_deepfilternet(input_wav: str, output_wav: str,
 
     Best for: targeted noise suppression while preserving speech naturalness.
     """
-    from df.enhance import enhance, init_df, load_audio, save_audio
+    from df.enhance import enhance, init_df
+    import torchaudio
 
     model, df_state = _get_cached_model(
         "deepfilternet3",
         lambda: init_df()[:2],  # init_df returns (model, df_state, _)
     )
-    audio, info = load_audio(input_wav, sr=df_state.sr())
+    audio, sr = load_audio(input_wav)
+    if sr != df_state.sr():
+        audio = torchaudio.functional.resample(audio, sr, df_state.sr())
     enhanced = enhance(model, df_state, audio, atten_lim_db=atten_lim)
     save_audio(output_wav, enhanced, df_state.sr())
 
@@ -122,7 +154,11 @@ def enhance_demucs_vocals(input_wav: str, output_wav: str):
     # Fallback to CPU if MPS fails
     if result.returncode != 0 and device == "mps":
         cmd[cmd.index("--device") + 1] = "cpu"
-        subprocess.run(cmd, capture_output=True, timeout=1200)
+        result = subprocess.run(cmd, capture_output=True, timeout=1200)
+
+    if result.returncode != 0:
+        stderr = result.stderr.decode(errors="replace")[-500:]
+        raise RuntimeError(f"Demucs htdemucs failed (exit {result.returncode}): {stderr}")
 
     stem_name = Path(input_wav).stem
     vocals_path = Path(out_dir) / "htdemucs" / stem_name / "vocals.wav"
@@ -230,7 +266,11 @@ def enhance_demucs_ft_vocals(input_wav: str, output_wav: str):
     # Fallback to CPU if MPS fails
     if result.returncode != 0 and device == "mps":
         cmd[cmd.index("--device") + 1] = "cpu"
-        subprocess.run(cmd, capture_output=True, timeout=2400)
+        result = subprocess.run(cmd, capture_output=True, timeout=2400)
+
+    if result.returncode != 0:
+        stderr = result.stderr.decode(errors="replace")[-500:]
+        raise RuntimeError(f"Demucs htdemucs_ft failed (exit {result.returncode}): {stderr}")
 
     stem_name = Path(input_wav).stem
     vocals_path = Path(out_dir) / "htdemucs_ft" / stem_name / "vocals.wav"
@@ -380,7 +420,7 @@ def enhance_mpsenet(input_wav: str, output_wav: str):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = model.to(device).eval()
 
-    wav, sr = torchaudio.load(input_wav)
+    wav, sr = load_audio(input_wav)
     wav = wav.mean(dim=0)  # mono
 
     # Resample to 16kHz (MPSENet's native rate)
@@ -390,7 +430,7 @@ def enhance_mpsenet(input_wav: str, output_wav: str):
     audio_np = wav.numpy()
     enhanced_np, out_sr, _ = model(audio_np)
     enhanced = torch.from_numpy(enhanced_np).unsqueeze(0)
-    torchaudio.save(output_wav, enhanced, out_sr)
+    save_audio(output_wav, enhanced, out_sr)
 
 
 def enhance_hybrid_mpsenet_sr(input_wav: str, output_wav: str):
@@ -441,7 +481,7 @@ def enhance_resemble_denoise(input_wav: str, output_wav: str):
     import torchaudio
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    wav, sr = torchaudio.load(input_wav)
+    wav, sr = load_audio(input_wav)
     wav = wav.mean(dim=0)  # mono
 
     # Resample to 44.1kHz (Resemble's native rate)
@@ -449,7 +489,7 @@ def enhance_resemble_denoise(input_wav: str, output_wav: str):
         wav = torchaudio.functional.resample(wav, sr, 44100)
 
     enhanced = denoise(wav, 44100, device)
-    torchaudio.save(output_wav, enhanced.unsqueeze(0).cpu(), 44100)
+    save_audio(output_wav, enhanced.unsqueeze(0).cpu(), 44100)
 
 
 def enhance_resemble_full(input_wav: str, output_wav: str):
@@ -471,7 +511,7 @@ def enhance_resemble_full(input_wav: str, output_wav: str):
     import torchaudio
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    wav, sr = torchaudio.load(input_wav)
+    wav, sr = load_audio(input_wav)
     wav = wav.mean(dim=0)  # mono
 
     if sr != 44100:
@@ -481,7 +521,7 @@ def enhance_resemble_full(input_wav: str, output_wav: str):
     denoised = denoise(wav, 44100, device)
     # Stage 2: Enhance/upscale
     enhanced, new_sr = enhance(denoised, 44100, device, nfe=32)
-    torchaudio.save(output_wav, enhanced.unsqueeze(0).cpu(), new_sr)
+    save_audio(output_wav, enhanced.unsqueeze(0).cpu(), new_sr)
 
 
 def enhance_sepformer_wham16k(input_wav: str, output_wav: str):
@@ -509,7 +549,40 @@ def enhance_sepformer_wham16k(input_wav: str, output_wav: str):
 
     # SepFormer returns (batch, time, sources) — take first source
     enhanced = est_sources[:, :, 0].squeeze(0)
-    torchaudio.save(output_wav, enhanced.unsqueeze(0).cpu(), 16000)
+    save_audio(output_wav, enhanced.unsqueeze(0).cpu(), 16000)
+
+
+# ── Pipeline availability probing ────────────────────────────────────
+
+_PIPELINE_DEPS: dict[str, str] = {
+    "mossformer2_48k": "clearvoice",
+    "mossformergan_16k": "clearvoice",
+    "frcrn_16k": "clearvoice",
+    "superres_48k": "clearvoice",
+    "hybrid_mossformergan_sr": "clearvoice",
+    "hybrid_demucs_ft_mossformer": "clearvoice",
+    "resemble_denoise": "resemble_enhance",
+    "resemble_full": "resemble_enhance",
+    "mpsenet_dns": "MPSENet",
+    "hybrid_mpsenet_sr": "MPSENet",
+    "sepformer_wham16k": "speechbrain",
+}
+
+
+def get_available_pipelines() -> list[str]:
+    """Return pipeline names whose dependencies are importable."""
+    available = []
+    for name in PIPELINES:
+        dep = _PIPELINE_DEPS.get(name)
+        if dep is None:
+            available.append(name)
+        else:
+            try:
+                __import__(dep)
+                available.append(name)
+            except Exception:
+                pass
+    return available
 
 
 # ── Pipeline registry ────────────────────────────────────────────────

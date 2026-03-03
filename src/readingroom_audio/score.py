@@ -12,13 +12,25 @@ from pathlib import Path
 import torch
 import torchaudio
 
+from .utils import load_audio
+
 # NISQA max window length in seconds (avoids mel spectrogram overflow)
 _NISQA_CHUNK_SEC = 9
+
+# Model cache — avoids re-instantiation per file (~0.5-2s overhead each)
+_SCORE_CACHE: dict = {}
+
+
+def _get_cached_scorer(key: str, loader_fn):
+    """Return a cached scoring model, loading it on first use."""
+    if key not in _SCORE_CACHE:
+        _SCORE_CACHE[key] = loader_fn()
+    return _SCORE_CACHE[key]
 
 
 def score_audio(wav_path: str, max_seconds: int = 60,
                 skip_seconds: int = 30) -> dict:
-    """Score audio quality using DNSMOS and NISQA (non-intrusive, no reference).
+    """Score audio quality using DNSMOS, NISQA, and UTMOS (non-intrusive, no reference).
 
     Args:
         wav_path: Path to WAV file to score.
@@ -27,9 +39,9 @@ def score_audio(wav_path: str, max_seconds: int = 60,
 
     Returns:
         Dict with score keys like dnsmos_p808, dnsmos_sig, dnsmos_bak, dnsmos_ovrl,
-        and nisqa_mos, nisqa_noisiness, etc. Error keys if scoring fails.
+        nisqa_mos, nisqa_noisiness, etc., and utmos_score. Error keys if scoring fails.
     """
-    wav, sr = torchaudio.load(wav_path)
+    wav, sr = load_audio(wav_path)
     wav = wav.mean(dim=0)  # mono
 
     # Resample to 16kHz for quality metrics
@@ -50,6 +62,9 @@ def score_audio(wav_path: str, max_seconds: int = 60,
     # NISQA scoring (chunked)
     scores.update(_score_nisqa(wav))
 
+    # UTMOS scoring (graceful fallback)
+    scores.update(_score_utmos(wav))
+
     return scores
 
 
@@ -66,7 +81,7 @@ def score_segment(wav_path: str, metrics: list[str] | None = None) -> dict:
     Returns:
         Dict with all available metric scores.
     """
-    wav, sr = torchaudio.load(wav_path)
+    wav, sr = load_audio(wav_path)
     wav = wav.mean(dim=0)  # mono
 
     if sr != 16000:
@@ -90,7 +105,10 @@ def _score_dnsmos(wav: torch.Tensor) -> dict:
     """Score using Deep Noise Suppression MOS (P.808)."""
     try:
         from torchmetrics.audio import DeepNoiseSuppressionMeanOpinionScore
-        dnsmos = DeepNoiseSuppressionMeanOpinionScore(fs=16000, personalized=False)
+        dnsmos = _get_cached_scorer(
+            "dnsmos",
+            lambda: DeepNoiseSuppressionMeanOpinionScore(fs=16000, personalized=False),
+        )
         dns_scores = dnsmos(wav)
         return {
             "dnsmos_p808": float(dns_scores[0]),
@@ -110,7 +128,10 @@ def _score_nisqa(wav: torch.Tensor) -> dict:
     """
     try:
         from torchmetrics.audio import NonIntrusiveSpeechQualityAssessment
-        nisqa = NonIntrusiveSpeechQualityAssessment(fs=16000)
+        nisqa = _get_cached_scorer(
+            "nisqa",
+            lambda: NonIntrusiveSpeechQualityAssessment(fs=16000),
+        )
 
         chunk_samples = 16000 * _NISQA_CHUNK_SEC
         total_samples = wav.shape[0]
@@ -161,9 +182,12 @@ def _score_utmos(wav: torch.Tensor) -> dict:
     Graceful fallback if utmos is not installed.
     """
     try:
-        predictor = torch.hub.load(
-            "tarepan/SpeechMOS:v1.2.0", "utmos22_strong",
-            trust_repo=True,
+        predictor = _get_cached_scorer(
+            "utmos",
+            lambda: torch.hub.load(
+                "tarepan/SpeechMOS:v1.2.0", "utmos22_strong",
+                trust_repo=True,
+            ),
         )
         # UTMOS expects (batch, samples) at 16kHz
         score = predictor(wav.unsqueeze(0), sr=16000)

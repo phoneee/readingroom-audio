@@ -34,9 +34,11 @@ ENHANCED_DIR = AUDIO_DIR / "enhanced_final"
 STATUS_PATH = AUDIO_DIR / "batch_status.json"
 
 
-# ── Status I/O (thread-safe) ────────────────────────────────────────
+# ── Status I/O (thread-safe, batched writes) ──────────────────────
 
 _status_lock = threading.Lock()
+_status_pending: dict = {}  # accumulated updates not yet flushed
+_STATUS_FLUSH_INTERVAL = 10  # flush to disk every N updates
 
 
 def _load_status() -> dict:
@@ -54,18 +56,31 @@ def _save_status(status: dict):
             json.dump(status, f, indent=2, ensure_ascii=False)
 
 
-def _update_video_status(pipeline_name: str, video_id: str, result: dict):
-    """Atomically update a single video's status in the status file."""
+def _flush_pending_status():
+    """Write accumulated pending updates to disk."""
     with _status_lock:
+        if not _status_pending:
+            return
         if STATUS_PATH.exists():
             with open(STATUS_PATH) as f:
                 status = json.load(f)
         else:
             status = {}
-        status.setdefault(pipeline_name, {})[video_id] = result
+        for pipeline_name, videos in _status_pending.items():
+            status.setdefault(pipeline_name, {}).update(videos)
         STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
         with open(STATUS_PATH, "w") as f:
             json.dump(status, f, indent=2, ensure_ascii=False)
+        _status_pending.clear()
+
+
+def _update_video_status(pipeline_name: str, video_id: str, result: dict):
+    """Accumulate status update; flush to disk every N updates."""
+    with _status_lock:
+        _status_pending.setdefault(pipeline_name, {})[video_id] = result
+        total_pending = sum(len(v) for v in _status_pending.values())
+    if total_pending >= _STATUS_FLUSH_INTERVAL:
+        _flush_pending_status()
 
 
 # ── Video loading ────────────────────────────────────────────────────
@@ -427,6 +442,9 @@ def cmd_run(
                             f"{result.get('error', 'unknown')}",
                             flush=True,
                         )
+
+    # Flush any remaining pending status updates
+    _flush_pending_status()
 
     # Cleanup empty temp dirs
     for tmp in output_dir.glob("_tmp_*"):
