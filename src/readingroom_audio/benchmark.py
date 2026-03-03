@@ -9,6 +9,7 @@ Sub-command CLI for running stratified benchmark across ~40 samples:
     python -m readingroom_audio.benchmark enhance      [--pipelines ...]
     python -m readingroom_audio.benchmark analyze
     python -m readingroom_audio.benchmark export       [--output-dir ...] [--n-samples 3]
+    python -m readingroom_audio.benchmark preview      [--output-dir ...] [--n-samples 8]
     python -m readingroom_audio.benchmark sensitivity  [--target-n 40] [--seeds ...]
     python -m readingroom_audio.benchmark run-all      [--target-n 40] [--pipelines ...] [--quick]
 """
@@ -1593,6 +1594,69 @@ def _select_representative_segments(
     return selected[:n]
 
 
+def _select_preview_segments(segments: list[dict], n: int = 8) -> list[str]:
+    """Select diverse segments for audio preview across quality and content.
+
+    Strategy: sort by original DNSMOS OVRL, pick evenly spaced samples,
+    then swap duplicates to ensure coverage of different series_group values.
+    """
+    scored = []
+    for seg in segments:
+        ovrl = seg["scores"].get("original", {}).get("dnsmos_ovrl")
+        if ovrl is not None:
+            scored.append({
+                "sid": seg["segment_id"],
+                "ovrl": ovrl,
+                "series_group": seg.get("strata", {}).get("series_group", "other"),
+                "era": seg.get("strata", {}).get("era", ""),
+            })
+
+    if not scored:
+        return []
+
+    scored.sort(key=lambda x: x["ovrl"])
+
+    if len(scored) <= n:
+        return [s["sid"] for s in scored]
+
+    # Pick evenly spaced indices across the quality range
+    step = (len(scored) - 1) / (n - 1)
+    indices = [round(i * step) for i in range(n)]
+    selected = [scored[i] for i in indices]
+
+    # Ensure series_group diversity: swap duplicates with nearest unused
+    seen_groups: set[str] = set()
+    used_sids = {s["sid"] for s in selected}
+    for i, entry in enumerate(selected):
+        group = entry["series_group"]
+        if group not in seen_groups:
+            seen_groups.add(group)
+            continue
+        # Find nearest unused segment with a different group
+        idx = indices[i]
+        for offset in range(1, len(scored)):
+            for candidate_idx in [idx + offset, idx - offset]:
+                if candidate_idx < 0 or candidate_idx >= len(scored):
+                    continue
+                candidate = scored[candidate_idx]
+                if (candidate["sid"] not in used_sids
+                        and candidate["series_group"] not in seen_groups):
+                    used_sids.discard(entry["sid"])
+                    used_sids.add(candidate["sid"])
+                    selected[i] = candidate
+                    seen_groups.add(candidate["series_group"])
+                    break
+            else:
+                continue
+            break
+        else:
+            seen_groups.add(group)
+
+    # Sort final selection by OVRL for display order
+    selected.sort(key=lambda x: x["ovrl"])
+    return [s["sid"] for s in selected]
+
+
 def _encode_mp3(input_wav: str, output_mp3: str, bitrate: str = "192k"):
     """Encode WAV to MP3 using ffmpeg."""
     Path(output_mp3).parent.mkdir(parents=True, exist_ok=True)
@@ -1815,11 +1879,13 @@ def _generate_export_markdown(
         f"consistent assessments; UTMOS shows saturation on this quality level.\n"
     )
 
-    readme_path = output_dir / "README.md"
-    with open(readme_path, "w") as f:
-        f.write("\n".join(lines))
+    # Write as index.md with Jekyll front matter for GitHub Pages
+    index_path = output_dir / "index.md"
+    front_matter = "---\nlayout: default\ntitle: Benchmark Report\n---\n\n"
+    with open(index_path, "w") as f:
+        f.write(front_matter + "\n".join(lines))
 
-    print(f"  Report written to {readme_path}")
+    print(f"  Report written to {index_path}")
 
 
 def cmd_export(output_dir: str | None = None, n_samples: int = 3):
@@ -1874,7 +1940,563 @@ def cmd_export(output_dir: str | None = None, n_samples: int = 3):
     )
 
     print(f"\nExport complete: {out}")
-    print(f"  Open: {out / 'README.md'}")
+    print(f"  Open: {out / 'index.md'}")
+
+
+# ── Phase: preview ──────────────────────────────────────────────────
+
+def cmd_preview(output_dir: str | None = None, n_samples: int = 8):
+    """Generate HTML audio preview page for benchmark results."""
+    results = _load_results()
+    if not results:
+        print("No results found. Run 'enhance' first.")
+        return
+
+    segments, pipeline_names = _collect_analysis_data(results)
+    if not segments:
+        print("No valid scored segments found.")
+        return
+
+    out = Path(output_dir) if output_dir else (ROOT / "docs" / "audio-preview")
+
+    # 1. Select diverse segments
+    preview_sids = _select_preview_segments(segments, n=n_samples)
+    if not preview_sids:
+        print("No segments with scores available.")
+        return
+
+    print(f"Preview: {len(preview_sids)} segments, {len(pipeline_names)} pipelines")
+    print(f"  Segments: {preview_sids}")
+    print(f"  Output:   {out}\n")
+
+    # 2. Encode WAV→MP3 (skip cached)
+    _export_audio_samples(preview_sids, pipeline_names, out)
+
+    # 3. Generate HTML
+    html_content = _generate_preview_html(
+        segments, pipeline_names, preview_sids, results,
+    )
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "index.html").write_text(html_content, encoding="utf-8")
+
+    print(f"\nPreview page: {out / 'index.html'}")
+    print(f"  Open: open {out / 'index.html'}")
+
+
+def _generate_preview_html(
+    segments: list[dict],
+    pipeline_names: list[str],
+    preview_sids: list[str],
+    results: dict,
+) -> str:
+    """Generate self-contained HTML audio preview page."""
+    import html as html_mod
+
+    seg_by_id = {s["segment_id"]: s for s in segments}
+
+    # Compute summary stats per pipeline
+    summary: dict[str, dict] = {}
+    for pipe_name in pipeline_names:
+        ovrl_vals: list[float] = []
+        sig_vals: list[float] = []
+        bak_vals: list[float] = []
+        utmos_vals: list[float] = []
+        for seg in segments:
+            ps = seg["scores"].get(pipe_name, {})
+            if (v := ps.get("dnsmos_ovrl")) is not None:
+                ovrl_vals.append(v)
+            if (v := ps.get("dnsmos_sig")) is not None:
+                sig_vals.append(v)
+            if (v := ps.get("dnsmos_bak")) is not None:
+                bak_vals.append(v)
+            if (v := ps.get("utmos_score")) is not None:
+                utmos_vals.append(v)
+        if ovrl_vals:
+            summary[pipe_name] = {
+                "mean_ovrl": sum(ovrl_vals) / len(ovrl_vals),
+                "mean_sig": sum(sig_vals) / len(sig_vals) if sig_vals else None,
+                "mean_bak": sum(bak_vals) / len(bak_vals) if bak_vals else None,
+                "mean_utmos": sum(utmos_vals) / len(utmos_vals) if utmos_vals else None,
+                "n": len(ovrl_vals),
+            }
+
+    # Summary table rows (sorted by mean OVRL desc)
+    sorted_pipes = sorted(
+        pipeline_names,
+        key=lambda p: summary.get(p, {}).get("mean_ovrl", 0),
+        reverse=True,
+    )
+
+    summary_rows = []
+    for pipe_name in sorted_pipes:
+        s = summary.get(pipe_name, {})
+        mean_ovrl = s.get("mean_ovrl", 0)
+        mean_sig = s.get("mean_sig")
+        mean_bak = s.get("mean_bak")
+        mean_utmos = s.get("mean_utmos")
+        n = s.get("n", 0)
+        bar_w = (mean_ovrl / 5.0 * 100) if mean_ovrl else 0
+        desc = html_mod.escape(PIPELINE_DESCRIPTIONS.get(pipe_name, ""))
+        is_recommended = pipe_name == "hybrid_demucs_df"
+        cls = ' class="recommended-row"' if is_recommended else ""
+
+        sig_s = f"{mean_sig:.3f}" if mean_sig is not None else "—"
+        bak_s = f"{mean_bak:.3f}" if mean_bak is not None else "—"
+        utmos_s = f"{mean_utmos:.3f}" if mean_utmos is not None else "—"
+
+        summary_rows.append(
+            f'      <tr{cls} title="{desc}">'
+            f'<td class="pipe-name">{html_mod.escape(pipe_name)}'
+            f'{"<span class=\"star\">★</span>" if is_recommended else ""}</td>'
+            f'<td class="score"><strong>{mean_ovrl:.3f}</strong></td>'
+            f'<td class="score">{sig_s}</td>'
+            f'<td class="score">{bak_s}</td>'
+            f'<td class="score">{utmos_s}</td>'
+            f'<td class="score">{n}</td>'
+            f'<td class="bar-cell"><div class="bar summary-bar" style="width:{bar_w:.0f}%"></div></td>'
+            f"</tr>"
+        )
+
+    # Pipeline descriptions
+    legend_rows = []
+    for pipe_name in pipeline_names:
+        desc = html_mod.escape(PIPELINE_DESCRIPTIONS.get(pipe_name, ""))
+        legend_rows.append(
+            f"      <tr><td>{html_mod.escape(pipe_name)}</td><td>{desc}</td></tr>"
+        )
+
+    # Sample cards
+    sample_cards = []
+    for sid in preview_sids:
+        seg = seg_by_id.get(sid)
+        if not seg:
+            continue
+        strata = seg.get("strata", {})
+        series_group = html_mod.escape(strata.get("series_group", ""))
+        era = html_mod.escape(strata.get("era", ""))
+        orig_ovrl = seg["scores"].get("original", {}).get("dnsmos_ovrl", 0)
+
+        # Player rows
+        player_rows = []
+        for pipe_name in pipeline_names:
+            ps = seg["scores"].get(pipe_name, {})
+            ovrl = ps.get("dnsmos_ovrl")
+            sig = ps.get("dnsmos_sig")
+            bak = ps.get("dnsmos_bak")
+            utmos = ps.get("utmos_score")
+
+            ovrl_s = f"{ovrl:.2f}" if ovrl is not None else "—"
+            sig_s = f"{sig:.2f}" if sig is not None else "—"
+            bak_s = f"{bak:.2f}" if bak is not None else "—"
+            utmos_s = f"{utmos:.2f}" if utmos is not None else "—"
+            bar_w = (ovrl / 5.0 * 100) if ovrl else 0
+            is_recommended = pipe_name == "hybrid_demucs_df"
+
+            player_rows.append(
+                f'      <tr class="player-row{" recommended" if is_recommended else ""}">'
+                f'<td class="pipe-name">{html_mod.escape(pipe_name)}'
+                f'{"<span class=\"star\">★</span>" if is_recommended else ""}</td>'
+                f'<td class="player-cell">'
+                f'<audio preload="none" src="audio/{sid}/{pipe_name}.mp3"></audio>'
+                f'<button class="play-btn" onclick="togglePlay(this)">&#9654;</button>'
+                f"</td>"
+                f'<td class="score">{ovrl_s}</td>'
+                f'<td class="score">{sig_s}</td>'
+                f'<td class="score">{bak_s}</td>'
+                f'<td class="score">{utmos_s}</td>'
+                f'<td class="bar-cell"><div class="bar" style="width:{bar_w:.0f}%"></div></td>'
+                f"</tr>"
+            )
+
+        sample_cards.append(f"""
+  <div class="sample-card" id="{sid}">
+    <div class="card-header">
+      <h3>{html_mod.escape(sid)}</h3>
+      <div class="card-meta">
+        <span class="meta-series">{series_group}</span>
+        <span class="meta-era">{era}</span>
+        <span class="meta-ovrl">Baseline OVRL: {orig_ovrl:.2f}</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+{"".join(player_rows)}
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>""")
+
+    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reading Room BKK — Audio Enhancement Preview</title>
+<style>
+{_preview_css()}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The Reading Room BKK<br><span class="subtitle">Audio Enhancement Preview</span></h1>
+  <p class="header-desc">
+    Comparing {len(pipeline_names)} audio enhancement pipelines across
+    {len(preview_sids)} diverse segments (from {len(segments)} benchmarked).
+    <br>
+    Each segment is a 45-second speech-active excerpt selected via Silero VAD
+    from 429 YouTube recordings (2011–2019).
+  </p>
+</header>
+
+<section id="summary">
+  <h2>Summary — Mean Scores ({len(segments)} segments)</h2>
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Pipeline</th>
+        <th>OVRL</th>
+        <th>SIG</th>
+        <th>BAK</th>
+        <th>UTMOS</th>
+        <th>n</th>
+        <th class="bar-cell">Distribution</th>
+      </tr>
+    </thead>
+    <tbody>
+{"".join(summary_rows)}
+    </tbody>
+  </table>
+</section>
+
+<section id="pipelines">
+  <h2>Pipeline Descriptions</h2>
+  <table class="legend-table">
+    <thead><tr><th>Pipeline</th><th>Description</th></tr></thead>
+    <tbody>
+{"".join(legend_rows)}
+    </tbody>
+  </table>
+</section>
+
+<section id="samples">
+  <h2>Audio Samples</h2>
+  <p class="section-desc">
+    {len(preview_sids)} segments selected for diversity across quality range
+    and content types. Sorted by ascending baseline OVRL.
+    <br>
+    <strong>★ hybrid_demucs_df</strong> = recommended pipeline (highlighted in blue).
+  </p>
+{"".join(sample_cards)}
+</section>
+
+<footer>
+  <p>Generated {now} by <code>readingroom_audio.benchmark preview</code>
+  — The Reading Room BKK Retrospective Project</p>
+</footer>
+
+<script>
+{_preview_js()}
+</script>
+</body>
+</html>"""
+
+
+def _preview_css() -> str:
+    """Inline CSS for the audio preview page."""
+    return """\
+:root {
+  --bg: #fafafa;
+  --card-bg: #fff;
+  --border: #e0e0e0;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --bar-color: #3b82f6;
+  --recommended-bg: #eff6ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.header-desc, .section-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-table, .legend-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.summary-table th, .summary-table td,
+.legend-table th, .legend-table td {
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-table th, .legend-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.recommended-row { background: var(--recommended-bg); }
+
+.sample-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header h3 {
+  font-size: 1.05rem;
+  font-family: monospace;
+  margin-bottom: 0.3rem;
+}
+
+.card-meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.meta-series {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.meta-era {
+  background: #f3f4f6;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+}
+
+.meta-ovrl {
+  font-family: monospace;
+  font-weight: 500;
+}
+
+.player-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.player-table th, .player-table td {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.player-table th {
+  background: #fafafa;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.player-row.recommended { background: var(--recommended-bg); }
+
+.pipe-name {
+  font-family: monospace;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.star { color: #f59e0b; margin-left: 0.3rem; }
+
+.player-cell { width: 50px; text-align: center; }
+
+.play-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 28px;
+  padding: 0;
+}
+
+.play-btn:hover { opacity: 0.85; }
+.play-btn.playing { background: #dc2626; }
+
+.score {
+  text-align: right;
+  font-family: monospace;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.bar-cell { width: 120px; }
+
+.bar {
+  height: 14px;
+  background: var(--bar-color);
+  border-radius: 2px;
+  min-width: 2px;
+  transition: width 0.3s;
+}
+
+.summary-bar { height: 18px; }
+
+.card-actions {
+  padding: 0.5rem 1.2rem;
+  border-top: 1px solid #f0f0f0;
+  text-align: right;
+}
+
+.stop-all-btn {
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.stop-all-btn:hover { background: #e5e7eb; }
+
+footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  body { padding: 1rem 0.5rem; }
+  .bar-cell { display: none; }
+  .card-meta { flex-direction: column; gap: 0.3rem; }
+}"""
+
+
+def _preview_js() -> str:
+    """Inline JavaScript for singleton audio playback."""
+    return """\
+let currentlyPlaying = null;
+
+function togglePlay(btn) {
+  const audio = btn.parentElement.querySelector('audio');
+  if (!audio) return;
+
+  if (audio.paused) {
+    if (currentlyPlaying && currentlyPlaying !== audio) {
+      currentlyPlaying.pause();
+      currentlyPlaying.currentTime = 0;
+      const prevBtn = currentlyPlaying.parentElement.querySelector('.play-btn');
+      if (prevBtn) {
+        prevBtn.classList.remove('playing');
+        prevBtn.innerHTML = '\\u25B6';
+      }
+    }
+    audio.play();
+    currentlyPlaying = audio;
+    btn.classList.add('playing');
+    btn.innerHTML = '\\u25A0';
+
+    audio.onended = function() {
+      btn.classList.remove('playing');
+      btn.innerHTML = '\\u25B6';
+      currentlyPlaying = null;
+    };
+  } else {
+    audio.pause();
+    audio.currentTime = 0;
+    btn.classList.remove('playing');
+    btn.innerHTML = '\\u25B6';
+    currentlyPlaying = null;
+  }
+}
+
+function stopAllInCard(stopBtn) {
+  const card = stopBtn.closest('.sample-card');
+  if (!card) return;
+  card.querySelectorAll('audio').forEach(function(a) {
+    a.pause();
+    a.currentTime = 0;
+  });
+  card.querySelectorAll('.play-btn').forEach(function(b) {
+    b.classList.remove('playing');
+    b.innerHTML = '\\u25B6';
+  });
+  currentlyPlaying = null;
+}"""
 
 
 # ── Phase: run-all ───────────────────────────────────────────────────
@@ -1950,6 +2572,7 @@ Sub-commands:
   enhance      Run enhancement pipelines and score
   analyze      Statistical analysis + report + charts
   export       Export report with PNG charts + audio samples
+  preview      Generate HTML audio preview page
   sensitivity  Multi-seed sensitivity analysis for sampling
   run-all      Run all phases sequentially
 
@@ -1996,6 +2619,13 @@ Available pipelines:
     p_export.add_argument("--n-samples", type=int, default=3,
                           help="Number of representative audio samples (default: 3)")
 
+    # preview
+    p_preview = subparsers.add_parser("preview", help="Generate HTML audio preview page")
+    p_preview.add_argument("--output-dir", type=str, default=None,
+                           help="Output directory (default: docs/audio-preview)")
+    p_preview.add_argument("--n-samples", type=int, default=8,
+                           help="Number of preview segments (default: 8)")
+
     # sensitivity
     p_sens = subparsers.add_parser("sensitivity", help="Multi-seed sensitivity analysis")
     p_sens.add_argument("--target-n", type=int, default=40)
@@ -2038,6 +2668,8 @@ Available pipelines:
         cmd_analyze()
     elif args.command == "export":
         cmd_export(output_dir=args.output_dir, n_samples=args.n_samples)
+    elif args.command == "preview":
+        cmd_preview(output_dir=args.output_dir, n_samples=args.n_samples)
     elif args.command == "sensitivity":
         cmd_sensitivity(target_n=args.target_n, seeds=args.seeds)
     elif args.command == "run-all":

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reading Room BKK — Audio Enhancement Preview</title>
+<style>
+:root {
+  --bg: #fafafa;
+  --card-bg: #fff;
+  --border: #e0e0e0;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --bar-color: #3b82f6;
+  --recommended-bg: #eff6ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.header-desc, .section-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-table, .legend-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.summary-table th, .summary-table td,
+.legend-table th, .legend-table td {
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-table th, .legend-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.recommended-row { background: var(--recommended-bg); }
+
+.sample-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header h3 {
+  font-size: 1.05rem;
+  font-family: monospace;
+  margin-bottom: 0.3rem;
+}
+
+.card-meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.meta-series {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.meta-era {
+  background: #f3f4f6;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+}
+
+.meta-ovrl {
+  font-family: monospace;
+  font-weight: 500;
+}
+
+.player-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.player-table th, .player-table td {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.player-table th {
+  background: #fafafa;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.player-row.recommended { background: var(--recommended-bg); }
+
+.pipe-name {
+  font-family: monospace;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.star { color: #f59e0b; margin-left: 0.3rem; }
+
+.player-cell { width: 50px; text-align: center; }
+
+.play-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 28px;
+  padding: 0;
+}
+
+.play-btn:hover { opacity: 0.85; }
+.play-btn.playing { background: #dc2626; }
+
+.score {
+  text-align: right;
+  font-family: monospace;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.bar-cell { width: 120px; }
+
+.bar {
+  height: 14px;
+  background: var(--bar-color);
+  border-radius: 2px;
+  min-width: 2px;
+  transition: width 0.3s;
+}
+
+.summary-bar { height: 18px; }
+
+.card-actions {
+  padding: 0.5rem 1.2rem;
+  border-top: 1px solid #f0f0f0;
+  text-align: right;
+}
+
+.stop-all-btn {
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.stop-all-btn:hover { background: #e5e7eb; }
+
+footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  body { padding: 1rem 0.5rem; }
+  .bar-cell { display: none; }
+  .card-meta { flex-direction: column; gap: 0.3rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The Reading Room BKK<br><span class="subtitle">Audio Enhancement Preview</span></h1>
+  <p class="header-desc">
+    Comparing 9 audio enhancement pipelines across
+    8 diverse segments (from 40 benchmarked).
+    <br>
+    Each segment is a 45-second speech-active excerpt selected via Silero VAD
+    from 429 YouTube recordings (2011–2019).
+  </p>
+</header>
+
+<section id="summary">
+  <h2>Summary — Mean Scores (40 segments)</h2>
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Pipeline</th>
+        <th>OVRL</th>
+        <th>SIG</th>
+        <th>BAK</th>
+        <th>UTMOS</th>
+        <th>n</th>
+        <th class="bar-cell">Distribution</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr title="DeepFilterNet3 — unlimited attenuation (aggressive)"><td class="pipe-name">deepfilter_full</td><td class="score"><strong>2.547</strong></td><td class="score">2.909</td><td class="score">3.709</td><td class="score">1.262</td><td class="score">40</td><td class="bar-cell"><div class="bar summary-bar" style="width:51%"></div></td></tr>      <tr title="ClearVoice MossFormerGAN 16kHz GAN-based enhancement"><td class="pipe-name">mossformergan_16k</td><td class="score"><strong>2.529</strong></td><td class="score">3.023</td><td class="score">3.392</td><td class="score">1.267</td><td class="score">30</td><td class="bar-cell"><div class="bar summary-bar" style="width:51%"></div></td></tr>      <tr title="ClearVoice MossFormer2 48kHz speech enhancement"><td class="pipe-name">mossformer2_48k</td><td class="score"><strong>2.236</strong></td><td class="score">2.748</td><td class="score">3.036</td><td class="score">1.255</td><td class="score">30</td><td class="bar-cell"><div class="bar summary-bar" style="width:45%"></div></td></tr>      <tr title="ClearVoice FRCRN 16kHz speech enhancement"><td class="pipe-name">frcrn_16k</td><td class="score"><strong>2.153</strong></td><td class="score">2.698</td><td class="score">2.748</td><td class="score">1.258</td><td class="score">30</td><td class="bar-cell"><div class="bar summary-bar" style="width:43%"></div></td></tr>      <tr class="recommended-row" title="Demucs vocals → DeepFilterNet 12dB → loudnorm"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="score"><strong>2.131</strong></td><td class="score">2.778</td><td class="score">2.544</td><td class="score">1.251</td><td class="score">40</td><td class="bar-cell"><div class="bar summary-bar" style="width:43%"></div></td></tr>      <tr title="DeepFilterNet3 — 12dB attenuation limit (gentle)"><td class="pipe-name">deepfilter_12dB</td><td class="score"><strong>1.865</strong></td><td class="score">2.401</td><td class="score">2.204</td><td class="score">1.247</td><td class="score">40</td><td class="bar-cell"><div class="bar summary-bar" style="width:37%"></div></td></tr>      <tr title="Demucs htdemucs vocal separation"><td class="pipe-name">demucs_vocals</td><td class="score"><strong>1.414</strong></td><td class="score">1.752</td><td class="score">1.604</td><td class="score">1.248</td><td class="score">40</td><td class="bar-cell"><div class="bar summary-bar" style="width:28%"></div></td></tr>      <tr title="ffmpeg high-pass + FFT denoise + compression + loudnorm"><td class="pipe-name">ffmpeg_gentle</td><td class="score"><strong>1.272</strong></td><td class="score">1.579</td><td class="score">1.388</td><td class="score">1.243</td><td class="score">40</td><td class="bar-cell"><div class="bar summary-bar" style="width:25%"></div></td></tr>      <tr title="No processing (baseline)"><td class="pipe-name">original</td><td class="score"><strong>1.186</strong></td><td class="score">1.391</td><td class="score">1.255</td><td class="score">1.284</td><td class="score">40</td><td class="bar-cell"><div class="bar summary-bar" style="width:24%"></div></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="pipelines">
+  <h2>Pipeline Descriptions</h2>
+  <table class="legend-table">
+    <thead><tr><th>Pipeline</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>original</td><td>No processing (baseline)</td></tr>      <tr><td>deepfilter_12dB</td><td>DeepFilterNet3 — 12dB attenuation limit (gentle)</td></tr>      <tr><td>deepfilter_full</td><td>DeepFilterNet3 — unlimited attenuation (aggressive)</td></tr>      <tr><td>demucs_vocals</td><td>Demucs htdemucs vocal separation</td></tr>      <tr><td>ffmpeg_gentle</td><td>ffmpeg high-pass + FFT denoise + compression + loudnorm</td></tr>      <tr><td>frcrn_16k</td><td>ClearVoice FRCRN 16kHz speech enhancement</td></tr>      <tr><td>hybrid_demucs_df</td><td>Demucs vocals → DeepFilterNet 12dB → loudnorm</td></tr>      <tr><td>mossformer2_48k</td><td>ClearVoice MossFormer2 48kHz speech enhancement</td></tr>      <tr><td>mossformergan_16k</td><td>ClearVoice MossFormerGAN 16kHz GAN-based enhancement</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="samples">
+  <h2>Audio Samples</h2>
+  <p class="section-desc">
+    8 segments selected for diversity across quality range
+    and content types. Sorted by ascending baseline OVRL.
+    <br>
+    <strong>★ hybrid_demucs_df</strong> = recommended pipeline (highlighted in blue).
+  </p>
+
+  <div class="sample-card" id="E034_CiPEvCzTxag">
+    <div class="card-header">
+      <h3>E034_CiPEvCzTxag</h3>
+      <div class="card-meta">
+        <span class="meta-series">other</span>
+        <span class="meta-era">early</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.09</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.09</td><td class="score">1.21</td><td class="score">1.18</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:22%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.39</td><td class="score">3.13</td><td class="score">3.09</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:48%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.65</td><td class="score">2.92</td><td class="score">3.97</td><td class="score">1.30</td><td class="bar-cell"><div class="bar" style="width:53%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.14</td><td class="score">1.26</td><td class="score">1.24</td><td class="score">1.23</td><td class="bar-cell"><div class="bar" style="width:23%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.16</td><td class="score">1.54</td><td class="score">1.32</td><td class="score">1.23</td><td class="bar-cell"><div class="bar" style="width:23%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.49</td><td class="score">2.84</td><td class="score">3.76</td><td class="score">1.29</td><td class="bar-cell"><div class="bar" style="width:50%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.23</td><td class="score">2.89</td><td class="score">2.88</td><td class="score">1.27</td><td class="bar-cell"><div class="bar" style="width:45%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.43</td><td class="score">2.74</td><td class="score">3.80</td><td class="score">1.28</td><td class="bar-cell"><div class="bar" style="width:49%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E034_CiPEvCzTxag/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.56</td><td class="score">2.94</td><td class="score">3.84</td><td class="score">1.28</td><td class="bar-cell"><div class="bar" style="width:51%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+  <div class="sample-card" id="E125_nIFhHNjhp90">
+    <div class="card-header">
+      <h3>E125_nIFhHNjhp90</h3>
+      <div class="card-meta">
+        <span class="meta-series">readrink</span>
+        <span class="meta-era">late</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.11</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.11</td><td class="score">1.21</td><td class="score">1.16</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:22%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.43</td><td class="score">1.69</td><td class="score">1.65</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:29%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.34</td><td class="score">2.71</td><td class="score">3.15</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:47%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.11</td><td class="score">1.20</td><td class="score">1.17</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:22%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.11</td><td class="score">1.22</td><td class="score">1.17</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:22%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.29</td><td class="score">1.49</td><td class="score">1.37</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:26%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.45</td><td class="score">1.74</td><td class="score">1.61</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:29%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.93</td><td class="score">2.24</td><td class="score">2.38</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:39%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E125_nIFhHNjhp90/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.71</td><td class="score">1.95</td><td class="score">1.94</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:34%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+  <div class="sample-card" id="E021_LYckfMbWEtM">
+    <div class="card-header">
+      <h3>E021_LYckfMbWEtM</h3>
+      <div class="card-meta">
+        <span class="meta-series">night_school</span>
+        <span class="meta-era">early</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.11</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.11</td><td class="score">1.23</td><td class="score">1.17</td><td class="score">1.37</td><td class="bar-cell"><div class="bar" style="width:22%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.98</td><td class="score">2.52</td><td class="score">2.42</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:40%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.60</td><td class="score">2.88</td><td class="score">3.90</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:52%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.41</td><td class="score">1.80</td><td class="score">1.59</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:28%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.21</td><td class="score">1.68</td><td class="score">1.33</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:24%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.41</td><td class="score">3.10</td><td class="score">3.00</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:48%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.40</td><td class="score">3.01</td><td class="score">3.04</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:48%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.53</td><td class="score">2.93</td><td class="score">3.58</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:51%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E021_LYckfMbWEtM/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.52</td><td class="score">2.94</td><td class="score">3.55</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:50%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+  <div class="sample-card" id="E087_qerMwTN420s">
+    <div class="card-header">
+      <h3>E087_qerMwTN420s</h3>
+      <div class="card-meta">
+        <span class="meta-series">talk_series</span>
+        <span class="meta-era">middle</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.13</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.13</td><td class="score">1.22</td><td class="score">1.18</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:23%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.58</td><td class="score">2.16</td><td class="score">1.80</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:32%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.55</td><td class="score">3.06</td><td class="score">3.44</td><td class="score">1.27</td><td class="bar-cell"><div class="bar" style="width:51%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.18</td><td class="score">1.29</td><td class="score">1.24</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:24%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.25</td><td class="score">1.62</td><td class="score">1.32</td><td class="score">1.23</td><td class="bar-cell"><div class="bar" style="width:25%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.87</td><td class="score">2.58</td><td class="score">2.03</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:37%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E087_qerMwTN420s/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+  <div class="sample-card" id="E107_RHiBru--TYw">
+    <div class="card-header">
+      <h3>E107_RHiBru--TYw</h3>
+      <div class="card-meta">
+        <span class="meta-series">sleepover</span>
+        <span class="meta-era">middle</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.14</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.14</td><td class="score">1.25</td><td class="score">1.17</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:23%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.58</td><td class="score">2.07</td><td class="score">1.77</td><td class="score">1.29</td><td class="bar-cell"><div class="bar" style="width:32%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.50</td><td class="score">2.90</td><td class="score">3.62</td><td class="score">1.30</td><td class="bar-cell"><div class="bar" style="width:50%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.15</td><td class="score">1.26</td><td class="score">1.19</td><td class="score">1.27</td><td class="bar-cell"><div class="bar" style="width:23%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.52</td><td class="score">2.26</td><td class="score">1.64</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:30%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.03</td><td class="score">2.99</td><td class="score">2.18</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:41%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E107_RHiBru--TYw/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+  <div class="sample-card" id="E023_raJC5xOT4Oc">
+    <div class="card-header">
+      <h3>E023_raJC5xOT4Oc</h3>
+      <div class="card-meta">
+        <span class="meta-series">screening</span>
+        <span class="meta-era">early</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.21</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.21</td><td class="score">1.50</td><td class="score">1.33</td><td class="score">1.41</td><td class="bar-cell"><div class="bar" style="width:24%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.84</td><td class="score">2.49</td><td class="score">2.07</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:37%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.56</td><td class="score">2.94</td><td class="score">3.72</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:51%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.24</td><td class="score">1.55</td><td class="score">1.35</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:25%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.14</td><td class="score">1.39</td><td class="score">1.19</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:23%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.05</td><td class="score">3.02</td><td class="score">2.18</td><td class="score">1.23</td><td class="bar-cell"><div class="bar" style="width:41%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E023_raJC5xOT4Oc/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="score">—</td><td class="bar-cell"><div class="bar" style="width:0%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+  <div class="sample-card" id="E160_PkxqIwLGIws">
+    <div class="card-header">
+      <h3>E160_PkxqIwLGIws</h3>
+      <div class="card-meta">
+        <span class="meta-series">re_reading</span>
+        <span class="meta-era">late</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.35</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.35</td><td class="score">1.85</td><td class="score">1.49</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:27%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.56</td><td class="score">3.25</td><td class="score">3.09</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:51%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.80</td><td class="score">3.09</td><td class="score">3.96</td><td class="score">1.28</td><td class="bar-cell"><div class="bar" style="width:56%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.48</td><td class="score">2.00</td><td class="score">1.71</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:30%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.09</td><td class="score">1.21</td><td class="score">1.23</td><td class="score">1.23</td><td class="bar-cell"><div class="bar" style="width:22%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.06</td><td class="score">3.06</td><td class="score">2.12</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:41%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.51</td><td class="score">3.16</td><td class="score">3.12</td><td class="score">1.25</td><td class="bar-cell"><div class="bar" style="width:50%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.04</td><td class="score">2.74</td><td class="score">2.50</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:41%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E160_PkxqIwLGIws/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.32</td><td class="score">2.97</td><td class="score">2.96</td><td class="score">1.26</td><td class="bar-cell"><div class="bar" style="width:46%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+  <div class="sample-card" id="E099_a85EVALGF4M">
+    <div class="card-header">
+      <h3>E099_a85EVALGF4M</h3>
+      <div class="card-meta">
+        <span class="meta-series">definitions</span>
+        <span class="meta-era">middle</span>
+        <span class="meta-ovrl">Baseline OVRL: 1.37</span>
+      </div>
+    </div>
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Play</th>
+          <th>OVRL</th>
+          <th>SIG</th>
+          <th>BAK</th>
+          <th>UTMOS</th>
+          <th class="bar-cell">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="player-row"><td class="pipe-name">original</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/original.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.37</td><td class="score">1.76</td><td class="score">1.57</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:27%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_12dB</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/deepfilter_12dB.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.19</td><td class="score">2.99</td><td class="score">2.72</td><td class="score">1.28</td><td class="bar-cell"><div class="bar" style="width:44%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">deepfilter_full</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/deepfilter_full.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.52</td><td class="score">3.02</td><td class="score">3.56</td><td class="score">1.29</td><td class="bar-cell"><div class="bar" style="width:50%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">demucs_vocals</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/demucs_vocals.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.61</td><td class="score">2.20</td><td class="score">1.93</td><td class="score">1.24</td><td class="bar-cell"><div class="bar" style="width:32%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">ffmpeg_gentle</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/ffmpeg_gentle.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">1.49</td><td class="score">2.17</td><td class="score">1.71</td><td class="score">1.23</td><td class="bar-cell"><div class="bar" style="width:30%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">frcrn_16k</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/frcrn_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.11</td><td class="score">3.06</td><td class="score">2.57</td><td class="score">1.27</td><td class="bar-cell"><div class="bar" style="width:42%"></div></td></tr>      <tr class="player-row recommended"><td class="pipe-name">hybrid_demucs_df<span class="star">★</span></td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/hybrid_demucs_df.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.24</td><td class="score">3.01</td><td class="score">2.81</td><td class="score">1.28</td><td class="bar-cell"><div class="bar" style="width:45%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformer2_48k</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/mossformer2_48k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.06</td><td class="score">2.85</td><td class="score">2.71</td><td class="score">1.27</td><td class="bar-cell"><div class="bar" style="width:41%"></div></td></tr>      <tr class="player-row"><td class="pipe-name">mossformergan_16k</td><td class="player-cell"><audio preload="none" src="audio/E099_a85EVALGF4M/mossformergan_16k.mp3"></audio><button class="play-btn" onclick="togglePlay(this)">&#9654;</button></td><td class="score">2.52</td><td class="score">3.11</td><td class="score">3.36</td><td class="score">1.30</td><td class="bar-cell"><div class="bar" style="width:50%"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="card-actions">
+      <button class="stop-all-btn" onclick="stopAllInCard(this)">Stop All</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Generated 2026-03-04 00:54 by <code>readingroom_audio.benchmark preview</code>
+  — The Reading Room BKK Retrospective Project</p>
+</footer>
+
+<script>
+let currentlyPlaying = null;
+
+function togglePlay(btn) {
+  const audio = btn.parentElement.querySelector('audio');
+  if (!audio) return;
+
+  if (audio.paused) {
+    if (currentlyPlaying && currentlyPlaying !== audio) {
+      currentlyPlaying.pause();
+      currentlyPlaying.currentTime = 0;
+      const prevBtn = currentlyPlaying.parentElement.querySelector('.play-btn');
+      if (prevBtn) {
+        prevBtn.classList.remove('playing');
+        prevBtn.innerHTML = '\u25B6';
+      }
+    }
+    audio.play();
+    currentlyPlaying = audio;
+    btn.classList.add('playing');
+    btn.innerHTML = '\u25A0';
+
+    audio.onended = function() {
+      btn.classList.remove('playing');
+      btn.innerHTML = '\u25B6';
+      currentlyPlaying = null;
+    };
+  } else {
+    audio.pause();
+    audio.currentTime = 0;
+    btn.classList.remove('playing');
+    btn.innerHTML = '\u25B6';
+    currentlyPlaying = null;
+  }
+}
+
+function stopAllInCard(stopBtn) {
+  const card = stopBtn.closest('.sample-card');
+  if (!card) return;
+  card.querySelectorAll('audio').forEach(function(a) {
+    a.pause();
+    a.currentTime = 0;
+  });
+  card.querySelectorAll('.play-btn').forEach(function(b) {
+    b.classList.remove('playing');
+    b.innerHTML = '\u25B6';
+  });
+  currentlyPlaying = null;
+}
+</script>
+</body>
+</html>

@@ -17,8 +17,9 @@ data/video/
 # ML model checkpoints
 checkpoints/
 
-# Generated outputs
-docs/listening-test/
+# GitHub Pages — allow docs/ assets including MP3s and PNGs
+!docs/**/*.mp3
+!docs/**/*.png
 
 # Legacy
 pilot/
