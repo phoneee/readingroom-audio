@@ -2097,8 +2097,7 @@ def _generate_preview_html(
                 f'<td class="pipe-name">{html_mod.escape(pipe_name)}'
                 f'{"<span class=\"star\">★</span>" if is_recommended else ""}</td>'
                 f'<td class="player-cell">'
-                f'<audio preload="none" src="audio/{sid}/{pipe_name}.mp3"></audio>'
-                f'<button class="play-btn" onclick="togglePlay(this)">&#9654;</button>'
+                f'<audio controls preload="none" src="audio/{sid}/{pipe_name}.mp3"></audio>'
                 f"</td>"
                 f'<td class="score">{ovrl_s}</td>'
                 f'<td class="score">{sig_s}</td>'
@@ -2122,7 +2121,7 @@ def _generate_preview_html(
       <thead>
         <tr>
           <th>Pipeline</th>
-          <th>Play</th>
+          <th>Audio</th>
           <th>OVRL</th>
           <th>SIG</th>
           <th>BAK</th>
@@ -2375,23 +2374,12 @@ h2 {
 
 .star { color: #f59e0b; margin-left: 0.3rem; }
 
-.player-cell { width: 50px; text-align: center; }
+.player-cell { min-width: 200px; }
 
-.play-btn {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  font-size: 0.7rem;
-  line-height: 28px;
-  padding: 0;
+.player-cell audio {
+  width: 100%;
+  height: 32px;
 }
-
-.play-btn:hover { opacity: 0.85; }
-.play-btn.playing { background: #dc2626; }
 
 .score {
   text-align: right;
@@ -2447,42 +2435,22 @@ footer {
 
 
 def _preview_js() -> str:
-    """Inline JavaScript for singleton audio playback."""
+    """Inline JavaScript for singleton audio playback with native controls."""
     return """\
-let currentlyPlaying = null;
-
-function togglePlay(btn) {
-  const audio = btn.parentElement.querySelector('audio');
-  if (!audio) return;
-
-  if (audio.paused) {
-    if (currentlyPlaying && currentlyPlaying !== audio) {
-      currentlyPlaying.pause();
-      currentlyPlaying.currentTime = 0;
-      const prevBtn = currentlyPlaying.parentElement.querySelector('.play-btn');
-      if (prevBtn) {
-        prevBtn.classList.remove('playing');
-        prevBtn.innerHTML = '\\u25B6';
-      }
-    }
-    audio.play();
-    currentlyPlaying = audio;
-    btn.classList.add('playing');
-    btn.innerHTML = '\\u25A0';
-
-    audio.onended = function() {
-      btn.classList.remove('playing');
-      btn.innerHTML = '\\u25B6';
-      currentlyPlaying = null;
-    };
-  } else {
-    audio.pause();
-    audio.currentTime = 0;
-    btn.classList.remove('playing');
-    btn.innerHTML = '\\u25B6';
-    currentlyPlaying = null;
-  }
-}
+// Singleton playback: only one audio plays at a time
+document.addEventListener('DOMContentLoaded', function() {
+  const allAudio = document.querySelectorAll('audio');
+  allAudio.forEach(function(audio) {
+    audio.addEventListener('play', function() {
+      allAudio.forEach(function(other) {
+        if (other !== audio && !other.paused) {
+          other.pause();
+          other.currentTime = 0;
+        }
+      });
+    });
+  });
+});
 
 function stopAllInCard(stopBtn) {
   const card = stopBtn.closest('.sample-card');
@@ -2491,11 +2459,6 @@ function stopAllInCard(stopBtn) {
     a.pause();
     a.currentTime = 0;
   });
-  card.querySelectorAll('.play-btn').forEach(function(b) {
-    b.classList.remove('playing');
-    b.innerHTML = '\\u25B6';
-  });
-  currentlyPlaying = null;
 }"""
 
 
