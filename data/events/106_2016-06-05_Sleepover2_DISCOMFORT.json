@@ -1,0 +1,70 @@
+{
+  "event_number": 106,
+  "key": "Sleepover2 DISCOMFORT",
+  "display_title": "Sleepover2 DISCOMFORT",
+  "event_date": "2016-06-05",
+  "year": "2016",
+  "series": "Sleepover",
+  "total_duration_seconds": 6936,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "9lnAbqC0gQ0",
+      "title": "Sleepover2_DISCOMFORT Part 1",
+      "url": "https://www.youtube.com/watch?v=9lnAbqC0gQ0",
+      "duration_seconds": 3377,
+      "upload_date": "20160626"
+    },
+    {
+      "id": "lLHMdFmThDg",
+      "title": "Sleepover2_DISCOMFORT Part2",
+      "url": "https://www.youtube.com/watch?v=lLHMdFmThDg",
+      "duration_seconds": 2930,
+      "upload_date": "20160626"
+    },
+    {
+      "id": "Hw6Blb3kqrc",
+      "title": "Sleepover2_DISCOMFORT Part3",
+      "url": "https://www.youtube.com/watch?v=Hw6Blb3kqrc",
+      "duration_seconds": 629,
+      "upload_date": "20160626"
+    }
+  ],
+  "raw_description": "Sleepover2_DISCOMFORT\nความ(ไม่)สามารถ: ว่าด้วยการเขียนและการทำสิ่งพิมพ์เกี่ยวกับศิลปะร่วมสมัยและศิลปะสมัยใหม่ในเอเชียตะวันออกเฉียงใต้ \n\nวันอาทิตย์ที่ 5 มิถุนายน 2559, เวลา 14.00-16.00 น.\n\nผู้ร่วมเสวนา\nเคโกะ เซ (Documenta12) \nธนาวิ โชติประดิษฐ (มหาวิทยาลัยศิลปากร/ SEON), \nวุธ ลีโน่ (SA SA ART PROJECT/SEON) \n\nดำเนินรายการและแปลเป็นภาษาไทยโดย นันท์นรี พานิชกุล\n\n“DISCOMFORT” หรือ “ความไม่สบาย” ในฐานะพาหนะของการคิดเกี่ยวกับประวัติศาสตร์ศิลปะและการคัดสรรผลงานที่สัมพันธ์กับความเป็นพื้นถิ่นของเอเชียตะวันออกเฉียงใต้ เราแสวงหาการตรวจสอบ รื้อฟื้น ท้าทาย และสร้างนิยามใหม่ของคำว่า “สมัยใหม่” และ “ร่วมสมัย” ผ่านการอ่านงานศิลปะที่เกิดขึ้นในภูมิภาค",
+  "bilingual": {
+    "th": "Sleepover2_DISCOMFORT\nความ(ไม่)สามารถ: ว่าด้วยการเขียนและการทำสิ่งพิมพ์เกี่ยวกับศิลปะร่วมสมัยและศิลปะสมัยใหม่ในเอเชียตะวันออกเฉียงใต้\n\nผู้ร่วมเสวนา\nเคโกะ เซ (Documenta12)\nธนาวิ โชติประดิษฐ (มหาวิทยาลัยศิลปากร/ SEON),\nวุธ ลีโน่ (SA SA ART PROJECT/SEON)\n\nดำเนินรายการและแปลเป็นภาษาไทยโดย นันท์นรี พานิชกุล\n\n“DISCOMFORT” หรือ “ความไม่สบาย” ในฐานะพาหนะของการคิดเกี่ยวกับประวัติศาสตร์ศิลปะและการคัดสรรผลงานที่สัมพันธ์กับความเป็นพื้นถิ่นของเอเชียตะวันออกเฉียงใต้ เราแสวงหาการตรวจสอบ รื้อฟื้น ท้าทาย และสร้างนิยามใหม่ของคำว่า “สมัยใหม่” และ “ร่วมสมัย” ผ่านการอ่านงานศิลปะที่เกิดขึ้นในภูมิภาค",
+    "en": "Sleepover2 — DISCOMFORT\nOn the (In)ability to Write and Publish about Contemporary and Modern Art in Southeast Asia\n\nParticipants:\nKeiko Sei (Documenta12)\nThanavi Chotpradit (Silpakorn University / SEON)\nVuth Lyno (SA SA ART PROJECT / SEON)\n\nModerated and translated into Thai by นันท์นรี พานิชกุล\n\nDiscomfort as a vehicle for thinking about art history and curatorial practice in relation to the locality of Southeast Asia. We seek to examine, revisit, challenge, and redefine the terms modern and contemporary through readings of art produced within the region.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "เคโกะ เซ",
+      "ธนาวิ โชติประดิษฐ",
+      "วุธ ลีโน่"
+    ],
+    "moderators_raw": [
+      "นันท์นรี พานิชกุล"
+    ],
+    "display_speakers": [
+      "Keiko Sei",
+      "ธนาวิ โชติประดิษฐ / Thanawi Chotipradist",
+      "วุธ ลีโน่"
+    ],
+    "display_moderators": [
+      "นันท์นรี พานิชกุล"
+    ],
+    "topics": [
+      "Art / ศิลปะ",
+      "Southeast Asia / อาเซียน"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": ""
+  }
+}

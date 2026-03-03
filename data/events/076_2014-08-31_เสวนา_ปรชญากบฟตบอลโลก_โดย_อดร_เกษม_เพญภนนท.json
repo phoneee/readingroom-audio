@@ -1,0 +1,55 @@
+{
+  "event_number": 76,
+  "key": "เสวนา \"ปรัชญากับฟุตบอลโลก\" โดย อ.ดร. เกษม เพ็ญภินันท์",
+  "display_title": "เสวนา \"ปรัชญากับฟุตบอลโลก\" โดย อ.ดร. เกษม เพ็ญภินันท์",
+  "event_date": "2014-08-31",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 8972,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "zTE6wOvojwM",
+      "title": "เสวนา \"ปรัชญากับฟุตบอลโลก\" โดยอ.ดร. เกษม เพ็ญภินันท์ Part 1",
+      "url": "https://www.youtube.com/watch?v=zTE6wOvojwM",
+      "duration_seconds": 5329,
+      "upload_date": "20140831"
+    },
+    {
+      "id": "ty94ud9RWmQ",
+      "title": "เสวนา \"ปรัชญากับฟุตบอลโลก\" โดย อ.ดร. เกษม เพ็ญภินันท์ Part 2",
+      "url": "https://www.youtube.com/watch?v=ty94ud9RWmQ",
+      "duration_seconds": 3643,
+      "upload_date": "20140901"
+    }
+  ],
+  "raw_description": "",
+  "bilingual": {
+    "th": "เสวนา \"ปรัชญากับฟุตบอลโลก\" โดย อ.ดร. เกษม เพ็ญภินันท์ ภาควิชาปรัชญา คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย ชวนตั้งคำถามทางปรัชญาต่อปรากฏการณ์ฟุตบอลโลก จัดที่ The Reading Room เมื่อวันที่ 31 สิงหาคม 2557",
+    "en": "A panel discussion on \"Philosophy and the World Cup\" by Ajarn Dr. Kasem Phenphinant, Department of Philosophy, Faculty of Arts, Chulalongkorn University, exploring philosophical questions prompted by the World Cup phenomenon, held at The Reading Room on 31 August 2014.",
+    "source_th": "manual",
+    "source_en": "manual"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "เกษม เพ็ญภินันท์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "เกษม เพ็ญภินันท์ / Kasem Phenphinant"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Sports / กีฬา"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

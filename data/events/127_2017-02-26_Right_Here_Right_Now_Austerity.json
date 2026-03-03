@@ -1,0 +1,51 @@
+{
+  "event_number": 127,
+  "key": "Right Here, Right Now: Austerity",
+  "display_title": "Right Here, Right Now: Austerity",
+  "event_date": "2017-02-26",
+  "year": "2017",
+  "series": "Right Here, Right Now",
+  "total_duration_seconds": 6832,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "aV073AHsIZQ",
+      "title": "Right Here, Right Now: Austerity part1",
+      "url": "https://www.youtube.com/watch?v=aV073AHsIZQ",
+      "duration_seconds": 3700,
+      "upload_date": "20170226"
+    },
+    {
+      "id": "gLayeqj-_cQ",
+      "title": "Right Here, Right Now: Austerity part2",
+      "url": "https://www.youtube.com/watch?v=gLayeqj-_cQ",
+      "duration_seconds": 3132,
+      "upload_date": "20170226"
+    }
+  ],
+  "raw_description": "Right Here, Right Now: ทำความเข้าใจแนวคิดฝ่ายขวา” พูดคุยเกี่ยวกับแนวคิด Austerity หรือ “มาตรการรัดเข็มขัด” ว่าเคยใช้ได้ผลจริงหรือไม่ ส่งผลสะเทือนอย่างไรต่อยุโรป อเมริกา และไทย และเชื่อมโยงกับการผงาดขึ้นของฝ่ายขวาทั่วโลกมากน้อยแค่ไหน\n\nAusterity หรือ “มาตรการรัดเข็มขัด” เป็นแนวคิดฝ่ายขวาที่แนบเนียนยิ่งกว่า Fascism Populism หรือ Fundamentalism เพราะทำให้คนส่วนใหญ่เข้าใจว่าเป็นนโยบายที่มีหลักเศรษฐศาสตร์รองรับอย่างเป็นระบบและพิสูจน์มาแล้วว่าดีต่อส่วนรวม แม้การตัดค่าใช้จ่ายภาครัฐอาจทำให้ผู้คนตกงานจำนวนมากและเศรษฐกิจฝืดเคืองในระยะสั้น แต่ในระยะยาวจะทำให้เศรษฐกิจกลับมารุ่งโรจน์ได้อีกครั้ง เมื่อต้องแก้ไขปัญหาเศรษฐกิจ มาตรการรัดเข็มขัดจึงมักเป็นนโยบายแรกๆ ที่เหล่าเทคโนแครตนึกถึงเสมอ ไล่มาตั้งแต่ยุคเริ่มต้นของทุนนิยม จวบจนวิกฤตต้มยำกุ้งและวิกฤตแฮมเบอร์เกอร์ อย่างไรก็ดี มาตรการนี้เป็นเพียงอีกหนึ่งมายาคติของฝ่ายขวาเท่านั้น",
+  "bilingual": {
+    "th": "Right Here, Right Now: ทำความเข้าใจแนวคิดฝ่ายขวา” พูดคุยเกี่ยวกับแนวคิด Austerity หรือ “มาตรการรัดเข็มขัด” ว่าเคยใช้ได้ผลจริงหรือไม่ ส่งผลสะเทือนอย่างไรต่อยุโรป อเมริกา และไทย และเชื่อมโยงกับการผงาดขึ้นของฝ่ายขวาทั่วโลกมากน้อยแค่ไหน\n\nAusterity หรือ “มาตรการรัดเข็มขัด” เป็นแนวคิดฝ่ายขวาที่แนบเนียนยิ่งกว่า Fascism Populism หรือ Fundamentalism เพราะทำให้คนส่วนใหญ่เข้าใจว่าเป็นนโยบายที่มีหลักเศรษฐศาสตร์รองรับอย่างเป็นระบบและพิสูจน์มาแล้วว่าดีต่อส่วนรวม แม้การตัดค่าใช้จ่ายภาครัฐอาจทำให้ผู้คนตกงานจำนวนมากและเศรษฐกิจฝืดเคืองในระยะสั้น แต่ในระยะยาวจะทำให้เศรษฐกิจกลับมารุ่งโรจน์ได้อีกครั้ง เมื่อต้องแก้ไขปัญหาเศรษฐกิจ มาตรการรัดเข็มขัดจึงมักเป็นนโยบายแรกๆ ที่เหล่าเทคโนแครตนึกถึงเสมอ ไล่มาตั้งแต่ยุคเริ่มต้นของทุนนิยม จวบจนวิกฤตต้มยำกุ้งและวิกฤตแฮมเบอร์เกอร์ อย่างไรก็ดี มาตรการนี้เป็นเพียงอีกหนึ่งมายาคติของฝ่ายขวาเท่านั้น",
+    "en": "Right Here, Right Now: Understanding Right-Wing Thought — a discussion of Austerity: whether it has ever truly worked, how it has reverberated through Europe, America, and Thailand, and how it connects to the global rise of the right.\n\nAusterity is a right-wing idea more insidious than fascism, populism, or fundamentalism, because it persuades the majority that it is a systematically sound and proven economic policy serving the common good. While cutting public expenditure may lead to mass unemployment and short-term economic contraction, the promise is that the economy will eventually flourish again. Whenever an economic crisis demands a remedy, austerity is almost always the first policy technicians reach for — from the earliest days of capitalism through the Asian financial crisis and the global financial crisis of 2008. Yet it remains nothing more than another right-wing myth.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Economics / เศรษฐศาสตร์",
+      "Politics / การเมือง"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

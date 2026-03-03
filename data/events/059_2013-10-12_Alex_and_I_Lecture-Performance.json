@@ -1,0 +1,50 @@
+{
+  "event_number": 59,
+  "key": "Alex and I: Lecture-Performance",
+  "display_title": "Alex and I: Lecture-Performance",
+  "event_date": "2013-10-12",
+  "year": "2013",
+  "series": "Other",
+  "total_duration_seconds": 1639,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "Zi2_gBSaXaY",
+      "title": "Alex and I: Lecture-Performance",
+      "url": "https://www.youtube.com/watch?v=Zi2_gBSaXaY",
+      "duration_seconds": 1639,
+      "upload_date": "20131012"
+    }
+  ],
+  "raw_description": "Alex and I เป็นการเล็คเชอร์ประกอบการแสดง (lecture-performance) โดยศิลปิน Sumugan Sivanesan เพื่อที่จะกล่าวถึงประเด็นการเมืองของการอพยพเคลื่อนย้าย ที่ปรากฏชัดในประเทศศรีลังกาหลังจากสงครามในปี 2009 จบสิ้นลง โดยประเด็นสำคัญส่วนหนึ่งของเล็คเชอร์นี้ได้มาจากการพูดคุยกับ อเล็กซ์ ผู้ลี้ภัยชาวทมิฬ ที่ปัจจุบันถูกกักตัวอยู่ในสถานกักกันผู้อพยพในกรุงเทพฯ และเรื่องราวของเขาแสดงถึงการปะทะกันของเรื่องเล่าพื้นถิ่นและผลผลิตของจินตนาการทางการเมือง\n\nเล็คเชอร์ประกอบการแสดงนี้เน้นถึงการเล่าเรื่องผ่านภาพ ทำให้เป็นการนำเสนอการอพยพเคลื่อนย้ายประชากรผ่านการเคลื่อนไหลหมุนเวียนของภาพ โดยการกล่าวถึงประเด็นต่างๆตั้งแต่เรื่องเล่าในตำนานของเอเชีย ประวัติศาสตร์ศิลปะยุโรป และวัฒนธรรมภาพยนตร์นี้ เป็นการชี้ให้เห็นถึงกลวิธีการผลิตเรื่องราวทางศิลปะร่วมสมัยผ่านบริบททางการเมืองต่างๆ",
+  "bilingual": {
+    "th": "Alex and I เป็นการเล็คเชอร์ประกอบการแสดง (lecture-performance) โดยศิลปิน Sumugan Sivanesan เพื่อที่จะกล่าวถึงประเด็นการเมืองของการอพยพเคลื่อนย้าย ที่ปรากฏชัดในประเทศศรีลังกาหลังจากสงครามในปี 2009 จบสิ้นลง โดยประเด็นสำคัญส่วนหนึ่งของเล็คเชอร์นี้ได้มาจากการพูดคุยกับ อเล็กซ์ ผู้ลี้ภัยชาวทมิฬ ที่ปัจจุบันถูกกักตัวอยู่ในสถานกักกันผู้อพยพในกรุงเทพฯ และเรื่องราวของเขาแสดงถึงการปะทะกันของเรื่องเล่าพื้นถิ่นและผลผลิตของจินตนาการทางการเมือง\n\nเล็คเชอร์ประกอบการแสดงนี้เน้นถึงการเล่าเรื่องผ่านภาพ ทำให้เป็นการนำเสนอการอพยพเคลื่อนย้ายประชากรผ่านการเคลื่อนไหลหมุนเวียนของภาพ โดยการกล่าวถึงประเด็นต่างๆตั้งแต่เรื่องเล่าในตำนานของเอเชีย ประวัติศาสตร์ศิลปะยุโรป และวัฒนธรรมภาพยนตร์นี้ เป็นการชี้ให้เห็นถึงกลวิธีการผลิตเรื่องราวทางศิลปะร่วมสมัยผ่านบริบททางการเมืองต่างๆ",
+    "en": "Alex and I is a lecture-performance by artist Sumugan Sivanesan addressing the politics of displacement that became sharply visible in Sri Lanka following the end of the war in 2009. A central part of the lecture draws on conversations with Alex, a Tamil refugee currently detained at an immigration detention centre in Bangkok, whose story embodies the collision between local narratives and the products of political imagination.\n\nThis lecture-performance emphasises visual storytelling, presenting the displacement of populations through a circulation of images. Spanning references from Asian mythology, European art history, and film culture, it illuminates the strategies by which contemporary artistic narratives are constructed across diverse political contexts.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Sumugan Sivanesan"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Sumugan Sivanesan"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Human Rights / สิทธิมนุษยชน",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย",
+      "Performance / การแสดง"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

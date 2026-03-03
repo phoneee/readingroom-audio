@@ -1,0 +1,60 @@
+{
+  "event_number": 89,
+  "key": "Love Indeed: ปรึกษาปัญหารักกับเชคสเปียร์",
+  "display_title": "Love Indeed: ปรึกษาปัญหารักกับเชคสเปียร์",
+  "event_date": "2014-12-04",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 9749,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "b4UnntHwKtQ",
+      "title": "Love Indeed: ปรึกษาปัญหารักกับเชคสเปียร์ Part 1",
+      "url": "https://www.youtube.com/watch?v=b4UnntHwKtQ",
+      "duration_seconds": 5499,
+      "upload_date": "20141204"
+    },
+    {
+      "id": "zDYQ5Zm0fBQ",
+      "title": "Love Indeed: ปรึกษาปัญหารักกับเชคสเปียร์ Part 2",
+      "url": "https://www.youtube.com/watch?v=zDYQ5Zm0fBQ",
+      "duration_seconds": 4250,
+      "upload_date": "20141204"
+    }
+  ],
+  "raw_description": "Love Indeed: ปรึกษาปัญหารักกับเชคสเปียร์\nโดย มนทกานติ์ รังสิพราหมณกุล & จัสมิน เบเกอร์ \nดำเนินรายการโดย อ.มิ่ง ปัญหา",
+  "bilingual": {
+    "th": "งานเสวนาว่าด้วยความรักผ่านมุมมองของเชกสเปียร์ ร่วมพูดคุยกับ มนทกานติ์ รังสิพราหมณกุล, จัสมิน เบเกอร์ และ อ.มิ่ง ปัญหา จัดขึ้นในเดือนธันวาคม 2557",
+    "en": "A discussion on love through the lens of Shakespeare, with Montakarn Rungsiprahmanakul, Jasmin Baker, and Ajarn Ming Panha, held in December 2014.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "มนทกานติ์ รังสิพราหมณกุล",
+      "จัสมิน เบเกอร์"
+    ],
+    "moderators_raw": [
+      "อ.มิ่ง ปัญหา"
+    ],
+    "display_speakers": [
+      "มนทกานติ์ รังสิพราหมณกุล / Montakarn Rungsiprahmanakul",
+      "Jasmin Baker"
+    ],
+    "display_moderators": [
+      "มิ่ง ปัญหา / Ming Panha"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

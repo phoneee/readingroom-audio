@@ -1,0 +1,55 @@
+{
+  "event_number": 78,
+  "key": "การปฏิรูปการศึกษา และความรู้ ในยุค 4G\" โดย อ.โสรัจจ์ หงศ์ลดารมภ์",
+  "display_title": "การปฏิรูปการศึกษา และความรู้ ในยุค 4G\" โดย อ.โสรัจจ์ หงศ์ลดารมภ์\"",
+  "event_date": "2014-09-09",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 7329,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "dey7EVGIOFo",
+      "title": "\"การปฏิรูปการศึกษา และความรู้ ในยุค 4G\" โดย อ.โสรัจจ์ หงศ์ลดารมภ์  Part 1",
+      "url": "https://www.youtube.com/watch?v=dey7EVGIOFo",
+      "duration_seconds": 5300,
+      "upload_date": "20140909"
+    },
+    {
+      "id": "i46bTU-DQRo",
+      "title": "\"การปฏิรูปการศึกษา และความรู้ ในยุค 4G\" โดย อ.โสรัจจ์ หงศ์ลดารมภ์  Part 2",
+      "url": "https://www.youtube.com/watch?v=i46bTU-DQRo",
+      "duration_seconds": 2029,
+      "upload_date": "20140909"
+    }
+  ],
+  "raw_description": "",
+  "bilingual": {
+    "th": "เสวนา \"การปฏิรูปการศึกษา และความรู้ ในยุค 4G\" โดย อ.โสรัจจ์ หงศ์ลดารมภ์ ภาควิชาปรัชญา คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย ว่าด้วยความท้าทายของการปฏิรูปการศึกษาและการเข้าถึงความรู้ในยุคดิจิทัล จัดที่ The Reading Room เมื่อวันที่ 9 กันยายน 2557",
+    "en": "A lecture and discussion on \"Education Reform and Knowledge in the 4G Era\" by Ajarn Soraj Hongladarom, Department of Philosophy, Faculty of Arts, Chulalongkorn University, addressing the challenges of educational reform and access to knowledge in the digital age, held at The Reading Room on 9 September 2014.",
+    "source_th": "agent_fabricated",
+    "source_en": "agent_fabricated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "โสรัจจ์ หงศ์ลดารมภ์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "โสรัจจ์ หงศ์ลดารมภ์ / Soraj Hongladarom"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Education / การศึกษา",
+      "Philosophy / ปรัชญา"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

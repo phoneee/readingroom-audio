@@ -1,0 +1,69 @@
+{
+  "event_number": 44,
+  "key": "การขึ้นสู่อำนาจของฮิตเลอร์",
+  "display_title": "การขึ้นสู่อำนาจของฮิตเลอร์",
+  "event_date": "2013-04-26",
+  "year": "2013",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 10924,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "yRdYy3QuQW0",
+      "title": "การขึ้นสู่อำนาจของฮิตเลอร์ part 1",
+      "url": "https://www.youtube.com/watch?v=yRdYy3QuQW0",
+      "duration_seconds": 5300,
+      "upload_date": "20130426"
+    },
+    {
+      "id": "40eMcG_TD5Y",
+      "title": "การขึ้นสู่อำนาจของฮิตเลอร์ part 2",
+      "url": "https://www.youtube.com/watch?v=40eMcG_TD5Y",
+      "duration_seconds": 3780,
+      "upload_date": "20130426"
+    },
+    {
+      "id": "WhXSqsm3y-Q",
+      "title": "การขึ้นสู่อำนาจของฮิตเลอร์ part 3",
+      "url": "https://www.youtube.com/watch?v=WhXSqsm3y-Q",
+      "duration_seconds": 1844,
+      "upload_date": "20130426"
+    }
+  ],
+  "raw_description": "การขึ้นสู่อำนาจของฮิตเลอร์: รัฐธรรมนูญ เจตจำนง ความชอบธรรม\nโดย รศ.ดร.วรเจตน์ ภาคีรัตน์ และ รศ.ดร.โสรัจจ์ หงศ์ลดารมภ์ \n\nวาทกรรม \"ฮิตเลอร์มาจากการเลือกตั้ง\" และ \"ฮิตเลอร์ขึ้นสู่อำนาจโดยเจตน์จำนงประชาชนผ่านการลงประชามติในระบอบประชาธิปไตย\" นั้น ได้รับการกล่าวอ้างและเผยแพร่ในสื่อต่างๆอย่างกว้างขวางในช่วงหลายปีที่ผ่านมา ชุดความคิดดังกล่าวมีความถูกต้องหรือไม่ หรือเป็นการตีความบิดเบือนข้อเท็จจริงทางประวัติศาสตร์มากน้อยเพียงไร \n\nร่วมทำความเข้าใจ ตั้งคำถาม และแลกเปลี่ยนคำตอบ กับสองนักวิชาการ รศ.ดร.วรเจตน์ ภาคีรัตน์ และ รศ.ดร.โสรัจจ์ หงศ์ลดารมภ์ ผ่านมุมมองด้านนิติศาสตร์และปรัชญา ในเสวนา \"การขึ้นสู่อำนาจของฮิตเลอร์: รัฐธรรมนูญ เจตจำนง ความชอบธรรม\"  ดำเนินรายการโดย จิตติพร ฉายแสงมงคล",
+  "bilingual": {
+    "th": "วาทกรรม \"ฮิตเลอร์มาจากการเลือกตั้ง\" และ \"ฮิตเลอร์ขึ้นสู่อำนาจโดยเจตน์จำนงประชาชนผ่านการลงประชามติในระบอบประชาธิปไตย\" นั้น ได้รับการกล่าวอ้างและเผยแพร่ในสื่อต่างๆอย่างกว้างขวางในช่วงหลายปีที่ผ่านมา ชุดความคิดดังกล่าวมีความถูกต้องหรือไม่ หรือเป็นการตีความบิดเบือนข้อเท็จจริงทางประวัติศาสตร์มากน้อยเพียงไร\n\nร่วมทำความเข้าใจ ตั้งคำถาม และแลกเปลี่ยนคำตอบ กับสองนักวิชาการ รศ.ดร.วรเจตน์ ภาคีรัตน์ และ รศ.ดร.โสรัจจ์ หงศ์ลดารมภ์ ผ่านมุมมองด้านนิติศาสตร์และปรัชญา ในเสวนา \"การขึ้นสู่อำนาจของฮิตเลอร์: รัฐธรรมนูญ เจตจำนง ความชอบธรรม\"",
+    "en": "The claim that \"Hitler came to power through elections\" and that \"Hitler rose to power by the democratic will of the people through a referendum\" has been widely repeated and circulated in various media in recent years. How accurate is this discourse? And to what extent does it distort the historical record?\n\nJoin two scholars — Assoc. Prof. Dr. Worachet Pakeerut and Assoc. Prof. Dr. Soraj Hongladarom — in understanding, questioning, and exchanging answers from the perspectives of law and philosophy, in the panel discussion \"Hitler's Rise to Power: Constitution, Will, and Legitimacy\".",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "รศ.ดร.วรเจตน์ ภาคีรัตน์",
+      "รศ.ดร.โสรัจจ์ หงศ์ลดารมภ์"
+    ],
+    "moderators_raw": [
+      "จิตติพร ฉายแสงมงคล"
+    ],
+    "display_speakers": [
+      "วรเจตน์ ภาคีรัตน์ / Worachet Pakeerut",
+      "โสรัจจ์ หงศ์ลดารมภ์ / Soraj Hongladarom"
+    ],
+    "display_moderators": [
+      "จิตติพร ฉายแสงมงคล / Jittiporn Chaisaengmongkol"
+    ],
+    "topics": [
+      "Politics / การเมือง",
+      "History / ประวัติศาสตร์",
+      "Philosophy / ปรัชญา"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

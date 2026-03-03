@@ -1,0 +1,47 @@
+{
+  "event_number": 75,
+  "key": "This is Not Fiction: เรื่องจริงอิงนิยาย#2 กับเรื่อง Disgrace",
+  "display_title": "This is Not Fiction: เรื่องจริงอิงนิยาย#2 กับเรื่อง Disgrace",
+  "event_date": "2014-08-27",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 5430,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "7PmUgSdrNVI",
+      "title": "This is Not Fiction: เรื่องจริงอิงนิยาย#2 กับเรื่อง Disgrace",
+      "url": "https://www.youtube.com/watch?v=7PmUgSdrNVI",
+      "duration_seconds": 5430,
+      "upload_date": "20140827"
+    }
+  ],
+  "raw_description": "This is Not Fiction: เรื่องจริงอิงนิยาย#2 กับเรื่อง Disgrace \nโดยนักเขียนรางวัลโนเบลชาวอัฟริกาใต้ J.M. Coetzee \nและทอล์คโดย อ.มิ่ง ปัญหา",
+  "bilingual": {
+    "th": "โดยนักเขียนรางวัลโนเบลชาวอัฟริกาใต้ J.M. Coetzee\nและทอล์คโดย อ.มิ่ง ปัญหา",
+    "en": "This is Not Fiction: Stranger than Fiction #2 — a discussion of Disgrace by South African Nobel laureate J. M. Coetzee, with a talk by อ.มิ่ง ปัญหา.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "มิ่ง ปัญหา"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "มิ่ง ปัญหา / Ming Panha"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Politics / การเมือง",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

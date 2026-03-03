@@ -1,0 +1,56 @@
+{
+  "event_number": 83,
+  "key": "Strawberry Sunday Bookclub#13",
+  "display_title": "Strawberry Sunday Bookclub#13",
+  "event_date": "2014-09-30",
+  "year": "2014",
+  "series": "Book Club",
+  "total_duration_seconds": 7610,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "XVxUkdTd4bo",
+      "title": "Strawberry Sunday Bookclub#13 Part 1",
+      "url": "https://www.youtube.com/watch?v=XVxUkdTd4bo",
+      "duration_seconds": 5466,
+      "upload_date": "20140930"
+    },
+    {
+      "id": "2Izs5g7Xc2o",
+      "title": "Strawberry Sunday Bookclub#13 Part 2",
+      "url": "https://www.youtube.com/watch?v=2Izs5g7Xc2o",
+      "duration_seconds": 2144,
+      "upload_date": "20140930"
+    }
+  ],
+  "raw_description": "Strawberry Sunday Bookclub ครั้งที่ 13 อ่าน \"เวลาในขวดแก้ว\" โดย ประภัสสร เสวิกุล กับคุณอรรถ บุนนาค",
+  "bilingual": {
+    "th": "Strawberry Sunday Bookclub ครั้งที่ 13 อ่าน \"เวลาในขวดแก้ว\" โดย ประภัสสร เสวิกุล กับคุณอรรถ บุนนาค",
+    "en": "Strawberry Sunday Bookclub, session 13: a discussion of เวลาในขวดแก้ว (Time in a Glass Bottle) by ประภัสสร เสวิกุล, with คุณอรรถ บุนนาค.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "เวลาในขวดแก้ว"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

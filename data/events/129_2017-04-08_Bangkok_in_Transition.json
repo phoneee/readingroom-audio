@@ -1,0 +1,80 @@
+{
+  "event_number": 129,
+  "key": "Bangkok in Transition",
+  "display_title": "Bangkok in Transition",
+  "event_date": "2017-04-08",
+  "year": "2017",
+  "series": "Other",
+  "total_duration_seconds": 11141,
+  "video_count": 4,
+  "videos": [
+    {
+      "id": "2yOcxedKa0U",
+      "title": "Bangkok in Transition PART1",
+      "url": "https://www.youtube.com/watch?v=2yOcxedKa0U",
+      "duration_seconds": 3392,
+      "upload_date": "20170408"
+    },
+    {
+      "id": "rVP5PvpbWD0",
+      "title": "Bangkok in Transition PART2",
+      "url": "https://www.youtube.com/watch?v=rVP5PvpbWD0",
+      "duration_seconds": 3702,
+      "upload_date": "20170408"
+    },
+    {
+      "id": "IB62pwT89uM",
+      "title": "Bangkok in Transition PART3",
+      "url": "https://www.youtube.com/watch?v=IB62pwT89uM",
+      "duration_seconds": 3701,
+      "upload_date": "20170408"
+    },
+    {
+      "id": "zsuHiOXZsOs",
+      "title": "Bangkok in Transition PART4",
+      "url": "https://www.youtube.com/watch?v=zsuHiOXZsOs",
+      "duration_seconds": 346,
+      "upload_date": "20170408"
+    }
+  ],
+  "raw_description": "เสวนา \"กรุง-เทพ-เปลี่ยน-ผ่าน\" [Bangkok in Transition] ร่วมพูดคุยเรื่องเมืองและการเปลี่ยนผ่านกับวิทยากร ศานนท์ หวังสร้างบุญ (ผู้ประกอบการ Once Again Hostel และบริษัทนำเที่ยวชุมชน Trawell Thailand), ประพันธ์ นภาวงศ์ดี (ภูมิสถาปนิก กรรมการบริษัท Shma), ชวณัฏฐ์ ล้วนเส้ง (สถาปนิกชุมชน ผู้ร่วมก่อตั้งกลุ่ม CAN: Community Act Network), ศศิธร ศิลป์วุฒยา (อาจารย์ภาควิชามานุษยวิทยา คณะโบราณคดี มหาวิทยาลัยศิลปากร), ดำเนินการเสวนาโดย อาทิตย์ โกวิทวรางกูร (นักจัดรายการวิทยุ 96.5MHz Modern Radio) ในวันเสาร์ที่ 8 เมษายน เวลา 16:30น.เป็นต้นไป ที่ The Reading Room สีลม 19",
+  "bilingual": {
+    "th": "งานเสวนาสำรวจกรุงเทพมหานครในช่วงเปลี่ยนผ่าน พิจารณาพลวัตทางการเมือง สังคม และวัฒนธรรมที่กำลังปรับเปลี่ยนรูปโฉมของมหานครแห่งนี้ในปี 2560",
+    "en": "A discussion exploring Bangkok in transition, examining the political, social, and cultural dynamics reshaping the city in 2017.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ศานนท์ หวังสร้างบุญ",
+      "ประพันธ์ นภาวงศ์ดี",
+      "ชวณัฏฐ์ ล้วนเส้ง",
+      "ศศิธร ศิลป์วุฒยา"
+    ],
+    "moderators_raw": [
+      "อาทิตย์ โกวิทวรางกูร"
+    ],
+    "display_speakers": [
+      "ศานนท์ หวังสร้างบุญ / Sanon Wangsangboon",
+      "ประพันธ์ นภาวงศ์ดี",
+      "ชวณัฏฐ์ ล้วนเส้ง",
+      "ศศิธร ศิลป์วุฒยา"
+    ],
+    "display_moderators": [
+      "อาทิตย์ โกวิทวรางกูร"
+    ],
+    "topics": [
+      "Architecture & Urbanism / สถาปัตยกรรม",
+      "Politics / การเมือง",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "16:30",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "event_number": 86,
+  "key": "This\"s not fiction#4 : The Joke",
+  "display_title": "This's not fiction#4 : The Joke",
+  "event_date": "2014-11-09",
+  "year": "2014",
+  "series": "This is Not Fiction",
+  "total_duration_seconds": 7682,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "W6PauXyV-Uk",
+      "title": "This's not fiction#4 : The Joke",
+      "url": "https://www.youtube.com/watch?v=W6PauXyV-Uk",
+      "duration_seconds": 7682,
+      "upload_date": "20141109"
+    }
+  ],
+  "raw_description": "ซีรีย์ This is Not Fiction: เรื่องจริงอิงนิยาย#4 พูดคุยเกี่ยวกับ The Joke นิยายเรื่องแรกของนักเขียน\nชาวเช็กร่วมสมัยคนสำคัญ Milan  Kundera  พร้อมสนทนากับอ.วริตตา ศรีรัตนา \nและชมภาพยนตร์ที่ดัดแปลงมาจากหนังสือเรื่องนี้ โดยผู้กำกับชาวเช็ค Jaromil Jires \nเมื่อวันเสาร์ที่ 25 ตุลาคม ที่ผ่านมา",
+  "bilingual": {
+    "th": "ซีรีย์ This is Not Fiction: เรื่องจริงอิงนิยาย#4 พูดคุยเกี่ยวกับ The Joke นิยายเรื่องแรกของนักเขียน\nชาวเช็กร่วมสมัยคนสำคัญ Milan Kundera พร้อมสนทนากับอ.วริตตา ศรีรัตนา\nและชมภาพยนตร์ที่ดัดแปลงมาจากหนังสือเรื่องนี้ โดยผู้กำกับชาวเช็ค Jaromil Jires\nเมื่อวันเสาร์ที่ 25 ตุลาคม ที่ผ่านมา",
+    "en": "The This is Not Fiction series #4 focused on The Joke, the debut novel of Milan Kundera, one of the most significant contemporary Czech writers, in conversation with Ajarn Varitta Srirana, followed by a screening of the film adaptation directed by Czech filmmaker Jaromil Jires, held on Saturday 25 October.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "วริตตา ศรีรัตนา"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "วริตตา ศรีรัตนา"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [
+      "The Joke"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

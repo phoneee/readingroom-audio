@@ -1,0 +1,56 @@
+{
+  "event_number": 77,
+  "key": "Strawberry Sunday Book Club #12",
+  "display_title": "Strawberry Sunday Book Club #12",
+  "event_date": "2014-09-03",
+  "year": "2014",
+  "series": "Book Club",
+  "total_duration_seconds": 8871,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "HOmJY9-R1jM",
+      "title": "Strawberry Sunday Book Club #12 Part 1",
+      "url": "https://www.youtube.com/watch?v=HOmJY9-R1jM",
+      "duration_seconds": 5443,
+      "upload_date": "20140903"
+    },
+    {
+      "id": "Lvdkrm-XNjI",
+      "title": "Strawberry Sunday Book Club #12 Part 2",
+      "url": "https://www.youtube.com/watch?v=Lvdkrm-XNjI",
+      "duration_seconds": 3428,
+      "upload_date": "20140903"
+    }
+  ],
+  "raw_description": "Strawberry Sunday Book Club ครั้งที่ 15 อ่าน \"ไส้เดือนตาบอดในเขาวงกต\" โดย วีรพร  นิติประภา กับคุณอรรถ บุนนาค",
+  "bilingual": {
+    "th": "Strawberry Sunday Book Club ครั้งที่ 15 อ่าน \"ไส้เดือนตาบอดในเขาวงกต\" โดย วีรพร นิติประภา กับคุณอรรถ บุนนาค",
+    "en": "Strawberry Sunday Book Club, session 12: hosted by Attha Bunnak at The Reading Room.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ไส้เดือนตาบอดในเขาวงกต"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "event_number": 36,
+  "key": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม",
+  "display_title": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม",
+  "event_date": "2012-10-07",
+  "year": "2012",
+  "series": "Night School",
+  "total_duration_seconds": 6056,
+  "video_count": 5,
+  "videos": [
+    {
+      "id": "x9JhgTDd8iE",
+      "title": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม part 1",
+      "url": "https://www.youtube.com/watch?v=x9JhgTDd8iE",
+      "duration_seconds": 1792,
+      "upload_date": "20121007"
+    },
+    {
+      "id": "ZdG79R-a7kE",
+      "title": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม part 2",
+      "url": "https://www.youtube.com/watch?v=ZdG79R-a7kE",
+      "duration_seconds": 1792,
+      "upload_date": "20121007"
+    },
+    {
+      "id": "jNqcTeUDyE0",
+      "title": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม part 3",
+      "url": "https://www.youtube.com/watch?v=jNqcTeUDyE0",
+      "duration_seconds": 468,
+      "upload_date": "20121010"
+    },
+    {
+      "id": "DzDc3LdRMEQ",
+      "title": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม part 4",
+      "url": "https://www.youtube.com/watch?v=DzDc3LdRMEQ",
+      "duration_seconds": 1792,
+      "upload_date": "20121010"
+    },
+    {
+      "id": "XEOI-gekcPQ",
+      "title": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม part 5",
+      "url": "https://www.youtube.com/watch?v=XEOI-gekcPQ",
+      "duration_seconds": 212,
+      "upload_date": "20121010"
+    }
+  ],
+  "raw_description": "โรงเรียน พ(ล)บค่ำ #7: นิรนาม\nกับ น.ต. ดร.กิตติพงศ์ ปิยะวรรณโณ\n\nอินเทอร์เนตถูกมองว่าเป็นพื้นที่สีเทาที่เป็นแหล่งส่องสุมอย่างดี สำหรับผู้ที่ต้องการกระทำความผิด โดยเฉพาะอย่างยิ่งหน่วยงานภาครัฐทั่วโลกมักจับตามองอินเทอร์เนตในฐานะภัย คุกคามรูปแบบหนึ่ง จึงมีความพยายามจากหน่วยงานภาครัฐในการลดทอนความเป็นนิรนามของประชากรอิน เทอร์เนตด้วยรูปแบบต่าง ๆ เช่น การกำหนดการเก็บล็อกไฟล์ผ่าน พรบ.คอมฯของรัฐไทย เป็นต้น แน่นอนว่าการแทรกแทรงจากภาครัฐเหล่านี้กระทบต่อความเป็นนิรนามในโลกอิน เทอร์เนตโดยตรง อะไรคือผลกระทบเหล่านั้น การแทรกแทรงของรัฐถือว่าเป็นการละเมิดความเป็นส่วนตัวหรือไม่ ประชากรอินเทอร์เนตควรประพฤติตนอย่างไรภายใต้ภาวะเช่นนี้",
+  "bilingual": {
+    "th": "กับ น.ต. ดร.กิตติพงศ์ ปิยะวรรณโณ\n\nอินเทอร์เนตถูกมองว่าเป็นพื้นที่สีเทาที่เป็นแหล่งซ่องสุมอย่างดี สำหรับผู้ที่ต้องการกระทำความผิด โดยเฉพาะอย่างยิ่งหน่วยงานภาครัฐทั่วโลกมักจับตามองอินเทอร์เนตในฐานะภัย คุกคามรูปแบบหนึ่ง จึงมีความพยายามจากหน่วยงานภาครัฐในการลดทอนความเป็นนิรนามของประชากรอิน เทอร์เนตด้วยรูปแบบต่าง ๆ เช่น การกำหนดการเก็บล็อกไฟล์ผ่าน พรบ.คอมฯของรัฐไทย เป็นต้น แน่นอนว่าการแทรกแซงจากภาครัฐเหล่านี้กระทบต่อความเป็นนิรนามในโลกอิน เทอร์เนตโดยตรง อะไรคือผลกระทบเหล่านั้น การแทรกแซงของรัฐถือว่าเป็นการละเมิดความเป็นส่วนตัวหรือไม่ ประชากรอินเทอร์เนตควรประพฤติตนอย่างไรภายใต้ภาวะเช่นนี้",
+    "en": "With Sqn. Ldr. Dr. Kittiphong Piyawanno\n\nThe internet is widely regarded as a grey zone — a fertile ground for those wishing to commit crimes. State agencies worldwide have tended to view the internet as a form of threat, leading to various efforts to reduce the anonymity of internet users — such as the requirement to retain log files under Thailand's Computer Crimes Act. Such state interventions directly affect online anonymity. What are their consequences? Does state intervention constitute a violation of privacy? And how should internet users conduct themselves under such conditions?",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "น.ต. ดร.กิตติพงศ์ ปิยะวรรณโณ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "กิตติพงศ์ ปิยะวรรณโณ / Kittiphong Piyawanno"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Media / สื่อ",
+      "Human Rights / สิทธิมนุษยชน"
+    ],
+    "partners": [
+      "Thai Netizen Network / เครือข่ายพลเมืองเน็ต"
+    ],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

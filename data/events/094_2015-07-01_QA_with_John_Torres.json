@@ -1,0 +1,48 @@
+{
+  "event_number": 94,
+  "key": "Q&A with John Torres",
+  "display_title": "Q&A with John Torres",
+  "event_date": "2015-07-01",
+  "year": "2015",
+  "series": "Other",
+  "total_duration_seconds": 5165,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "m1i32zkn-7Y",
+      "title": "Q&A with John Torres",
+      "url": "https://www.youtube.com/watch?v=m1i32zkn-7Y",
+      "duration_seconds": 5165,
+      "upload_date": "20150701"
+    }
+  ],
+  "raw_description": "สนทนากับ John Torres ผู้กำกับหนุ่มคนสำคัญอีกคนของวงการภาพยนตร์ฟิลิปปินส์ร่วมสมัย ผู้ซึ่งทำงานเล่าเรื่องเชิงทดลอง \nที่ผสานเอาทั้ง วีดีโอ ภาพถ่ายและภาพยนตร์ให้ถ่ายทอด สิ่งที่เป็นทั้งความทรงจำส่วนบุคคลไปจนถึงประวัติศาสตร์ของประเทศได้อย่างทรงพลังและน่าทึ่ง",
+  "bilingual": {
+    "th": "สนทนากับ John Torres ผู้กำกับหนุ่มคนสำคัญอีกคนของวงการภาพยนตร์ฟิลิปปินส์ร่วมสมัย ผู้ซึ่งทำงานเล่าเรื่องเชิงทดลอง\nที่ผสานเอาทั้ง วีดีโอ ภาพถ่ายและภาพยนตร์ให้ถ่ายทอด สิ่งที่เป็นทั้งความทรงจำส่วนบุคคลไปจนถึงประวัติศาสตร์ของประเทศได้อย่างทรงพลังและน่าทึ่ง",
+    "en": "A conversation with John Torres, one of the most significant young directors in contemporary Philippine cinema, whose work in experimental narrative masterfully weaves together video, photography, and film to convey both personal memory and the history of a nation.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "John Torres"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "John Torres"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Art / ศิลปะ"
+    ],
+    "partners": [],
+    "formats": [
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

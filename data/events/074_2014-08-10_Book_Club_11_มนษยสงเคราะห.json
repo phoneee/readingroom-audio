@@ -1,0 +1,49 @@
+{
+  "event_number": 74,
+  "key": "Book Club 11 : มนุษย์สังเคราะห์",
+  "display_title": "Book Club 11 : มนุษย์สังเคราะห์",
+  "event_date": "2014-08-10",
+  "year": "2014",
+  "series": "Book Club",
+  "total_duration_seconds": 5550,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "_Wckqy7oSUc",
+      "title": "Book Club 11 : มนุษย์สังเคราะห์",
+      "url": "https://www.youtube.com/watch?v=_Wckqy7oSUc",
+      "duration_seconds": 5550,
+      "upload_date": "20140810"
+    }
+  ],
+  "raw_description": "“มนุษย์สังเคราะห์” โดยราชินีแห่งเรื่องลึกลับเมืองไทย จินตวีร์ วิวัธน์ \n\nจินตวีร์ วิวัธน์ เป็นนามปากกาของจินตนา ภักดีชายแดน (2485-2531) ใช้สำหรับเขียนงานประเภทลึกลับสยองขวัญกว่า 40 เรื่อง ซึ่งแต่ละเรื่องประสบความสำเร็จมาก และทำให้เธอได้รับการขนานนามว่าเป็นราชินีแห่งเรื่องลึกลับเมืองไทย นิยายเรื่อง “มนุษย์สังเคราะห์” นี้ ตีพิมพ์ในปี 2526 เป็นนวนิยายแนววิทยาศาสตร์ที่ล้ำสมัย เต็มไปด้วยจินตนาการ ไม่ว่าจะเป็นเรื่องการทดลองวิทยาศาสตร์ การปลูกถ่ายเนื้อเยื่อเซลล์มนุษย์ การทดลองสร้างหุ่นยนต์แอนดรอยด์ รวมไปถึงพล็อตเรื่องที่ดำเนินไปด้วยประเด็นคู่ขนานระหว่างการกระทำทุกอย่างเพื่อความรัก และการตั้งคำถามต่อขอบเขตศีลธรรม",
+  "bilingual": {
+    "th": "“มนุษย์สังเคราะห์” โดยราชินีแห่งเรื่องลึกลับเมืองไทย จินตวีร์ วิวัธน์\n\nจินตวีร์ วิวัธน์ เป็นนามปากกาของจินตนา ภักดีชายแดน (2485-2531) ใช้สำหรับเขียนงานประเภทลึกลับสยองขวัญกว่า 40 เรื่อง ซึ่งแต่ละเรื่องประสบความสำเร็จมาก และทำให้เธอได้รับการขนานนามว่าเป็นราชินีแห่งเรื่องลึกลับเมืองไทย นิยายเรื่อง “มนุษย์สังเคราะห์” นี้ ตีพิมพ์ในปี 2526 เป็นนวนิยายแนววิทยาศาสตร์ที่ล้ำสมัย เต็มไปด้วยจินตนาการ ไม่ว่าจะเป็นเรื่องการทดลองวิทยาศาสตร์ การปลูกถ่ายเนื้อเยื่อเซลล์มนุษย์ การทดลองสร้างหุ่นยนต์แอนดรอยด์ รวมไปถึงพล็อตเรื่องที่ดำเนินไปด้วยประเด็นคู่ขนานระหว่างการกระทำทุกอย่างเพื่อความรัก และการตั้งคำถามต่อขอบเขตศีลธรรม",
+    "en": "\"Manut Sangkhrao\" (Synthetic Human) by Jintawee Wiwat, the Queen of Thai Mystery Fiction.\n\nJintawee Wiwat is the pen name of Jintana Phakdichaidaen (1942–1988), used for more than 40 works of mystery and horror — each enormously successful, earning her the title Queen of Thai Mystery Fiction. \"Manut Sangkhrao,\" published in 1983, is a remarkably forward-looking science fiction novel brimming with imagination: scientific experimentation, the transplantation of human tissue and cells, the construction of android robots, and a plot driven by the parallel threads of doing anything for love alongside a sustained interrogation of moral boundaries.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "มนุษย์สังเคราะห์"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

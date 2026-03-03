@@ -1,0 +1,49 @@
+{
+  "event_number": 65,
+  "key": "ต้นส้มแสนรัก",
+  "display_title": "ต้นส้มแสนรัก",
+  "event_date": "2013-12-26",
+  "year": "2013",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 6115,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "m4UK4Z3EMPE",
+      "title": "ต้นส้มแสนรัก",
+      "url": "https://www.youtube.com/watch?v=m4UK4Z3EMPE",
+      "duration_seconds": 6115,
+      "upload_date": "20131226"
+    }
+  ],
+  "raw_description": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่สี่นี้จะอ่านบทประพันธ์แปลเรื่องดัง \"ต้นส้มแสนรัก\" โดยนักเขียนชาวบราซิล โจเซ่ วาสคอนเซลอส\n\"ต้นส้มแสนรัก\" เป็นวรรณกรรมเยาชนสุดคลาสสิคเรื่องนี้ เป็นหนังสือที่เป็นที่รักของนักอ่านทั่วโลก โดยเป็นเรื่องเกี่ยวกับเด็กชายแสนซนในครอบครัวยากจน ที่วันหนึ่งได้พบกันต้นส้มที่สามารถพูดคุยเป็นเพื่อนสนิทกับเขา แต่สุดท้ายชะตาของเพื่อนทั้งสองก็หนีไม่พ้นการต้องลาจากกัน วรรณกรรมสุดเศร้าซึ้งเรื่องนี้ ได้รับการแปลและตีพิมพ์ในไทยครั้งแรกในปี 2522 และได้รับความนิยมเป็นอย่างมาก มีการพิมพ์ซ้ำอย่างต่อเนื่องมาจนถึงทุกวันนี้\n\nในครั้งนี้ the reading room ต้องขออภัยด้วยนะคะ เนื่องจากเกิดเหตุผิดพลาดทางเทคนิค ทำให้คลิปวิดีโอเสียหาย สามารถนำมาทำเป็นไฟล์เสียงได้เพียงอย่างเดียว ต้องขออภัยผู้ชมทุกท่านด้วยนะคะ",
+  "bilingual": {
+    "th": "\"ต้นส้มแสนรัก\" เป็นวรรณกรรมเยาวชนสุดคลาสสิคเรื่องนี้ เป็นหนังสือที่เป็นที่รักของนักอ่านทั่วโลก โดยเป็นเรื่องเกี่ยวกับเด็กชายแสนซนในครอบครัวยากจน ที่วันหนึ่งได้พบกับต้นส้มที่สามารถพูดคุยเป็นเพื่อนสนิทกับเขา แต่สุดท้ายชะตาของเพื่อนทั้งสองก็หนีไม่พ้นการต้องลาจากกัน วรรณกรรมสุดเศร้าซึ้งเรื่องนี้ ได้รับการแปลและตีพิมพ์ในไทยครั้งแรกในปี 2522 และได้รับความนิยมเป็นอย่างมาก มีการพิมพ์ซ้ำอย่างต่อเนื่องมาจนถึงทุกวันนี้\n\nในครั้งนี้ the reading room ต้องขออภัยด้วยนะคะ เนื่องจากเกิดเหตุผิดพลาดทางเทคนิค ทำให้คลิปวิดีโอเสียหาย สามารถนำมาทำเป็นไฟล์เสียงได้เพียงอย่างเดียว ต้องขออภัยผู้ชมทุกท่านด้วยนะคะ",
+    "en": "\"My Sweet Orange Tree\" (Meu Pe de Laranja Lima) is a timeless classic of children's literature, beloved by readers around the world. It tells the story of a mischievous boy in a poor family who one day befriends a talking orange tree — only for the two companions to face an inevitable parting. This deeply moving work was first translated into Thai in 1979 and has remained continuously in print to this day.\n\nPlease note: The Reading Room wishes to apologise that due to a technical error, the video recording of this session was damaged and could only be recovered as an audio file.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ต้นส้มแสนรัก"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

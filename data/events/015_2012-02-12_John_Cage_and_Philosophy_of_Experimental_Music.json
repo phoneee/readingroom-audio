@@ -1,0 +1,73 @@
+{
+  "event_number": 15,
+  "key": "John Cage and Philosophy of Experimental Music",
+  "display_title": "John Cage and Philosophy of Experimental Music",
+  "event_date": "2012-02-12",
+  "year": "2012",
+  "series": "Other",
+  "total_duration_seconds": 6990,
+  "video_count": 4,
+  "videos": [
+    {
+      "id": "j95VhF0tsis",
+      "title": "John Cage and Philosophy of Experimental Music part 1",
+      "url": "https://www.youtube.com/watch?v=j95VhF0tsis",
+      "duration_seconds": 1722,
+      "upload_date": "20120217"
+    },
+    {
+      "id": "9vlh_85LFfw",
+      "title": "John Cage and Philosophy of Experimental Music part 3",
+      "url": "https://www.youtube.com/watch?v=9vlh_85LFfw",
+      "duration_seconds": 1885,
+      "upload_date": "20120222"
+    },
+    {
+      "id": "YaD5CRhf3iY",
+      "title": "John Cage and Philosophy of Experimental Music part 4",
+      "url": "https://www.youtube.com/watch?v=YaD5CRhf3iY",
+      "duration_seconds": 1812,
+      "upload_date": "20120225"
+    },
+    {
+      "id": "viCi4h9vzxE",
+      "title": "John Cage and Philosophy of Experimental Music part 4",
+      "url": "https://www.youtube.com/watch?v=viCi4h9vzxE",
+      "duration_seconds": 1571,
+      "upload_date": "20120226"
+    }
+  ],
+  "raw_description": "(ภาษาไทยโปรดเลื่อนลง)\n\nThe Reading Room presents \"John Cage and Philosophy of Experimental Music\" a lecture by Atibhop Pataradetpisan, columnist at Siamrath Daily and Fine Art Magazine, followed by a discussion led by Viriya Sawangchot, lecturer at Research Institute for Languages and Cultures of Asia, Mahidol University on Sunday February 12th; 5:00-7:00pm at The Reading Room, Bangkok.\n\nThe lecture focuses on John Cage's concept and influence on early experimental music during the 1950s; the influence of Eastern philosophy on Cage's music and his methodology; and the importance of the relation between Time and Space in Cage's and other experimental composers' works; and lastly, the association and obliteration of the boundaries between experimental music and other fields of practice and study.\n\n---\n\nThe Reading Room เสนอการบรรยายเรื่อง \"John Cage and Philosophy of Experimental Music\" โดย อติภพ ภัทรเดชไพศาล คอลัมนิสต์ประจำหนังสือพิมพ์สยามรัฐรายวัน และนิตยสาร FINE ART และร่วมพุดคุยหลังการบรรยายโดยวิริยะ สว่างโชติ อาจารย์ประจำสถาบันภาษาและวัฒนธรรมเอเชีย มหาวิทยาลัยมหิดล ในวันอาทิตย์ ที่ 12 กุมภาพันธ์ 2555 เวลา 17.00 -- 19.00 น. ณ The Reading Room\n\nการบรรยายเน้นเรื่องแนวคิดของ John Cage กับการก่อตัวและบุคลิกของ Experimental Music ในระยะเริ่มต้นในช่วงปี 1950 และเรื่องอิทธิพลของปรัชญาตะวันออกที่ส่งผลต่อรูปแบบการสร้างงานของ Cage ไปจนถึงประเด็น Time และ Space ในทัศนะของ Cage และนักประพันธ์เพลง Experimental อื่นๆ ที่ส่งผลต่อการจัดการกับชิ้นงานและสถานการณ์ด้วยกลวิธีต่างๆ รวมไปถึงการเชื่อมโยงและการลบเลือนพรมแดนระหว่างศิลปะแขนงต่างๆ ผ่าน Experimental music",
+  "bilingual": {
+    "th": "การบรรยายเน้นเรื่องแนวคิดของ John Cage กับการก่อตัวและบุคลิกของ Experimental Music ในระยะเริ่มต้นในช่วงปี 1950 และเรื่องอิทธิพลของปรัชญาตะวันออกที่ส่งผลต่อรูปแบบการสร้างงานของ Cage ไปจนถึงประเด็น Time และ Space ในทัศนะของ Cage และนักประพันธ์เพลง Experimental อื่นๆ ที่ส่งผลต่อการจัดการกับชิ้นงานและสถานการณ์ด้วยกลวิธีต่างๆ รวมไปถึงการเชื่อมโยงและการลบเลือนพรมแดนระหว่างศิลปะแขนงต่างๆ ผ่าน Experimental music",
+    "en": "The lecture focuses on John Cage's concept and influence on early experimental music during the 1950s; the influence of Eastern philosophy on Cage's music and his methodology; and the importance of the relation between Time and Space in Cage's and other experimental composers' works; and lastly, the association and obliteration of the boundaries between experimental music and other fields of practice and study.",
+    "source_th": "original",
+    "source_en": "original"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อติภพ ภัทรเดชไพศาล"
+    ],
+    "moderators_raw": [
+      "วิริยะ สว่างโชติ"
+    ],
+    "display_speakers": [
+      "อติภพ ภัทรเดชไพศาล / Atiphop Phatradechaipaisal"
+    ],
+    "display_moderators": [
+      "วิริยะ สว่างโชติ"
+    ],
+    "topics": [
+      "Music / ดนตรี",
+      "Philosophy / ปรัชญา"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "17:00",
+    "venue": ""
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "event_number": 134,
+  "key": "On the Concept of Immortality and Rebirth by Claude Mangion",
+  "display_title": "On the Concept of Immortality and Rebirth by Claude Mangion",
+  "event_date": "2017-07-19",
+  "year": "2017",
+  "series": "Other",
+  "total_duration_seconds": 7705,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Cz9il_QhPco",
+      "title": "On the Concept of Immortality and Rebirth by Claude Mangion (1/2)",
+      "url": "https://www.youtube.com/watch?v=Cz9il_QhPco",
+      "duration_seconds": 3703,
+      "upload_date": "20170719"
+    },
+    {
+      "id": "ivVld1lSFOw",
+      "title": "On the Concept of Immortality and Rebirth by Claude Mangion (2/2)",
+      "url": "https://www.youtube.com/watch?v=ivVld1lSFOw",
+      "duration_seconds": 4002,
+      "upload_date": "20170719"
+    }
+  ],
+  "raw_description": "The Reading Room และ ภาควิชาปรัชญา คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย เสนอ “แนวคิดเรื่องความเป็นอมตะและการเกิดใหม่ในงานเรื่อง “การไม่มีอยู่ของพระเจ้า” ของ กองแต็ง เมญาซู” โดย โคล็ด มันจ็อน (จากมหาวิทยาลัยมอลต้า) เมื่อวันอาทิตย์ที่ 16 ก.ค. 2560\n\n\nThe Reading Room and Department of Philosophy, Faculty of Arts, Chulalongkorn University present “On the Concept of Immortality and Rebirth in Quentin Meillassoux's ‘The Divine Inexistence’,” a lecture by Claude Mangion (University of Malta) on Sunday July 16th 2017",
+  "bilingual": {
+    "th": "The Reading Room และ ภาควิชาปรัชญา คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย เสนอ “แนวคิดเรื่องความเป็นอมตะและการเกิดใหม่ในงานเรื่อง “การไม่มีอยู่ของพระเจ้า” ของ กองแต็ง เมญาซู” โดย โคล็ด มันจ็อน (จากมหาวิทยาลัยมอลต้า) เมื่อวันอาทิตย์ที่ 16 ก.ค. 2560",
+    "en": "The Reading Room and the Department of Philosophy, Faculty of Arts, Chulalongkorn University present \"On the Concept of Immortality and Rebirth in Questioning of the Divine: Religion, Philosophy, and Rationality\" — a lecture by Dr Claude Mangion (University of Malta). The lecture examines the possibility of immortality and the concept of rebirth within the philosophical tradition of questioning the divine, exploring the relationship between religion, philosophy, and rationality. Sunday, 16 July 2017.",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Claude Mangion"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Claude Mangion"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

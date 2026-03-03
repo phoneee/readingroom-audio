@@ -1,0 +1,51 @@
+{
+  "event_number": 45,
+  "key": "Just Enough",
+  "display_title": "Just Enough",
+  "event_date": "2013-04-27",
+  "year": "2013",
+  "series": "Other",
+  "total_duration_seconds": 5539,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "QQUMbanU4HI",
+      "title": "Just Enough",
+      "url": "https://www.youtube.com/watch?v=QQUMbanU4HI",
+      "duration_seconds": 5539,
+      "upload_date": "20130427"
+    }
+  ],
+  "raw_description": "งานเปิดตัวหนังสือ Just Enough โดย มิร่า ลี แมนนิกคาม Just Enough เป็นหนังสือที่เล่าเรื่องการเดินทางไปในดินแดนแห่งความขัดแย้งในจังหวัดภาคใต้ของประเทศไทย ภายใต้บริบทวัฒนธรรมมาเลย์-มุสลิมที่หยั่งรากลึกมายาวนาน ผู้เขียนเป็นนักวิจัยผู้รักการผจญภัยชาวอเมริกัน นำพาเราเข้าไปสู่หมู่บ้านประมงแห่งหนึ่งในจังหวัดปัตตานี เพื่อไปดูอีกด้านหนึ่งของสังคมชาวมุสลิม ที่บุคคลภายนอกยากที่จะเห็น และไม่เคยได้รับการกล่าวถึงในหน้าหนังสือพิมพ์ไทยซึ่งปกคลุมไปด้วยภาพของความรุนแรงในภาคใต้แต่เพียงด้านเดียว",
+  "bilingual": {
+    "th": "งานเสวนาว่าด้วยแนวคิด \"พอเพียง\" สำรวจปรัชญาแห่งความพอดีและความยั่งยืนในบริบทสังคมไทยและโลก จัดขึ้นในปี 2556",
+    "en": "A discussion on the concept of \"just enough,\" exploring the philosophy of sufficiency and sustainability in both Thai and global contexts, held in 2013.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "มิร่า ลี แมนนิกคาม"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "มิร่า ลี แมนนิกคาม"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Politics / การเมือง",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Launch / เปิดตัวหนังสือ"
+    ],
+    "book_titles": [
+      "Just Enough"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

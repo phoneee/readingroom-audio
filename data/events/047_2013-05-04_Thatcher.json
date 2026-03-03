@@ -1,0 +1,62 @@
+{
+  "event_number": 47,
+  "key": "Thatcher",
+  "display_title": "Thatcher",
+  "event_date": "2013-05-04",
+  "year": "2013",
+  "series": "Other",
+  "total_duration_seconds": 10477,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "yumwSoYrnvE",
+      "title": "Thatcher part 1",
+      "url": "https://www.youtube.com/watch?v=yumwSoYrnvE",
+      "duration_seconds": 5451,
+      "upload_date": "20130505"
+    },
+    {
+      "id": "oplsLt30SFA",
+      "title": "Thatcher part 2",
+      "url": "https://www.youtube.com/watch?v=oplsLt30SFA",
+      "duration_seconds": 5026,
+      "upload_date": "20130504"
+    }
+  ],
+  "raw_description": "มาร์กาเรต แธตเชอร์ อดีตประธานาธิบดีสหราชอาณาจักร (ดำรงตำแหน่งตั้งแต่ปี 2522 ถึง 2533) ได้เสียชีวิตลงเมื่อวันที่ 8 เมษายน 2556 ที่ผ่านมา การเสียชีวิตของเธอก่อให้เกิดกระแสทั้งยกย่องและวิพากษ์วิจารณ์อย่างรุนแรง ความไม่ลงรอยในความรู้สึกและความทรงจำ ของอิทธิพลทางความคิดและนโยบายของมาร์กาเรต แธตเชอร์ ทำให้คนรุ่นหลังต้องพยายามทำความเข้าใจมรดกของเธอต่อประเทศและต่อโลก ไม่ใช่เพื่อตัดสินว่าแธตเชอร์เป็นวีรบุรุษหรือทรราช ไม่ใช่เพื่อประเมินว่านโยบายของแทตเธอร์เป็นสิ่งที่ดีหรือเลว แต่เพื่อทำความเข้าใจถึงรากฐานทางความคิดของแทตเธอร์ และผลกระทบทางนโยบายที่มีต่อสังคมสหรชอาณาจักรและประชาคมโลก \n\nThe Reading Room จึงขอเชิญทุกท่านร่วมทำความเข้าใจอิทธิพลและมรดกของมาร์กาเรต แธตเชอร์ ในงานเสวนา \"Thatcher is Dead! Long Live Thatcherism!\" ร่วมสนทนากับ ดร.พิชิต ลิขิตกิจสมบูรณ์ และ ดร.วิโรจน์ อาลี ดำเนินรายการโดย ตฤณ ไอยะรา",
+  "bilingual": {
+    "th": "เสวนาว่าด้วยมาร์กาเร็ต แทตเชอร์ นายกรัฐมนตรีอังกฤษผู้เป็นสัญลักษณ์ของลัทธิเสรีนิยมใหม่ และมรดกทางการเมืองที่ยังคงส่งผลสะเทือนต่อโลกจนถึงปัจจุบัน ดำเนินรายการโดย ตฤณ ไอยะรา ที่ The Reading Room Bangkok เดือนพฤษภาคม 2556",
+    "en": "A discussion of Margaret Thatcher — the British Prime Minister who became the defining symbol of neoliberalism — and the political legacy that continues to reverberate across the world. Moderated by ตฤณ ไอยะรา at The Reading Room Bangkok, May 2013.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "พิชิต ลิขิตกิจสมบูรณ์",
+      "วิโรจน์ อาลี"
+    ],
+    "moderators_raw": [
+      "ตฤณ ไอยะรา"
+    ],
+    "display_speakers": [
+      "พิชิต ลิขิตกิจสมบูรณ์",
+      "วิโรจน์ อาลี"
+    ],
+    "display_moderators": [
+      "ตฤณ ไอยะรา / Trin Aiyara"
+    ],
+    "topics": [
+      "Politics / การเมือง",
+      "Economics / เศรษฐศาสตร์",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

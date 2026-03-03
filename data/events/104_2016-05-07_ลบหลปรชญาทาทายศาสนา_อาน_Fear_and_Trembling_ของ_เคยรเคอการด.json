@@ -1,0 +1,65 @@
+{
+  "event_number": 104,
+  "key": "ลบหลู่ปรัชญาท้าทายศาสนา : อ่าน \"Fear and Trembling\" ของ เคียร์เคอการ์ด",
+  "display_title": "ลบหลู่ปรัชญาท้าทายศาสนา : อ่าน \"Fear and Trembling\" ของ เคียร์เคอการ์ด",
+  "event_date": "2016-05-07",
+  "year": "2016",
+  "series": "Other",
+  "total_duration_seconds": 5510,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "Smq_jMSgcXo",
+      "title": "“ลบหลู่ปรัชญาท้าทายศาสนา : อ่าน \"Fear and Trembling\" ของ เคียร์เคอการ์ด“ PART 1",
+      "url": "https://www.youtube.com/watch?v=Smq_jMSgcXo",
+      "duration_seconds": 2183,
+      "upload_date": "20160523"
+    },
+    {
+      "id": "lcVUz7cfFv4",
+      "title": "“ลบหลู่ปรัชญาท้าทายศาสนา : อ่าน \"Fear and Trembling\" ของ เคียร์เคอการ์ด“ PART 2",
+      "url": "https://www.youtube.com/watch?v=lcVUz7cfFv4",
+      "duration_seconds": 1795,
+      "upload_date": "20160523"
+    },
+    {
+      "id": "v9M8e0xIbPA",
+      "title": "“ลบหลู่ปรัชญาท้าทายศาสนา : อ่าน \"Fear and Trembling\" ของ เคียร์เคอการ์ด“ PART 3",
+      "url": "https://www.youtube.com/watch?v=v9M8e0xIbPA",
+      "duration_seconds": 1532,
+      "upload_date": "20160523"
+    }
+  ],
+  "raw_description": "สมาคมปรัชญาและศาสนาแห่งประเทศไทย ร่วมกับ ห้องสมุด The Reading Room\nการอ่านปรัชญา ในหัวข้อ\n“ลบหลู่ปรัชญาท้าทายศาสนา : อ่าน \"Fear and Trembling\" ของ เคียร์เคอการ์ด“\nโดย อ.รชฎ สาตราวุธ \nอาจารย์ประจำภาควิชาปรัชญาและศาสนา มหาวิทยาลัยสงขลานครินทร์(ปัตตานี)\n“เมื่อพระเจ้า ศรัทธาและอัตวิสัย ไม่ปราชัยบนเวทีแห่งความจริง”\nฟังบรรยายการอ่าน Fear and Trembling งานปรัชญาชิ้นสำคัญของ Søren Kierkegaard นักปรัชญา อัตถิภาวะนิยมที่ยอมรับความเชื่อเกี่ยวกับพระเจ้า เพื่อให้ทบทวน เกี่ยวกับการมีอยู่และการแสวงหาความจริงในยุคปัจจุบัน\nที่ห้องสมุด The Reading Room \nวันเสาร์ที่ 7 พฤษภาคม 2559 เวลา 15.00-17.00น",
+  "bilingual": {
+    "th": "อาจารย์ประจำภาควิชาปรัชญาและศาสนา มหาวิทยาลัยสงขลานครินทร์(ปัตตานี)\n“เมื่อพระเจ้า ศรัทธาและอัตวิสัย ไม่ปราชัยบนเวทีแห่งความจริง”\nฟังบรรยายการอ่าน Fear and Trembling งานปรัชญาชิ้นสำคัญของ Søren Kierkegaard นักปรัชญา อัตถิภาวะนิยมที่ยอมรับความเชื่อเกี่ยวกับพระเจ้า เพื่อให้ทบทวน เกี่ยวกับการมีอยู่และการแสวงหาความจริงในยุคปัจจุบัน",
+    "en": "Lecturer, Department of Philosophy and Religion, Prince of Songkla University (Pattani)\n\"When God, Faith, and Subjectivity Are Not Defeated in the Arena of Truth\"\n\nA lecture on reading Fear and Trembling, the seminal philosophical work of Søren Kierkegaard — the existentialist philosopher who affirmed belief in God — as an occasion to reflect on existence and the search for truth in the present day.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "รชฎ สาตราวุธ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "รชฎ สาตราวุธ"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา"
+    ],
+    "partners": [
+      "สมาคมปรัชญาและศาสนาแห่งประเทศไทย"
+    ],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [
+      "Fear and Trembling"
+    ],
+    "film_titles": [],
+    "event_time": "15:00",
+    "venue": ""
+  }
+}

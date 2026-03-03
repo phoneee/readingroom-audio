@@ -1,0 +1,111 @@
+{
+  "event_number": 6,
+  "key": "Life through Zakariya Lens",
+  "display_title": "Life through Zakariya Lens",
+  "event_date": "2011-06-22",
+  "year": "2011",
+  "series": "Other",
+  "total_duration_seconds": 7813,
+  "video_count": 9,
+  "videos": [
+    {
+      "id": "oO7ctw0b8lE",
+      "title": "Life through Zakariya Lens (part 1)",
+      "url": "https://www.youtube.com/watch?v=oO7ctw0b8lE",
+      "duration_seconds": 890,
+      "upload_date": "20110622"
+    },
+    {
+      "id": "YW0QPW2mO3s",
+      "title": "Life through Zakariya Lens (part 2)",
+      "url": "https://www.youtube.com/watch?v=YW0QPW2mO3s",
+      "duration_seconds": 900,
+      "upload_date": "20110622"
+    },
+    {
+      "id": "jSmv_du--sc",
+      "title": "Life through Zakariya Lens (part 3)",
+      "url": "https://www.youtube.com/watch?v=jSmv_du--sc",
+      "duration_seconds": 900,
+      "upload_date": "20110629"
+    },
+    {
+      "id": "Lj0A-O1q6xQ",
+      "title": "Life through Zakariya Lens (part 4)",
+      "url": "https://www.youtube.com/watch?v=Lj0A-O1q6xQ",
+      "duration_seconds": 830,
+      "upload_date": "20110629"
+    },
+    {
+      "id": "JpgCbV7qFTI",
+      "title": "Life through Zakariya Lens (part 5)",
+      "url": "https://www.youtube.com/watch?v=JpgCbV7qFTI",
+      "duration_seconds": 898,
+      "upload_date": "20110629"
+    },
+    {
+      "id": "ax_Yxi1J5A8",
+      "title": "Life through Zakariya Lens (part 6)",
+      "url": "https://www.youtube.com/watch?v=ax_Yxi1J5A8",
+      "duration_seconds": 898,
+      "upload_date": "20110629"
+    },
+    {
+      "id": "DdzAssKJMXs",
+      "title": "Life through Zakariya Lens (part 7)",
+      "url": "https://www.youtube.com/watch?v=DdzAssKJMXs",
+      "duration_seconds": 898,
+      "upload_date": "20110629"
+    },
+    {
+      "id": "rR6zHhYsyDg",
+      "title": "Life through Zakariya Lens (part 8)",
+      "url": "https://www.youtube.com/watch?v=rR6zHhYsyDg",
+      "duration_seconds": 798,
+      "upload_date": "20110629"
+    },
+    {
+      "id": "eT0_mvxSsXI",
+      "title": "Life through Zakariya Lens (part 9)",
+      "url": "https://www.youtube.com/watch?v=eT0_mvxSsXI",
+      "duration_seconds": 801,
+      "upload_date": "20110707"
+    }
+  ],
+  "raw_description": "สนทนา มองโลกแบบ \"ปุถุชน\": Life through Zakariya Lens\nสนทนาสลับการอ่านบทกวี กับ ซะการีย์ยา อมตยา เจ้าของกวีนิพนธ์รวมเล่ม \"ไม่มีหญิงสาวในบทกวี\" รางวัลซีไรท์ประเภทกวีนิพนธ์ ปี 2553 @The Reading Room Bangkok \n\nดำเนินสนทนา โดย ธิติ มีแต้ม บรรณาธิการปาจารยสาร",
+  "bilingual": {
+    "th": "สนทนาสลับการอ่านบทกวี กับ ซะการีย์ยา อมตยา เจ้าของกวีนิพนธ์รวมเล่ม \"ไม่มีหญิงสาวในบทกวี\" รางวัลซีไรท์ประเภทกวีนิพนธ์ ปี 2553 @The Reading Room Bangkok\n\nดำเนินสนทนา โดย ธิติ มีแต้ม บรรณาธิการปาจารยสาร",
+    "en": "A conversation interspersed with poetry readings, with Zakariya Amataya, author of the poetry collection \"Mai Mi Ying Sao nai Bot Kawi\" (There Are No Young Women in the Poem), winner of the S.E.A. Write Award for poetry in 2010, at The Reading Room Bangkok.\n\nModerated by Thiti Meetam, editor of Patcharayasarn.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ซะการีย์ยา อมตยา"
+    ],
+    "moderators_raw": [
+      "ธิติ มีแต้ม"
+    ],
+    "display_speakers": [
+      "ซะการีย์ยา อมตยา"
+    ],
+    "display_moderators": [
+      "ธิติ มีแต้ม / Thiti Meetam"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Art / ศิลปะ"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา",
+      "Performance / การแสดง"
+    ],
+    "book_titles": [
+      "ไม่มีหญิงสาวในบทกวี"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

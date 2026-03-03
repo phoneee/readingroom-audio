@@ -1,0 +1,57 @@
+{
+  "event_number": 72,
+  "key": "Book Club 10: ผู้ดี",
+  "display_title": "Book Club 10: ผู้ดี",
+  "event_date": "2014-07-08",
+  "year": "2014",
+  "series": "Book Club",
+  "total_duration_seconds": 8088,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "fXpcFUx_TFE",
+      "title": "Book Club 10: ผู้ดี part 1",
+      "url": "https://www.youtube.com/watch?v=fXpcFUx_TFE",
+      "duration_seconds": 5197,
+      "upload_date": "20140708"
+    },
+    {
+      "id": "NzuCCm7MVI4",
+      "title": "Book Club 10: ผู้ดี part 2",
+      "url": "https://www.youtube.com/watch?v=NzuCCm7MVI4",
+      "duration_seconds": 2891,
+      "upload_date": "20140708"
+    }
+  ],
+  "raw_description": "The Reading Room เสนอ \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับ \"คุณอรรถ บุนนาค\" โดยครั้งที่สิบนี้จะอ่านนวนิยาย \"ผู้ดี\" โดย ดอกไม้สด นามปากกาของหม่อมหลวงบุปผา นิมมานเหมินท์\n\n\"ผู้ดี\" เป็นนิยายที่เป็นที่รู้จักดีที่สุดในบรรดาผลงานของดอกไม้สด (พ.ศ. 2448-2506) โดยเป็นงานแนวสมจริงหรือเรียลลิสติก ที่ตีพิมพ์ในปี พ.ศ. 2480 และแสดงถึงผลกระทบของการเปลี่ยนแปลงการปกครอง พ.ศ. 2475 ต่อชนชั้นนำไทยในสมัยนั้น ผ่านตัวละครหญิง หนึ่งในชนชั้นผู้ดีที่ได้รับผลกระทบโดยตรง โดยเฉพาะด้านสังคมและเศรษฐกิจ นอกจากการสะท้อนภาพสังคมสมัยนั้นอย่างสมจริง \"ผู้ดี\" ยังโดดเด่นในเรื่องของการให้ความสำคัญกับตัวละครหญิง การประสานอิทธิพลตะวันตกเข้ากับวัฒนธรรมและความคิดของโลกตะวันออก รวมถึงการแทรกคติสอนใจเข้าไปในเนื้อเรื่องอีกด้วย",
+  "bilingual": {
+    "th": "The Reading Room เสนอ \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับ \"คุณอรรถ บุนนาค\" โดยครั้งที่สิบนี้จะอ่านนวนิยาย \"ผู้ดี\" โดย ดอกไม้สด นามปากกาของหม่อมหลวงบุปผา นิมมานเหมินท์\n\n\"ผู้ดี\" เป็นนิยายที่เป็นที่รู้จักดีที่สุดในบรรดาผลงานของดอกไม้สด (พ.ศ. 2448-2506) โดยเป็นงานแนวสมจริงหรือเรียลลิสติก ที่ตีพิมพ์ในปี พ.ศ. 2480 และแสดงถึงผลกระทบของการเปลี่ยนแปลงการปกครอง พ.ศ. 2475 ต่อชนชั้นนำไทยในสมัยนั้น ผ่านตัวละครหญิง หนึ่งในชนชั้นผู้ดีที่ได้รับผลกระทบโดยตรง โดยเฉพาะด้านสังคมและเศรษฐกิจ นอกจากการสะท้อนภาพสังคมสมัยนั้นอย่างสมจริง \"ผู้ดี\" ยังโดดเด่นในเรื่องของการให้ความสำคัญกับตัวละครหญิง การประสานอิทธิพลตะวันตกเข้ากับวัฒนธรรมและความคิดของโลกตะวันออก รวมถึงการแทรกคติสอนใจเข้าไปในเนื้อเรื่องอีกด้วย",
+    "en": "The Reading Room presents the \"Strawberry Sunday Book Club: Reading Pop Fiction with Khun Attha Bunnak.\" For this tenth edition, the club reads the novel \"Phudi\" (The Gentry) by Dokmai Sot, the pen name of Mom Luang Buppha Nimmanhemin.\n\n\"Phudi\" is the best-known of Dokmai Sot's works (1905–1963). A realist novel published in 1937, it depicts the impact of the 1932 change of government on the Thai aristocracy of that era, through a female protagonist — a member of the gentry directly affected, particularly in social and economic terms. Beyond its vivid portrait of contemporary society, \"Phudi\" is distinguished by its foregrounding of female characters, its synthesis of Western influence with Eastern culture and thought, and its integration of moral lessons throughout the narrative.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ผู้ดี"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

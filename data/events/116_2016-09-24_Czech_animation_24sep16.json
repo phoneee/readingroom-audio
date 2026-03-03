@@ -1,0 +1,51 @@
+{
+  "event_number": 116,
+  "key": "Czech animation 24sep16",
+  "display_title": "Czech animation 24sep16",
+  "event_date": "2016-09-24",
+  "year": "2016",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 3568,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "pyA-pscTyP4",
+      "title": "Czech animation_24sep16",
+      "url": "https://www.youtube.com/watch?v=pyA-pscTyP4",
+      "duration_seconds": 3568,
+      "upload_date": "20161001"
+    }
+  ],
+  "raw_description": "สถานทูตสาธารณรัฐเช็ก ร่วมกับ FILMVIRUS และ The Reading Room ชวนคุณชมโปรแกรมพิเศษ รวมมิตร อนิเมชั่นจากสาธารณรัฐเช็ก ซึ่งเป็นที่รู้กันดีว่าเป็นหนึ่งในงานอนิเมชั่นที่สำคัญลำดับต้นๆของโลก พร้อมทั้งการบรรยายเปิดงานโดย เคโกะ เซ ภัณฑารักษ์ และนักวิชาการภาพยนตร์อิสระ ผู้เชี่ยวชาญด้านศิลปวัฒนธรรมเช็ก สุดสัปดาห์ที่ 24 -25 กันยายน\n\nEmbassy of the Czech Republic in the Kingdom of Thailand, with FilmVirus and The Reading Room present a two-day special screening program of Czech animation, and a presentation by Keiko Sei, an independent curator and film scholar, on 24-25 September",
+  "bilingual": {
+    "th": "สถานทูตสาธารณรัฐเช็ก ร่วมกับ FILMVIRUS และ The Reading Room ชวนคุณชมโปรแกรมพิเศษ รวมมิตร อนิเมชั่นจากสาธารณรัฐเช็ก ซึ่งเป็นที่รู้กันดีว่าเป็นหนึ่งในงานอนิเมชั่นที่สำคัญลำดับต้นๆของโลก พร้อมทั้งการบรรยายเปิดงานโดย เคโกะ เซ ภัณฑารักษ์ และนักวิชาการภาพยนตร์อิสระ ผู้เชี่ยวชาญด้านศิลปวัฒนธรรมเช็ก สุดสัปดาห์ที่ 24 -25 กันยายน",
+    "en": "The Embassy of the Czech Republic in the Kingdom of Thailand, together with FILMVIRUS and The Reading Room, present a special two-day screening programme of selected Czech animation — widely recognised as among the most significant in the world — accompanied by an introductory presentation by Keiko Sei, independent curator and film scholar, and specialist in Czech art and culture. The programme runs over the weekend of 24-25 September.",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "เคโกะ เซ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Keiko Sei"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Film / ภาพยนตร์"
+    ],
+    "partners": [
+      "Film Virus"
+    ],
+    "formats": [
+      "Lecture / บรรยาย",
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

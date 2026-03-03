@@ -1,0 +1,68 @@
+{
+  "event_number": 119,
+  "key": "Right Here, Right Now: Populism",
+  "display_title": "Right Here, Right Now: Populism",
+  "event_date": "2016-11-19",
+  "year": "2016",
+  "series": "Right Here, Right Now",
+  "total_duration_seconds": 9836,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "DIHYlgN4eH0",
+      "title": "Right Here, Right Now:  Populism part1",
+      "url": "https://www.youtube.com/watch?v=DIHYlgN4eH0",
+      "duration_seconds": 3713,
+      "upload_date": "20161124"
+    },
+    {
+      "id": "bVQayPS50tc",
+      "title": "Right Here, Right Now:  Populism part2",
+      "url": "https://www.youtube.com/watch?v=bVQayPS50tc",
+      "duration_seconds": 3751,
+      "upload_date": "20161124"
+    },
+    {
+      "id": "8k9_WsZnepY",
+      "title": "Right Here, Right Now:  Populism part3",
+      "url": "https://www.youtube.com/watch?v=8k9_WsZnepY",
+      "duration_seconds": 2372,
+      "upload_date": "20161124"
+    }
+  ],
+  "raw_description": "ผลการเลือกตั้งที่อเมริกาชี้ให้เห็นว่าโวหารแบบประชานิยมเป็นแรงผลักดันหนึ่งที่พาโดนัลด์ ทรัมพ์ ขึ้นสู่ตำแหน่งว่าที่ประธานาธิบดี ส่วนในไทยนั้น ประชานิยมเป็นเหมือนผีที่ตามหลอกหลอนสังคมมากว่าสิบปี สถานะผีไม่ใช่แค่เพียงการตามหลอกหลอน แต่ยังเป็นความคลุมเครือว่าความน่ากลัวนั้นคืออะไรด้วย หรือถ้าจะพูดให้ถึงที่สุด บริบทการเมืองไทยในช่วงที่ผ่านมาอาจได้สร้างความหมายเฉพาะของ\"ประชานิยมแบบไทยๆ\"ขึ้นมาแล้วก็เป็นได้\n\nความหมายของประชานิยมคืออะไร มีพัฒนาการและความหลากหลายอย่างไร, ประชานิยมเกี่ยวข้องอย่างไรกับประชาธิปไตย, right-wing populism กับ left-wing populism ในแต่ละมุมโลกแตกต่างกันอย่างไร, และกระแสความเฟื่องฟูของ right-wing populism และ neo-nationalist populism ในปัจจุบันบอกอะไรกับเรา ร่วมสนทนาประเด็นเหล่านี้กับ ประจักษ์ ก้องกีรติ และเชาวฤทธิ์ เชาว์แสงรัตน์ ดำเนินรายการโดย ลลิตา หาญวงษ์ ในวันเสาร์ที่ 19 พฤศจิกายน เวลา 14.30-17.00 น. ที่ The Reading Room สีลม 19\nน์ ดำเนินรายการโดย ลลิตา หาญวงษ์",
+  "bilingual": {
+    "th": "ผลการเลือกตั้งที่อเมริกาชี้ให้เห็นว่าโวหารแบบประชานิยมเป็นแรงผลักดันหนึ่งที่พาโดนัลด์ ทรัมพ์ ขึ้นสู่ตำแหน่งว่าที่ประธานาธิบดี ส่วนในไทยนั้น ประชานิยมเป็นเหมือนผีที่ตามหลอกหลอนสังคมมากว่าสิบปี สถานะผีไม่ใช่แค่เพียงการตามหลอกหลอน แต่ยังเป็นความคลุมเครือว่าความน่ากลัวนั้นคืออะไรด้วย หรือถ้าจะพูดให้ถึงที่สุด บริบทการเมืองไทยในช่วงที่ผ่านมาอาจได้สร้างความหมายเฉพาะของ\"ประชานิยมแบบไทยๆ\"ขึ้นมาแล้วก็เป็นได้\n\nความหมายของประชานิยมคืออะไร มีพัฒนาการและความหลากหลายอย่างไร, ประชานิยมเกี่ยวข้องอย่างไรกับประชาธิปไตย, right-wing populism กับ left-wing populism ในแต่ละมุมโลกแตกต่างกันอย่างไร, และกระแสความเฟื่องฟูของ right-wing populism และ neo-nationalist populism ในปัจจุบันบอกอะไรกับเรา ร่วมสนทนาประเด็นเหล่านี้กับ ประจักษ์ ก้องกีรติ",
+    "en": "The American election results revealed that populist rhetoric was one of the forces that carried Donald Trump to the presidency. In Thailand, populism has haunted public discourse for more than a decade — a ghost whose menace is as much about ambiguity as about fear. Or, put more bluntly, the Thai political context of recent years may well have produced its own distinct form of Thai-style populism.\n\nWhat does populism actually mean? How has it evolved and diversified? How does populism relate to democracy? How do right-wing and left-wing populism differ across different parts of the world? And what does the current wave of right-wing populism and neo-nationalist populism tell us? Join a discussion of these questions with ประจักษ์ ก้องกีรติ. Moderated by ลลิตา หาญวงษ์.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ประจักษ์ ก้องกีรติ",
+      "เชาวฤทธิ์ เชาว์แสงรัตน์"
+    ],
+    "moderators_raw": [
+      "ลลิตา หาญวงษ์"
+    ],
+    "display_speakers": [
+      "ประจักษ์ ก้องกีรติ",
+      "เชาวฤทธิ์ เชาว์แสงรัตน์"
+    ],
+    "display_moderators": [
+      "ลลิตา หาญวงษ์ / Lalita Hanwong"
+    ],
+    "topics": [
+      "Politics / การเมือง",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:30",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

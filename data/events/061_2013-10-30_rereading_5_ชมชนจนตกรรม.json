@@ -1,0 +1,58 @@
+{
+  "event_number": 61,
+  "key": "re:reading 5: ชุมชนจินตกรรม",
+  "display_title": "re:reading 5: ชุมชนจินตกรรม",
+  "event_date": "2013-10-30",
+  "year": "2013",
+  "series": "re:reading",
+  "total_duration_seconds": 8832,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Are9iRvRsYY",
+      "title": "re:reading 5: ชุมชนจินตกรรม part 1",
+      "url": "https://www.youtube.com/watch?v=Are9iRvRsYY",
+      "duration_seconds": 4760,
+      "upload_date": "20131030"
+    },
+    {
+      "id": "xZIMbvLJQrw",
+      "title": "re:reading 5: ชุมชนจินตกรรม part 2",
+      "url": "https://www.youtube.com/watch?v=xZIMbvLJQrw",
+      "duration_seconds": 4072,
+      "upload_date": "20131030"
+    }
+  ],
+  "raw_description": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม ใน \"Re:Reading Group\" มาร่วมกัน \"อ่านและตีความใหม่\" โดยครั้งที่ห้านี้จะเป็นการตีความใหม่ตัวบทด้านรัฐศาสตร์และประวัติศาสตร์ โดยเลือกอ่านบทความสำคัญในสาขานี้คือ บทนำและบทแรกของ Imagined Communities (ชุมชนจินตกรรม) โดย Benedict Anderson อ่านและแลกเปลี่ยนกับ ประจักษ์ ก้องกีรติ & ภารุต เพ็ญพายัพ",
+  "bilingual": {
+    "th": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม ใน \"Re:Reading Group\" มาร่วมกัน \"อ่านและตีความใหม่\" โดยครั้งที่ห้านี้จะเป็นการตีความใหม่ตัวบทด้านรัฐศาสตร์และประวัติศาสตร์ โดยเลือกอ่านบทความสำคัญในสาขานี้คือ บทนำและบทแรกของ Imagined Communities (ชุมชนจินตกรรม) โดย Benedict Anderson อ่านและแลกเปลี่ยนกับ ประจักษ์ ก้องกีรติ & ภารุต เพ็ญพายัพ",
+    "en": "The Reading Room invited readers of social and cultural texts to join Re:Reading Group for a session of re-reading and reinterpretation. For its fifth instalment, the group turned to political science and history, selecting a key text in the field: the introduction and first chapter of Imagined Communities by Benedict Anderson, read and discussed with Prajak Kongkirati and Pharut Phenphayap.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ประจักษ์ ก้องกีรติ",
+      "ภารุต เพ็ญพายัพ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ประจักษ์ ก้องกีรติ",
+      "ภารุต เพ็ญพายัพ / Pharut Phenphayap"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Politics / การเมือง",
+      "Literature / วรรณกรรม",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Reading Group"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

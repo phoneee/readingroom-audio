@@ -1,0 +1,42 @@
+{
+  "event_number": 53,
+  "key": "จากห้องเรียนศิลปะเก่าสู่ห้องเรียนออนไลน์กับการดำรงอยู่ของการวิจารณ์",
+  "display_title": "จากห้องเรียนศิลปะเก่าสู่ห้องเรียนออนไลน์กับการดำรงอยู่ของการวิจารณ์",
+  "event_date": "2013-08-12",
+  "year": "2013",
+  "series": "Other",
+  "total_duration_seconds": 7151,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "FDKmWpH0aPc",
+      "title": "จากห้องเรียนศิลปะเก่าสู่ห้องเรียนออนไลน์กับการดำรงอยู่ของการวิจารณ์",
+      "url": "https://www.youtube.com/watch?v=FDKmWpH0aPc",
+      "duration_seconds": 7151,
+      "upload_date": "20130812"
+    }
+  ],
+  "raw_description": "",
+  "bilingual": {
+    "th": "เสวนาว่าด้วยการเปลี่ยนผ่านจากห้องเรียนศิลปะแบบดั้งเดิมสู่แพลตฟอร์มออนไลน์ และการดำรงอยู่ของการวิจารณ์ศิลปะในยุคดิจิทัล จัดที่ The Reading Room เมื่อวันที่ 12 สิงหาคม 2556",
+    "en": "A panel discussion on the transition from the traditional art classroom to online platforms, and the continued relevance and practice of art criticism in the digital age, held at The Reading Room on 12 August 2013.",
+    "source_th": "agent_fabricated",
+    "source_en": "agent_fabricated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Education / การศึกษา"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

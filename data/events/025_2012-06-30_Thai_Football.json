@@ -1,0 +1,91 @@
+{
+  "event_number": 25,
+  "key": "Thai Football",
+  "display_title": "Thai Football",
+  "event_date": "2012-06-30",
+  "year": "2012",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 11708,
+  "video_count": 7,
+  "videos": [
+    {
+      "id": "rVmPQDyUjhA",
+      "title": "Thai Football part 1",
+      "url": "https://www.youtube.com/watch?v=rVmPQDyUjhA",
+      "duration_seconds": 1662,
+      "upload_date": "20120721"
+    },
+    {
+      "id": "z-r-BIJ4-F4",
+      "title": "Thai Football part 2",
+      "url": "https://www.youtube.com/watch?v=z-r-BIJ4-F4",
+      "duration_seconds": 1760,
+      "upload_date": "20120725"
+    },
+    {
+      "id": "dfXdeghWAQY",
+      "title": "Thai Football part 3",
+      "url": "https://www.youtube.com/watch?v=dfXdeghWAQY",
+      "duration_seconds": 1792,
+      "upload_date": "20120726"
+    },
+    {
+      "id": "l-4sJNBHrhA",
+      "title": "Thai Football part 4",
+      "url": "https://www.youtube.com/watch?v=l-4sJNBHrhA",
+      "duration_seconds": 1792,
+      "upload_date": "20120803"
+    },
+    {
+      "id": "PIgMVLsroVo",
+      "title": "Thai Football part 5",
+      "url": "https://www.youtube.com/watch?v=PIgMVLsroVo",
+      "duration_seconds": 699,
+      "upload_date": "20120804"
+    },
+    {
+      "id": "OQ8yATHG3lI",
+      "title": "Thai Football part 6",
+      "url": "https://www.youtube.com/watch?v=OQ8yATHG3lI",
+      "duration_seconds": 2457,
+      "upload_date": "20120804"
+    },
+    {
+      "id": "iiCQHKA1BII",
+      "title": "Thai Football part 7",
+      "url": "https://www.youtube.com/watch?v=iiCQHKA1BII",
+      "duration_seconds": 1546,
+      "upload_date": "20120805"
+    }
+  ],
+  "raw_description": "คุยเรื่องฟุตบอลไทย\nโดย ภิญญพันธุ์ พจนะลาวัณย์ & อาจินต์ ทองอยู่คง\n\nThe Reading Room ต้อนรับเทศกาลฟุตบอลยูโร 2012 ด้วยโปรแกรมเสวนาและฉายภาพยนตร์ \"Spectacular Images: ฟุตบอล, ลัทธิของความคลั่งไคล้, และสุนทรียศาสตร์ของภาพตัวแทน\" ในวันเสาร์ที่ 23 & 30 มิถุนายน 2555 โดยจะเน้นประเด็นเกี่ยวกับแง่มุมด้านสังคมวัฒนธรรมที่เกี่ยวข้องกับกีฬาฟุตบอลทั้งในระดับโลกและระดับประเทศ\n\nสำหรับฟุตบอลไทย จะว่าด้วยลักษณะเด่นของฟุตบอลในประเทศไทย ในแง่ความเหมือนและต่างจากต่างประเทศทั้งในระดับภูมิภาคและระดับโลก โดยภิญญพันธุ์ พจนะลาวัณย์ จะกล่าวถึงประวัติศาสตร์ของฟุตบอลกับพื้นที่ทางสังคมที่แสดงให้เห็นถึงความเปลี่ยนแปลงของการแข่งขันและชมฟุตบอลในสังคมไทย และอาจินต์ ทองอยู่คง จะพูดคุยเรื่องปรากฏการณ์ความนิยมของฟุตบอลไทยในช่วงไม่กี่ปีที่ผ่านมา โดยเฉพาะกระแสแฟนฟุตบอลไทย",
+  "bilingual": {
+    "th": "คุยเรื่องฟุตบอลไทย\n\nThe Reading Room ต้อนรับเทศกาลฟุตบอลยูโร 2012 ด้วยโปรแกรมเสวนาและฉายภาพยนตร์ \"Spectacular Images: ฟุตบอล, ลัทธิของความคลั่งไคล้, และสุนทรียศาสตร์ของภาพตัวแทน\" ในวันเสาร์ที่ 23 & 30 มิถุนายน 2555 โดยจะเน้นประเด็นเกี่ยวกับแง่มุมด้านสังคมวัฒนธรรมที่เกี่ยวข้องกับกีฬาฟุตบอลทั้งในระดับโลกและระดับประเทศ\n\nสำหรับฟุตบอลไทย จะว่าด้วยลักษณะเด่นของฟุตบอลในประเทศไทย ในแง่ความเหมือนและต่างจากต่างประเทศทั้งในระดับภูมิภาคและระดับโลก โดยภิญญพันธุ์ พจนะลาวัณย์ จะกล่าวถึงประวัติศาสตร์ของฟุตบอลกับพื้นที่ทางสังคมที่แสดงให้เห็นถึงความเปลี่ยนแปลงของการแข่งขันและชมฟุตบอลในสังคมไทย และอาจินต์ ทองอยู่คง จะพูดคุยเรื่องปรากฏการณ์ความนิยมของฟุตบอลไทยในช่วงไม่กี่ปีที่ผ่านมา โดยเฉพาะกระแสแฟนฟุตบอลไทย",
+    "en": "On Thai Football\n\nThe Reading Room welcomes the UEFA Euro 2012 tournament with a programme of talks and film screenings under the title Spectacular Images: Football, the Cult of Popularity, and the Aesthetics of Representation, held on Saturdays 23 and 30 June 2012, focusing on the social and cultural dimensions of football at both the national and international level.\n\nThis session on Thai football examines the distinctive features of football in Thailand — how it resembles and differs from the game elsewhere, both regionally and globally. ภิญญพันธุ์ พจนะลาวัณย์ will discuss the history of football and the social spaces that reveal how the experience of playing and watching football has evolved in Thai society, while อาจินต์ ทองอยู่คง will address the phenomenon of Thai football's surge in popularity over recent years — particularly the growth of Thai football fan culture.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ภิญญพันธุ์ พจนะลาวัณย์",
+      "อาจินต์ ทองอยู่คง"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ภิญญพันธุ์ พจนะลาวัณย์ / Phinyaphan Phochanalawan",
+      "อาจินต์ ทองอยู่คง / Ajin Thongyukhong"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

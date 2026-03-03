@@ -1,0 +1,72 @@
+{
+  "event_number": 9,
+  "key": "Artist Talk : Dennis Balk : Bangkok Bound",
+  "display_title": "Artist Talk : Dennis Balk : Bangkok Bound",
+  "event_date": "2011-11-12",
+  "year": "2011",
+  "series": "Artist Talk",
+  "total_duration_seconds": 6174,
+  "video_count": 4,
+  "videos": [
+    {
+      "id": "zBXkghcR9i4",
+      "title": "Artist Talk : Dennis Balk : Bangkok Bound (part 1)",
+      "url": "https://www.youtube.com/watch?v=zBXkghcR9i4",
+      "duration_seconds": 1750,
+      "upload_date": "20111204"
+    },
+    {
+      "id": "0iMBTvFBUzs",
+      "title": "Artist Talk : Dennis Balk : Bangkok Bound (part 2)",
+      "url": "https://www.youtube.com/watch?v=0iMBTvFBUzs",
+      "duration_seconds": 1804,
+      "upload_date": "20111113"
+    },
+    {
+      "id": "xVNKuZZOOD8",
+      "title": "Artist Talk : Dennis Balk : Bangkok Bound (part 3)",
+      "url": "https://www.youtube.com/watch?v=xVNKuZZOOD8",
+      "duration_seconds": 1780,
+      "upload_date": "20111112"
+    },
+    {
+      "id": "971Aa8CBPBA",
+      "title": "Artist Talk : Dennis Balk : Bangkok Bound (part 4)",
+      "url": "https://www.youtube.com/watch?v=971Aa8CBPBA",
+      "duration_seconds": 840,
+      "upload_date": "20111113"
+    }
+  ],
+  "raw_description": "Artist Talk: Dennis Balk: Bangkok Bound (Pun Intended)!\nSaturday October 8th, 2pm\nThe Reading Room, Bangkok\n\nThe Reading Room, in collaboration with Gallery Ver and Thai Art Archives present an artist talk by Dennis Balk on the occasion of his first solo show in Bangkok at Gallery Ver (October 2-29, 2011). \n\nProvocateur, post-Dada performance artist, author, and multi-platform conceptualist, Dennis Balk - now Associate Professor of Media Art and Design at Bangkok University International College - started out his career as a core artist, archivist, and insider of the renowned alternative art hub, American Fine Arts, founded by the legendary gallerist Colin de Land (1955--2003). Dennis Balk will discuss his work since the early 1990s to the present, share his experiences at American Fine Arts, and reflect on future directions.",
+  "bilingual": {
+    "th": "Artist Talk: Dennis Balk: Bangkok Bound (เล่นคำด้วยความตั้งใจ!)\nเสาร์ที่ 8 ตุลาคม เวลา 14.00 น.\n\nThe Reading Room ร่วมกับ Gallery Ver และ Thai Art Archives นำเสนอ Artist Talk โดย Dennis Balk ในโอกาสที่เขาจัดนิทรรศการเดี่ยวครั้งแรกในกรุงเทพฯ ณ Gallery Ver (2-29 ตุลาคม 2011)\n\nDennis Balk คือศิลปิน นักเขียน และนักคิดแนวความคิดหลายแพลตฟอร์มแบบ post-Dada ผู้ยั่วยุ — ปัจจุบันดำรงตำแหน่ง รองศาสตราจารย์ด้าน Media Art and Design ที่ Bangkok University International College — เริ่มต้นอาชีพในฐานะศิลปิน นักจัดเก็บเอกสาร และบุคคลสำคัญภายในของ American Fine Arts ซึ่งเป็นศูนย์กลางศิลปะทางเลือกที่ได้รับการยอมรับอย่างสูง ก่อตั้งโดยแกลเลอริสต์ผู้เป็นตำนาน Colin de Land (1955–2003) Dennis Balk จะพูดคุยถึงผลงานของเขาตั้งแต่ต้นทศวรรษ 1990 จนถึงปัจจุบัน แบ่งปันประสบการณ์ใน American Fine Arts และสะท้อนถึงทิศทางในอนาคต",
+    "en": "Artist Talk: Dennis Balk: Bangkok Bound (Pun Intended)!\nSaturday October 8th, 2pm\nThe Reading Room, Bangkok\n\nThe Reading Room, in collaboration with Gallery Ver and Thai Art Archives present an artist talk by Dennis Balk on the occasion of his first solo show in Bangkok at Gallery Ver (October 2-29, 2011).\n\nProvocateur, post-Dada performance artist, author, and multi-platform conceptualist, Dennis Balk - now Associate Professor of Media Art and Design at Bangkok University International College - started out his career as a core artist, archivist, and insider of the renowned alternative art hub, American Fine Arts, founded by the legendary gallerist Colin de Land (1955--2003). Dennis Balk will discuss his work since the early 1990s to the present, share his experiences at American Fine Arts, and reflect on future directions.",
+    "source_th": "manual",
+    "source_en": "original"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Dennis Balk"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Dennis Balk"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Media / สื่อ"
+    ],
+    "partners": [
+      "Gallery Ver",
+      "Thai Art Archives"
+    ],
+    "formats": [
+      "Artist Talk"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": ""
+  }
+}

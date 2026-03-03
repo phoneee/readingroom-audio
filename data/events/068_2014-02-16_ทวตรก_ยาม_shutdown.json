@@ -1,0 +1,47 @@
+{
+  "event_number": 68,
+  "key": "#ทวิตรัก ยาม shutdown",
+  "display_title": "#ทวิตรัก ยาม shutdown",
+  "event_date": "2014-02-16",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 8762,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "xkoftH1rVcw",
+      "title": "#ทวิตรัก ยาม shutdown",
+      "url": "https://www.youtube.com/watch?v=xkoftH1rVcw",
+      "duration_seconds": 8762,
+      "upload_date": "20140216"
+    }
+  ],
+  "raw_description": "\"#ทวิตรัก\" เป็นความพยายามใช้ social media (Twitter) \nเป็นช่องทางถาม-ตอบ-ระบายเรื่องราวความรัก \n(แอบรักเธออยู่ในใจ บอกรัก/บอกเลิก รักเพื่อนผู้ชาย/รักเพื่อนผู้หญิง ฯลฯ)\n\nตลอดเวลากว่าสามปีที่ผ่านมา \"ทวิตรัก\" กลายเป็นพื้นที่ผู้คนได้ตั้งคำถามและช่วยให้จัดการกับประเด็น \"ส่วนตัว\" รวมถึงเข้าใจการเมืองเรื่องเพศสภาพซึ่งกำหนดตัวตนทางเพศตามความคาดหวังของสังคม\n\nReading Room ขอเชิญชวนชาวทวิตร่วมปรึกษาปัญหาหัวใจกับ\nอาจารย์ชลิดาภรณ์ กติกาทวิต: ผู้เข้าร่วมเขียนคำถามความยาวไม่เกิน \n140 คำ (เหมือน Twitter) โดยไม่เปิดเผยชื่อผู้ถาม อาจารย์ชลิดาภรณ์ตอบ \nส่วนผู้ชมเพลิดเพลินไปกับคำตอบ \"กระชากอารมณ์\" ของอาจารย์",
+  "bilingual": {
+    "th": "\" เป็นความพยายามใช้ social media (Twitter)\nเป็นช่องทางถาม-ตอบ-ระบายเรื่องราวความรัก\n(แอบรักเธออยู่ในใจ บอกรัก/บอกเลิก รักเพื่อนผู้ชาย/รักเพื่อนผู้หญิง ฯลฯ)\n\nตลอดเวลากว่าสามปีที่ผ่านมา \"ทวิตรัก\" กลายเป็นพื้นที่ผู้คนได้ตั้งคำถามและช่วยให้จัดการกับประเด็น \"ส่วนตัว\" รวมถึงเข้าใจการเมืองเรื่องเพศสภาพซึ่งกำหนดตัวตนทางเพศตามความคาดหวังของสังคม\n\nReading Room ขอเชิญชวนชาวทวิตร่วมปรึกษาปัญหาหัวใจกับ\nอาจารย์ชลิดาภรณ์ กติกาทวิต: ผู้เข้าร่วมเขียนคำถามความยาวไม่เกิน\n140 คำ (เหมือน Twitter) โดยไม่เปิดเผยชื่อผู้ถาม อาจารย์ชลิดาภรณ์ตอบ\nส่วนผู้ชมเพลิดเพลินไปกับคำตอบ \"กระชากอารมณ์\" ของอาจารย์",
+    "en": "An attempt to use social media (Twitter) as a channel for asking questions, sharing answers, and expressing feelings about love — secret crushes, confessions, breakups, same-sex love, and more.\n\nOver more than three years, \"ทวิตรัก\" (Twitlove) became a space where people could raise questions and work through \"personal\" issues, as well as come to understand the gender politics that shape sexual identity according to social expectations.\n\nThe Reading Room invited Twitter users to consult on matters of the heart with Ajarn Chalidaporn. Ground rules: participants write questions of no more than 140 characters (just like Twitter), anonymously. Ajarn Chalidaporn answers — and the audience enjoys her characteristically sharp and emotionally candid responses.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ชลิดาภรณ์ ส่งสัมพันธ์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ชลิดาภรณ์ ส่งสัมพันธ์"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Gender / เพศสภาพ",
+      "Society / สังคม",
+      "Media / สื่อ"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

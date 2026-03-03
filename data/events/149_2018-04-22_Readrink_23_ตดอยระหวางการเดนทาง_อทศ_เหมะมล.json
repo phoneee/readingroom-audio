@@ -1,0 +1,45 @@
+{
+  "event_number": 149,
+  "key": "Readrink #23 — \"ติดอยู่ระหว่างการเดินทาง\" อุทิศ เหมะมูล",
+  "display_title": "Readrink #23 — \"ติดอยู่ระหว่างการเดินทาง\" อุทิศ เหมะมูล",
+  "event_date": "2018-04-22",
+  "year": "2018",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7596,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "qAAAFQp3Ybo",
+      "title": "Readrink #23 — “ติดอยู่ระหว่างการเดินทาง” อุทิศ เหมะมูล",
+      "url": "https://www.youtube.com/watch?v=qAAAFQp3Ybo",
+      "duration_seconds": 7596,
+      "upload_date": "20180423"
+    }
+  ],
+  "raw_description": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 23 ชวนอ่านและล้อมวงคุยถึงหนังสือรวมเรื่องสั้นเล่มใหม่ของ อุทิศ เหมะมูล “ติดอยู่ระหว่างการเดินทาง” รวมเรื่องสั้น 7 เรื่อง เกี่ยวกับสถานที่ ประสบการณ์ และความทรงจำ ที่มีต่อเมืองต่างๆ ทั้งกรุงเทพฯ ปารีส เกียวโต โซล พาราณสี ฯลฯ บอกเล่าเรื่องราวการเดินทาง ความรัก และความลับของชีวิต ที่มีบางขณะ เรามักพอใจที่จะชะงักงัน ติดตรึงอยู่ระหว่างการเดินทาง และยังไม่อยากเดินจากไป\n\nวันอาทิตย์ที่ 22 เมษายน 2561 เวลา 14:00–16:00 ที่ห้องสมุด The Reading Room สีลมซอย 19",
+  "bilingual": {
+    "th": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 23 ชวนอ่านและล้อมวงคุยถึงหนังสือรวมเรื่องสั้นเล่มใหม่ของ อุทิศ เหมะมูล “ติดอยู่ระหว่างการเดินทาง” รวมเรื่องสั้น 7 เรื่อง เกี่ยวกับสถานที่ ประสบการณ์ และความทรงจำ ที่มีต่อเมืองต่างๆ ทั้งกรุงเทพฯ ปารีส เกียวโต โซล พาราณสี ฯลฯ บอกเล่าเรื่องราวการเดินทาง ความรัก และความลับของชีวิต ที่มีบางขณะ เรามักพอใจที่จะชะงักงัน ติดตรึงอยู่ระหว่างการเดินทาง และยังไม่อยากเดินจากไป",
+    "en": "Readrink Book Club #23 invites readers to discuss Stuck Between Journeys (ติดอยู่ระหว่างการเดินทาง), a new short story collection by อุทิศ เหมะมูล. The volume contains seven stories about places, experiences, and memories — taking in Bangkok, Paris, Kyoto, Seoul, Varanasi, and beyond. Each piece narrates travel, love, and the secrets of a life in which there are moments when we choose to pause, to remain suspended between one destination and the next, reluctant to move on.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ติดอยู่ระหว่างการเดินทาง"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

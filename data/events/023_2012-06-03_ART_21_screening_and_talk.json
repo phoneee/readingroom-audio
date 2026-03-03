@@ -1,0 +1,66 @@
+{
+  "event_number": 23,
+  "key": "ART 21 : screening and talk",
+  "display_title": "ART 21 : screening and talk",
+  "event_date": "2012-06-03",
+  "year": "2012",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 5293,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "raJC5xOT4Oc",
+      "title": "ART 21 : screening and talk part 1",
+      "url": "https://www.youtube.com/watch?v=raJC5xOT4Oc",
+      "duration_seconds": 1792,
+      "upload_date": "20120603"
+    },
+    {
+      "id": "BxAIq8F4HlY",
+      "title": "ART 21 : screening and talk part 2",
+      "url": "https://www.youtube.com/watch?v=BxAIq8F4HlY",
+      "duration_seconds": 1792,
+      "upload_date": "20120603"
+    },
+    {
+      "id": "utVPVZZIyCM",
+      "title": "ART 21 : screening and talk part 3",
+      "url": "https://www.youtube.com/watch?v=utVPVZZIyCM",
+      "duration_seconds": 1709,
+      "upload_date": "20120603"
+    }
+  ],
+  "raw_description": "Art:21 Screening & Talk \nWith Thasnai Sethaseree & Takerng Pattanopas\n\nฉายภาพยนตร์สารคดี Art:21 และร่วมเสวนา \nกับ อ.ทัศนัย เศรษฐเสรี และ อ.เถกิง พัฒโนภาษ\n\nThe Reading Room, in collaboration with PBS (US), presents a screening of a seminal contemporary art television program, Art in the 21st Century (Art:21) from the latest season premiered in the US in April. The Reading Room will screen an episode called \"Change\" features artists who bear witness, through their work, to transformation—cultural, material, and aesthetic—and actively engage communities as collaborators and subjects. The artists profiled are Ai Weiwei, Catherine Opie, and El Anatsui.\n\nThe screening will be followed by a discussion with Thasnai Sethaseree (Media Art Department, Chiang Mai University) and Takerng Pattanopas (Faculty of Architecture, Chulalongkorn University).\n\nThe Reading Room ร่วมกับสถานี PBS (สหรัฐอเมริกา) จัดฉายภาพยนตร์สารคดีเกี่ยวกับศิลปะร่วมสมัย Art in the 21st Century (Art:21) จากซีซั่นล่าสุดที่เพิ่งจะออกอากาศในสหรัฐอเมริกาในเดือนเมษายนที่ผ่านมา โดย The Reading Room จะจัดฉายสารคดี episode \"Change\" ซึ่งเป็นตอนที่เกี่ยวกับศิลปินที่พยายามสร้างความเปลี่ยนแปลงทางความคิดทัศนคติและสั­งคม การเมือง ผ่านงานของพวกเขา ผ่านแนวคิดและผลงานของศิลปินสามคนคือ Ai Weiwei, Catherine Opie และ El Anatsui \n\nนอกจากนี้ หลังการฉายภาพยนตร์สารคดี จะมีการร่วมพูดคุยกับ อ.ทัศนัย เศรษฐเสรี (ภาควิชา Media Art มหาวิทยาลัยเชียงใหม่) และ อ.เถกิง พัฒโนภาษ (คณะสถาปัตยกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย)",
+  "bilingual": {
+    "th": "The Reading Room ร่วมกับสถานี PBS ร่วมจัดฉายรายการ ART 21 ตอน \"Change\" ซึ่งนำเสนอศิลปินร่วมสมัยที่ทำงานเกี่ยวกับความเปลี่ยนแปลงในรูปแบบต่างๆ ตั้งแต่ศิลปะจัดวาง ภาพถ่าย ไปจนถึงศิลปะสื่อผสม พร้อมเสวนาหลังฉาย",
+    "en": "The Reading Room will screen an episode called \"Change,\" which features artists working in diverse media — from installation and photography to mixed media — exploring how art responds to transformation. A post-screening discussion follows.",
+    "source_th": "manual",
+    "source_en": "manual"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ทัศนัย เศรษฐเสรี",
+      "เถกิง พัฒโนภาษ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ทัศนัย เศรษฐเสรี",
+      "เถกิง พัฒโนภาษ"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Film / ภาพยนตร์",
+      "Media / สื่อ"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา",
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

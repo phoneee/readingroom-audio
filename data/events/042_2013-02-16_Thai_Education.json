@@ -1,0 +1,62 @@
+{
+  "event_number": 42,
+  "key": "Thai Education",
+  "display_title": "Thai Education",
+  "event_date": "2013-02-16",
+  "year": "2013",
+  "series": "Other",
+  "total_duration_seconds": 8643,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "m_g4hzglBgU",
+      "title": "Thai Education Part 1",
+      "url": "https://www.youtube.com/watch?v=m_g4hzglBgU",
+      "duration_seconds": 3876,
+      "upload_date": "20130302"
+    },
+    {
+      "id": "b_UALe8tjaw",
+      "title": "Thai Education Part 2",
+      "url": "https://www.youtube.com/watch?v=b_UALe8tjaw",
+      "duration_seconds": 4767,
+      "upload_date": "20130303"
+    }
+  ],
+  "raw_description": "โรงเรียน การศึกษา และการครอบงําทางวัฒนธรรม\nร่วมเสวนาโดย ชาตรี ประกิตนนทการ และ ภิญญพันธุ์ พจนะลาวัณย์\nดําเนินรายการโดย พิเชฐ ยิ่งเกียรติคุณ จาก Siam Intelligence Unit\nวันเสาร์ที่ 16 กุมภาพันธ์ 2556 เวลา 16.00 น. เป็นต้นไป\n\nหากนับกันตามจริงเราใช้เวลาอยู่ในรั้วโรงเรียนและระบบการศึกษาอย่างน้อย 12 ปี ดังนั้น \"โรงเรียน\" นอกจาทําหน้าที่ในการให้ความรู้ ให้การศึกษา และให้โอกาสแล้ว โรงเรียนยังทําหน้าที่เสมือน \"เครื่องมือในการควบคุมของรัฐ\" ด้วย โดยผ่านเนื้อหาของแบบเรียน ตํารา กฏระเบียบ พื้นที่ สถาปัตยกรรม เครื่องแบบ กฏระเบียบ หรือแม้กระทั่งทรงผม หรือจะเรียกได้ว่ารัฐใช้โรงเรียนในการ \"สถาปนาอํานาจนําทางวัฒนธรรม\" เพ่ือขัดเกลา ให้ประชาชนของรัฐมีความ \"เชื่อง\" ต่อผู้มีอํานาจในรัฐหรือประเทศนั้นๆ\n\nในโอกาสที่ประเทศไทยมีความเปลี่ยนแปลงในเรื่องการศึกษาที่น่าสนใจในช่วงต้นปี 2556 ทั้งเรื่องทรงผมนักเรียน เครื่องแบบนักเรียน และการลดการให้การบ้านนักเรียน The Reading Room จึงชวนสองนักวิชาการ อ.ชาตรี ประกิตนนทการ (คณะสถาปัตยกรรมศาสตร์ มหาวิทยาลัยศิลปากร) และ อ.ภิญญพันธุ์ พจนะลาวัณย์ (คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยราชภัฎลําปาง) มาร่วมสนทนาเรื่องความสัมพันธ์ของระบบการศึกษาไทยกับอํานาจรัฐและการครอบงำวัฒนธรรม",
+  "bilingual": {
+    "th": "โรงเรียน การศึกษา และการครอบงําทางวัฒนธรรม\nร่วมเสวนาโดย ชาตรี ประกิตนนทการ และ ภิญญพันธุ์ พจนะลาวัณย์\nดําเนินรายการโดย พิเชฐ ยิ่งเกียรติคุณ จาก Siam Intelligence Unit\n\nหากนับกันตามจริงเราใช้เวลาอยู่ในรั้วโรงเรียนและระบบการศึกษาอย่างน้อย 12 ปี ดังนั้น \"โรงเรียน\" นอกจากทำหน้าที่ในการให้ความรู้ ให้การศึกษา และให้โอกาสแล้ว โรงเรียนยังทําหน้าที่เสมือน \"เครื่องมือในการควบคุมของรัฐ\" ด้วย โดยผ่านเนื้อหาของแบบเรียน ตํารา กฏระเบียบ พื้นที่ สถาปัตยกรรม เครื่องแบบ กฏระเบียบ หรือแม้กระทั่งทรงผม หรือจะเรียกได้ว่ารัฐใช้โรงเรียนในการ \"สถาปนาอํานาจนําทางวัฒนธรรม\" เพื่อขัดเกลา ให้ประชาชนของรัฐมีความ \"เชื่อง\" ต่อผู้มีอํานาจในรัฐหรือประเทศนั้นๆ\n\nในโอกาสที่ประเทศไทยมีความเปลี่ยนแปลงในเรื่องการศึกษาที่น่าสนใจในช่วงต้นปี 2556 ทั้งเรื่องทรงผมนักเรียน เครื่องแบบนักเรียน และการลดการให้การบ้านนักเรียน The Reading Room จึงชวนสองนักวิชาการ อ.ชาตรี ประกิตนนทการ (คณะสถาปัตยกรรมศาสตร์ มหาวิทยาลัยศิลปากร) และ อ.ภิญญพันธุ์ พจนะลาวัณย์ (คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยราชภัฎลําปาง) มาร่วมสนทนาเรื่องความสัมพันธ์ของระบบการศึกษาไทยกับอํานาจรัฐและการครอบงำวัฒนธรรม",
+    "en": "Schools, Education, and Cultural Domination\nWith ชาตรี ประกิตนนทการ and ภิญญพันธุ์ พจนะลาวัณย์\nModerated by พิเชฐ ยิ่งเกียรติคุณ from Siam Intelligence Unit\n\nOver the course of our lives we spend at least twelve years inside school walls and educational systems. Beyond its functions of imparting knowledge, education, and opportunity, the school also operates as an instrument of state control — through the content of textbooks, regulations, spaces, architecture, uniforms, rules, and even hairstyles. In other words, the state uses schools to establish cultural hegemony, socialising citizens into compliance with those who hold power.\n\nIn the context of several notable educational policy shifts in Thailand in early 2013 — touching on student hairstyles, school uniforms, and the reduction of homework — The Reading Room invites two scholars, อ.ชาตรี ประกิตนนทการ (Faculty of Architecture, Silpakorn University) and อ.ภิญญพันธุ์ พจนะลาวัณย์ (Faculty of Humanities and Social Sciences, Rajabhat University Lampang), to discuss the relationship between the Thai educational system, state power, and cultural domination.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ชาตรี ประกิตนนทการ",
+      "ภิญญพันธุ์ พจนะลาวัณย์"
+    ],
+    "moderators_raw": [
+      "พิเชฐ ยิ่งเกียรติคุณ"
+    ],
+    "display_speakers": [
+      "ชาตรี ประกิตนนทการ",
+      "ภิญญพันธุ์ พจนะลาวัณย์ / Phinyaphan Phochanalawan"
+    ],
+    "display_moderators": [
+      "พิเชฐ ยิ่งเกียรติคุณ / Pichet Yingkiatkun"
+    ],
+    "topics": [
+      "Education / การศึกษา",
+      "Politics / การเมือง",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "16:00",
+    "venue": ""
+  }
+}

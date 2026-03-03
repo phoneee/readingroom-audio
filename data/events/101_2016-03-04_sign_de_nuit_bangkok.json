@@ -1,0 +1,63 @@
+{
+  "event_number": 101,
+  "key": "sign de nuit bangkok",
+  "display_title": "sign de nuit bangkok",
+  "event_date": "2016-03-04",
+  "year": "2016",
+  "series": "Filmvirus",
+  "total_duration_seconds": 3836,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "bIHyGE4dkAI",
+      "title": "sign de nuit bangkok part1",
+      "url": "https://www.youtube.com/watch?v=bIHyGE4dkAI",
+      "duration_seconds": 1365,
+      "upload_date": "20160315"
+    },
+    {
+      "id": "hMVeKeST0dk",
+      "title": "sign de nuit bangkok part2",
+      "url": "https://www.youtube.com/watch?v=hMVeKeST0dk",
+      "duration_seconds": 1436,
+      "upload_date": "20160316"
+    },
+    {
+      "id": "2m8WFIHfwaY",
+      "title": "sign de nuit bangkok part3",
+      "url": "https://www.youtube.com/watch?v=2m8WFIHfwaY",
+      "duration_seconds": 1035,
+      "upload_date": "20160316"
+    }
+  ],
+  "raw_description": "4 - 6 มีนาคม 2559 ที่ The Reading Room สีลม ซอย 19\n\nFilmvirus ร่วมกับ The Reading Room และ เทศกาลภาพยนตร์นานาชาติ Signes de Nuit ขอเรียนเชิญทุกท่านรับชมโปรแกรมเทศกาลภาพยนตร์นานาชาติ Signes de Nuit in Bangkok\n\nพบกับ หนังสั้น สารคดี หนังทดลอง จากทั่วทุกมุมโลก คัดสรรมาเป็นพิเศษ เพื่อผู้ชมชาวไทย หกโปรแกรมสามวันเต็มอิ่ม พร้อมทั้งร่วมโหวตหนังทีทุกท่านชื่นชอบในเทศกาลนี้ โดยในปีนี้นอกจากจะได้ชมภาพยนตร์แล้ว เรายังได้รับเกียรติจาก คุณ Dieter Wieczorek มาพูดคุยแลกเปลี่ยนด้วยตนเอง",
+  "bilingual": {
+    "th": "4 - 6 มีนาคม 2559\n\nFilmvirus ร่วมกับ The Reading Room และ เทศกาลภาพยนตร์นานาชาติ Signes de Nuit ขอเรียนเชิญทุกท่านรับชมโปรแกรมเทศกาลภาพยนตร์นานาชาติ Signes de Nuit in Bangkok\n\nพบกับ หนังสั้น สารคดี หนังทดลอง จากทั่วทุกมุมโลก คัดสรรมาเป็นพิเศษ เพื่อผู้ชมชาวไทย หกโปรแกรมสามวันเต็มอิ่ม พร้อมทั้งร่วมโหวตหนังทีทุกท่านชื่นชอบในเทศกาลนี้ โดยในปีนี้นอกจากจะได้ชมภาพยนตร์แล้ว เรายังได้รับเกียรติจาก คุณ Dieter Wieczorek มาพูดคุยแลกเปลี่ยนด้วยตนเอง",
+    "en": "4–6 March 2016\n\nFilmvirus, The Reading Room, and the Signes de Nuit International Film Festival are pleased to invite you to the Signes de Nuit in Bangkok programme.\n\nJoin us for short films, documentaries, and experimental works from around the world, specially curated for Thai audiences — six programmes over three full days. Attendees are also invited to vote for their favourite film in the festival. This year, in addition to the screenings, we were honoured to welcome Dieter Wieczorek for a talk and discussion in person.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Dieter Wieczorek"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Dieter Wieczorek"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์"
+    ],
+    "partners": [
+      "Film Virus"
+    ],
+    "formats": [
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

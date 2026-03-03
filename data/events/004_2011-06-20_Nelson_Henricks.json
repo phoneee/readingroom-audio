@@ -1,0 +1,56 @@
+{
+  "event_number": 4,
+  "key": "Nelson Henricks",
+  "display_title": "Nelson Henricks",
+  "event_date": "2011-06-20",
+  "year": "2011",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 1556,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Rl6nx2rS1sI",
+      "title": "Nelson Henricks (part 1)",
+      "url": "https://www.youtube.com/watch?v=Rl6nx2rS1sI",
+      "duration_seconds": 836,
+      "upload_date": "20110620"
+    },
+    {
+      "id": "-les48aFxAI",
+      "title": "Nelson Henricks (part 2)",
+      "url": "https://www.youtube.com/watch?v=-les48aFxAI",
+      "duration_seconds": 720,
+      "upload_date": "20110620"
+    }
+  ],
+  "raw_description": "Nelson Henricks 8 short work screening and talk at the reading room bangkok on 26th November 2010.",
+  "bilingual": {
+    "th": "การฉายภาพยนตร์และเสวนากับ Nelson Henricks ศิลปินวีดีโออาร์ตชาวแคนาดา สำรวจงานวิดีโอทดลองและแนวทางปฏิบัติของเขา จัดขึ้นในปี 2554",
+    "en": "A screening and talk with Nelson Henricks, Canadian video artist, exploring his experimental video works and practice, held in 2011.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Nelson Henricks"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Nelson Henricks"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Film / ภาพยนตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Screening / ฉายภาพยนตร์",
+      "Artist Talk"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "event_number": 113,
+  "key": "Readrink#7 อ่าน ชิทแตก 21 august",
+  "display_title": "Readrink#7 อ่าน ชิทแตก 21 august",
+  "event_date": "2016-08-21",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 6911,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "UXiG1lwbTQw",
+      "title": "Readrink#7 อ่าน ชิทแตก 21 august part 1",
+      "url": "https://www.youtube.com/watch?v=UXiG1lwbTQw",
+      "duration_seconds": 3742,
+      "upload_date": "20161023"
+    },
+    {
+      "id": "vHjC6t3bZiU",
+      "title": "Readrink#7 อ่าน ชิทแตก 21 august part 2",
+      "url": "https://www.youtube.com/watch?v=vHjC6t3bZiU",
+      "duration_seconds": 3169,
+      "upload_date": "20161023"
+    }
+  ],
+  "raw_description": "Readrink#7 อ่าน ชิทแตก\nวันอาทิตย์ที่ 21 สิงหาคม\n\nชิทแตก! นวนิยายเรื่องยาวเรื่องแรกของ ปราบดา หยุ่น ในหลากหลายแง่มุมแบบเอ็กสตรีมลี่เปิดกว้าง พร้อมจิบเบียร์เย็นๆ ไปกับเราได้ที่ Readrink บุ๊คคลับปาร์ตี้ครั้งที่ 7 กับ อรรถ บุนนาค และ Readery ที่ The Reading Room, Bangkok สีลม 19",
+  "bilingual": {
+    "th": "ชิทแตก! นวนิยายเรื่องยาวเรื่องแรกของ ปราบดา หยุ่น ในหลากหลายแง่มุมแบบเอ็กสตรีมลี่เปิดกว้าง พร้อมจิบเบียร์เย็นๆ ไปกับเราได้ที่ Readrink บุ๊คคลับปาร์ตี้ครั้งที่ 7 กับ อรรถ บุนนาค และ Readery",
+    "en": "Readrink Book Club Party #7 presents a discussion of Shit Taek (ชิทแตก), the first full-length novel by Prabda Yoon, approached from multiple angles with extreme openness — over a cold beer, with อรรถ บุนนาค and Readery.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "Readery"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ชิทแตก"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

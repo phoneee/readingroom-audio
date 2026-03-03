@@ -1,0 +1,50 @@
+{
+  "event_number": 63,
+  "key": "re:reading group 6 ปากไก่และใบเรือ",
+  "display_title": "re:reading group 6 ปากไก่และใบเรือ",
+  "event_date": "2013-12-02",
+  "year": "2013",
+  "series": "re:reading",
+  "total_duration_seconds": 5577,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "QB6PMShpgH0",
+      "title": "re:reading group 6 ปากไก่และใบเรือ",
+      "url": "https://www.youtube.com/watch?v=QB6PMShpgH0",
+      "duration_seconds": 5577,
+      "upload_date": "20131202"
+    }
+  ],
+  "raw_description": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม ใน \"Re:Reading Group\" มาร่วมกัน \"อ่านใหม่\" และ \"ตีความใหม่\" โดยครั้งที่หกนี้จะเป็นการตีความใหม่ตัวบทด้านประวัติศาสตร์ โดยเลือกอ่านบทความสำคัญในสาขานี้คือ บทความ\"สุนทรภู่: มหากวีกระฎุมพี\" ในปากไก่และใบเรือ โดย นิธิ เอียวศรีวงศ์ ร่วมอ่านและแลกเปลี่ยนโดย เกษม เพ็ญภินันท์ และภิญญพันธุ์ พจนะลาวัณย์",
+  "bilingual": {
+    "th": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม ใน \"Re:Reading Group\" มาร่วมกัน \"อ่านใหม่\" และ \"ตีความใหม่\" โดยครั้งที่หกนี้จะเป็นการตีความใหม่ตัวบทด้านประวัติศาสตร์ โดยเลือกอ่านบทความสำคัญในสาขานี้คือ บทความ\"สุนทรภู่: มหากวีกระฎุมพี\" ในปากไก่และใบเรือ โดย นิธิ เอียวศรีวงศ์ ร่วมอ่านและแลกเปลี่ยนโดย เกษม เพ็ญภินันท์ และภิญญพันธุ์ พจนะลาวัณย์",
+    "en": "The Reading Room invited readers of social and cultural texts to join Re:Reading Group for a session of re-reading and reinterpretation. For its sixth instalment, the group focused on a key work of Thai historiography: the essay \"Sunthorn Phu: The Bourgeois Poet\" from Pak Kai lae Bai Ruea by Nithi Aeusrivongse, read and discussed with Kasem Phenpinan and Phinya Phan Phochana Lawam.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "เกษม เพ็ญภินันท์",
+      "ภิญญพันธุ์ พจนะลาวัณย์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "เกษม เพ็ญภินันท์ / Kasem Phenphinant",
+      "ภิญญพันธุ์ พจนะลาวัณย์ / Phinyaphan Phochanalawan"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Reading Group"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

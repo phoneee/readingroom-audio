@@ -1,0 +1,72 @@
+{
+  "event_number": 131,
+  "key": "Readrink #15 — ยอดนักสืบ อาเคจิ โคโกะโร",
+  "display_title": "Readrink #15 — ยอดนักสืบ อาเคจิ โคโกะโร",
+  "event_date": "2017-05-28",
+  "year": "2017",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 9604,
+  "video_count": 4,
+  "videos": [
+    {
+      "id": "jjF3iDqNER8",
+      "title": "Readrink #15 — ยอดนักสืบ อาเคจิ โคโกะโร PART1",
+      "url": "https://www.youtube.com/watch?v=jjF3iDqNER8",
+      "duration_seconds": 3059,
+      "upload_date": "20170530"
+    },
+    {
+      "id": "kIfrZ7L6BiU",
+      "title": "Readrink #15 — ยอดนักสืบ อาเคจิ โคโกะโร PART2",
+      "url": "https://www.youtube.com/watch?v=kIfrZ7L6BiU",
+      "duration_seconds": 407,
+      "upload_date": "20170530"
+    },
+    {
+      "id": "m8KZ0gOqGWo",
+      "title": "Readrink #15 — ยอดนักสืบ อาเคจิ โคโกะโร PART3",
+      "url": "https://www.youtube.com/watch?v=m8KZ0gOqGWo",
+      "duration_seconds": 3700,
+      "upload_date": "20170530"
+    },
+    {
+      "id": "xUeDKF18a7Y",
+      "title": "Readrink #15 — ยอดนักสืบ อาเคจิ โคโกะโร PART4",
+      "url": "https://www.youtube.com/watch?v=xUeDKF18a7Y",
+      "duration_seconds": 2438,
+      "upload_date": "20170530"
+    }
+  ],
+  "raw_description": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 15 ชวนอ่านคดีฆาตกรรมของยอดนักสืบ อาเคจิ โคโกะโร นักสืบชื่อดังของ เอโดะงาวะ รัมโป บิดาแห่งนวนิยายสืบสวนสยองขวัญของญี่ปุ่น\n\nฆาตกรรมบนเนิน D (สนพ. JLIT)\nดวงดาวแห่งเงามืด (สนพ. JLIT)\nแมงมุมสังหาร (สนพ. JCLASS)\nปริศนากิ้งก่าดำ (สนพ. JCLASS)\n\nมาร่วมไขคดีกับ อาเคจิ โคโกะโร และพูดคุยในประเด็นที่ว่า “ประเทศที่เจริญแล้วล้วนต้องมีอาชญนิยาย” นำสนทนาโดย อรรถ บุนนาค (ผู้แปล ฆาตกรรมบนเนิน D)\n\nวันอาทิตย์ที่ 28 พฤษภาคม 2560 เวลา 14:00–17:00 ที่ห้องสมุด The Reading Room สีลมซอย 19",
+  "bilingual": {
+    "th": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 15 ชวนอ่านคดีฆาตกรรมของยอดนักสืบ อาเคจิ โคโกะโร นักสืบชื่อดังของ เอโดะงาวะ รัมโป บิดาแห่งนวนิยายสืบสวนสยองขวัญของญี่ปุ่น\n\nฆาตกรรมบนเนิน D (สนพ. JLIT)\nดวงดาวแห่งเงามืด (สนพ. JLIT)\nแมงมุมสังหาร (สนพ. JCLASS)\nปริศนากิ้งก่าดำ (สนพ. JCLASS)\n\nมาร่วมไขคดีกับ อาเคจิ โคโกะโร และพูดคุยในประเด็นที่ว่า “ประเทศที่เจริญแล้วล้วนต้องมีอาชญนิยาย” นำสนทนาโดย อรรถ บุนนาค (ผู้แปล ฆาตกรรมบนเนิน D)",
+    "en": "Readrink Book Club #15 invites readers to solve cases alongside the celebrated detective Akechi Kogoro, the iconic creation of Edogawa Ranpo — the father of Japanese mystery and horror fiction. Titles discussed include Murder on the D Hill (JLIT), The Star of the Dark (JLIT), The Spider Man (JCLASS), and The Enigma of the Black Lizard (JCLASS). The session also takes up the proposition that \"every civilised country must have crime fiction,\" and is facilitated by อรรถ บุนนาค, translator of Murder on the D Hill.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "display_speakers": [],
+    "display_moderators": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "JLIT Publishing"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ประเทศที่เจริญแล้วล้วนต้องมีอาชญนิยาย"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

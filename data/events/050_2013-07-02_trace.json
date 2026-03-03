@@ -1,0 +1,52 @@
+{
+  "event_number": 50,
+  "key": "trace",
+  "display_title": "trace",
+  "event_date": "2013-07-02",
+  "year": "2013",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 5173,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "0HrJvj8igeU",
+      "title": "trace",
+      "url": "https://www.youtube.com/watch?v=0HrJvj8igeU",
+      "duration_seconds": 5173,
+      "upload_date": "20130702"
+    }
+  ],
+  "raw_description": "\"Trace\" is about an 80-year old woman's wish to leave Istanbul and be buried in her homeland that she was forced to flee 20 years ago, and her son's determination to make this wish happens. The film is a journey into past traditions, beliefs and taboos; and brings forth examination of Turkish society's ethnic and cultural divides.\n\n\"Trace\" is Tayfur Aydin's first full-length feature film and has won the Special Jury Prize at the 2012 Istanbul Film Festival; participated in London Turkish Film Festival, and Canada Pomegranate International Film Festival. \n\nภายใต้สังคมตุรกีที่สลับซับซ้อน น้อยคนนักที่จะรับรู้ความเป็นไปของชนกลุ่มน้อยที่ใหญ่เป็นอันดับสองของประเทศอย่าง เผ่าพันธุ์เคอร์ดิช The Reading Room และ FilmVirus ชวนชมภาพยนตร์ตุรกีเรื่องเยี่ยม Trace พร้อม Q&A กับผู้กำกับ ไทเฟอร์ ไอดิน\n\nTrace เป็นหนังตุรกีที่กำกับโดย ผู้กำกับเชื้อชาติเคิร์ดจากเมืองแบทแมน ชื่อ ไทเฟอร์ ไอดิน (Tayfur Aydin) ว่าด้วยเรื่องราวของ หญิงชราชาวเคิร์ดที่ซ่อนความลับเกี่ยวกับชาติพันธุ์ของเธอมาเป็นเวลานาน เมื่อถึงวาระสุดท้ายของชีวิตเธอจึงอยากกลับไปสู่อ้อมกอดพระเจ้าที่บ้านเกิด เธอจึงขอให้ลูกชาย และหลานชายของเธอพาเธอกลับไปยังดินแดนที่ความทรงจำลางเลือนทุกที\n\nTrace ได้รับรางวัล ดนตรีประกอบยอดเยี่ยม และรางวัล Jury Prize จากเทศกาล ภาพยนตร์นานาชาติแห่ง อิสตันบูล ในปี 2012 และยังได้รับเลือกฉายที่เทศกาล London Turkish Film Festival ครั้งที่ 18 และเทศกาล Canada Pomegranate International Film Festival",
+  "bilingual": {
+    "th": "ภายใต้สังคมตุรกีที่สลับซับซ้อน น้อยคนนักที่จะรับรู้ความเป็นไปของชนกลุ่มน้อยที่ใหญ่เป็นอันดับสองของประเทศอย่าง เผ่าพันธุ์เคอร์ดิช The Reading Room และ FilmVirus ชวนชมภาพยนตร์ตุรกีเรื่องเยี่ยม Trace พร้อม Q&A กับผู้กำกับ ไทเฟอร์ ไอดิน\n\nTrace เป็นหนังตุรกีที่กำกับโดย ผู้กำกับเชื้อชาติเคิร์ดจากเมืองแบทแมน ชื่อ ไทเฟอร์ ไอดิน (Tayfur Aydin) ว่าด้วยเรื่องราวของ หญิงชราชาวเคิร์ดที่ซ่อนความลับเกี่ยวกับชาติพันธุ์ของเธอมาเป็นเวลานาน เมื่อถึงวาระสุดท้ายของชีวิตเธอจึงอยากกลับไปสู่อ้อมกอดพระเจ้าที่บ้านเกิด เธอจึงขอให้ลูกชาย และหลานชายของเธอพาเธอกลับไปยังดินแดนที่ความทรงจำลางเลือนทุกที\n\nTrace ได้รับรางวัล ดนตรีประกอบยอดเยี่ยม และรางวัล Jury Prize จากเทศกาล ภาพยนตร์นานาชาติแห่ง อิสตันบูล ในปี 2012 และยังได้รับเลือกฉายที่เทศกาล London Turkish Film Festival ครั้งที่ 18 และเทศกาล Canada Pomegranate International Film Festival",
+    "en": "Trace is Tayfur Aydin's first full-length feature film and has won the Special Jury Prize at the 2012 Istanbul Film Festival; it also participated in the London Turkish Film Festival and the Canada Pomegranate International Film Festival.\n\nBeneath the complexities of Turkish society, few outsiders are aware of the circumstances of the country's second-largest ethnic minority, the Kurdish people. The Reading Room and FilmVirus invited audiences to screen the outstanding Turkish film Trace, followed by a Q&A with director Tayfur Aydin.\n\nTrace is a Turkish film directed by Tayfur Aydin, a Kurdish filmmaker from the city of Batman, telling the story of an elderly Kurdish woman who has long concealed her ethnic identity. As she nears the end of her life, she wishes to return to her birthplace to be close to God, and asks her son and grandson to take her back to the land of her fading memories.\n\nTrace won the Best Music Score and Jury Prize at the 2012 Istanbul International Film Festival, and was selected for screening at the 18th London Turkish Film Festival and the Canada Pomegranate International Film Festival.",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Tayfur Aydin"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Tayfur Aydin"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Human Rights / สิทธิมนุษยชน"
+    ],
+    "partners": [
+      "Film Virus"
+    ],
+    "formats": [
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [
+      "Trace"
+    ],
+    "event_time": "",
+    "venue": ""
+  }
+}

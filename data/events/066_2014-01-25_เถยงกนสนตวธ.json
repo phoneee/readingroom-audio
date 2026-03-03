@@ -1,0 +1,54 @@
+{
+  "event_number": 66,
+  "key": "เถียงกันสันติวิธี",
+  "display_title": "เถียงกันสันติวิธี",
+  "event_date": "2014-01-25",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 8532,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "FMpdHH3Pru8",
+      "title": "เถียงกันสันติวิธี part1",
+      "url": "https://www.youtube.com/watch?v=FMpdHH3Pru8",
+      "duration_seconds": 5337,
+      "upload_date": "20140125"
+    },
+    {
+      "id": "F1yrhg3-mQ8",
+      "title": "เถียงกันสันติวิธี part2",
+      "url": "https://www.youtube.com/watch?v=F1yrhg3-mQ8",
+      "duration_seconds": 3195,
+      "upload_date": "20140125"
+    }
+  ],
+  "raw_description": "ศูนย์ข่าวสารสันติภาพร่วมกับ The Reading Room เชิญร่วมเวทีสนทนา ว่าด้วยปฏิบัติการสันติวิธีท่ามกลางความขัดแย้งในสังคมไทย จากมุมมองของกลุ่มคนทำงานด้านนี้แต่ต่างมิติกัน ทั้งกลุ่มพอกันที! ที่ริเริ่มกิจกรรมจุดเทียนเพื่อปฏิเสธการสร้างเงื่อนไขความรุนแรง กลุ่ม We Vote ที่รณรงค์สนับสนุนการเลือกตั้งเพื่อเป็นเครื่องมือการเปลี่ยนผ่านความขัดแย้งอย่างสันติ กลุ่ม iPeace ที่ร่วมขับเคลื่อนแนวคิดปฏิบัติการสันติวิธีเชิงสร้างสรรค์ รวมถึงกลุ่มสันติอาสาสักขีพยานซึ่งบันทึกสถานการณ์ความรุนแรงและเข้าแทรกแซงในฐานะ \"คนกลาง\" ตัวแทนกลุ่มเหล่านี้ยังร่วมกันถกเถียงพูดคุยเกี่ยวกับปฏิบัติการสันติวิธีของกลุ่มกปปส. โดยเฉพาะปฏิบัติการ shutdown",
+  "bilingual": {
+    "th": "ศูนย์ข่าวสารสันติภาพร่วมกับ The Reading Room เชิญร่วมเวทีสนทนา ว่าด้วยปฏิบัติการสันติวิธีท่ามกลางความขัดแย้งในสังคมไทย จากมุมมองของกลุ่มคนทำงานด้านนี้แต่ต่างมิติกัน ทั้งกลุ่มพอกันที! ที่ริเริ่มกิจกรรมจุดเทียนเพื่อปฏิเสธการสร้างเงื่อนไขความรุนแรง กลุ่ม We Vote ที่รณรงค์สนับสนุนการเลือกตั้งเพื่อเป็นเครื่องมือการเปลี่ยนผ่านความขัดแย้งอย่างสันติ กลุ่ม iPeace ที่ร่วมขับเคลื่อนแนวคิดปฏิบัติการสันติวิธีเชิงสร้างสรรค์ รวมถึงกลุ่มสันติอาสาสักขีพยานซึ่งบันทึกสถานการณ์ความรุนแรงและเข้าแทรกแซงในฐานะ \"คนกลาง\" ตัวแทนกลุ่มเหล่านี้ยังร่วมกันถกเถียงพูดคุยเกี่ยวกับปฏิบัติการสันติวิธีของกลุ่มกปปส. โดยเฉพาะปฏิบัติการ shutdown",
+    "en": "The Peace Information Centre and The Reading Room invited participants to a forum on nonviolent action amid conflict in Thai society, drawing on the perspectives of groups working in this field from different dimensions: the Por Kan Thi! (Enough Already!) group, which initiated candlelight activities to refuse the creation of conditions for violence; the We Vote group, which advocates for elections as a tool for peaceful transition through conflict; the iPeace group, which advances creative nonviolent action; and the Santhi Asa Sakkhi Phayan group (Peace Volunteer Witnesses), which documents situations of violence and intervenes as neutral third parties. Representatives of these groups also debated nonviolent practice in relation to the PDRC (People's Democratic Reform Committee), particularly the shutdown operations.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Politics / การเมือง",
+      "Society / สังคม",
+      "Human Rights / สิทธิมนุษยชน"
+    ],
+    "partners": [
+      "ศูนย์ข่าวสารสันติภาพ"
+    ],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

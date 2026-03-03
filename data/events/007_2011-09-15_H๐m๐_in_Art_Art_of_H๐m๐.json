@@ -1,0 +1,58 @@
+{
+  "event_number": 7,
+  "key": "H๐m๐ in Art : Art of H๐m๐",
+  "display_title": "H๐m๐ in Art : Art of H๐m๐",
+  "event_date": "2011-09-15",
+  "year": "2011",
+  "series": "Other",
+  "total_duration_seconds": 3378,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "xvgb8VoaT3k",
+      "title": "H๐m๐ in Art : Art of H๐m๐ (part 1)",
+      "url": "https://www.youtube.com/watch?v=xvgb8VoaT3k",
+      "duration_seconds": 1799,
+      "upload_date": "20111113"
+    },
+    {
+      "id": "plB6QDWkkwc",
+      "title": "H๐m๐ in Art : Art of H๐m๐ (part 2)",
+      "url": "https://www.youtube.com/watch?v=plB6QDWkkwc",
+      "duration_seconds": 1579,
+      "upload_date": "20111113"
+    }
+  ],
+  "raw_description": "เสวนา Homo in Art / Art of Homo\nโดย วรเทพ อรรคบุตร และ สัณห์ชัย โชติรสเศรณี\nวันพฤหัสบดีที่ 15 กันยายน เวลา 19.00 น.\nที่ The Reading Room",
+  "bilingual": {
+    "th": "เสวนา \"Homo in Art / Art of Homo\" ว่าด้วยการนำเสนอและการแสดงออกของเพศวิถีในงานศิลปะ ร่วมพูดคุยกับ วรเทพ อรรคบุตร และ สัณห์ชัย โชติรสเศรณี",
+    "en": "A panel discussion on the representation and expression of sexuality in art, with Woratep Akkabutr and Sanchai Chotirotsaranee.",
+    "source_th": "agent_translated",
+    "source_en": "manual"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "วรเทพ อรรคบุตร",
+      "สัณห์ชัย โชติรสเศรณี"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "วรเทพ อรรคบุตร / Woratep Akkabutr",
+      "สัณห์ชัย โชติรสเศรณี / Sanchai Chotirotsaranee"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Gender / เพศสภาพ",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "19:00",
+    "venue": ""
+  }
+}

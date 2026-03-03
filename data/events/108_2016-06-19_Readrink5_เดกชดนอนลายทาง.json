@@ -1,0 +1,60 @@
+{
+  "event_number": 108,
+  "key": "Readrink#5 \"เด็กชุดนอนลายทาง",
+  "display_title": "Readrink#5 \"เด็กชุดนอนลายทาง\"",
+  "event_date": "2016-06-19",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7953,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "bZ1vTvYjp3s",
+      "title": "Readrink#5 'เด็กชุดนอนลายทาง' Part 1",
+      "url": "https://www.youtube.com/watch?v=bZ1vTvYjp3s",
+      "duration_seconds": 3322,
+      "upload_date": "20160711"
+    },
+    {
+      "id": "HW0h7a7wyRE",
+      "title": "Readrink#5 'เด็กชุดนอนลายทาง' Part 2",
+      "url": "https://www.youtube.com/watch?v=HW0h7a7wyRE",
+      "duration_seconds": 3994,
+      "upload_date": "20160711"
+    },
+    {
+      "id": "O_QeB9fVeaA",
+      "title": "Readrink#5 'เด็กชุดนอนลายทาง' Part 3",
+      "url": "https://www.youtube.com/watch?v=O_QeB9fVeaA",
+      "duration_seconds": 637,
+      "upload_date": "20160711"
+    }
+  ],
+  "raw_description": "Readrink#5 \nRead: เด็กชายในชุดนอนลายทาง โดย จอห์น บอยน์\nDrink: รูทเบียร์\nวันอาทิตย์ที่ 19 มิถุนายน 2559 เวลา 14:00 น.\nที่ The Reading Room สีลม 19\n\nเตรียมหัวใจและกระดาษทิชชู่ไว้ให้พร้อม เพราะเดือนมิถุนายนนี้เราจะมาอ่านหนังสือ #เด็กชายในชุดนอนลายทาง วรรณกรรมเยาวชนสุดซึ้งที่ทำให้ใครหลายคนต้องหลั่งน้ำตาให้กับมิตรภาพระหว่างเพื่อนที่สงครามก็ไม่อาจกีดกั้น มาเมาท์ มาเศร้า เคล้ารูทเบียร์ ได้ที่ Readrink ปาร์ตี้ครั้งที่ 5 นี้กันนะ",
+  "bilingual": {
+    "th": "Read: เด็กชายในชุดนอนลายทาง โดย จอห์น บอยน์\nDrink: รูทเบียร์\n\nเตรียมหัวใจและกระดาษทิชชู่ไว้ให้พร้อม เพราะเดือนมิถุนายนนี้เราจะมาอ่านหนังสือ วรรณกรรมเยาวชนสุดซึ้งที่ทำให้ใครหลายคนต้องหลั่งน้ำตาให้กับมิตรภาพระหว่างเพื่อนที่สงครามก็ไม่อาจกีดกั้น มาเมาท์ มาเศร้า เคล้ารูทเบียร์ ได้ที่ Readrink ปาร์ตี้ครั้งที่ 5 นี้กันนะ",
+    "en": "Read: The Boy in the Striped Pyjamas by John Boyne\nDrink: Root Beer\n\nPrepare your heart and a box of tissues — this June we read a celebrated work of young adult fiction that has reduced countless readers to tears over the friendship between two boys whom even war cannot separate. Come to gossip, to grieve, and to sip root beer together at Readrink Party #5.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "เด็กชายในชุดนอนลายทาง"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

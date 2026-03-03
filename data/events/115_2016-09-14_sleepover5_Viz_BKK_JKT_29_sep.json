@@ -1,0 +1,59 @@
+{
+  "event_number": 115,
+  "key": "sleepover5 : \"Viz BKK : JKT\" 29 sep",
+  "display_title": "sleepover5 : \"Viz BKK : JKT\" 29 sep",
+  "event_date": "2016-09-14",
+  "year": "2016",
+  "series": "Sleepover",
+  "total_duration_seconds": 8031,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "SKYBt8oaGkc",
+      "title": "sleepover5 : “Viz BKK : JKT” 29 sep part 1",
+      "url": "https://www.youtube.com/watch?v=SKYBt8oaGkc",
+      "duration_seconds": 5936,
+      "upload_date": "20161117"
+    },
+    {
+      "id": "Ty0xN7Qinuc",
+      "title": "sleepover5 : “Viz BKK : JKT” 29 sep part2",
+      "url": "https://www.youtube.com/watch?v=Ty0xN7Qinuc",
+      "duration_seconds": 2095,
+      "upload_date": "20161117"
+    }
+  ],
+  "raw_description": "SLEEPOVER#5: YouPin!\nโดย เครือข่ายพลเมืองเน็ต, สถาบันเทคโนโลยีเพื่อนวัตกรรมสังคม และ บุญมีแล็บ\n14-30 กันยายน 2559 \n\nที่ The Reading Room สีลม 19\n\nพฤหัสบดี 29 กันยายน \n19:00 - 21:00 “Viz BKK : JKT” กับ ภูริพันธุ์ รุจิขจร & วิโรจน์ จิรพัฒนกุล \nvisualization กรุงเทพฯ พร้อมดูเมืองเพื่อนบ้าน Jakarta Smart City",
+  "bilingual": {
+    "th": "SLEEPOVER#5: YouPin!\n14-30 กันยายน 2559\n\nพฤหัสบดี 29 กันยายน\n19:00 - 21:00 “Viz BKK : JKT” กับ ภูริพันธุ์ รุจิขจร & วิโรจน์ จิรพัฒนกุล\nvisualization กรุงเทพฯ พร้อมดูเมืองเพื่อนบ้าน Jakarta Smart City",
+    "en": "SLEEPOVER#5: YouPin!\n14–30 September 2016\n\nThursday 29 September\n19:00–21:00 \"Viz BKK : JKT\" with Phuriphan Rujikhajorn & Wiroj Jirapattanakul\nData visualisation of Bangkok, with a comparative look at neighbouring city Jakarta Smart City.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ภูริพันธุ์ รุจิขจร",
+      "วิโรจน์ จิรพัฒนกุล"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ภูริพันธุ์ รุจิขจร",
+      "วิโรจน์ จิรพัฒนกุล"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Architecture & Urbanism / สถาปัตยกรรม",
+      "Media / สื่อ"
+    ],
+    "partners": [
+      "Thai Netizen Network / เครือข่ายพลเมืองเน็ต"
+    ],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

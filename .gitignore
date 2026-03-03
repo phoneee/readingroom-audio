@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.mypy_cache/
+
+# Audio data (large, downloaded at runtime)
+data/audio/
+*.wav
+*.m4a
+*.flac
+*.mp3
+
+# Video data (large, downloaded at runtime)
+data/video/
+
+# ML model checkpoints
+checkpoints/
+
+# Generated outputs
+docs/listening-test/
+
+# Legacy
+pilot/

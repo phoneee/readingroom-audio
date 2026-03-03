@@ -1,0 +1,45 @@
+{
+  "event_number": 80,
+  "key": "Writer\"s Talk & Reading : Zoë Jenny",
+  "display_title": "Writer's Talk & Reading : Zoë Jenny",
+  "event_date": "2014-09-21",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 3542,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "1qR-nWyB2ZA",
+      "title": "Writer's Talk & Reading : Zoë Jenny",
+      "url": "https://www.youtube.com/watch?v=1qR-nWyB2ZA",
+      "duration_seconds": 3542,
+      "upload_date": "20140921"
+    }
+  ],
+  "raw_description": "",
+  "bilingual": {
+    "th": "นักเขียนชาวสวิส Zoë Jenny ผู้เขียนนิยายชื่อดัง The Pollen Room มาร่วมอ่านงานและพูดคุยถึงกระบวนการสร้างสรรค์ของเธอ ณ The Reading Room กรุงเทพฯ เมื่อวันที่ 21 กันยายน 2557",
+    "en": "Swiss author Zoë Jenny, best known for her acclaimed debut novel The Pollen Room, joined The Reading Room Bangkok for a writer's talk and reading session on 21 September 2014.",
+    "source_th": "agent_fabricated",
+    "source_en": "agent_fabricated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Zoë Jenny"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Zoë Jenny"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "event_number": 73,
+  "key": "Fahrenheit 451",
+  "display_title": "Fahrenheit 451",
+  "event_date": "2014-07-23",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 6681,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "14zz4oTi1-s",
+      "title": "Fahrenheit 451 part 1",
+      "url": "https://www.youtube.com/watch?v=14zz4oTi1-s",
+      "duration_seconds": 4040,
+      "upload_date": "20140723"
+    },
+    {
+      "id": "EsajuSeXKS4",
+      "title": "Fahrenheit 451 part 2",
+      "url": "https://www.youtube.com/watch?v=EsajuSeXKS4",
+      "duration_seconds": 2641,
+      "upload_date": "20140723"
+    }
+  ],
+  "raw_description": "This is Not Fiction: เรื่องจริงอิงนิยาย ครั้งที่ 1: \nFahrenheit 451 (Ray Bradbury)\n\nThe Reading Room เชิญชวนทุกท่านค้นหาความจริงจากเรื่องแต่ง ผ่านงานวรรณกรรมห้าเรื่องจากห้าวัฒนธรรมที่สะท้อนถึงสภาพสังคมและวิถีชีวิตที่คุณอาจไม่เคยได้สัมผัสมาก่อน หากแต่เรื่องราวเหล่านี้แท้จริงแล้วอาจใกล้ตัวกว่าที่คุณคิด \n\nโดยในครั้งที่ 1 นี้เป็นนิยายไซไฟดิสโทเปียเรื่องสำคัญ Fahrenheit 451 โดยนักเขียนอเมริกัน เรย์ แบรดบิวรี เกี่ยวกับสังคมอเมริกันในโลกอนาคต ที่หนังสือกลายเป็นสิ่งต้องห้าม ที่รัฐมองว่าอันตรายและเต็มไปด้วยแนวคิดอันแปลกแยก ยังให้เกิดปัญหาและความขัดแย้งในสังคม ซึ่งหากพบเจอจะส่งหน่วยวางเพลิงไปเผาทำลายทิ้งทันทีเพื่อประโยชน์สุขส่วนรวม แต่สุดท้ายแล้วแม้ผู้มีอำนาจจะสามารถเผาทำลายหนังสือได้ แต่พวกเขาก็ไม่สามารถทำลายเมล็ดพันธุ์ของความตื่นรู้ที่ฝังลงในสำนึกของนักอ่านได้แต่อย่างใด",
+  "bilingual": {
+    "th": "The Reading Room เชิญชวนทุกท่านค้นหาความจริงจากเรื่องแต่ง ผ่านงานวรรณกรรมห้าเรื่องจากห้าวัฒนธรรมที่สะท้อนถึงสภาพสังคมและวิถีชีวิตที่คุณอาจไม่เคยได้สัมผัสมาก่อน หากแต่เรื่องราวเหล่านี้แท้จริงแล้วอาจใกล้ตัวกว่าที่คุณคิด\n\nโดยในครั้งที่ 1 นี้เป็นนิยายไซไฟดิสโทเปียเรื่องสำคัญ Fahrenheit 451 โดยนักเขียนอเมริกัน เรย์ แบรดบิวรี เกี่ยวกับสังคมอเมริกันในโลกอนาคต ที่หนังสือกลายเป็นสิ่งต้องห้าม ที่รัฐมองว่าอันตรายและเต็มไปด้วยแนวคิดอันแปลกแยก ยังให้เกิดปัญหาและความขัดแย้งในสังคม ซึ่งหากพบเจอจะส่งหน่วยวางเพลิงไปเผาทำลายทิ้งทันทีเพื่อประโยชน์สุขส่วนรวม แต่สุดท้ายแล้วแม้ผู้มีอำนาจจะสามารถเผาทำลายหนังสือได้ แต่พวกเขาก็ไม่สามารถทำลายเมล็ดพันธุ์ของความตื่นรู้ที่ฝังลงในสำนึกของนักอ่านได้แต่อย่างใด",
+    "en": "The Reading Room invites you to find truth in fiction through five works of literature from five cultures, each reflecting social conditions and ways of life you may never have encountered directly — yet which, in reality, may be closer to home than you think.\n\nThis first instalment features Fahrenheit 451, one of the most important dystopian science fiction novels, by American author Ray Bradbury. Set in a future American society where books have been declared forbidden — deemed dangerous by the state, filled with dissident ideas, causing social conflict and division — fire brigades are dispatched to burn any that are found, for the common good. Yet in the end, even if those in power can burn the books themselves, they cannot destroy the seeds of awakening planted in the consciousness of readers.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

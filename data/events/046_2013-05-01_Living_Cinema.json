@@ -1,0 +1,51 @@
+{
+  "event_number": 46,
+  "key": "Living Cinema",
+  "display_title": "Living Cinema",
+  "event_date": "2013-05-01",
+  "year": "2013",
+  "series": "Other",
+  "total_duration_seconds": 4251,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "XmWJfSSfsuQ",
+      "title": "Living Cinema",
+      "url": "https://www.youtube.com/watch?v=XmWJfSSfsuQ",
+      "duration_seconds": 4251,
+      "upload_date": "20130501"
+    }
+  ],
+  "raw_description": "Living Cinema: การแสดงดนตรีทดลองประกอบวีดิโอและแอนิเมชั่น \nโดย Bob Ostertag & Pierre Hébert\n\nตลอดหลายทศวรรษที่ผ่านมา Bob Ostertag และ Pierre Hébert เป็นผู้บุกเบิก นักสร้างสรรค์ และเป็นที่รู้จักกันดีในแวดวงดนตรี ภาพยนตร์ และศิลปะ โดยการร่วมงานกันในโปรเจ็ค Living Cinema เป็นนำภาพยนตร์แอนิเมชั่นของ Hébert ที่ใช้เทคนิคกระบวนการพิเศษคือ การ engrave หรือ การวาด ขูดขีด หรือขีดเขียน ลงไปบนแผ่นฟิล์มโดยตรง มาประกอบกับดนตรีทดลอง ดนตรี sample และเสียงที่ดัดแปลงจากสื่อและอุปกรณ์ต่างๆ ลักษณะการแสดงสด (live performance) เป็นการเปิดโอกาสให้ศิลปินทั้งสองได้ถ่ายทอดความคิดเห็นที่มีต่อเหตุการณ์และประเด็นทางสังคมการเมืองร่วมสมัยได้ทันที",
+  "bilingual": {
+    "th": "ตลอดหลายทศวรรษที่ผ่านมา Bob Ostertag และ Pierre Hébert เป็นผู้บุกเบิก นักสร้างสรรค์ และเป็นที่รู้จักกันดีในแวดวงดนตรี ภาพยนตร์ และศิลปะ โดยการร่วมงานกันในโปรเจ็ค Living Cinema เป็นการนำภาพยนตร์แอนิเมชั่นของ Hébert ที่ใช้เทคนิคกระบวนการพิเศษคือ การ engrave หรือ การวาด ขูดขีด หรือขีดเขียน ลงไปบนแผ่นฟิล์มโดยตรง มาประกอบกับดนตรีทดลอง ดนตรี sample และเสียงที่ดัดแปลงจากสื่อและอุปกรณ์ต่างๆ ลักษณะการแสดงสด (live performance) เป็นการเปิดโอกาสให้ศิลปินทั้งสองได้ถ่ายทอดความคิดเห็นที่มีต่อเหตุการณ์และประเด็นทางสังคมการเมืองร่วมสมัยได้ทันที",
+    "en": "Over several decades, Bob Ostertag and Pierre Hébert have been pioneers and widely recognised figures in the worlds of music, cinema, and art. Their collaborative project Living Cinema brings together Hébert's animation films — made using a distinctive technique of directly engraving, drawing, scratching, or marking on film stock — with Ostertag's experimental music, sampled sounds, and audio transformed from various media and devices. The live performance format gives both artists the opportunity to respond in real time to contemporary events and socio-political issues.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Bob Ostertag",
+      "Pierre Hébert"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Bob Ostertag",
+      "Pierre Hébert"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Film / ภาพยนตร์",
+      "Music / ดนตรี"
+    ],
+    "partners": [],
+    "formats": [
+      "Performance / การแสดง"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

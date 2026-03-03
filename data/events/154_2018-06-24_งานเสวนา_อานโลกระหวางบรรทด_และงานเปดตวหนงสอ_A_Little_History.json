@@ -1,0 +1,63 @@
+{
+  "event_number": 154,
+  "key": "งานเสวนา \"อ่านโลกระหว่างบรรทัด\" และงานเปิดตัวหนังสือ A Little History of Literature",
+  "display_title": "งานเสวนา \"อ่านโลกระหว่างบรรทัด\" และงานเปิดตัวหนังสือ A Little History of Literature",
+  "event_date": "2018-06-24",
+  "year": "2018",
+  "series": "Other",
+  "total_duration_seconds": 7551,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "wSD2fYo9LiU",
+      "title": "งานเสวนา \"อ่านโลกระหว่างบรรทัด\" และงานเปิดตัวหนังสือ A Little History of Literature",
+      "url": "https://www.youtube.com/watch?v=wSD2fYo9LiU",
+      "duration_seconds": 7551,
+      "upload_date": "20180627"
+    }
+  ],
+  "raw_description": "bookscape x readery \n.\nสำนักพิมพ์ bookscape ร่วมกับร้านหนังสือออนไลน์ Readery ชวนเหล่าหนอนหนังสือร่วมสำรวจ \"โลก\" ที่ซ่อนอยู่ในวรรณกรรม และค้นหาเสน่ห์ผ่านตัวอักษร \nในงานเสวนา \"อ่านโลกระหว่างบรรทัด\" และงานเปิดตัวหนังสือ A Little History of Literature\n.\nร่วมสนทนาโดย\n.\nรศ.ดร. สุรเดช โชติอุดมพันธ์\nภาควิชาวรรณคดีเปรียบเทียบ คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย\nและผู้แปลหนังสือ A Little History of Literature\n.\nอุทิศ เหมะมูล\nนักวิจารณ์วรรณกรรม และนักเขียนรางวัลซีไรต์\n.\nนักรบ มูลมานัส \nศิลปินอิสระ และผู้ออกแบบปกหนังสือ A Little History of Literature\n.\n.\nชวนสนทนาโดย\n.\nโจ วรรณพิณ และเน็ต-นัฏฐกร ปาระชัย\nผู้ก่อตั้งร้านหนังสือออนไลน์ Readery\n.\n.\nวันอาทิตย์ที่ 24 มิถุนายน 2561\nเวลา 14.00-16.30 น.\nThe Reading Room สีลม 19",
+  "bilingual": {
+    "th": "bookscape ร่วมกับ readery จัดงานเสวนา \"อ่านโลกระหว่างบรรทัด\" พร้อมงานเปิดตัวหนังสือ A Little History of Literature เมื่อวันที่ 24 มิถุนายน 2561",
+    "en": "bookscape and readery co-presented the panel discussion \"Reading the World Between the Lines\" alongside the launch of A Little History of Literature at The Reading Room on 24 June 2018.",
+    "source_th": "agent_translated",
+    "source_en": "manual"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "สุรเดช โชติอุดมพันธ์",
+      "อุทิศ เหมะมูล",
+      "นักรบ มูลมานัส"
+    ],
+    "moderators_raw": [
+      "โจ วรรณพิณ",
+      "นัฏฐกร ปาระชัย"
+    ],
+    "display_speakers": [
+      "สุรเดช โชติอุดมพันธ์ / Suradech Chotiudomphan",
+      "อุทิศ เหมะมูล",
+      "นักรบ มูลมานัส"
+    ],
+    "display_moderators": [
+      "โจ วรรณพิณ",
+      "นัฏฐกร ปาระชัย"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Art / ศิลปะ"
+    ],
+    "partners": [
+      "Readery"
+    ],
+    "formats": [
+      "Panel / เสวนา",
+      "Book Launch / เปิดตัวหนังสือ"
+    ],
+    "book_titles": [
+      "A Little History of Literature"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

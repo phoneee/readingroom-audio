@@ -1,0 +1,63 @@
+{
+  "event_number": 155,
+  "key": "อ่าน \"The Birth of Biopolitics\" ของมิเชล ฟูโกต์",
+  "display_title": "อ่าน \"The Birth of Biopolitics\" ของมิเชล ฟูโกต์",
+  "event_date": "2018-09-22",
+  "year": "2018",
+  "series": "Other",
+  "total_duration_seconds": 14720,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Q0L7SztWruw",
+      "title": "อ่าน ‘The Birth of Biopolitics’ ของมิเชล ฟูโกต์ (1/2)",
+      "url": "https://www.youtube.com/watch?v=Q0L7SztWruw",
+      "duration_seconds": 7914,
+      "upload_date": "20180927"
+    },
+    {
+      "id": "c3yJT2JcINQ",
+      "title": "อ่าน ‘The Birth of Biopolitics’ ของมิเชล ฟูโกต์ (2/2)",
+      "url": "https://www.youtube.com/watch?v=c3yJT2JcINQ",
+      "duration_seconds": 6806,
+      "upload_date": "20180928"
+    }
+  ],
+  "raw_description": "กิจกรรม Workshop การอ่าน ‘The Birth of Biopolitics’ ของมิเชล ฟูโกต์\nโดยกลุ่ม Black Circle\nวันเสาร์ที่ 22 กันยายน 2561 เวลา 13.00 น. - 17.00 น.\nที่ The Reading Room\n.\nร่วมอ่านโดย อรรถสิทธิ์ สิทธิดำรง, เก่งกิจ กิติเรียงลาภ, ชญาณทัต ศุลชลาศัย และต่อศักดิ์ จินดาสุขศรี \n.\nการอ่านแบ่งออกเป็น 4 ส่วน เก่งกิจอ่านบทที่ 1-3 อรรถสิทธิ์อ่านบทที่ 4-8 ชญาณทัตอ่านบทที่ 9-10 และต่อศักดิ์อ่านบทที่ 11-12\n.\nวิดีโอพาร์ทที่ 1 ประกอบด้วยการอ่านของเก่งกิจและอรรถสิทธิ์ สำหรับพาร์ทที่ 2 จะเป็นการอ่านของชญาณทัตและต่อศักดิ์",
+  "bilingual": {
+    "th": "กลุ่ม Black Circle จัดกิจกรรมอ่านงาน The Birth of Biopolitics ชุดบรรยายสำคัญของมิเชล ฟูโกต์ ที่ The Reading Room เมื่อวันที่ 22 กันยายน 2561",
+    "en": "By the Black Circle group.\n\nA reading session of The Birth of Biopolitics, Michel Foucault's landmark lecture series, held at The Reading Room on 22 September 2018.",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "เก่งกิจ กิติเรียงลาภ",
+      "อรรถสิทธิ์ สิทธิดำรง",
+      "ชญาณทัต ศุลชลาศัย",
+      "ต่อศักดิ์ จินดาสุขศรี"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "เก่งกิจ กิติเรียงลาภ",
+      "อรรถสิทธิ์ สิทธิดำรง",
+      "ชญาณทัต ศุลชลาศัย",
+      "ต่อศักดิ์ จินดาสุขศรี"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Politics / การเมือง"
+    ],
+    "partners": [],
+    "formats": [
+      "Reading Group"
+    ],
+    "book_titles": [
+      "The Birth of Biopolitics"
+    ],
+    "film_titles": [],
+    "event_time": "13:00",
+    "venue": ""
+  }
+}

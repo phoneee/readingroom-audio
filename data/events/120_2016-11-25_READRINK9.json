@@ -1,0 +1,59 @@
+{
+  "event_number": 120,
+  "key": "READRINK#9",
+  "display_title": "READRINK#9",
+  "event_date": "2016-11-25",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 10683,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "dwP0n8lOJZ0",
+      "title": "READRINK#9 part1",
+      "url": "https://www.youtube.com/watch?v=dwP0n8lOJZ0",
+      "duration_seconds": 3715,
+      "upload_date": "20161125"
+    },
+    {
+      "id": "-MpoKXymNHs",
+      "title": "READRINK#9 part2",
+      "url": "https://www.youtube.com/watch?v=-MpoKXymNHs",
+      "duration_seconds": 3704,
+      "upload_date": "20161125"
+    },
+    {
+      "id": "ggINgmCeYxo",
+      "title": "READRINK#9 part3",
+      "url": "https://www.youtube.com/watch?v=ggINgmCeYxo",
+      "duration_seconds": 3264,
+      "upload_date": "20161125"
+    }
+  ],
+  "raw_description": "#ชายไร้สีกับปีแสวงบุญ นิยายที่เขียนโดยลุงมู ฮารูกิ มูราคามิ\n\nเรื่องราวของ ทสึคุรุ ทะซากิ ชายหนุ่มหน้าที่การงานดี แต่กลับใช้ชีวิตอย่างห่อเหี่ยวอยู่ลำพังคนเดียว ราวกับว่าตัวเองเป็นร่างไร้วิญญาณที่เดินเหินได้ เพราะยังติดอยู่กับช่วงเวลาสมัยมัธยมและความคลางแคลงสงสัย...\n\nว่าเหตุใดเขาจึงถูกเพื่อนๆ มัธยมที่ครั้งหนึ่งเคยรักกันมากหันหลังให้ ผลักไสไล่ส่งออกจากกลุ่มโดยที่เขาเองก็ไม่รู้สาเหตุ และยังหาคำตอบให้กับตัวเองไม่ได้",
+  "bilingual": {
+    "th": "นิยายที่เขียนโดยลุงมู ฮารูกิ มูราคามิ\n\nเรื่องราวของ ทสึคุรุ ทะซากิ ชายหนุ่มหน้าที่การงานดี แต่กลับใช้ชีวิตอย่างห่อเหี่ยวอยู่ลำพังคนเดียว ราวกับว่าตัวเองเป็นร่างไร้วิญญาณที่เดินเหินได้ เพราะยังติดอยู่กับช่วงเวลาสมัยมัธยมและความคลางแคลงสงสัย...\n\nว่าเหตุใดเขาจึงถูกเพื่อนๆ มัธยมที่ครั้งหนึ่งเคยรักกันมากหันหลังให้ ผลักไสไล่ส่งออกจากกลุ่มโดยที่เขาเองก็ไม่รู้สาเหตุ และยังหาคำตอบให้กับตัวเองไม่ได้",
+    "en": "A discussion of Colorless Tsukuru Tazaki and His Years of Pilgrimage (สีไร้สีของ ทสึคุรุ ทะซากิ) by Haruki Murakami.\n\nThe story of Tsukuru Tazaki, a young man with a successful career who lives a hollow, solitary existence — as though he were a soul-less body moving through the world — because he remains trapped in his high school years and a nagging, unresolved mystery.\n\nWhy did his closest high school friends — people he once loved deeply — suddenly turn their backs on him, cast him out of the group without explanation, without any reason he could understand or has ever been able to account for?",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ชายไร้สีกับปีแสวงบุญ"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

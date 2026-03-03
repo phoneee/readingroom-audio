@@ -1,0 +1,62 @@
+{
+  "event_number": 93,
+  "key": "การทำลายรูปเคารพ: ความเป็นมาทางโบราณคดีและกรณีศึกษาไอซิส",
+  "display_title": "การทำลายรูปเคารพ: ความเป็นมาทางโบราณคดีและกรณีศึกษาไอซิส",
+  "event_date": "2015-04-25",
+  "year": "2015",
+  "series": "Other",
+  "total_duration_seconds": 7771,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "RZ51PjMLMdM",
+      "title": "การทำลายรูปเคารพ: ความเป็นมาทางโบราณคดีและกรณีศึกษาไอซิส Part 1",
+      "url": "https://www.youtube.com/watch?v=RZ51PjMLMdM",
+      "duration_seconds": 5792,
+      "upload_date": "20150509"
+    },
+    {
+      "id": "wZ9QFU8JM8g",
+      "title": "\"การทำลายรูปเคารพ: ความเป็นมาทางโบราณคดีและกรณีศึกษาไอซิส\" Part 2",
+      "url": "https://www.youtube.com/watch?v=wZ9QFU8JM8g",
+      "duration_seconds": 1979,
+      "upload_date": "20150509"
+    }
+  ],
+  "raw_description": "โดย รศ.ดร.รัศมี ชูทรงเดช & ดร.วิญญู อาจรักษา\nดำเนินรายการโดย ดร.เกรียงไกร เกิดศิริ\nวันเสาร์ที่ 25 เมษายน เวลา 14:00-16:00น.\nที่ The Reading Room สีลม 19",
+  "bilingual": {
+    "th": "เสวนาว่าด้วยประวัติศาสตร์และโบราณคดีของการทำลายรูปเคารพ ตั้งแต่บริบทโบราณจนถึงกรณีร่วมสมัยของกลุ่ม ISIS ที่ทำลายมรดกทางวัฒนธรรมในตะวันออกกลาง จัดที่ The Reading Room เมื่อวันที่ 25 เมษายน 2558",
+    "en": "A panel discussion on the history and archaeology of iconoclasm, from ancient contexts to the contemporary case of ISIS and the destruction of cultural heritage in the Middle East, held at The Reading Room on 25 April 2015.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "รศ.ดร.รัศมี ชูทรงเดช",
+      "ดร.วิญญู อาจรักษา"
+    ],
+    "moderators_raw": [
+      "ดร.เกรียงไกร เกิดศิริ"
+    ],
+    "display_speakers": [
+      "รศ.ดร.รัศมี ชูทรงเดช",
+      "ดร.วิญญู อาจรักษา"
+    ],
+    "display_moderators": [
+      "เกรียงไกร เกิดศิริ / Kriangkrai Kerdsiri"
+    ],
+    "topics": [
+      "History / ประวัติศาสตร์",
+      "Art / ศิลปะ",
+      "Politics / การเมือง"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

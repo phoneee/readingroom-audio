@@ -1,0 +1,57 @@
+{
+  "event_number": 125,
+  "key": "READRINK#11 จดหมายลับไป่เหอ",
+  "display_title": "READRINK#11 จดหมายลับไป่เหอ",
+  "event_date": "2017-01-22",
+  "year": "2017",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 9836,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "PChwbV_nwIQ",
+      "title": "READRINK#11 จดหมายลับไป่เหอ PART1",
+      "url": "https://www.youtube.com/watch?v=PChwbV_nwIQ",
+      "duration_seconds": 3673,
+      "upload_date": "20170123"
+    },
+    {
+      "id": "nIFhHNjhp90",
+      "title": "READRINK#11 จดหมายลับไป่เหอ  PART2",
+      "url": "https://www.youtube.com/watch?v=nIFhHNjhp90",
+      "duration_seconds": 3703,
+      "upload_date": "20170123"
+    },
+    {
+      "id": "Yl4Qg43Syeg",
+      "title": "READRINK#11 จดหมายลับไป่เหอ  PART3",
+      "url": "https://www.youtube.com/watch?v=Yl4Qg43Syeg",
+      "duration_seconds": 2460,
+      "upload_date": "20170123"
+    }
+  ],
+  "raw_description": "ปาร์ตี้ #Readrink ครั้งที่ 11 อ่าน #จดหมายลับไป่เหอ หนังสือจีนสุดดราม่าของสาวจีนในหูหนานช่วงปลายศตวรรษที่ 19\n\nเรื่องราวชีวิตอันซับซ้อนของ ไป่เหอกับเสว่ฮวา หญิงสาวที่เกิดวันเดือนปีเดียวกัน แม้ชีวิตจะแตกต่างกัน แต่พวกเธอก็คอยช่วยเหลือซึ่งกันและกัน จนเกิดเป็นสายสัมพันธ์อันแน่นแฟ้นและมิตรภาพที่ไม่มีใครมาแทรกแซงได้\n\nวันอาทิตย์ที่ 22 มกราคมที่ The Reading Room, Bangkok สีลม 19",
+  "bilingual": {
+    "th": "ปาร์ตี้ ครั้งที่ 11 อ่าน หนังสือจีนสุดดราม่าของสาวจีนในหูหนานช่วงปลายศตวรรษที่ 19\n\nเรื่องราวชีวิตอันซับซ้อนของ ไป่เหอกับเสว่ฮวา หญิงสาวที่เกิดวันเดือนปีเดียวกัน แม้ชีวิตจะแตกต่างกัน แต่พวกเธอก็คอยช่วยเหลือซึ่งกันและกัน จนเกิดเป็นสายสัมพันธ์อันแน่นแฟ้นและมิตรภาพที่ไม่มีใครมาแทรกแซงได้",
+    "en": "Book club party #11 — reading a deeply dramatic Chinese novel about women in Hunan in the late nineteenth century.\n\nThe story of Baihe and Xuehua, two young women born on the same day — though their lives take different paths, they support each other unfailingly, forging a bond and a friendship that no one can come between.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

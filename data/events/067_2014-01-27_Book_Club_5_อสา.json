@@ -1,0 +1,48 @@
+{
+  "event_number": 67,
+  "key": "Book Club 5: อีสา",
+  "display_title": "Book Club 5: อีสา",
+  "event_date": "2014-01-27",
+  "year": "2014",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7891,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "VbMnMBbmYyg",
+      "title": "Book Club 5: อีสา",
+      "url": "https://www.youtube.com/watch?v=VbMnMBbmYyg",
+      "duration_seconds": 7891,
+      "upload_date": "20140127"
+    }
+  ],
+  "raw_description": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่ห้านี้จะอ่านบทประพันธ์เรื่องดัง \"อีสา\" นวนิยายชิ้นเอกของสีฟ้า \n\nวรรณกรรมชีวิตเรื่องอีสา โดยสีฟ้า หรือหม่อมหลวงศรีฟ้า มหาวรรณ เป็นการถ่ายทอดเหตุการณ์ของยุคสมัยช่วงเกิดการเปลี่ยนแปลงทั้งทางด้านชีวิตความเป็นอยู่ และเหตุการณ์ของบ้านเมืองได้อย่างสมจริง โดยมีฉากชีวิตของตัวเอกคืออีสานำพาบอกกล่าวเรื่องราวต่างๆ บทประพันธ์เรื่องนี้ได้รับความนิยมนำมาสร้างเป็นละครอย่างต่อเนื่องตั้งแต่ปี 2517 มาจะถึงครั้งล่าสุดกำลังออกอากาศอยู่ในปัจจุบัน",
+  "bilingual": {
+    "th": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่ห้านี้จะอ่านบทประพันธ์เรื่องดัง \"อีสา\" นวนิยายชิ้นเอกของสีฟ้า\n\nวรรณกรรมชีวิตเรื่องอีสา โดยสีฟ้า หรือหม่อมหลวงศรีฟ้า มหาวรรณ เป็นการถ่ายทอดเหตุการณ์ของยุคสมัยช่วงเกิดการเปลี่ยนแปลงทั้งทางด้านชีวิตความเป็นอยู่ และเหตุการณ์ของบ้านเมืองได้อย่างสมจริง โดยมีฉากชีวิตของตัวเอกคืออีสานำพาบอกกล่าวเรื่องราวต่างๆ บทประพันธ์เรื่องนี้ได้รับความนิยมนำมาสร้างเป็นละครอย่างต่อเนื่องตั้งแต่ปี 2517 มาจะถึงครั้งล่าสุดกำลังออกอากาศอยู่ในปัจจุบัน",
+    "en": "The Reading Room presents the charming \"Strawberry Sunday Book Club: Reading Pop Fiction with Khun Attha Bunnak.\" For this fifth edition, the club reads the celebrated novel \"Isa,\" the masterwork of Sifa.\n\n\"Isa,\" a novel of life by Sifa — pen name of Mom Luang Srifa Mahawan — faithfully conveys the events of an era of transformation, both in everyday life and in the affairs of the nation, through the lens of its protagonist Isa, whose life story carries the reader through the narrative. The novel has been continuously adapted for television drama since 1974, including the most recent adaptation currently on air.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "event_number": 152,
+  "key": "Readrink #24 — \"ในกรงแก้ว\" โดย ซิลเวีย แพลท",
+  "display_title": "Readrink #24 — \"ในกรงแก้ว\" โดย ซิลเวีย แพลท",
+  "event_date": "2018-05-20",
+  "year": "2018",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 8728,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "MdY5odH-kew",
+      "title": "Readrink #24 — “ในกรงแก้ว” โดย ซิลเวีย แพลท",
+      "url": "https://www.youtube.com/watch?v=MdY5odH-kew",
+      "duration_seconds": 8728,
+      "upload_date": "20180521"
+    }
+  ],
+  "raw_description": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 24 ชวนอ่านและล้อมวงคุยถึง The Bell Jar หรือ “ในกรงแก้ว” นวนิยายเพียงเรื่องเดียวของ ซิลเวีย แพลท ที่ตีแผ่ความคิดจิตใจของผู้หญิงได้อย่างเจ็บปวดและลึกซึ้ง\n\nชวนคุยโดย อรรถ บุนนาค และแขกรับเชิญพิเศษ เจนจิรา เสรีโยธิน ผู้แปล “ในกรงแก้ว” ฉบับภาษาไทย โดยสำนักพิมพ์ Library House\n\nวันอาทิตย์ที่ 20 พฤษภาคม 2561 เวลา 14:00–16:00 ที่ห้องสมุด The Reading Room, Bangkok สีลมซอย 19",
+  "bilingual": {
+    "th": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 24 ชวนอ่านและล้อมวงคุยถึง The Bell Jar หรือ “ในกรงแก้ว” นวนิยายเพียงเรื่องเดียวของ ซิลเวีย แพลท ที่ตีแผ่ความคิดจิตใจของผู้หญิงได้อย่างเจ็บปวดและลึกซึ้ง\n\nชวนคุยโดย อรรถ บุนนาค และแขกรับเชิญพิเศษ เจนจิรา เสรีโยธิน ผู้แปล “ในกรงแก้ว” ฉบับภาษาไทย โดยสำนักพิมพ์ Library House",
+    "en": "Readrink Book Club #24 presents a discussion of The Bell Jar (ในกรงแก้ว), Sylvia Plath's only novel — a work that maps the inner life of a woman with painful and profound insight. Facilitated by อรรถ บุนนาค, with special guest เจนจิรา เสรีโยธิน, translator of the Thai edition published by Library House.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "เจนจิรา เสรีโยธิน"
+    ],
+    "moderators_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "display_speakers": [
+      "เจนจิรา เสรีโยธิน / Jenjira Seriyothin"
+    ],
+    "display_moderators": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ในกรงแก้ว"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

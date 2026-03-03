@@ -1,0 +1,40 @@
+[project]
+name = "readingroom-audio"
+version = "0.1.0"
+description = "Audio enhancement pipeline for Reading Room BKK YouTube recordings (429 videos, 341 hours)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "soundfile",
+    "torch",
+    "torchaudio",
+]
+
+[project.optional-dependencies]
+enhance = [
+    "clearvoice",
+    "deepfilternet",
+    "demucs",
+    "MPSENet",
+    "resemble-enhance",
+    "speechbrain",
+]
+score = [
+    "torchmetrics[audio]",
+]
+viz = [
+    "altair",
+    "pandas",
+    "scipy",
+    "numpy",
+]
+all = [
+    "readingroom-audio[enhance,score,viz]",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/readingroom_audio"]

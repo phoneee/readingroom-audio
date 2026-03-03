@@ -1,0 +1,58 @@
+{
+  "event_number": 55,
+  "key": "Post-Colonial",
+  "display_title": "Post-Colonial",
+  "event_date": "2013-09-05",
+  "year": "2013",
+  "series": "re:reading",
+  "total_duration_seconds": 10615,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "7h8hQo6I_8I",
+      "title": "Post-Colonial part1",
+      "url": "https://www.youtube.com/watch?v=7h8hQo6I_8I",
+      "duration_seconds": 4883,
+      "upload_date": "20130905"
+    },
+    {
+      "id": "4u1wy5Ypwqc",
+      "title": "Post-Colonial part 2",
+      "url": "https://www.youtube.com/watch?v=4u1wy5Ypwqc",
+      "duration_seconds": 5732,
+      "upload_date": "20130905"
+    }
+  ],
+  "raw_description": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม ใน \"Re:Reading Group\" มาร่วมกัน \"อ่านใหม่\" และ \"ตีความใหม่\" เดือนละครั้งตั้งแต่มิถุนายนเป็นต้นไป โดยเดือนที่สองนี้จะเป็นการตีความตัวบท \"หลังอาณานิคม\" (Post-Colonial Studies) ใหม่ โดยเลือกอ่านบทความจากหนังสือสำคัญในสาขานี้สองเล่มคือ บทนำและบทแรกของ Orientalism โดย Edward Said และ Location of Culture โดย Homi Bhabha เริ่มอ่านและแลกเปลี่ยนออนไลน์กันได้กับ อ.แพร จิตติพลังศรี และ อ.สุธิดา วิมุตติโกศล",
+  "bilingual": {
+    "th": "งานเสวนาว่าด้วยแนวคิด Post-Colonial สำรวจทฤษฎีหลังอาณานิคมโดยเฉพาะงานของ Edward Said ร่วมพูดคุยกับ อ.สุธิดา วิมุตติโกศล ในซีรีย์ \"re:reading\" ปี 2556",
+    "en": "A discussion on post-colonial theory, focusing particularly on the work of Edward Said, with Ajarn Suthida Wimuttikoson, as part of The Reading Room's re:reading series in 2013.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "แพร จิตติพลังศรี",
+      "สุธิดา วิมุตติโกศล"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "แพร จิตติพลังศรี / Prae Jittiphalangsri",
+      "สุธิดา วิมุตติโกศล / Suthida Wimuttikoson"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Literature / วรรณกรรม",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Reading Group"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

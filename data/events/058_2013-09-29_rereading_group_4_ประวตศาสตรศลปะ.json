@@ -1,0 +1,57 @@
+{
+  "event_number": 58,
+  "key": "re:reading group #4: ประวัติศาสตร์ศิลปะ",
+  "display_title": "re:reading group #4: ประวัติศาสตร์ศิลปะ",
+  "event_date": "2013-09-29",
+  "year": "2013",
+  "series": "re:reading",
+  "total_duration_seconds": 10591,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "mBKZz46nzOE",
+      "title": "re:reading group #4: ประวัติศาสตร์ศิลปะ (part 1)",
+      "url": "https://www.youtube.com/watch?v=mBKZz46nzOE",
+      "duration_seconds": 7038,
+      "upload_date": "20131007"
+    },
+    {
+      "id": "Cc9sgQbI6BM",
+      "title": "re:reading group #4: ประวัติศาสตร์ศิลปะ (part 2)",
+      "url": "https://www.youtube.com/watch?v=Cc9sgQbI6BM",
+      "duration_seconds": 3553,
+      "upload_date": "20131007"
+    }
+  ],
+  "raw_description": "re:reading group #4: ประวัติศาสตร์ศิลปะไทย\nโดย สิทธิธรรม โรหิตะสุข และ ธนาวิ โชติประดิษฐ\nวันอาทิตย์ที่ 29 กันยายน 2556",
+  "bilingual": {
+    "th": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม ใน Re:Reading Group #4 ด้านประวัติศาสตร์ศิลปะ ร่วมอ่านและตีความใหม่กับ สิทธิธรรม โรหิตะสุข และ ธนาวิ โชติประดิษฐ เมื่อวันที่ 29 กันยายน 2556",
+    "en": "The Reading Room's Re:Reading Group #4 explored art history through close re-reading and reinterpretation, in discussion with Sittithum Rohitasuk and Thanawi Chotipradist, held on 29 September 2013.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "สิทธิธรรม โรหิตะสุข",
+      "ธนาวิ โชติประดิษฐ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "สิทธิธรรม โรหิตะสุข / Sittithum Rohitasuk",
+      "ธนาวิ โชติประดิษฐ / Thanawi Chotipradist"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Reading Group"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

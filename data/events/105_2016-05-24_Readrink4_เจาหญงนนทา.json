@@ -1,0 +1,52 @@
+{
+  "event_number": 105,
+  "key": "Readrink4 \"เจ้าหญิงนินทา",
+  "display_title": "Readrink4 \"เจ้าหญิงนินทา\"",
+  "event_date": "2016-05-24",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7414,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "cmgFkwRuKeM",
+      "title": "Readrink4 'เจ้าหญิงนินทา' part1",
+      "url": "https://www.youtube.com/watch?v=cmgFkwRuKeM",
+      "duration_seconds": 3208,
+      "upload_date": "20160620"
+    },
+    {
+      "id": "HGNRmRsqbcw",
+      "title": "Readrink4  'เจ้าหญิงนินทา' part2",
+      "url": "https://www.youtube.com/watch?v=HGNRmRsqbcw",
+      "duration_seconds": 4206,
+      "upload_date": "20160620"
+    }
+  ],
+  "raw_description": "Readrink#4 Tea Party\nRead: เจ้าหญิงนินทา โดย Linda Rodriguez McRobbie\nDrink: Lady Grey Tea\nวันอาทิตย์ที่ 24 พฤษภาคม 2559 เวลา 14:00 น.\nที่ The Reading Room สีลม 19\n\nเตรียมมงกุฎเอาไว้ให้พร้อม เพราะพฤษภาคมนี้เราจะมาร่วมแงะแกะเกาความคันของเจ้าหญิงสุดฮิตในประวัติศาสตร์โลก ผ่านหนังสือ \"เจ้าหญิงนินทา\" หนังสือ non-fiction สุดป๊อปที่จะมาฉีกกระชากลากเอาภาพฝันวันหวานของเจ้าหญิงสวยใสมาตีแผ่จนไม่เหลือชิ้นดี!",
+  "bilingual": {
+    "th": "Readrink#4 Tea Party\nRead: เจ้าหญิงนินทา โดย Linda Rodriguez McRobbie\nDrink: Lady Grey Tea\n\nเตรียมมงกุฎเอาไว้ให้พร้อม เพราะพฤษภาคมนี้เราจะมาร่วมแงะแกะเกาความคันของเจ้าหญิงสุดฮิตในประวัติศาสตร์โลก ผ่านหนังสือ \"เจ้าหญิงนินทา\" หนังสือ non-fiction สุดป๊อปที่จะมาฉีกกระชากลากเอาภาพฝันวันหวานของเจ้าหญิงสวยใสมาตีแผ่จนไม่เหลือชิ้นดี!",
+    "en": "Readrink #4 — Tea Party\nRead: Princesses Behaving Badly (เจ้าหญิงนินทา) by Linda Rodriguez McRobbie\nDrink: Lady Grey Tea\n\nReady your crowns — this May we dig into history's most talked-about princesses through Princesses Behaving Badly, a wildly popular work of non-fiction that tears away the fairy-tale veneer from history's most celebrated royal women and lays bare the unvarnished truth.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "เจ้าหญิงนินทา"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

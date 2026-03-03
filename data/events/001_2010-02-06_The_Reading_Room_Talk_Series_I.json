@@ -1,0 +1,84 @@
+{
+  "event_number": 1,
+  "key": "The Reading Room Talk Series I",
+  "display_title": "The Reading Room Talk Series I",
+  "event_date": "2010-02-06",
+  "year": "2010",
+  "series": "Talk Series",
+  "total_duration_seconds": 4315,
+  "video_count": 6,
+  "videos": [
+    {
+      "id": "rYijhbo5esI",
+      "title": "The Reading Room Talk Series I (part 1)",
+      "url": "https://www.youtube.com/watch?v=rYijhbo5esI",
+      "duration_seconds": 900,
+      "upload_date": "20110526"
+    },
+    {
+      "id": "3kRyRfjg0XI",
+      "title": "The Reading Room Talk Series I (part 2)",
+      "url": "https://www.youtube.com/watch?v=3kRyRfjg0XI",
+      "duration_seconds": 663,
+      "upload_date": "20110526"
+    },
+    {
+      "id": "3LLiLi1xEWg",
+      "title": "The Reading Room Talk Series I (part 3)",
+      "url": "https://www.youtube.com/watch?v=3LLiLi1xEWg",
+      "duration_seconds": 899,
+      "upload_date": "20110526"
+    },
+    {
+      "id": "XGhdV5gv7_M",
+      "title": "The Reading Room Talk Series I (part 4)",
+      "url": "https://www.youtube.com/watch?v=XGhdV5gv7_M",
+      "duration_seconds": 482,
+      "upload_date": "20110527"
+    },
+    {
+      "id": "npJZ-D14jzM",
+      "title": "The Reading Room Talk Series I (part 5)",
+      "url": "https://www.youtube.com/watch?v=npJZ-D14jzM",
+      "duration_seconds": 720,
+      "upload_date": "20110527"
+    },
+    {
+      "id": "HiyW0ZtYmWI",
+      "title": "The Reading Room Talk Series I (part 6)",
+      "url": "https://www.youtube.com/watch?v=HiyW0ZtYmWI",
+      "duration_seconds": 651,
+      "upload_date": "20110527"
+    }
+  ],
+  "raw_description": "เสวนา Reading Room ครั้งที่ 1\nโดย อาจารย์ธเนศ วงศ์ยานนาวา และอาจารย์ประพล คำจิ่ม\nวันเสาร์ที่ 6 ก.พ. 2553 เวลา 16:00 น.\n\nThe Reading Room Talk Series I\nThanes Wongyannava + Prapon Kumjim\nSaturday 6 February 2010, 4pm",
+  "bilingual": {
+    "th": "เสวนา Reading Room ครั้งที่ 1 นำโดย อาจารย์ธเนศ วงศ์ยานนาวา และ อาจารย์ประพล คำจิ่ม ที่ The Reading Room Bangkok เมื่อเดือนกุมภาพันธ์ 2553",
+    "en": "The first Reading Room Talk Series, a discussion led by Thanes Wongyannava and Prapon Kumjim at The Reading Room Bangkok in February 2010.",
+    "source_th": "agent_translated",
+    "source_en": "manual"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อาจารย์ธเนศ วงศ์ยานนาวา",
+      "อาจารย์ประพล คำจิ่ม"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ธเนศ วงศ์ยานนาวา / Thanes Wongyannava",
+      "ประพล คำจิ่ม / Prapon Kumjim"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "General / ทั่วไป"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "16:00",
+    "venue": ""
+  }
+}

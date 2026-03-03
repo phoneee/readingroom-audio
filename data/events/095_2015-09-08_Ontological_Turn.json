@@ -1,0 +1,57 @@
+{
+  "event_number": 95,
+  "key": "Ontological Turn",
+  "display_title": "Ontological Turn",
+  "event_date": "2015-09-08",
+  "year": "2015",
+  "series": "Definitions Series",
+  "total_duration_seconds": 8245,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Yo_z3P5h3lA",
+      "title": "Ontological Turn Part 1",
+      "url": "https://www.youtube.com/watch?v=Yo_z3P5h3lA",
+      "duration_seconds": 5539,
+      "upload_date": "20150908"
+    },
+    {
+      "id": "Fv_q2Dzrc0I",
+      "title": "Ontological  Turn  Part 2",
+      "url": "https://www.youtube.com/watch?v=Fv_q2Dzrc0I",
+      "duration_seconds": 2706,
+      "upload_date": "20150908"
+    }
+  ],
+  "raw_description": "“ความจำกัดคำ | คำจำกัดความ” #1: Ontological Turn ร่วมค้นหาความหมายและที่มาที่ไปของคีย์เวิร์ดสำคัญสายมานุษยวิทยาคำนี้ได้กับ\n อ.จักรกริช สังขมณี (คณะรัฐศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย) & อ.เกษม เพ็ญภินันท์ (คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย) \n ร่วมจัดโดย ศูนย์ศึกษาสังคมและวัฒนธรรมร่วมสมัย คณะสังคมวิทยาและมานุษยวิทยา มหาวิทยาลัยธรรมศาสตร์",
+  "bilingual": {
+    "th": "อ.จักรกริช สังขมณี (คณะรัฐศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย) & อ.เกษม เพ็ญภินันท์ (คณะอักษรศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย)\n ร่วมจัดโดย ศูนย์ศึกษาสังคมและวัฒนธรรมร่วมสมัย คณะสังคมวิทยาและมานุษยวิทยา มหาวิทยาลัยธรรมศาสตร์",
+    "en": "A discussion with Ajarn Jakkrit Sangkhamanee (Faculty of Political Science, Chulalongkorn University) and Ajarn Kasem Phenphinant (Faculty of Arts, Chulalongkorn University) on the Ontological Turn.\n\nCo-organised by the Centre for the Study of Contemporary Society and Culture, Faculty of Sociology and Anthropology, Thammasat University.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "จักรกริช สังขมณี",
+      "เกษม เพ็ญภินันท์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "จักรกริช สังขมณี",
+      "เกษม เพ็ญภินันท์ / Kasem Phenphinant"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

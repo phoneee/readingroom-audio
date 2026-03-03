@@ -1,0 +1,58 @@
+{
+  "event_number": 100,
+  "key": "readrink 1: อย่าไปไหน",
+  "display_title": "readrink 1: อย่าไปไหน",
+  "event_date": "2016-02-14",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 2828,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "glTW-mUfAyE",
+      "title": "readrink 1: อย่าไปไหน part1",
+      "url": "https://www.youtube.com/watch?v=glTW-mUfAyE",
+      "duration_seconds": 1151,
+      "upload_date": "20160223"
+    },
+    {
+      "id": "v1reP_Tde6E",
+      "title": "readrink 1: อย่าไปไหน part 2",
+      "url": "https://www.youtube.com/watch?v=v1reP_Tde6E",
+      "duration_seconds": 1677,
+      "upload_date": "20160226"
+    }
+  ],
+  "raw_description": "READRINK: 1\nRead: อย่าไปไหน โดย มาร์กาเร็ต มัซซันตินี \nDrink: เบียร์ถูกๆ \nวันอาทิตย์ที่ 14 กุมภาพันธ์ ที่ The Reading Room สีลม 19\n\nThe Reading Room และ Readery ชวนทุกท่านมา Book Club Party ที่งาน Readrink ครั้งที่ 1 ปาร์ตี้สนทนาหนังสือกับอรรถ บุนนาค กับบุ๊คคลับที่เปิดให้นักอ่านทุกท่านได้มีส่วนร่วมตั้งแต่เลือกหนังสือ พ่วงด้วยเครื่องดื่มเด็ดๆ จากหนังสือเล่มนั้นๆ ที่จะเสิร์ฟระหว่างการสนทนาอย่างสนุกสนาน",
+  "bilingual": {
+    "th": "READRINK: 1\nRead: อย่าไปไหน โดย มาร์กาเร็ต มัซซันตินี\nDrink: เบียร์ถูกๆ\n\nThe Reading Room และ Readery ชวนทุกท่านมา Book Club Party ที่งาน Readrink ครั้งที่ 1 ปาร์ตี้สนทนาหนังสือกับอรรถ บุนนาค กับบุ๊คคลับที่เปิดให้นักอ่านทุกท่านได้มีส่วนร่วมตั้งแต่เลือกหนังสือ พ่วงด้วยเครื่องดื่มเด็ดๆ จากหนังสือเล่มนั้นๆ ที่จะเสิร์ฟระหว่างการสนทนาอย่างสนุกสนาน",
+    "en": "READRINK: 1\nRead: Don't Move by Margaret Mazzantini\nDrink: Cheap beer\n\nThe Reading Room and Readery invited everyone to a Book Club Party at Readrink #1, a lively book conversation party with Att Bunyak — a book club open to all readers, from choosing the book to enjoying themed drinks inspired by the book, served throughout the discussion.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "Readery"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "อย่าไปไหน"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

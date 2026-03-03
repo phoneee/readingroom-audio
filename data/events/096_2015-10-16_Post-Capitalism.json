@@ -1,0 +1,54 @@
+{
+  "event_number": 96,
+  "key": "Post-Capitalism",
+  "display_title": "Post-Capitalism",
+  "event_date": "2015-10-16",
+  "year": "2015",
+  "series": "Definitions Series",
+  "total_duration_seconds": 10034,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "QalNqYV_5dA",
+      "title": "Post-Capitalism Part 1",
+      "url": "https://www.youtube.com/watch?v=QalNqYV_5dA",
+      "duration_seconds": 6591,
+      "upload_date": "20151016"
+    },
+    {
+      "id": "6JS0jHKJYSs",
+      "title": "Post-Capitalism  Part 2",
+      "url": "https://www.youtube.com/watch?v=6JS0jHKJYSs",
+      "duration_seconds": 3443,
+      "upload_date": "20151016"
+    }
+  ],
+  "raw_description": "\"ความจำกัดคำ|คำจำกัดความ\" # 2 โดย อธิป จิตตฤกษ์ และแบ๊งค์ งามอรุณโชติ \nจะมาแนะนำและตีความคำว่า \"Post-Capitalism\"",
+  "bilingual": {
+    "th": "งานเสวนาว่าด้วยแนวคิด Post-Capitalism สำรวจทฤษฎีและแนวโน้มหลังทุนนิยม ร่วมพูดคุยกับ อธิป จิตตฤกษ์ และ แบ๊งค์ งามอรุณโชติ ในซีรีย์ \"ความจำกัดคำ คำจำกัดความ\" ปี 2558",
+    "en": "A discussion on Post-Capitalism, exploring post-capitalist theory and possibilities, with Athip Jittarek and Baeng Ngam-arunchoti, as part of The Reading Room's Definitions Series in 2015.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อธิป จิตตฤกษ์",
+      "แบ๊งค์ งามอรุณโชติ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อธิป จิตตฤกษ์ / Athip Jittarek",
+      "แบ๊งค์ งามอรุณโชติ / Baeng Ngam-arunchoti"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Economics / เศรษฐศาสตร์"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

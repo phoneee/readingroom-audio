@@ -1,0 +1,54 @@
+{
+  "event_number": 141,
+  "key": "Murakami \"Cinema: UN/LIKE/ M/UR/AKA/MI",
+  "display_title": "Murakami \"Cinema: UN/LIKE/ M/UR/AKA/MI\"",
+  "event_date": "2018-01-28",
+  "year": "2018",
+  "series": "Filmvirus",
+  "total_duration_seconds": 2275,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "mFwMamBiDxQ",
+      "title": "Murakami 'Cinema: UN/LIKE/ M/UR/AKA/MI'",
+      "url": "https://www.youtube.com/watch?v=mFwMamBiDxQ",
+      "duration_seconds": 2275,
+      "upload_date": "20180128"
+    }
+  ],
+  "raw_description": "Murakami 'Cinema: UN/LIKE/ M/UR/AKA/MI'\n\nพูดคุยกับ วิวัฒน์ เลิศวิวัฒน์วงศา แห่ง Filmvirus Wildtype และ ธีรภาส ว่องไพศาลกิจ ผู้กำกับ Flummoxed Cocoon เกี่ยวกับภาพยนตร์และกลิ่นอายงานเขียนของฮารูกิ มูราคามิในงานภาพยนตร์ หลังชม ชมหนังสั้น 3 เรื่อง \nBurner, Flummoxed Cocoon, Le Roman de Mitchelle et Francisco",
+  "bilingual": {
+    "th": "พูดคุยกับ วิวัฒน์ เลิศวิวัฒน์วงศา แห่ง Filmvirus Wildtype และ ธีรภาส ว่องไพศาลกิจ ผู้กำกับ Flummoxed Cocoon เกี่ยวกับภาพยนตร์และกลิ่นอายงานเขียนของฮารูกิ มูราคามิในงานภาพยนตร์ หลังชม ชมหนังสั้น 3 เรื่อง\nBurner, Flummoxed Cocoon, Le Roman de Mitchelle et Francisco",
+    "en": "A conversation with Wiwat Lertwiwatwongsa of Filmvirus Wildtype and director Theeraphast Wongphaisankij of Flummoxed Cocoon, on film and the sensibility of Haruki Murakami's writing as it appears in cinema, following a screening of three short films: Burner, Flummoxed Cocoon, and Le Roman de Mitchelle et Francisco.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "วิวัฒน์ เลิศวิวัฒน์วงศา",
+      "ธีรภาส ว่องไพศาลกิจ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "วิวัฒน์ เลิศวิวัฒน์วงศา / Wiwat Lertwiwattanawongsa (Filmsick)",
+      "ธีรภาส ว่องไพศาลกิจ"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Literature / วรรณกรรม",
+      "Art / ศิลปะ"
+    ],
+    "partners": [
+      "Film Virus"
+    ],
+    "formats": [
+      "Screening / ฉายภาพยนตร์",
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

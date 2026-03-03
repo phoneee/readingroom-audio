@@ -1,0 +1,53 @@
+{
+  "event_number": 160,
+  "key": "Reading group อ่านงาน Freedom\"s Right โดย Axel Honneth",
+  "display_title": "Reading group อ่านงาน Freedom's Right โดย Axel Honneth",
+  "event_date": "2019-06-05",
+  "year": "2019",
+  "series": "Reading Group",
+  "total_duration_seconds": 6115,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "PkxqIwLGIws",
+      "title": "Part1 Reading group อ่านงาน Freedom’s Right โดย Axel Honneth",
+      "url": "https://www.youtube.com/watch?v=PkxqIwLGIws",
+      "duration_seconds": 3535,
+      "upload_date": "20190605"
+    },
+    {
+      "id": "oqbS3jqHJ0g",
+      "title": "Part2 Reading group อ่านงาน Freedom’s Right โดย Axel Honneth",
+      "url": "https://www.youtube.com/watch?v=oqbS3jqHJ0g",
+      "duration_seconds": 2580,
+      "upload_date": "20190605"
+    }
+  ],
+  "raw_description": "",
+  "bilingual": {
+    "th": "กลุ่มอ่านหนังสือว่าด้วยงาน \"Freedom's Right\" ของ Axel Honneth นักปรัชญาสังคมชาวเยอรมัน สำรวจทฤษฎีเสรีภาพทางสังคมและการยอมรับในบริบทร่วมสมัย จัดขึ้นในปี 2562",
+    "en": "A reading group on Axel Honneth's \"Freedom's Right,\" exploring his theory of social freedom and recognition in a contemporary context, held in 2019.",
+    "source_th": "agent_fabricated",
+    "source_en": "agent_fabricated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Politics / การเมือง"
+    ],
+    "partners": [],
+    "formats": [
+      "Reading Group"
+    ],
+    "book_titles": [
+      "Freedom's Right"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

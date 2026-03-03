@@ -1,0 +1,59 @@
+{
+  "event_number": 146,
+  "key": "Readrink #22 — \"ยัญพิธีเชือดแพะ\" นวนิยายผู้เผด็จการลาตินอเมริกา",
+  "display_title": "Readrink #22 — \"ยัญพิธีเชือดแพะ\" นวนิยายผู้เผด็จการลาตินอเมริกา",
+  "event_date": "2018-03-19",
+  "year": "2018",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 6201,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "5_5myduSNes",
+      "title": "Readrink #22 — “ยัญพิธีเชือดแพะ” นวนิยายผู้เผด็จการลาตินอเมริกา (1/2)",
+      "url": "https://www.youtube.com/watch?v=5_5myduSNes",
+      "duration_seconds": 3424,
+      "upload_date": "20180319"
+    },
+    {
+      "id": "zbMeBQ50XwE",
+      "title": "Readrink #22 — “ยัญพิธีเชือดแพะ” นวนิยายผู้เผด็จการลาตินอเมริกา (2/2)",
+      "url": "https://www.youtube.com/watch?v=zbMeBQ50XwE",
+      "duration_seconds": 2777,
+      "upload_date": "20180319"
+    }
+  ],
+  "raw_description": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 22 ชวนอ่านและล้อมวงคุยเรื่อง “ยัญพิธีเชือดแพะ” นวนิยายผู้เผด็จการลาตินอเมริกาอิงประวัติศาสตร์ของ มาริโอ บาร์กัส โยซา นักเขียนรางวัลโนเบลชาวเปรู ชวนคุยโดยคุณอรรถ บุนนาค และสำนักพิมพ์บทจร",
+  "bilingual": {
+    "th": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 22 ชวนอ่านและล้อมวงคุยเรื่อง “ยัญพิธีเชือดแพะ” นวนิยายผู้เผด็จการลาตินอเมริกาอิงประวัติศาสตร์ของ มาริโอ บาร์กัส โยซา นักเขียนรางวัลโนเบลชาวเปรู ชวนคุยโดยคุณอรรถ บุนนาค และสำนักพิมพ์บทจร",
+    "en": "Readrink Book Club #22 presents a discussion of The Feast of the Goat, a historical novel about a Latin American dictator by Mario Vargas Llosa, the Peruvian Nobel laureate. Facilitated by อรรถ บุนนาค and สำนักพิมพ์บทจร.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Politics / การเมือง"
+    ],
+    "partners": [
+      "Bodjorn Publishing / สำนักพิมพ์บทจร"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ยัญพิธีเชือดแพะ"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

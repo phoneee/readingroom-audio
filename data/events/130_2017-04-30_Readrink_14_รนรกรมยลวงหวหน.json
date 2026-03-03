@@ -1,0 +1,63 @@
+{
+  "event_number": 130,
+  "key": "Readrink #14 รื่นรักรมย์ลวง@หัวหิน",
+  "display_title": "Readrink #14 รื่นรักรมย์ลวง@หัวหิน",
+  "event_date": "2017-04-30",
+  "year": "2017",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7889,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "ySTY7RRso7E",
+      "title": "Readrink #14 รื่นรักรมย์ลวง@หัวหิน PART1",
+      "url": "https://www.youtube.com/watch?v=ySTY7RRso7E",
+      "duration_seconds": 2810,
+      "upload_date": "20170501"
+    },
+    {
+      "id": "cH2ksjjdF58",
+      "title": "Readrink #14 รื่นรักรมย์ลวง@หัวหิน PART2",
+      "url": "https://www.youtube.com/watch?v=cH2ksjjdF58",
+      "duration_seconds": 3697,
+      "upload_date": "20170501"
+    },
+    {
+      "id": "WXdzYQvjONo",
+      "title": "Readrink #14 รื่นรักรมย์ลวง@หัวหิน PART3",
+      "url": "https://www.youtube.com/watch?v=WXdzYQvjONo",
+      "duration_seconds": 1382,
+      "upload_date": "20170501"
+    }
+  ],
+  "raw_description": "งานบุ๊คคลับ Readrink ครั้งที่ 14 อ่าน ″รื่นรัก รมย์ลวง@หัวหิน″ นิยายเล่มใหม่ล่าสุดของ กิ่งฉัตร \n\nเรื่องของ อธินาถ หญิงสาวผู้สื่อวิญญาณกับ จิรัสย์ ชายหนุ่มเจ้าของโรงแรม ความวุ่นวายเริ่มต้นขึ้นเมื่อนางเอกต้องเดินทางไปสื่อสารกับวิญญาณคุณทวดของพระเอกที่หัวหิน เล่มนี้มีครบทุกรส ทั้งลึกลับเหนือธรรมชาติ สืบสวนสอบสวน และมีความโรเเมนติกกุ๊กกิ๊กให้ชุ่มชื่นหัวใจ\n\nวันอาทิตย์ที่ 30 เมษายนนี้ เวลา 14:00 - 16:00 น.\nนำสนทนาโดย อรรถ บุนนาค และ Readery ที่ The Reading Room, Bangkok สีลมซอย 19",
+  "bilingual": {
+    "th": "งานบุ๊คคลับ Readrink ครั้งที่ 14 อ่าน ″รื่นรัก รมย์ลวง@หัวหิน″ นิยายเล่มใหม่ล่าสุดของ กิ่งฉัตร\n\nเรื่องของ อธินาถ หญิงสาวผู้สื่อวิญญาณกับ จิรัสย์ ชายหนุ่มเจ้าของโรงแรม ความวุ่นวายเริ่มต้นขึ้นเมื่อนางเอกต้องเดินทางไปสื่อสารกับวิญญาณคุณทวดของพระเอกที่หัวหิน เล่มนี้มีครบทุกรส ทั้งลึกลับเหนือธรรมชาติ สืบสวนสอบสวน และมีความโรแมนติกกุ๊กกิ๊กให้ชุ่มชื่นหัวใจ\n\nนำสนทนาโดย อรรถ บุนนาค และ Readery",
+    "en": "Readrink Book Club #14 presents a discussion of Ruen Rak Rom Luang at Hua Hin, the latest novel by Kingchat. The story follows Athinat, a young woman gifted with mediumship, and Jirat, the young owner of a Hua Hin hotel. Complications arise when she is sent to communicate with the spirit of his great-grandmother at the seaside resort. The novel blends supernatural mystery, detective intrigue, and romance in equal measure. Facilitated by อรรถ บุนนาค and Readery.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "display_speakers": [],
+    "display_moderators": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "Readery"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

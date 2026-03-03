@@ -1,0 +1,77 @@
+{
+  "event_number": 2,
+  "key": "Capoeira Angola Bangkok",
+  "display_title": "Capoeira Angola Bangkok",
+  "event_date": "2011-06-08",
+  "year": "2011",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 3910,
+  "video_count": 5,
+  "videos": [
+    {
+      "id": "w8EwDyMAHhg",
+      "title": "Capoeira Angola Bangkok (part 1)",
+      "url": "https://www.youtube.com/watch?v=w8EwDyMAHhg",
+      "duration_seconds": 900,
+      "upload_date": "20110608"
+    },
+    {
+      "id": "6gZ37Ko5lf0",
+      "title": "Capoeira Angola Bangkok (part 2)",
+      "url": "https://www.youtube.com/watch?v=6gZ37Ko5lf0",
+      "duration_seconds": 900,
+      "upload_date": "20110619"
+    },
+    {
+      "id": "BD5w0PE1fO4",
+      "title": "Capoeira Angola Bangkok (part 3)",
+      "url": "https://www.youtube.com/watch?v=BD5w0PE1fO4",
+      "duration_seconds": 900,
+      "upload_date": "20110619"
+    },
+    {
+      "id": "AIUB0U669rA",
+      "title": "Capoeira Angola Bangkok (part 4)",
+      "url": "https://www.youtube.com/watch?v=AIUB0U669rA",
+      "duration_seconds": 615,
+      "upload_date": "20110620"
+    },
+    {
+      "id": "wyRthqND048",
+      "title": "Capoeira Angola Bangkok (part 5)",
+      "url": "https://www.youtube.com/watch?v=wyRthqND048",
+      "duration_seconds": 595,
+      "upload_date": "20110620"
+    }
+  ],
+  "raw_description": "In collaboration with The Reading Room, Capoeira Angola Bangkok organized a screening of \"Rhythmic Uprising\", a documentary film and project that seeks to empower a movement of artists who are using African-Brazilian traditions to elevate the quality of life for children in the culturally rich region of Bahia, Brazil.",
+  "bilingual": {
+    "th": "งานฉายภาพยนตร์สารคดีและเสวนาว่าด้วย Capoeira Angola ที่กรุงเทพมหานคร สำรวจประเพณีศิลปะการต่อสู้แอฟริกัน-บราซิลและความเชื่อมโยงกับขบวนการทางสังคมและวัฒนธรรมร่วมสมัย",
+    "en": "A screening and talk on Capoeira Angola in Bangkok, exploring the African-Brazilian martial arts tradition and its connections to contemporary social and cultural movements.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Society / สังคม",
+      "Southeast Asia / อาเซียน"
+    ],
+    "partners": [
+      "Capoeira Angola Bangkok"
+    ],
+    "formats": [
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [
+      "Rhythmic Uprising"
+    ],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "event_number": 88,
+  "key": "Strawberry Sunday Book Club#15",
+  "display_title": "Strawberry Sunday Book Club#15",
+  "event_date": "2014-12-01",
+  "year": "2014",
+  "series": "Book Club",
+  "total_duration_seconds": 7682,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "7Buw8gyeXY4",
+      "title": "Strawberry Sunday Book Club#15 Part1",
+      "url": "https://www.youtube.com/watch?v=7Buw8gyeXY4",
+      "duration_seconds": 4169,
+      "upload_date": "20141201"
+    },
+    {
+      "id": "brUDIrsSgh0",
+      "title": "Strawberry Sunday Book Club#15 Part 2",
+      "url": "https://www.youtube.com/watch?v=brUDIrsSgh0",
+      "duration_seconds": 3513,
+      "upload_date": "20141201"
+    }
+  ],
+  "raw_description": "Strawberry Sunday Book Club ครั้งที่ 15 อ่าน \"ไส้เดือนตาบอดในเขาวงกต\" โดย วีรพร  นิติประภา กับคุณอรรถ บุนนาค",
+  "bilingual": {
+    "th": "Strawberry Sunday Book Club ครั้งที่ 15 อ่าน \"ไส้เดือนตาบอดในเขาวงกต\" โดย วีรพร นิติประภา กับคุณอรรถ บุนนาค",
+    "en": "Strawberry Sunday Book Club, session 15: a discussion of ไส้เดือนตาบอดในเขาวงกต (Blind Earthworm in a Labyrinth) by วีรพร นิติประภา, with คุณอรรถ บุนนาค.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ไส้เดือนตาบอดในเขาวงกต"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "event_number": 81,
+  "key": "This is Not Fiction#3: The Reluctant Fundamentalist",
+  "display_title": "This is Not Fiction#3: The Reluctant Fundamentalist",
+  "event_date": "2014-09-24",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 6721,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "-M5UBPbJQOU",
+      "title": "This is Not Fiction#3: The Reluctant Fundamentalist Part 1",
+      "url": "https://www.youtube.com/watch?v=-M5UBPbJQOU",
+      "duration_seconds": 3480,
+      "upload_date": "20140924"
+    },
+    {
+      "id": "VXK3fpZqQhg",
+      "title": "This is Not Fiction#3: The Reluctant Fundamentalist   Part2",
+      "url": "https://www.youtube.com/watch?v=VXK3fpZqQhg",
+      "duration_seconds": 3241,
+      "upload_date": "20140924"
+    }
+  ],
+  "raw_description": "This is Not Fiction#3: เรื่องจริงอิงนิยาย พูดคุยเกี่ยวกับหนังสือ \nThe Reluctant Fundamentalist ของนักเขียนปากีสถาน Mohsin Hamid \nโดย อ.แพร จิตติพลังศรี",
+  "bilingual": {
+    "th": "This is Not Fiction#3: เรื่องจริงอิงนิยาย พูดคุยเกี่ยวกับหนังสือ\nThe Reluctant Fundamentalist ของนักเขียนปากีสถาน Mohsin Hamid",
+    "en": "This is Not Fiction #3: Stranger than Fiction — a discussion of The Reluctant Fundamentalist by Pakistani author Mohsin Hamid. With อ.แพร จิตติพลังศรี.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อ.แพร จิตติพลังศรี"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "แพร จิตติพลังศรี / Prae Jittiphalangsri"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "The Reluctant Fundamentalist"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

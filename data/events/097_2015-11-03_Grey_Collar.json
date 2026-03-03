@@ -1,0 +1,50 @@
+{
+  "event_number": 97,
+  "key": "Grey Collar",
+  "display_title": "Grey Collar",
+  "event_date": "2015-11-03",
+  "year": "2015",
+  "series": "Definitions Series",
+  "total_duration_seconds": 7137,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "HSF-1ijJJGQ",
+      "title": "Grey Collar",
+      "url": "https://www.youtube.com/watch?v=HSF-1ijJJGQ",
+      "duration_seconds": 7137,
+      "upload_date": "20151103"
+    }
+  ],
+  "raw_description": "\"ความจำกัดคำ | คำจำกัดความ” # 3 แนะนำและตีความคำว่า “Grey Collar” ที่เป็นประเด็นสำคัญของแรงงานศึกษา \nและวิชาสังคมวิทยาแรงงานในปัจจุบัน มาร่วมหาคำตอบกับ อ.อภิวัฒน์ รัตนวราหะ และ อ.เก่งกิจ กิติเรียงลาภ",
+  "bilingual": {
+    "th": "ซีรีส์เสวนา \"คำจำกัดความ ความจำกัดคำ\" ว่าด้วยแนวคิด \"Grey Collar\" และวิชาสังคมวิทยาแรงงานในปัจจุบัน มาร่วมหาคำตอบกับ อ.อภิวัฒน์ รัตนวราหะ และ อ.เก่งกิจ กิติเรียงลาภ",
+    "en": "A discussion on the sociology of labour in the present day, exploring the concept of \"grey collar\" workers with Ajarn Aphiwat Rattanaraha and Ajarn Kaengkit Kiti-rianglap.",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อภิวัฒน์ รัตนวราหะ",
+      "เก่งกิจ กิติเรียงลาภ"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อภิวัฒน์ รัตนวราหะ",
+      "เก่งกิจ กิติเรียงลาภ"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Economics / เศรษฐศาสตร์",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

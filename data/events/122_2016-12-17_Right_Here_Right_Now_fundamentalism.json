@@ -1,0 +1,69 @@
+{
+  "event_number": 122,
+  "key": "Right Here, Right Now : fundamentalism",
+  "display_title": "Right Here, Right Now : fundamentalism",
+  "event_date": "2016-12-17",
+  "year": "2016",
+  "series": "Right Here, Right Now",
+  "total_duration_seconds": 9723,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "_33X4CTbgLw",
+      "title": "Right Here, Right Now : fundamentalism part1",
+      "url": "https://www.youtube.com/watch?v=_33X4CTbgLw",
+      "duration_seconds": 3709,
+      "upload_date": "20161219"
+    },
+    {
+      "id": "Er7v2RwdT9k",
+      "title": "Right Here, Right Now : fundamentalism part2",
+      "url": "https://www.youtube.com/watch?v=Er7v2RwdT9k",
+      "duration_seconds": 3703,
+      "upload_date": "20161219"
+    },
+    {
+      "id": "LkjUhOXPM5I",
+      "title": "Right Here, Right Now : fundamentalism part3",
+      "url": "https://www.youtube.com/watch?v=LkjUhOXPM5I",
+      "duration_seconds": 2311,
+      "upload_date": "20161219"
+    }
+  ],
+  "raw_description": "ศาสนามีบทบาทอย่างไรในโลกสมัยใหม่ เราจะทำความเข้าใจความสัมพันธ์ระหว่างศาสนา การเมือง และความรุนแรง ในบริบทที่กระแสโลกกำลังหันขวาได้อย่างไร ความคิดแบบ fundamentalism มีที่มาอย่างไร นำมาใช้ทำความเข้าใจพัฒนาการของศาสนาและการเมืองได้หรือไม่ ร่วมสนทนาประเด็นเหล่านี้ในงาน Right Here, Right Now #3: Fundamentalism โดย ซากีย์ พิทักษ์คุมพล และ ประกีรติ สัตสุต ดำเนินรายการโดย อรอนงค์ ทิพย์พิมล ในวันเสาร์ที่ 17 ธันวาคม 14:00น. ณ The Reading Room สีลม 19",
+  "bilingual": {
+    "th": "ศาสนามีบทบาทอย่างไรในโลกสมัยใหม่ เราจะทำความเข้าใจความสัมพันธ์ระหว่างศาสนา การเมือง และความรุนแรง ในบริบทที่กระแสโลกกำลังหันขวาได้อย่างไร ความคิดแบบ fundamentalism มีที่มาอย่างไร นำมาใช้ทำความเข้าใจพัฒนาการของศาสนาและการเมืองได้หรือไม่ ร่วมสนทนาประเด็นเหล่านี้ในงาน Right Here, Right Now #3: Fundamentalism โดย ซากีย์ พิทักษ์คุมพล และ ประกีรติ สัตสุต",
+    "en": "What role does religion play in the modern world? How do we make sense of the relationship between religion, politics, and violence in a context where the global tide is turning rightward? What are the intellectual origins of fundamentalism, and can the concept be usefully applied to understanding religious and political developments today? Join a discussion of these questions at Right Here, Right Now #3: Fundamentalism, with ซากีย์ พิทักษ์คุมพล and ประกีรติ สัตสุต. Moderated by อรอนงค์ ทิพย์พิมล.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ซากีย์ พิทักษ์คุมพล",
+      "ประกีรติ สัตสุต"
+    ],
+    "moderators_raw": [
+      "อรอนงค์ ทิพย์พิมล"
+    ],
+    "display_speakers": [
+      "ซากีย์ พิทักษ์คุมพล / Saki Phithakkhumphon",
+      "ประกีรติ สัตสุต / Prakirti Satsut"
+    ],
+    "display_moderators": [
+      "อรอนงค์ ทิพย์พิมล / Onanong Thippimon"
+    ],
+    "topics": [
+      "Politics / การเมือง",
+      "Philosophy / ปรัชญา",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

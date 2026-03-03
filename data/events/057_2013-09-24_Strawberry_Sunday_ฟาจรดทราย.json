@@ -1,0 +1,49 @@
+{
+  "event_number": 57,
+  "key": "Strawberry Sunday : ฟ้าจรดทราย",
+  "display_title": "Strawberry Sunday : ฟ้าจรดทราย",
+  "event_date": "2013-09-24",
+  "year": "2013",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 5009,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "dSrtTw4PrFY",
+      "title": "Strawberry Sunday : ฟ้าจรดทราย",
+      "url": "https://www.youtube.com/watch?v=dSrtTw4PrFY",
+      "duration_seconds": 5009,
+      "upload_date": "20130924"
+    }
+  ],
+  "raw_description": "The Reading Room เสนอบุ๊คคลับหวานใส Strawberry Sunday Book Club อ่านหนังสือป็อปกับคุณอรรถ บุนนาค เริ่มครั้งแรกกันด้วย \"ฟ้าจรดทราย\" นิยายรักของโสภาค สุวรรณ ที่เกิดท่ามกลางดินแดนในทะเลทรายอันร้อนระอุ เป็นนิยายได้รับการตอบรับจากผู้อ่านทุกเพศทุกวัยมาเป็นเวลานาน และได้รับการดัดแปลงเป็นละครโทรทัศน์ที่เป็นประเด็นร้อนและถูกกล่าวถึงกันอย่างแพร่หลายอยู่ในปัจจุบัน",
+  "bilingual": {
+    "th": "The Reading Room เสนอบุ๊คคลับหวานใส Strawberry Sunday Book Club อ่านหนังสือป็อปกับคุณอรรถ บุนนาค เริ่มครั้งแรกกันด้วย \"ฟ้าจรดทราย\" นิยายรักของโสภาค สุวรรณ ที่เกิดท่ามกลางดินแดนในทะเลทรายอันร้อนระอุ เป็นนิยายได้รับการตอบรับจากผู้อ่านทุกเพศทุกวัยมาเป็นเวลานาน และได้รับการดัดแปลงเป็นละครโทรทัศน์ที่เป็นประเด็นร้อนและถูกกล่าวถึงกันอย่างแพร่หลายอยู่ในปัจจุบัน",
+    "en": "The Reading Room presents Strawberry Sunday Book Club: Reading Pop Fiction with คุณอรรถ บุนนาค. The inaugural session opens with ฟ้าจรดทราย (Where the Sky Meets the Sand), a romance by โสภาค สุวรรณ set against the blazing landscapes of the desert. The novel has found enthusiastic readers across all ages and genders over many years, and its recent television adaptation has become one of the most widely discussed dramas currently on air.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ฟ้าจรดทราย"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

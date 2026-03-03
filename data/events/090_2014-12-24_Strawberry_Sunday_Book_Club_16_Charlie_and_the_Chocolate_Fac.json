@@ -1,0 +1,49 @@
+{
+  "event_number": 90,
+  "key": "Strawberry Sunday Book Club #16 : Charlie and the Chocolate Factory",
+  "display_title": "Strawberry Sunday Book Club #16 : Charlie and the Chocolate Factory",
+  "event_date": "2014-12-24",
+  "year": "2014",
+  "series": "Book Club",
+  "total_duration_seconds": 5394,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "WI6ZOmXKaiI",
+      "title": "Strawberry Sunday Book Club #16 : Charlie and the Chocolate Factory",
+      "url": "https://www.youtube.com/watch?v=WI6ZOmXKaiI",
+      "duration_seconds": 5394,
+      "upload_date": "20141224"
+    }
+  ],
+  "raw_description": "Strawberry Sunday Book Club ครั้งที่ 16\nอ่าน \"โรงงานช็อคโกแล็ตมหัศจรรย์\" โดย โรอัลด์  ดาห์ล\nกับคุณอรรถ บุนนาค",
+  "bilingual": {
+    "th": "Strawberry Sunday Book Club ครั้งที่ 16\nอ่าน \"โรงงานช็อคโกแล็ตมหัศจรรย์\" โดย โรอัลด์ ดาห์ล\nกับคุณอรรถ บุนนาค",
+    "en": "Strawberry Sunday Book Club, session 16: a discussion of Charlie and the Chocolate Factory (โรงงานช็อคโกแล็ตมหัศจรรย์) by Roald Dahl, with คุณอรรถ บุนนาค.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "โรงงานช็อคโกแล็ตมหัศจรรย์"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

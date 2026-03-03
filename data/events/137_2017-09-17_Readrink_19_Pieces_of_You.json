@@ -1,0 +1,65 @@
+{
+  "event_number": 137,
+  "key": "Readrink 19 : Pieces of You",
+  "display_title": "Readrink 19 : Pieces of You",
+  "event_date": "2017-09-17",
+  "year": "2017",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7507,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "09q_jcaXgvc",
+      "title": "Readrink 19 : Pieces of You (1/3)",
+      "url": "https://www.youtube.com/watch?v=09q_jcaXgvc",
+      "duration_seconds": 3407,
+      "upload_date": "20170917"
+    },
+    {
+      "id": "dM8FaEcyJSw",
+      "title": "Readrink 19 : Pieces of You (2/3)",
+      "url": "https://www.youtube.com/watch?v=dM8FaEcyJSw",
+      "duration_seconds": 2938,
+      "upload_date": "20170917"
+    },
+    {
+      "id": "Ty6hb5SQaKY",
+      "title": "Readrink 19 : Pieces of You (3/3)",
+      "url": "https://www.youtube.com/watch?v=Ty6hb5SQaKY",
+      "duration_seconds": 1162,
+      "upload_date": "20170917"
+    }
+  ],
+  "raw_description": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 19 รี้ดเดอร์รี่ชวนอ่าน “Pieces of You เศษเสี้ยวของเธอ“ รวมเรื่องสั้นของ Tablo แร็ปเปอร์เกาหลีชื่อดัง เล่าถึงหัวใจที่เจ็บปวดและโดดเดี่ยวของผู้คนที่อยู่ในวัยแห่งการเติบโตและสูญเสีย \n\nจากเด็กหนุ่มผู้เคยมีหัวใจปิดตายและเย็นชา แต่กลับยืนหยัดขึ้นมาจากวัยเยาว์ที่แตกสลาย หนังสือเล่มนี้จึงคล้ายถ้อยคำปลอบประโลม แก่ทุกคนที่กำลังโดดเดี่ยวจากการต่อสู้และหลงทางระหว่างการเติบโต \n\nถ้าหัวใจของคุณกำลังเจ็บปวดหรือรู้สึกโดดเดี่ยว ลองเปิดหนังสือ Pieces of You อ่าน แล้วเรามาแลกเปลี่ยนความเจ็บปวดของกันและกัน ถ้อยคำของ ทาโบล เป็นเหมือนเสียงกระซิบอันอ่อนโยนที่คอยปลอบใจ\n\n“ผมเข้าใจความเดียวดายของคุณ ผมเห็นเงาของคุณ”\n\nนำสนทนาโดย อรรถ บุนนาค \n\nวันอาทิตย์ที่ 17 กันยายน 2560 เวลา 14:00–17:00 ที่ห้องสมุด The Reading Room สีลมซอย 19",
+  "bilingual": {
+    "th": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 19 รี้ดเดอร์รี่ชวนอ่าน “Pieces of You เศษเสี้ยวของเธอ“ รวมเรื่องสั้นของ Tablo แร็ปเปอร์เกาหลีชื่อดัง เล่าถึงหัวใจที่เจ็บปวดและโดดเดี่ยวของผู้คนที่อยู่ในวัยแห่งการเติบโตและสูญเสีย\n\nจากเด็กหนุ่มผู้เคยมีหัวใจปิดตายและเย็นชา แต่กลับยืนหยัดขึ้นมาจากวัยเยาว์ที่แตกสลาย หนังสือเล่มนี้จึงคล้ายถ้อยคำปลอบประโลม แก่ทุกคนที่กำลังโดดเดี่ยวจากการต่อสู้และหลงทางระหว่างการเติบโต\n\nถ้าหัวใจของคุณกำลังเจ็บปวดหรือรู้สึกโดดเดี่ยว ลองเปิดหนังสือ Pieces of You อ่าน แล้วเรามาแลกเปลี่ยนความเจ็บปวดของกันและกัน ถ้อยคำของ ทาโบล เป็นเหมือนเสียงกระซิบอันอ่อนโยนที่คอยปลอบใจ\n\n“ผมเข้าใจความเดียวดายของคุณ ผมเห็นเงาของคุณ”\n\nนำสนทนาโดย อรรถ บุนนาค",
+    "en": "Readrink Book Club #19 presents a discussion of Pieces of You (เศษเสี้ยวของเธอ), a short story collection by Tablo, the celebrated Korean rapper — tales of the aching, lonely hearts of people caught in the throes of growing up and loss.\n\nWritten by a young man who once had a closed and cold heart yet rose from a shattered youth, this book reads like words of consolation for all who are lonely in their struggles, adrift in the process of becoming.\n\nIf your heart is in pain or you feel alone, open Pieces of You — and let us share our pain with one another. Tablo's words are like a gentle whisper of comfort.\n\n\"I understand your solitude. I see your shadow.\"\n\nFacilitated by อรรถ บุนนาค.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "display_speakers": [],
+    "display_moderators": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "Readery"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ผมเข้าใจความเดียวดายของคุณ ผมเห็นเงาของคุณ"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

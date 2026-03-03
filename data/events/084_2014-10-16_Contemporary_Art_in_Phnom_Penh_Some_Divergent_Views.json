@@ -1,0 +1,55 @@
+{
+  "event_number": 84,
+  "key": "Contemporary Art in Phnom Penh: Some Divergent Views",
+  "display_title": "Contemporary Art in Phnom Penh: Some Divergent Views",
+  "event_date": "2014-10-16",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 17232,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "Amz971UoNDc",
+      "title": "Contemporary Art in Phnom Penh: Some Divergent Views Part1",
+      "url": "https://www.youtube.com/watch?v=Amz971UoNDc",
+      "duration_seconds": 6075,
+      "upload_date": "20141016"
+    },
+    {
+      "id": "d4kl1NNH7_8",
+      "title": "Contemporary Art in Phnom Penh: Some Divergent Views Part 2",
+      "url": "https://www.youtube.com/watch?v=d4kl1NNH7_8",
+      "duration_seconds": 5285,
+      "upload_date": "20141016"
+    },
+    {
+      "id": "QCc7ShClRq4",
+      "title": "Contemporary Art in Phnom Penh: Some Divergent Views Part 3",
+      "url": "https://www.youtube.com/watch?v=QCc7ShClRq4",
+      "duration_seconds": 5872,
+      "upload_date": "20141016"
+    }
+  ],
+  "raw_description": "",
+  "bilingual": {
+    "th": "งานเสวนาว่าด้วยศิลปะร่วมสมัยในพนมเปญ นำเสนอมุมมองที่หลากหลายเกี่ยวกับฉากศิลปะที่กำลังเติบโตของกัมพูชาและพลวัตทางวัฒนธรรมที่กำลังเปลี่ยนแปลง จัดขึ้นในปี 2557",
+    "en": "A talk presenting divergent perspectives on contemporary art in Phnom Penh, examining Cambodia's emerging art scene and its evolving cultural dynamics, held in 2014.",
+    "source_th": "agent_fabricated",
+    "source_en": "agent_fabricated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

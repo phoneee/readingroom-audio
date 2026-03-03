@@ -1,0 +1,56 @@
+{
+  "event_number": 132,
+  "key": "Readrink #16 — American Gods",
+  "display_title": "Readrink #16 — American Gods",
+  "event_date": "2017-06-17",
+  "year": "2017",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7948,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Pfj-BsljMd8",
+      "title": "Readrink #16 — American Gods (1/2)",
+      "url": "https://www.youtube.com/watch?v=Pfj-BsljMd8",
+      "duration_seconds": 3792,
+      "upload_date": "20170622"
+    },
+    {
+      "id": "PrxFkoHqHBQ",
+      "title": "Readrink #16 — American Gods (2/2)",
+      "url": "https://www.youtube.com/watch?v=PrxFkoHqHBQ",
+      "duration_seconds": 4156,
+      "upload_date": "20170622"
+    }
+  ],
+  "raw_description": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 16 เราชวนอ่าน ’อเมริกัน ก็อดส์’ นิยายแฟนตาซี-ดราม่า เรื่องดังของนีล เกแมน และเพิ่งถูกดัดแปลงเป็นซีรีส์ในชื่อเรื่องเดียวกัน \n\n\n\nวันเสาร์ที่ 17 มิถุนายน 2560 เวลา 14:00–16:00 ที่ห้องสมุด The Reading Room สีลมซอย 19\n\nนำสนทนาโดย: อรรถ บุนนาค\nร่วมจัดงานโดย: Readery, The Reading Room, Bangkok\nซื้อหนังสือได้ที่: https://readery.co/9786169187394",
+  "bilingual": {
+    "th": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 16 เราชวนอ่าน ’อเมริกัน ก็อดส์’ นิยายแฟนตาซี-ดราม่า เรื่องดังของนีล เกแมน และเพิ่งถูกดัดแปลงเป็นซีรีส์ในชื่อเรื่องเดียวกัน\n\nนำสนทนาโดย: อรรถ บุนนาค\nร่วมจัดงานโดย: Readery, The Reading Room, Bangkok",
+    "en": "Readrink Book Club #16 turns to American Gods, the acclaimed fantasy-drama novel by Neil Gaiman — which has since been adapted as a television series of the same name. Facilitated by อรรถ บุนนาค; co-presented by Readery and The Reading Room, Bangkok.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "display_speakers": [],
+    "display_moderators": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "Readery"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

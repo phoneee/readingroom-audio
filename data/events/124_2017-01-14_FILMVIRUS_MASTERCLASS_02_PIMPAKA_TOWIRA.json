@@ -1,0 +1,71 @@
+{
+  "event_number": 124,
+  "key": "FILMVIRUS MASTERCLASS 02 : PIMPAKA TOWIRA",
+  "display_title": "FILMVIRUS MASTERCLASS 02 : PIMPAKA TOWIRA",
+  "event_date": "2017-01-14",
+  "year": "2017",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 8258,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "NiuBLSVmKjw",
+      "title": "FILMVIRUS MASTERCLASS 02 : PIMPAKA TOWIRA PART1",
+      "url": "https://www.youtube.com/watch?v=NiuBLSVmKjw",
+      "duration_seconds": 3666,
+      "upload_date": "20170115"
+    },
+    {
+      "id": "tXdeRFmCpgg",
+      "title": "FILMVIRUS MASTERCLASS 02 : PIMPAKA TOWIRA PART2",
+      "url": "https://www.youtube.com/watch?v=tXdeRFmCpgg",
+      "duration_seconds": 3700,
+      "upload_date": "20170115"
+    },
+    {
+      "id": "bwRaPxRm2V4",
+      "title": "FILMVIRUS MASTERCLASS 02 : PIMPAKA TOWIRA PART3",
+      "url": "https://www.youtube.com/watch?v=bwRaPxRm2V4",
+      "duration_seconds": 892,
+      "upload_date": "20170115"
+    }
+  ],
+  "raw_description": "สนทนาหลังฉายหนัง เกี่ยวกับ ความคิด การทำงาน และความเห็นของ พิมพกา โตวิระ ต่อเรื่องต่างๆ ดำเนินรายการโดย วิวัฒน์ เลิศวิวัฒน์วงศา และ รัชฎ์ภูมิ บุญบัญชาโชค ในวันที่14-15 มกราคม 2560",
+  "bilingual": {
+    "th": "สนทนาหลังฉายหนัง เกี่ยวกับ ความคิด การทำงาน และความเห็นของ พิมพกา โตวิระ ต่อเรื่องต่างๆ",
+    "en": "A post-screening conversation exploring the ideas, practice, and perspectives of filmmaker Pimpaka Towira.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "พิมพกา โตวิระ"
+    ],
+    "moderators_raw": [
+      "วิวัฒน์ เลิศวิวัฒน์วงศา",
+      "รัชฎ์ภูมิ บุญบัญชาโชค"
+    ],
+    "display_speakers": [
+      "พิมพกา โตวิระ"
+    ],
+    "display_moderators": [
+      "วิวัฒน์ เลิศวิวัฒน์วงศา / Wiwat Lertwiwattanawongsa (Filmsick)",
+      "รัชฎ์ภูมิ บุญบัญชาโชค / Ratchaphumi Boonbanchachok"
+    ],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Society / สังคม"
+    ],
+    "partners": [
+      "Film Virus"
+    ],
+    "formats": [
+      "Screening / ฉายภาพยนตร์",
+      "Masterclass"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

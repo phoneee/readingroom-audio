@@ -1,0 +1,78 @@
+{
+  "event_number": 24,
+  "key": "Night School#5 : Media Art",
+  "display_title": "Night School#5 : Media Art",
+  "event_date": "2012-06-21",
+  "year": "2012",
+  "series": "Night School",
+  "total_duration_seconds": 7714,
+  "video_count": 5,
+  "videos": [
+    {
+      "id": "sa7oqQfaroE",
+      "title": "Night School#5 : Media Art",
+      "url": "https://www.youtube.com/watch?v=sa7oqQfaroE",
+      "duration_seconds": 1790,
+      "upload_date": "20120621"
+    },
+    {
+      "id": "RgD9-OLF0d0",
+      "title": "Night School#5 : Media Art part 2",
+      "url": "https://www.youtube.com/watch?v=RgD9-OLF0d0",
+      "duration_seconds": 1792,
+      "upload_date": "20120624"
+    },
+    {
+      "id": "0lju-1R7wdo",
+      "title": "Night School#5 : Media Art part 3",
+      "url": "https://www.youtube.com/watch?v=0lju-1R7wdo",
+      "duration_seconds": 1792,
+      "upload_date": "20120628"
+    },
+    {
+      "id": "KTmeMLL5F2Y",
+      "title": "Night School#5 : Media Art part 4",
+      "url": "https://www.youtube.com/watch?v=KTmeMLL5F2Y",
+      "duration_seconds": 1124,
+      "upload_date": "20120629"
+    },
+    {
+      "id": "wVF1WOoz3A8",
+      "title": "Night School#5 : Media Art part 5",
+      "url": "https://www.youtube.com/watch?v=wVF1WOoz3A8",
+      "duration_seconds": 1216,
+      "upload_date": "20120630"
+    }
+  ],
+  "raw_description": "โรงเรียนพ(ล)บค่ำ #5: Media Art ศิลปะเพื่อมวลชนยุค 2.0\nกับ ประกิต กอบกิจวัฒนา (เจ้าของเพจ อยู่เมืองดัดจริตชีวิตต้องป๊อป)\n\nThe Reading Room และ เครือข่ายพลเมืองเน็ต เสนอโครงการ \"โรงเรียนพ(ล)บค่ำ\" แลกเปลี่ยนมุมมองวัฒนธรรมใหม่ โดยเฉพาะประเด็นเสรีภาพในการแสดงออก ทรัพย์สินทางปัญญา สื่อใหม่ ขบวนการทางสังคม และมีเดียอาร์ต ในชั้นเรียนที่ 5 นี้เป็นประเด็นเกี่ยวกับ ศิลปะเพื่อมวลชนยุคดิจิทัล ร่วมพูดคุยโดย ประกิต กอบกิจวัฒนา อาร์ทไดเร็คเตอร์และเจ้าของเพจ \"อยู่เมืองดัดจริตชีวิตต้องป๊อป\" \n\nข้อมูลเพิ่มเติม : http://readingroombkk.org/events/%E0%B8%B7night-school-5-media-art/",
+  "bilingual": {
+    "th": "โรงเรียนพ(ล)บค่ำ #5: Media Art ศิลปะเพื่อมวลชนยุค 2.0\nกับ ประกิต กอบกิจวัฒนา (เจ้าของเพจ อยู่เมืองดัดจริตชีวิตต้องป๊อป)\n\nThe Reading Room และ เครือข่ายพลเมืองเน็ต เสนอโครงการ \"โรงเรียนพ(ล)บค่ำ\" แลกเปลี่ยนมุมมองวัฒนธรรมใหม่ โดยเฉพาะประเด็นเสรีภาพในการแสดงออก ทรัพย์สินทางปัญญา สื่อใหม่ ขบวนการทางสังคม และมีเดียอาร์ต ในชั้นเรียนที่ 6 นี้เป็นประเด็นเกี่ยวกับ ศิลปะเพื่อมวลชนยุคดิจิทัล ร่วมพูดคุยโดย ประกิต กอบกิจวัฒนา อาร์ทไดเร็คเตอร์และเจ้าของเพจ \"อยู่เมืองดัดจริตชีวิตต้องป๊อป\"",
+    "en": "Night School #5: Media Art — Art for the Masses, Version 2.0.\nWith Prakit Kobkitwattana (creator of the Facebook page \"Yu Mueang Datjaring Chiwit Tong Pop\").\n\nThe Reading Room and the Thai Netizen Network present the \"Night School\" project — an exchange of perspectives on new cultural forms, with particular focus on freedom of expression, intellectual property, new media, social movements, and media art. This fifth lesson addresses art for the masses in the digital era, in conversation with Prakit Kobkitwattana, art director and creator of the Facebook page \"Yu Mueang Datjaring Chiwit Tong Pop.\"",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ประกิต กอบกิจวัฒนา"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ประกิต กอบกิจวัฒนา"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Media / สื่อ"
+    ],
+    "partners": [
+      "Thai Netizen Network / เครือข่ายพลเมืองเน็ต"
+    ],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

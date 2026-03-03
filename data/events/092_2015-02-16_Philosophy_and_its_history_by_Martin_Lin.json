@@ -1,0 +1,55 @@
+{
+  "event_number": 92,
+  "key": "Philosophy and its history by Martin Lin",
+  "display_title": "Philosophy and its history by Martin Lin",
+  "event_date": "2015-02-16",
+  "year": "2015",
+  "series": "Other",
+  "total_duration_seconds": 6375,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "jtTtlIDEsiA",
+      "title": "Philosophy and its history by Martin Lin Part 1",
+      "url": "https://www.youtube.com/watch?v=jtTtlIDEsiA",
+      "duration_seconds": 5489,
+      "upload_date": "20150217"
+    },
+    {
+      "id": "P64Qxn96tx4",
+      "title": "Philosophy and its history by Martin Lin Part 2",
+      "url": "https://www.youtube.com/watch?v=P64Qxn96tx4",
+      "duration_seconds": 886,
+      "upload_date": "20150216"
+    }
+  ],
+  "raw_description": "“ปรัชญากับประวัติของปรัชญา” โดย มาร์ติน ลิน (จาก Rutgers University/Ashoka University) มาร่วมหาคำตอบจากคำถามที่ว่า เหตุใดประวัติของปรัชญาจึงเป็นส่วนหนึ่งของวิชาปรัชญา —",
+  "bilingual": {
+    "th": "“ปรัชญากับประวัติของปรัชญา” โดย มาร์ติน ลิน (จาก Rutgers University/Ashoka University) มาร่วมหาคำตอบจากคำถามที่ว่า เหตุใดประวัติของปรัชญาจึงเป็นส่วนหนึ่งของวิชาปรัชญา —",
+    "en": "\"Philosophy and Its History\" by Martin Lin (Rutgers University / Ashoka University). Exploring the question of why the history of philosophy is itself a part of the discipline of philosophy.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "มาร์ติน ลิน"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "มาร์ติน ลิน"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

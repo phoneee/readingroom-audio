@@ -1,0 +1,56 @@
+{
+  "event_number": 123,
+  "key": "SLEEPOVER#6: เกษียณสโมสร",
+  "display_title": "SLEEPOVER#6: เกษียณสโมสร",
+  "event_date": "2016-12-23",
+  "year": "2016",
+  "series": "Sleepover",
+  "total_duration_seconds": 5858,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "tQpM9aZapc0",
+      "title": "SLEEPOVER#6: เกษียณสโมสร 1",
+      "url": "https://www.youtube.com/watch?v=tQpM9aZapc0",
+      "duration_seconds": 3517,
+      "upload_date": "20161223"
+    },
+    {
+      "id": "ZbKW56X-5ZM",
+      "title": "SLEEPOVER#6: เกษียณสโมสร 2",
+      "url": "https://www.youtube.com/watch?v=ZbKW56X-5ZM",
+      "duration_seconds": 2341,
+      "upload_date": "20161224"
+    }
+  ],
+  "raw_description": "สารคดีจากงานเสวนากับทหารวัยเกษียณ โดย จุฬญาณนนท์ ศิริผล เป็นส่วนหนึ่งของงาน \"SLEEPOVER#6: เกษียณสโมสร\" ของ อภิชาติพงศ์ วีระเศรษฐกุล จัดที่ The Reading Room สีลม 19",
+  "bilingual": {
+    "th": "SLEEPOVER#6 ชวนสำรวจธีม เกษียณสโมสร — การเกษียณอายุ วัยชรา และการใช้ชีวิตในบั้นปลาย ผ่านกิจกรรมพูดคุยและฉายภาพยนตร์ที่ The Reading Room Bangkok ในเดือนธันวาคม 2559",
+    "en": "SLEEPOVER#6 explores the theme of Retirement Club (เกษียณสโมสร) — retirement, old age, and life in its later chapters — through talks and film screenings at The Reading Room Bangkok, December 2016.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "จุฬญาณนนท์ ศิริผล"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "จุฬญาณนนท์ ศิริผล"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Screening / ฉายภาพยนตร์",
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "event_number": 103,
+  "key": "Readrink#3 \"กัปตันเม็ดทราย",
+  "display_title": "Readrink#3 \"กัปตันเม็ดทราย\"",
+  "event_date": "2016-04-24",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 12695,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "ButC1kKxZ2I",
+      "title": "Readrink#3 \"กัปตันเม็ดทราย\"part 1",
+      "url": "https://www.youtube.com/watch?v=ButC1kKxZ2I",
+      "duration_seconds": 5408,
+      "upload_date": "20160506"
+    },
+    {
+      "id": "jZcxfm7lLqk",
+      "title": "Readrink#3 \"กัปตันเม็ดทราย\" part 2",
+      "url": "https://www.youtube.com/watch?v=jZcxfm7lLqk",
+      "duration_seconds": 3652,
+      "upload_date": "20160506"
+    },
+    {
+      "id": "y0fUwu_N_tc",
+      "title": "Readrink#3 \"กัปตันเม็ดทราย\" part 3",
+      "url": "https://www.youtube.com/watch?v=y0fUwu_N_tc",
+      "duration_seconds": 3635,
+      "upload_date": "20160506"
+    }
+  ],
+  "raw_description": "Readrink#3 Summer\nRead: กัปตันเม็ดทราย โดย ฌอร์จ อะมาดู\nDrink: ซาน ซัลวาดอร์ \nวันอาทิตย์ที่ 24 เมษายน 2559 เวลา 14:00 น.\nที่ The Reading Room สีลม 19\n\nซัมเมอร์นี้เราจะมาอ่าน “กัปตันเม็ดทราย” วรรณกรรมวิพากษ์วิจารณ์สังคมด้วยมุมมองของเยาวชนกัน! คราวนี้อ่านคู่กับเครื่องดื่ม “ซาน ซัลวาดอร์” ที่เข้ากั๊นเข้ากันกับสายลมแสงแดดอันร้อนแรงแห่งเดือนเมษาฯแบบสุดๆ\n\nจดลงปฏิทินเอาไว้เลยว่า วันอาทิตย์ที่ 24 เมษายนนี้เรามีนัดปาร์ตี้หนังสือกันกับ อรรถ บุนนาค ที่ The Reading Room สีลม 19",
+  "bilingual": {
+    "th": "Readrink#3 Summer\nRead: กัปตันเม็ดทราย โดย ฌอร์จ อะมาดู\nDrink: ซาน ซัลวาดอร์\n\nซัมเมอร์นี้เราจะมาอ่าน “กัปตันเม็ดทราย” วรรณกรรมวิพากษ์วิจารณ์สังคมด้วยมุมมองของเยาวชนกัน! คราวนี้อ่านคู่กับเครื่องดื่ม “ซาน ซัลวาดอร์” ที่เข้ากั๊นเข้ากันกับสายลมแสงแดดอันร้อนแรงแห่งเดือนเมษาฯแบบสุดๆ\n\nจดลงปฏิทินเอาไว้เลยว่า วันอาทิตย์ที่ 24 เมษายนนี้เรามีนัดปาร์ตี้หนังสือกันกับ อรรถ บุนนาค",
+    "en": "Readrink #3 — Summer\nRead: Capitaes da Areia (กัปตันเม็ดทราย) by Jorge Amado\nDrink: San Salvador\n\nThis summer we read Capitaes da Areia — a work of social criticism seen through the eyes of the young. Paired with the drink San Salvador, perfectly matched to the blazing April sun. Mark your calendars: Sunday 24 April, a book party with อรรถ บุนนาค.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "กัปตันเม็ดทราย"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

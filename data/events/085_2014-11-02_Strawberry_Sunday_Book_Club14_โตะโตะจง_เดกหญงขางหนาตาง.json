@@ -1,0 +1,57 @@
+{
+  "event_number": 85,
+  "key": "Strawberry Sunday Book Club#14 \"โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง",
+  "display_title": "Strawberry Sunday Book Club#14 \"โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง\"",
+  "event_date": "2014-11-02",
+  "year": "2014",
+  "series": "Book Club",
+  "total_duration_seconds": 7714,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "DQU8P4Jm3kM",
+      "title": "Strawberry Sunday Book Club#14 \"โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง\" Part 1",
+      "url": "https://www.youtube.com/watch?v=DQU8P4Jm3kM",
+      "duration_seconds": 5445,
+      "upload_date": "20141102"
+    },
+    {
+      "id": "zS1MG3HzS8U",
+      "title": "Strawberry Sunday Book Club#14 \"โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง\" Part2",
+      "url": "https://www.youtube.com/watch?v=zS1MG3HzS8U",
+      "duration_seconds": 2269,
+      "upload_date": "20141102"
+    }
+  ],
+  "raw_description": "Strawberry Sunday Book Club ครั้งที่ 14 \nอ่าน \"โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง\" โดยเท็ตสึโกะ คุโรยานางิ\nกับคุณอรรถ บุนนาค",
+  "bilingual": {
+    "th": "Strawberry Sunday Book Club ครั้งที่ 14\nอ่าน \"โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง\" โดยเท็ตสึโกะ คุโรยานางิ\nกับคุณอรรถ บุนนาค",
+    "en": "Strawberry Sunday Book Club, session 14: a discussion of Totto-Chan: The Little Girl at the Window (โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง) by Tetsuko Kuroyanagi, with คุณอรรถ บุนนาค.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Education / การศึกษา"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "โต๊ะโตะจัง เด็กหญิงข้างหน้าต่าง"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

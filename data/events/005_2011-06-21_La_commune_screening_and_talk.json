@@ -1,0 +1,119 @@
+{
+  "event_number": 5,
+  "key": "La commune : screening and talk",
+  "display_title": "La commune : screening and talk",
+  "event_date": "2011-06-21",
+  "year": "2011",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 8683,
+  "video_count": 11,
+  "videos": [
+    {
+      "id": "xKVsy6bzT7I",
+      "title": "La commune : screening and talk (part 1)",
+      "url": "https://www.youtube.com/watch?v=xKVsy6bzT7I",
+      "duration_seconds": 900,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "8XtVqwifkmU",
+      "title": "La commune : screening and talk (part 2)",
+      "url": "https://www.youtube.com/watch?v=8XtVqwifkmU",
+      "duration_seconds": 900,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "wB6IAy_XSDs",
+      "title": "La commune : screening and talk (part 3)",
+      "url": "https://www.youtube.com/watch?v=wB6IAy_XSDs",
+      "duration_seconds": 900,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "uzlVuGzXSD8",
+      "title": "La commune : screening and talk (part 4)",
+      "url": "https://www.youtube.com/watch?v=uzlVuGzXSD8",
+      "duration_seconds": 900,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "kWKk_rkZm5w",
+      "title": "La commune : screening and talk (part 5)",
+      "url": "https://www.youtube.com/watch?v=kWKk_rkZm5w",
+      "duration_seconds": 900,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "DIO61db28iQ",
+      "title": "La commune : screening and talk (part 6)",
+      "url": "https://www.youtube.com/watch?v=DIO61db28iQ",
+      "duration_seconds": 900,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "Yz9vFox5u4g",
+      "title": "La commune : screening and talk (part 7)",
+      "url": "https://www.youtube.com/watch?v=Yz9vFox5u4g",
+      "duration_seconds": 899,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "WrF-0te4vws",
+      "title": "La commune : screening and talk (part 8)",
+      "url": "https://www.youtube.com/watch?v=WrF-0te4vws",
+      "duration_seconds": 535,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "a2AvE5sgPc4",
+      "title": "La commune : screening and talk (part 9)",
+      "url": "https://www.youtube.com/watch?v=a2AvE5sgPc4",
+      "duration_seconds": 526,
+      "upload_date": "20110621"
+    },
+    {
+      "id": "aTZ8bEi55pc",
+      "title": "La commune : screening and talk (part 10)",
+      "url": "https://www.youtube.com/watch?v=aTZ8bEi55pc",
+      "duration_seconds": 746,
+      "upload_date": "20110622"
+    },
+    {
+      "id": "QnGLH9rtyhg",
+      "title": "La commune : screening and talk (part 11)",
+      "url": "https://www.youtube.com/watch?v=QnGLH9rtyhg",
+      "duration_seconds": 577,
+      "upload_date": "20110622"
+    }
+  ],
+  "raw_description": "La commune : screening and talk by The Reading Room and Film Virus",
+  "bilingual": {
+    "th": "การฉายภาพยนตร์และเสวนาเกี่ยวกับ La Commune (Paris, 1871) ภาพยนตร์ของ Peter Watkins ว่าด้วยการปฏิวัติปารีสคอมมูน สำรวจประเด็นทางการเมือง ประชาธิปไตยโดยตรง และการลุกฮือของชนชั้นแรงงาน",
+    "en": "A screening and discussion of Peter Watkins's film La Commune (Paris, 1871), examining the Paris Commune revolution and exploring themes of political insurrection, direct democracy, and working-class uprising.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Politics / การเมือง",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [
+      "Film Virus"
+    ],
+    "formats": [
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [
+      "La Commune (Paris, 1871)"
+    ],
+    "event_time": "",
+    "venue": ""
+  }
+}

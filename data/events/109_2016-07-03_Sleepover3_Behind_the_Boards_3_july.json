@@ -1,0 +1,59 @@
+{
+  "event_number": 109,
+  "key": "Sleepover#3 Behind the Boards! 3 july",
+  "display_title": "Sleepover#3 Behind the Boards! 3 july",
+  "event_date": "2016-07-03",
+  "year": "2016",
+  "series": "Sleepover",
+  "total_duration_seconds": 5827,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "9DcEg52NVas",
+      "title": "Sleepover#3 _Behind the Boards! 3 july part 1",
+      "url": "https://www.youtube.com/watch?v=9DcEg52NVas",
+      "duration_seconds": 3658,
+      "upload_date": "20160723"
+    },
+    {
+      "id": "_3gUBfHsfGs",
+      "title": "Sleepover#3_Behind the Boards! 3 july part 2",
+      "url": "https://www.youtube.com/watch?v=_3gUBfHsfGs",
+      "duration_seconds": 2169,
+      "upload_date": "20160722"
+    }
+  ],
+  "raw_description": "SLEEPOVER#3: On Board! \nโดย ทีปกร วุฒิพิทยามงคล \n3-31 กรกฎาคม \nที่ The Reading Room สีลม 19\n \n3 กรกฎาคม Behind the Boards! 14.00-17.00\nร่วมพูดคุยกับผู้เขียนหนังสือ Boardgame Universe จักรวาลกระดานเดียว และนักเล่นบอร์ดเกมมือฉมังที่มีเกมอยู่ที่บ้านมากกว่า 500 เกม! สฤณี อาชวานันทกุล และนักเขียน บรรณาธิการ ผู้คลั่งไคล้บอร์ดเกมไม่แพ้ใครๆ โตมร ศุขปรีชา ว่า ‘ข้างหลัง’ บอร์ดเกมนั้นมีแนวคิดอะไร ซ่อนอยู่บ้าง และร่วมเล่นบอร์ดเกมไปด้วยกัน",
+  "bilingual": {
+    "th": "SLEEPOVER#3: On Board!\n3-31 กรกฎาคม\n\n3 กรกฎาคม Behind the Boards! 14.00-17.00\nร่วมพูดคุยกับผู้เขียนหนังสือ Boardgame Universe จักรวาลกระดานเดียว และนักเล่นบอร์ดเกมมือฉมังที่มีเกมอยู่ที่บ้านมากกว่า 500 เกม! สฤณี อาชวานันทกุล และนักเขียน บรรณาธิการ ผู้คลั่งไคล้บอร์ดเกมไม่แพ้ใครๆ โตมร ศุขปรีชา ว่า ‘ข้างหลัง’ บอร์ดเกมนั้นมีแนวคิดอะไร ซ่อนอยู่บ้าง และร่วมเล่นบอร์ดเกมไปด้วยกัน",
+    "en": "SLEEPOVER#3: On Board!\n3–31 July\n\n3 July — Behind the Boards! 14:00–17:00\nJoin a conversation with the author of the book Boardgame Universe (จักรวาลกระดานเดียว) and a board game enthusiast whose personal collection exceeds 500 titles — สฤณี อาชวานันทกุล — alongside writer, editor, and board game devotee โตมร ศุขปรีชา — to explore what ideas lie behind board games, followed by a session of playing together.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ทีปกร วุฒิพิทยามงคล",
+      "สฤณี อาชวานันทกุล",
+      "โตมร ศุขปรีชา"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ทีปกร วุฒิพิทยามงคล / Teepakorn Wuttipittayamongkol",
+      "สฤณี อาชวานันทกุล",
+      "โตมร ศุขปรีชา"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา",
+      "Workshop / เวิร์คช็อป"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "event_number": 70,
+  "key": "NSA",
+  "display_title": "NSA",
+  "event_date": "2014-03-11",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 7093,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "kK9KfxHNnw4",
+      "title": "NSA Part 1",
+      "url": "https://www.youtube.com/watch?v=kK9KfxHNnw4",
+      "duration_seconds": 4352,
+      "upload_date": "20140312"
+    },
+    {
+      "id": "L9VlABsWI4k",
+      "title": "NSA part2",
+      "url": "https://www.youtube.com/watch?v=L9VlABsWI4k",
+      "duration_seconds": 2741,
+      "upload_date": "20140311"
+    }
+  ],
+  "raw_description": "NSA สอดแนมมวลชน-ดักฟังข้อมูล เกี่ยวอะไรกับเราด้วย\n\nFAQ: What and Why do we need to know about NSA spying?\n\nร่วมสนทนาและแลกเปลี่ยนกับ แมทธิว ไรซ์ จาก Privacy International องค์กรรณรงค์เพื่อพิทักษ์สิทธิความเป็นส่วนตัวของคนทั่วโลก\nประเด็นสำคัญในการเสวนา:\n- ภาพรวมของการติดตามสอดส่องความเป็นไปของพลเมืองโลก แล้วตอนนี้โลกรู้อะไรถึงไหนแล้วบ้าง?\n- การสอดแนมจากหน่วยงานความมั่นคงของสหรัฐอเมริกา (NSA) ส่งผลต่อเราอย่างไร? \n- คนทั่วไปที่อยู่นอกเครือข่ายการสื่อสารของสหรัฐฯ จะถูกสอดแนมด้วยหรือไม่?\n- แล้วเราจะทำอะไรได้บ้าง?",
+  "bilingual": {
+    "th": "NSA สอดแนมมวลชน-ดักฟังข้อมูล เกี่ยวอะไรกับเราด้วย\n\n\nร่วมสนทนาและแลกเปลี่ยนกับ แมทธิว ไรซ์ จาก Privacy International องค์กรรณรงค์เพื่อพิทักษ์สิทธิความเป็นส่วนตัวของคนทั่วโลก\nประเด็นสำคัญในการเสวนา:\n- ภาพรวมของการติดตามสอดส่องความเป็นไปของพลเมืองโลก แล้วตอนนี้โลกรู้อะไรถึงไหนแล้วบ้าง?\n- การสอดแนมจากหน่วยงานความมั่นคงของสหรัฐอเมริกา (NSA) ส่งผลต่อเราอย่างไร?\n- คนทั่วไปที่อยู่นอกเครือข่ายการสื่อสารของสหรัฐฯ จะถูกสอดแนมด้วยหรือไม่?\n- แล้วเราจะทำอะไรได้บ้าง?",
+    "en": "NSA: Mass Surveillance and Wiretapping — What Does It Have to Do With Us?\n\nFAQ: What and Why Do We Need to Know About NSA Spying?\n\nA conversation and exchange with Matthew Rice of Privacy International, an organisation campaigning to protect the right to privacy of people worldwide.\n\nKey topics for discussion:\n- An overview of global citizen surveillance: how much do we currently know?\n- How does surveillance by the US National Security Agency (NSA) affect us?\n- Are people outside the United States communications network subject to surveillance as well?\n- And what can we do about it?",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Matthew Rice"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Matthew Rice"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Politics / การเมือง",
+      "Human Rights / สิทธิมนุษยชน",
+      "Media / สื่อ"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

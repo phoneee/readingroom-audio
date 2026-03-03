@@ -1,0 +1,50 @@
+{
+  "event_number": 60,
+  "key": "Strawberry Sunday 2: ทองเนื้อเก้า",
+  "display_title": "Strawberry Sunday 2: ทองเนื้อเก้า",
+  "event_date": "2013-10-30",
+  "year": "2013",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7730,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "MYQHHHXE0Bs",
+      "title": "Strawberry Sunday 2: ทองเนื้อเก้า",
+      "url": "https://www.youtube.com/watch?v=MYQHHHXE0Bs",
+      "duration_seconds": 7730,
+      "upload_date": "20131030"
+    }
+  ],
+  "raw_description": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่สองนี้จะหยิบบทประพันธ์เรื่องดัง \"ทองเนื้อเก้า\" ของโบตั๋น เกี่ยวกับ ลำยอง หญิงขี้เมา สำส่อนและขี้เกียจ และลูกชายยอดกตัญญูของเธอ ทองเนื้อเก้าเป็นนิยายได้รับการตอบรับจากผู้อ่านทุกเพศทุกวัยมาเป็นเวลานาน และได้รับการดัดแปลงเป็นละครโทรทัศน์มาหลายครั้ง รวมถึงเวอร์ชั่นล่าสุดที่แพร่ภาพอยู่ในปัจจุบัน",
+  "bilingual": {
+    "th": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่สองนี้จะหยิบบทประพันธ์เรื่องดัง \"ทองเนื้อเก้า\" ของโบตั๋น เกี่ยวกับ ลำยอง หญิงขี้เมา สำส่อนและขี้เกียจ และลูกชายยอดกตัญญูของเธอ ทองเนื้อเก้าเป็นนิยายได้รับการตอบรับจากผู้อ่านทุกเพศทุกวัยมาเป็นเวลานาน และได้รับการดัดแปลงเป็นละครโทรทัศน์มาหลายครั้ง รวมถึงเวอร์ชั่นล่าสุดที่แพร่ภาพอยู่ในปัจจุบัน",
+    "en": "The Reading Room presents Strawberry Sunday Book Club: Reading Pop Fiction with คุณอรรถ บุนนาค. The second instalment features ทองเนื้อเก้า (Pure Gold) by Bottan — the story of ลำยอง, a woman given to drink, promiscuity, and idleness, and her extraordinarily devoted son. ทองเนื้อเก้า has long enjoyed an enthusiastic readership across generations and has been adapted for television on multiple occasions, including a recent run currently airing.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ทองเนื้อเก้า"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

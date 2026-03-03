@@ -1,0 +1,63 @@
+{
+  "event_number": 69,
+  "key": "blu rosso",
+  "display_title": "blu rosso",
+  "event_date": "2014-02-28",
+  "year": "2014",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 11184,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "g7lz-t6NpB8",
+      "title": "blu rosso part 1",
+      "url": "https://www.youtube.com/watch?v=g7lz-t6NpB8",
+      "duration_seconds": 3677,
+      "upload_date": "20140228"
+    },
+    {
+      "id": "4Fe0cv_yIEE",
+      "title": "blu rosso part 2",
+      "url": "https://www.youtube.com/watch?v=4Fe0cv_yIEE",
+      "duration_seconds": 3666,
+      "upload_date": "20140228"
+    },
+    {
+      "id": "NxqpeQj6hZg",
+      "title": "blu rosso part 3",
+      "url": "https://www.youtube.com/watch?v=NxqpeQj6hZg",
+      "duration_seconds": 3841,
+      "upload_date": "20140228"
+    }
+  ],
+  "raw_description": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่หกนี้จะอ่านนิยายแปลเรื่องดังสองเล่ม \"Blu & Rosso: ระหว่างความเยือกเย็นและร้อนแรง\" โดย ทซึจิ ฮิโตนาริ\n\n\"ระหว่างความเยือกเย็นและร้อนแรง\" เป็นนิยายคู่สุดโรแมนติก ผลงานของทซึจิ ฮิโตนาริ นักเขียนรางวัลอาคุตางาวะ ของญี่ปุ่น และรางวัลเฟมินา ของฝรั่งเศส หนังสือทั้งสองเล่มถ่ายทอดเรื่องราวความรักของหญิงชายที่จากกันไป และความสัมพันธ์ของคนทั้งคู่จากมุมมองที่ต่างกันออกไป",
+  "bilingual": {
+    "th": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่หกนี้จะอ่านนิยายแปลเรื่องดังสองเล่ม \"Blu & Rosso: ระหว่างความเยือกเย็นและร้อนแรง\" โดย ทซึจิ ฮิโตนาริ\n\n\"ระหว่างความเยือกเย็นและร้อนแรง\" เป็นนิยายคู่สุดโรแมนติก ผลงานของทซึจิ ฮิโตนาริ นักเขียนรางวัลอาคุตางาวะ ของญี่ปุ่น และรางวัลเฟมินา ของฝรั่งเศส หนังสือทั้งสองเล่มถ่ายทอดเรื่องราวความรักของหญิงชายที่จากกันไป และความสัมพันธ์ของคนทั้งคู่จากมุมมองที่ต่างกันออกไป",
+    "en": "The Reading Room presented the Strawberry Sunday Book Club: Pop Reading with Att Bunyak. For the sixth edition, the book club read two celebrated translated novels — Blu and Rosso: Between the Ice and the Fire by Tsuji Hitonari.\n\nBetween the Ice and the Fire is a romantically paired set of novels by Tsuji Hitonari, winner of Japan's Akutagawa Prize and France's Prix Femina. The two volumes recount the story of a couple who have separated, each narrating their shared relationship from their own distinct perspective.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ระหว่างความเยือกเย็นและร้อนแรง"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

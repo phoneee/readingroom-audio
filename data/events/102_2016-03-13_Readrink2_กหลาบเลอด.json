@@ -1,0 +1,61 @@
+{
+  "event_number": 102,
+  "key": "Readrink2 \"กุหลาบเลือด",
+  "display_title": "Readrink2 \"กุหลาบเลือด\"",
+  "event_date": "2016-03-13",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 9401,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "adj4X1cDed8",
+      "title": "Readrink2 \"กุหลาบเลือด\" part1",
+      "url": "https://www.youtube.com/watch?v=adj4X1cDed8",
+      "duration_seconds": 3377,
+      "upload_date": "20160323"
+    },
+    {
+      "id": "Gyn0yB_IHJA",
+      "title": "Readrink2 'กุหลาบเลือด' Part2",
+      "url": "https://www.youtube.com/watch?v=Gyn0yB_IHJA",
+      "duration_seconds": 2840,
+      "upload_date": "20160323"
+    },
+    {
+      "id": "W0X5Jw-AT48",
+      "title": "Readrink2  \"กุหลาบเลือด\" part3",
+      "url": "https://www.youtube.com/watch?v=W0X5Jw-AT48",
+      "duration_seconds": 3184,
+      "upload_date": "20160324"
+    }
+  ],
+  "raw_description": "READRINK#2\nRead: กุหลาบเลือด โดย อิมะมุระ อายะ \nDrink: บลัดดี้แมรี่\nวันอาทิตย์ที่ 13 มีนาคม เวลา 14:00น.\nที่ The Reading Room สีลม 19\n\nบุ๊คคลับ Readrink ครั้งที่ 2 นี้ The Reading Room และ Readery ชวนทุกท่านอ่านนิยายฆาตกรรม\n \"กุหลาบเลือด\" นิยายสืบสวนสอบสวนหลอนระทึก ผลงานของ อิมะมุระ อายะ กับเครื่องดื่ม “บลัดดี้แมรี่”",
+  "bilingual": {
+    "th": "Read: กุหลาบเลือด โดย อิมะมุระ อายะ\nDrink: บลัดดี้แมรี่\n\nบุ๊คคลับ Readrink ครั้งที่ 2 นี้ The Reading Room และ Readery ชวนทุกท่านอ่านนิยายฆาตกรรม\n \"กุหลาบเลือด\" นิยายสืบสวนสอบสวนหลอนระทึก ผลงานของ อิมะมุระ อายะ กับเครื่องดื่ม “บลัดดี้แมรี่”",
+    "en": "Read: Blood Rose (กุหลาบเลือด) by Imamura Aya\nDrink: Bloody Mary\n\nFor Readrink Book Club Party #2, The Reading Room and Readery invite you to read กุหลาบเลือด — a chilling and gripping detective novel by Imamura Aya — paired with the cocktail Bloody Mary.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "Readery"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "กุหลาบเลือด"
+    ],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

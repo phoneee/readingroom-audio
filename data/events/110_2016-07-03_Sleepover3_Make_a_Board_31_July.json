@@ -1,0 +1,55 @@
+{
+  "event_number": 110,
+  "key": "Sleepover#3 Make a Board! 31 July",
+  "display_title": "Sleepover#3 Make a Board! 31 July",
+  "event_date": "2016-07-03",
+  "year": "2016",
+  "series": "Sleepover",
+  "total_duration_seconds": 1733,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "b4mu8_HCnf8",
+      "title": "Sleepover#3_Make a Board! 31 July",
+      "url": "https://www.youtube.com/watch?v=b4mu8_HCnf8",
+      "duration_seconds": 1733,
+      "upload_date": "20160814"
+    }
+  ],
+  "raw_description": "SLEEPOVER#3: On Board! \nโดย ทีปกร วุฒิพิทยามงคล \n3-31 กรกฎาคม \nที่ The Reading Room สีลม 19\n\n31 กรกฎาคม Make a Board! 13.00-18.00\nก๊วนเถื่อนเกม ( facebook.com/deschooling.games) นำโดยอ. เดชรัต สุขกำเนิด, ศุภวิชช์ สงวนคัมธรณ์ (มะโหนก Blackbox) และพีรัช ษรานุรักษ์ จะมาเล่าให้ฟังถึงเกมที่พวกเขาออกแบบเพื่อสื่อสารประเด็นต่างๆ เอง ทั้งเกมเศรษฐกิจเขียว (Green Economy) เกม Asean Line หรือเกมภัยแล้ง นอกจากนั้นพวกเขายังจะชวนพวกเราเล่นบอร์ดเกมอื่นๆ ที่สื่อสารประเด็นที่กว้างไปกว่า ‘แค่เกม’ ด้วย",
+  "bilingual": {
+    "th": "SLEEPOVER#3: On Board!\n3-31 กรกฎาคม\n\n31 กรกฎาคม Make a Board! 13.00-18.00\nก๊วนเถื่อนเกม นำโดยอ. เดชรัต สุขกำเนิด, ศุภวิชช์ สงวนคัมธรณ์ (มะโหนก Blackbox) และพีรัช ษรานุรักษ์ จะมาเล่าให้ฟังถึงเกมที่พวกเขาออกแบบเพื่อสื่อสารประเด็นต่างๆ เอง ทั้งเกมเศรษฐกิจเขียว (Green Economy) เกม Asean Line หรือเกมภัยแล้ง นอกจากนั้นพวกเขายังจะชวนพวกเราเล่นบอร์ดเกมอื่นๆ ที่สื่อสารประเด็นที่กว้างไปกว่า 'แค่เกม' ด้วย",
+    "en": "SLEEPOVER#3: On Board!\n3–31 July\n\n31 July — Make a Board! 13:00–18:00\nก๊วนเถื่อนเกม (Deschooling Games), led by อ.เดชรัต สุขกำเนิด, ศุภวิชช์ สงวนคัมธรณ์ (มะโหนก Blackbox), and พีรัช ษรานุรักษ์, discuss the games they have designed to communicate specific issues — including a Green Economy game, an ASEAN Line game, and a drought game — and then invite participants to play other board games that engage with questions extending well beyond just being a game.",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "เดชรัต สุขกำเนิด",
+      "ศุภวิชช์ สงวนคัมธรณ์",
+      "พีรัช ษรานุรักษ์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "เดชรัต สุขกำเนิด / Detrat Sukkamnerd",
+      "ศุภวิชช์ สงวนคัมธรณ์",
+      "พีรัช ษรานุรักษ์"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Society / สังคม",
+      "Southeast Asia / อาเซียน"
+    ],
+    "partners": [
+      "ก๊วนเถื่อนเกม"
+    ],
+    "formats": [
+      "Lecture / บรรยาย",
+      "Workshop / เวิร์คช็อป"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

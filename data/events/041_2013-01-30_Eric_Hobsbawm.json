@@ -1,0 +1,59 @@
+{
+  "event_number": 41,
+  "key": "Eric Hobsbawm",
+  "display_title": "Eric Hobsbawm",
+  "event_date": "2013-01-30",
+  "year": "2013",
+  "series": "Other",
+  "total_duration_seconds": 6827,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "NMEBC6NbJGc",
+      "title": "Eric Hobsbawm_part1",
+      "url": "https://www.youtube.com/watch?v=NMEBC6NbJGc",
+      "duration_seconds": 4688,
+      "upload_date": "20130130"
+    },
+    {
+      "id": "k62oWeKq7J0",
+      "title": "Eric Hobsbawm_part2",
+      "url": "https://www.youtube.com/watch?v=k62oWeKq7J0",
+      "duration_seconds": 2139,
+      "upload_date": "20130130"
+    }
+  ],
+  "raw_description": "The Reading Room ร่วมรำลึกถึง Eric Hobsbawm นักประวัติศาสตร์ชาวอังกฤษที่สำคัญที่สุดคนหนึ่งของศตวรรษที่ 20 กับงาน \"Eric Hobsbawm กับประวัติศาสตร์นิพนธ์สำนักคิดทฤษฎีแนวมาร์กซ์\" ร่วมเสวนากับ รศ.ไชยันต์ รัชชกูล (คณะรัฐศาสตร์ มหาวิทยาลัยอุบลราชธานี) ดำเนินรายการโดย วิป วิญญรัตน์",
+  "bilingual": {
+    "th": "งานเสวนาถกเถียงถึงมรดกทางปัญญาของ Eric Hobsbawm นักประวัติศาสตร์ชาวอังกฤษผู้ล่วงลับ และการตีความประวัติศาสตร์ของเขาในบริบทร่วมสมัย จัดขึ้นในปี 2556",
+    "en": "A discussion on the intellectual legacy of the late British historian Eric Hobsbawm and the continuing relevance of his historical interpretations in a contemporary context, held in 2013.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ไชยันต์ รัชชกูล"
+    ],
+    "moderators_raw": [
+      "วิป วิญญรัตน์"
+    ],
+    "display_speakers": [
+      "ไชยันต์ รัชชกูล / Chaiyant Rachakul"
+    ],
+    "display_moderators": [
+      "วิป วิญญรัตน์ / Wip Winyarat"
+    ],
+    "topics": [
+      "History / ประวัติศาสตร์",
+      "Politics / การเมือง"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

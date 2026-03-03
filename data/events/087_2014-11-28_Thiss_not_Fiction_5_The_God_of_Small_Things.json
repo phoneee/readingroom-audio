@@ -1,0 +1,53 @@
+{
+  "event_number": 87,
+  "key": "This\"s not Fiction # 5 : The God of Small Things",
+  "display_title": "This's not Fiction # 5 : The God of Small Things",
+  "event_date": "2014-11-28",
+  "year": "2014",
+  "series": "This is Not Fiction",
+  "total_duration_seconds": 6404,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "qerMwTN420s",
+      "title": "This's not Fiction # 5 : The God of Small Things",
+      "url": "https://www.youtube.com/watch?v=qerMwTN420s",
+      "duration_seconds": 6404,
+      "upload_date": "20141128"
+    }
+  ],
+  "raw_description": "พูดคุยเกี่ยวกับหนังสือ The God of Small Things (ของ อรุณธตี รอย) โดย อ.คารินา โชติรวี ดำเนินรายการโดย อ.มิ่ง ปัญหา",
+  "bilingual": {
+    "th": "พูดคุยเกี่ยวกับหนังสือ The God of Small Things (ของ อรุณธตี รอย) โดย อ.คารินา โชติรวี",
+    "en": "This is Not Fiction #5: a discussion of The God of Small Things by Arundhati Roy, presented by อ.คารินา โชติรวี. Moderated by อ.มิ่ง ปัญหา.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อ.คารินา โชติรวี"
+    ],
+    "moderators_raw": [
+      "อ.มิ่ง ปัญหา"
+    ],
+    "display_speakers": [
+      "คารินา โชติรวี / Karina Chotirawee"
+    ],
+    "display_moderators": [
+      "มิ่ง ปัญหา / Ming Panha"
+    ],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "The God of Small Things"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

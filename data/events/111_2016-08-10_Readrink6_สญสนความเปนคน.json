@@ -1,0 +1,67 @@
+{
+  "event_number": 111,
+  "key": "Readrink#6 \"สูญสิ้นความเป็นคน",
+  "display_title": "Readrink#6 \"สูญสิ้นความเป็นคน\"",
+  "event_date": "2016-08-10",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 9562,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "IbWVBi3Iph4",
+      "title": "Readrink#6 'สูญสิ้นความเป็นคน' Part 1",
+      "url": "https://www.youtube.com/watch?v=IbWVBi3Iph4",
+      "duration_seconds": 3495,
+      "upload_date": "20160810"
+    },
+    {
+      "id": "V-7rTEBtUA0",
+      "title": "Readrink#6 'สูญสิ้นความเป็นคน' Part 2",
+      "url": "https://www.youtube.com/watch?v=V-7rTEBtUA0",
+      "duration_seconds": 3796,
+      "upload_date": "20160810"
+    },
+    {
+      "id": "RCT4goQJH1c",
+      "title": "Readrink#6 'สูญสิ้นความเป็นคน' Part 3",
+      "url": "https://www.youtube.com/watch?v=RCT4goQJH1c",
+      "duration_seconds": 2271,
+      "upload_date": "20160814"
+    }
+  ],
+  "raw_description": "Readrink#6 ร่วมสนทนาวรรณกรรม #สูญสิ้นความเป็นคน (人間失格) ผลงานชิ้นเอกซึ่งกล่าวกันว่าเป็นเสมือน ‘พินัยกรรม’ สะท้อนชีวิตของ ดะไซ โอซามุ นักเขียนผู้มีบทบาทสำคัญต่อวงวรรณกรรมญี่ปุ่นสมัยใหม่ \n\nนำสนทนาโดย อรรถ บุนนาค นักแปล พิธีกร นักอ่านตัวยง และ พรพิรุณ กิจสมเจตน์ ผู้แปล #สูญสิ้นความเป็นคน ในฉบับภาษาไทยโดยสำนักพิมพ์ JLIT\n\nเสิร์ฟพร้อม Matcha Green Tea ที่จะทำอินไปหนังสือได้อย่างเต็มที่",
+  "bilingual": {
+    "th": "Readrink#6 ร่วมสนทนาวรรณกรรม (人間失格) ผลงานชิ้นเอกซึ่งกล่าวกันว่าเป็นเสมือน ‘พินัยกรรม’ สะท้อนชีวิตของ ดะไซ โอซามุ นักเขียนผู้มีบทบาทสำคัญต่อวงวรรณกรรมญี่ปุ่นสมัยใหม่\n\nนำสนทนาโดย อรรถ บุนนาค นักแปล พิธีกร นักอ่านตัวยง และ พรพิรุณ กิจสมเจตน์ ผู้แปล ในฉบับภาษาไทยโดยสำนักพิมพ์ JLIT\n\nเสิร์ฟพร้อม Matcha Green Tea ที่จะทำอินไปหนังสือได้อย่างเต็มที่",
+    "en": "Readrink #6 presents a literary discussion of No Longer Human (人間失格) — the masterpiece widely regarded as the literary testament of Dazai Osamu, a defining figure of modern Japanese literature.\n\nFacilitated by อรรถ บุนนาค, translator, host, and dedicated reader, alongside พรพิรุณ กิจสมเจตน์, translator of the Thai edition published by สำนักพิมพ์ JLIT.\n\nServed with Matcha Green Tea — the perfect accompaniment for total immersion in the text.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค",
+      "พรพิรุณ กิจสมเจตน์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak",
+      "พรพิรุณ กิจสมเจตน์ / Pornpirun Kitsomjet"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [
+      "JLIT Publishing"
+    ],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "สูญสิ้นความเป็นคน"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "event_number": 3,
+  "key": "Capoeira Angola Show",
+  "display_title": "Capoeira Angola Show",
+  "event_date": "2011-06-08",
+  "year": "2011",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 900,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "l1iHORZbiys",
+      "title": "Capoeira Angola Show",
+      "url": "https://www.youtube.com/watch?v=l1iHORZbiys",
+      "duration_seconds": 900,
+      "upload_date": "20110608"
+    }
+  ],
+  "raw_description": "In collaboration with The Reading Room, Capoeira Angola Bangkok organized a screening of \"Rhythmic Uprising\", a documentary film and project that seeks to empower a movement of artists who are using African-Brazilian traditions to elevate the quality of life for children in the culturally rich region of Bahia, Brazil.",
+  "bilingual": {
+    "th": "ร่วมกับ The Reading Room, Capoeira Angola Bangkok จัดฉายภาพยนตร์สารคดี \"Rhythmic Uprising\" ซึ่งเป็นสารคดีและโครงการที่มุ่งสร้างพลังให้แก่ขบวนการศิลปิน ผู้ใช้ประเพณีแอฟริกัน-บราซิลในการยกระดับคุณภาพชีวิตของเด็กๆ ในภูมิภาคอันอุดมด้วยวัฒนธรรมของ Bahia ประเทศบราซิล",
+    "en": "In collaboration with The Reading Room, Capoeira Angola Bangkok organized a screening of \"Rhythmic Uprising\", a documentary film and project that seeks to empower a movement of artists who are using African-Brazilian traditions to elevate the quality of life for children in the culturally rich region of Bahia, Brazil.",
+    "source_th": "agent_translated",
+    "source_en": "original"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Society / สังคม",
+      "Southeast Asia / อาเซียน"
+    ],
+    "partners": [
+      "Capoeira Angola Bangkok"
+    ],
+    "formats": [
+      "Performance / การแสดง"
+    ],
+    "book_titles": [],
+    "film_titles": [
+      "Rhythmic Uprising"
+    ],
+    "event_time": "",
+    "venue": ""
+  }
+}

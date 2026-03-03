@@ -1,0 +1,71 @@
+{
+  "event_number": 8,
+  "key": "Romania Model",
+  "display_title": "Romania Model",
+  "event_date": "2011-09-24",
+  "year": "2011",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 4690,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "aXXDFvR6bwY",
+      "title": "Romania Model (part 1)",
+      "url": "https://www.youtube.com/watch?v=aXXDFvR6bwY",
+      "duration_seconds": 1854,
+      "upload_date": "20111116"
+    },
+    {
+      "id": "hdiFzfttB3E",
+      "title": "Romania Model (part 2)",
+      "url": "https://www.youtube.com/watch?v=hdiFzfttB3E",
+      "duration_seconds": 1799,
+      "upload_date": "20111116"
+    },
+    {
+      "id": "Y3GnoG8s17A",
+      "title": "Romania Model (part 3)",
+      "url": "https://www.youtube.com/watch?v=Y3GnoG8s17A",
+      "duration_seconds": 1037,
+      "upload_date": "20111117"
+    }
+  ],
+  "raw_description": "The Reading Room and Filmvirus presents \"Romania Model\" program: screenings of two documentaries: \"Videograms of a Revolution\" and \"Autobiography of Nicolae Caucescu\" followed by a talk on Romanian Revolution, Nicolae Caucescu, and the media by Assistant Prof. Suthachai Yimprasert and Keiko Sei on Saturday, September 24th, 2011.\n\nThe Reading Room และ Filmvirus เสนอโปรแกรม Romania Model โดยฉายภาพยนตร์สารคดีเรื่อง Videograms of a Revolution และ Autobiography of Nicolae Caucescu ตามด้วยการเสวนาเกี่ยวกับแง่มุมต่างๆของการปฏิวัติโรมาเนีย โดย อาจารย์สุธาชัย ยิ้มประเสริฐ และเคโกะ เซ ในวันเสาร์ที่ 24 กันยายน 2554",
+  "bilingual": {
+    "th": "The Reading Room และ Filmvirus เสนอโปรแกรม Romania Model โดยฉายภาพยนตร์สารคดีเรื่อง Videograms of a Revolution และ Autobiography of Nicolae Ceausescu ตามด้วยการเสวนาเกี่ยวกับแง่มุมต่างๆของการปฏิวัติโรมาเนีย โดย อาจารย์สุธาชัย ยิ้มประเสริฐ และเคโกะ เซ ในวันเสาร์ที่ 24 กันยายน 2554",
+    "en": "The Reading Room and Filmvirus present the Romania Model programme, featuring screenings of the documentary The Autobiography of Nicolae Ceausescu by Andrei Ujica, followed by a talk with Suthachai Yimprasert and Keiko Sei. The discussions examine the end of the Ceausescu era and the Romanian revolution through cinematic and historical lenses.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "สุธาชัย ยิ้มประเสริฐ",
+      "Keiko Sei"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "สุธาชัย ยิ้มประเสริฐ / Suthachai Yimprasert",
+      "Keiko Sei"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Politics / การเมือง",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [
+      "Film Virus"
+    ],
+    "formats": [
+      "Panel / เสวนา",
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [
+      "Videograms of a Revolution",
+      "Autobiography of Nicolae Ceausescu"
+    ],
+    "event_time": "",
+    "venue": ""
+  }
+}

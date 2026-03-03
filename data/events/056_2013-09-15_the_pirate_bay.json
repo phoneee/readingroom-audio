@@ -1,0 +1,50 @@
+{
+  "event_number": 56,
+  "key": "the pirate bay",
+  "display_title": "the pirate bay",
+  "event_date": "2013-09-15",
+  "year": "2013",
+  "series": "Screening & Talk",
+  "total_duration_seconds": 2206,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "IrsirwuZjLk",
+      "title": "the pirate bay",
+      "url": "https://www.youtube.com/watch?v=IrsirwuZjLk",
+      "duration_seconds": 2206,
+      "upload_date": "20130915"
+    }
+  ],
+  "raw_description": "สารคดี TPB:AFK (The Pirate Bay: Away From Keyboard) กำกับโดย Simon Klose มีเนื้อหาเกี่ยวกับผู้ก่อตั้ง The Pirate Bay และกรณีการถูกฟ้องร้องละเมิดลิขสิทธิ์ตั้งแต่ช่วงปี 2008-2012 โดยสารคดีนี้เกิดจากการระดมทุนจากเว็ปไซต์ Kickstarter สารคดี TPB:AFK เปิดตัวในเดือนกุมภาพันธ์ปี 2013 และอนุญาตให้ดาวน์โหลดบิททอร์เรนต์ได้ฟรีทางเว็ปไซต์ The Pirate Bay และได้เดินทางไปร่วมฉายในเทศกาลภาพยนตร์นานาชาติมาแล้วทั่วโลก โดยในสารคดี TPB:AFK มีการกล่าวถึงกรณีความช่วยเหลือของ The Pirate Bay ต่อวิกิลีกส์และพลทหารแบรดลีย์ แมนนิง กรณีพรรคไพเรท (Pirate Party) พรรคการเมืองที่ก่อตั้งในปี 2006 โดยนักเคลื่อนไหวทางสังคมการเมืองในสวีเดน ที่ปัจจุบันขยายตัวไปในประเทศต่างๆทั่วโลก พรรคไพเรทเน้นนโยบายปฎิรูปลิขสิทธิ์และกฎสิทธิบัตร และการให้ความรู้โดยการแชร์ข้อมูลอย่างเสรี\n\nThe Reading Room เสนองาน \"TPB10\" ครบรอบ 10 ปีเว็ปไซต์ The Pirate Bay พร้อมฉายภาพยนตร์สารคดี TPB: AFK (The Pirate Bay: Away From Keyboard, 2013) ที่ตามติดชีวิตผู้ก่อตั้ง The Pirate Bay สามคน ในช่วงเวลาที่ The Pirate Bay ถูกฟ้องร้องฐานละเมิดลิขสิทธิ์ในช่วงปี 2008 แล้วพูดคุยกันต่อกับ อธิป จิตตฤกษ์ เรื่องการต่อสู้ของ The Pirate Bay กรณีกฏหมายและการละเมิดลิขสิทธิ์ต่างๆ และเรื่องเสรีภาพของข้อมูลข่าวสารและความรู้",
+  "bilingual": {
+    "th": "The Reading Room เสนองาน \"TPB10\" ครบรอบ 10 ปีเว็บไซต์ The Pirate Bay พร้อมฉายภาพยนตร์สารคดี TPB: AFK (The Pirate Bay: Away From Keyboard, 2013) ที่ตามติดชีวิตผู้ก่อตั้ง The Pirate Bay สามคน ในช่วงเวลาที่ The Pirate Bay ถูกฟ้องร้องฐานละเมิดลิขสิทธิ์ในช่วงปี 2008 แล้วพูดคุยกันต่อกับ อธิป จิตตฤกษ์ เรื่องการต่อสู้ของ The Pirate Bay กรณีกฏหมายและการละเมิดลิขสิทธิ์ต่างๆ และเรื่องเสรีภาพของข้อมูลข่าวสารและความรู้",
+    "en": "The Reading Room presented \"TPB10\", marking the tenth anniversary of The Pirate Bay, with a screening of the documentary TPB: AFK (The Pirate Bay: Away From Keyboard, 2013), which follows the lives of the three founders of The Pirate Bay during the period when the site faced copyright infringement proceedings in 2008. The screening was followed by a discussion with Athip Jittaruek on The Pirate Bay's legal battles, copyright law, and the broader question of freedom of information and knowledge.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อธิป จิตตฤกษ์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อธิป จิตตฤกษ์ / Athip Jittarek"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Media / สื่อ",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [
+      "TPB: AFK (The Pirate Bay: Away From Keyboard)"
+    ],
+    "event_time": "",
+    "venue": ""
+  }
+}

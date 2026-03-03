@@ -1,0 +1,72 @@
+{
+  "event_number": 34,
+  "key": "Seeing the Invisible (Godzilla)",
+  "display_title": "Seeing the Invisible (Godzilla)",
+  "event_date": "2012-09-08",
+  "year": "2012",
+  "series": "Other",
+  "total_duration_seconds": 6433,
+  "video_count": 4,
+  "videos": [
+    {
+      "id": "Q5U4zS_HzHk",
+      "title": "Seeing the Invisible (Godzilla) part 1",
+      "url": "https://www.youtube.com/watch?v=Q5U4zS_HzHk",
+      "duration_seconds": 1658,
+      "upload_date": "20120908"
+    },
+    {
+      "id": "8kUCaHJXXV8",
+      "title": "Seeing the Invisible (Godzilla) part 2",
+      "url": "https://www.youtube.com/watch?v=8kUCaHJXXV8",
+      "duration_seconds": 975,
+      "upload_date": "20120908"
+    },
+    {
+      "id": "CiPEvCzTxag",
+      "title": "Seeing the Invisible (Godzilla) part 3",
+      "url": "https://www.youtube.com/watch?v=CiPEvCzTxag",
+      "duration_seconds": 2160,
+      "upload_date": "20120908"
+    },
+    {
+      "id": "AA7yCA8q4s4",
+      "title": "Seeing the Invisible (Godzilla) part 4",
+      "url": "https://www.youtube.com/watch?v=AA7yCA8q4s4",
+      "duration_seconds": 1640,
+      "upload_date": "20120909"
+    }
+  ],
+  "raw_description": "Seeing the Invisible: Representation of the Radioactivity in the First Godzilla Movie\nBy Claude Estèbe\nTues. 4 September, 7:30pm\n\nThe Reading Room presents \"Seeing the Invisible: Representation of the Radioactivity in the First Godzilla Movie\" talk by Claude Estèbe, a French photographer and researcher on the topic of Godzilla, especially its relation to Radioactivity. He will also show images and video clips from the first Godzilla movies from 1954 and from other sources in his presentation at The Reading Room on Tuesday, September 4th, from 7:30pm.\n\nIn the movie, Godzilla is an antediluvian monster that was hurt by the radiations generated during the testing of U.S. hydrogen bombs at Bikini island, rampages through Tokyo in a radioactive Apocalypse. Ishirō Honda, the director of the first Godzilla movie (1954) (original title Gojira) carefully designed the monster to embodies the deadly invisible danger of radiations. Honda said in an interview that he conceived Gojira as a way of \"making radiation visible\".",
+  "bilingual": {
+    "th": "The Reading Room เสนอการบรรยาย Seeing the Invisible: การนำเสนอภาพกัมมันตภาพรังสีในภาพยนตร์ก็อดซิลลาเรื่องแรก โดย คล็อด เอสเตบ ช่างภาพชาวฝรั่งเศสและนักวิจัยผู้เชี่ยวชาญเรื่องก็อดซิลลา โดยเฉพาะความสัมพันธ์ระหว่างสัตว์ประหลาดกับกัมมันตภาพรังสี พร้อมการนำเสนอภาพนิ่งและคลิปวิดีโอจากภาพยนตร์ก็อดซิลลาเรื่องดั้งเดิมปี 1954 และแหล่งข้อมูลอื่นๆ\n\nในภาพยนตร์เรื่องนั้น ก็อดซิลลาคือสัตว์ประหลาดจากยุคก่อนน้ำท่วมโลกที่ได้รับบาดเจ็บจากรังสีที่เกิดขึ้นระหว่างการทดสอบระเบิดไฮโดรเจนของสหรัฐอเมริกาที่เกาะบิกินี ก่อนที่มันจะบุกโจมตีโตเกียวในวันสิ้นโลกแห่งกัมมันตภาพรังสี อิชิโร ฮอนดา ผู้กำกับภาพยนตร์ก็อดซิลลาเรื่องแรก (1954) ออกแบบสัตว์ประหลาดนี้อย่างพิถีพิถันเพื่อให้มันเป็นสัญลักษณ์ของอันตรายที่มองไม่เห็นและร้ายกาจของรังสีนิวเคลียร์ โดยฮอนดาเคยกล่าวในบทสัมภาษณ์ว่าเขาคิดค้นก็อดซิลลาขึ้นมาเพื่อทำให้กัมมันตภาพรังสีมองเห็นได้",
+    "en": "Seeing the Invisible: Representation of the Radioactivity in the First Godzilla Movie\nTues. 4 September, 7:30pm\n\nThe Reading Room presents \"Seeing the Invisible: Representation of the Radioactivity in the First Godzilla Movie\" talk by Claude Estèbe, a French photographer and researcher on the topic of Godzilla, especially its relation to Radioactivity. He will also show images and video clips from the first Godzilla movies from 1954 and from other sources in his presentation\n\nIn the movie, Godzilla is an antediluvian monster that was hurt by the radiations generated during the testing of U.S. hydrogen bombs at Bikini island, rampages through Tokyo in a radioactive Apocalypse. Ishirō Honda, the director of the first Godzilla movie (1954) (original title Gojira) carefully designed the monster to embodies the deadly invisible danger of radiations. Honda said in an interview that he conceived Gojira as a way of \"making radiation visible\".",
+    "source_th": "agent_translated",
+    "source_en": "original"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Claude Estèbe"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Claude Estèbe"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์",
+      "Art / ศิลปะ",
+      "History / ประวัติศาสตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [
+      "Godzilla (Gojira)"
+    ],
+    "event_time": "19:30",
+    "venue": ""
+  }
+}

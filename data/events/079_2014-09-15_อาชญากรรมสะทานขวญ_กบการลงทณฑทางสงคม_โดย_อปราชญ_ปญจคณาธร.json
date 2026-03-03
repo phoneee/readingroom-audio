@@ -1,0 +1,55 @@
+{
+  "event_number": 79,
+  "key": "อาชญากรรมสะท้านขวัญ กับการลงทัณฑ์ทางสังคม\" โดย อ.ปราชญ์ ปัญจคุณาธร",
+  "display_title": "อาชญากรรมสะท้านขวัญ กับการลงทัณฑ์ทางสังคม\" โดย อ.ปราชญ์ ปัญจคุณาธร\"",
+  "event_date": "2014-09-15",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 7396,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "ItdVJWMz9Ik",
+      "title": "อาชญากรรมสะท้านขวัญ กับการลงทัณฑ์ทางสังคม\" โดย อ.ปราชญ์ ปัญจคุณาธร Part 1",
+      "url": "https://www.youtube.com/watch?v=ItdVJWMz9Ik",
+      "duration_seconds": 5492,
+      "upload_date": "20140916"
+    },
+    {
+      "id": "I1NmpTkqusU",
+      "title": "\"อาชญากรรมสะท้านขวัญ กับการลงทัณฑ์ทางสังคม\" โดย อ.ปราชญ์ ปัญจคุณาธร Part 2",
+      "url": "https://www.youtube.com/watch?v=I1NmpTkqusU",
+      "duration_seconds": 1904,
+      "upload_date": "20140915"
+    }
+  ],
+  "raw_description": "\"อาชญากรรมสะท้านขวัญ กับการลงทัณฑ์ทางสังคม\" โดย อ.ปราชญ์ ปัญจคุณาธร Part 2",
+  "bilingual": {
+    "th": "บรรยายและเสวนาเรื่อง \"อาชญากรรมสะท้านขวัญ กับการลงทัณฑ์ทางสังคม\" โดย อ.ปราชญ์ ปัญจคุณาธร ว่าด้วยอาชญากรรมที่สร้างความตื่นตะลึงแก่สังคมและปฏิกิริยาของสาธารณชนต่อการลงโทษ จัดที่ The Reading Room เมื่อวันที่ 15 กันยายน 2557",
+    "en": "A lecture and discussion on \"Terrifying Crimes and Social Punishment\" by Ajarn Prach Panjakhunathon, examining crimes that shock society and the public's responses to punishment, held at The Reading Room on 15 September 2014.",
+    "source_th": "agent_translated",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ปราชญ์ ปัญจคุณาธร"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ปราชญ์ ปัญจคุณาธร"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Society / สังคม",
+      "Philosophy / ปรัชญา"
+    ],
+    "partners": [],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

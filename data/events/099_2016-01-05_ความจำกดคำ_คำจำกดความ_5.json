@@ -1,0 +1,57 @@
+{
+  "event_number": 99,
+  "key": "ความจำกัดคำ คำจำกัดความ 5",
+  "display_title": "ความจำกัดคำ คำจำกัดความ 5",
+  "event_date": "2016-01-05",
+  "year": "2016",
+  "series": "Definitions Series",
+  "total_duration_seconds": 8383,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "ee5DrMvRVV4",
+      "title": "ความจำกัดคำ คำจำกัดความ 5 (part 1)",
+      "url": "https://www.youtube.com/watch?v=ee5DrMvRVV4",
+      "duration_seconds": 3843,
+      "upload_date": "20160105"
+    },
+    {
+      "id": "a85EVALGF4M",
+      "title": "ความจำกัดคำ คำจำกัดความ 5 (part 2)",
+      "url": "https://www.youtube.com/watch?v=a85EVALGF4M",
+      "duration_seconds": 4540,
+      "upload_date": "20160105"
+    }
+  ],
+  "raw_description": "ความจำกัดคำ | คำจำกัดความ #5\n\nในโลกของการอ่าน มีคำศัพท์ใหม่ๆถูดคิดค้น ปรับใช้ และหมุนเวียนอยู่เสมอ ร่วมค้นหาความหมายและที่มาที่ไปของคำสำคัญเหล่านี้ ผ่านการตีความอันของนักวิชาการหลากหลายสาขา ในซีรีย์เสวนา “ความจำกัดคำ | คำจำกัดความ” ร่วมจัดโดย ศูนย์ศึกษาสังคมและวัฒนธรรมร่วมสมัย คณะสังคมวิทยาและมานุษยวิทยา มหาวิทยาลัยธรรมศาสตร์ และ The Reading Room \n\nโดยในครั้งสุดท้ายนี้ รชฏ สาตราวุธ (คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตปัตตานี) & อรรณนพ ชินตะวัน (คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยศิลปากร) จะมาแนะนำและตีความคำว่า “Event” ที่เป็นกระแสความคิดสำคัญทางปรัชญาและมนุษย์ศาสตร์",
+  "bilingual": {
+    "th": "คความจำกัดคำ | คำจำกัดความ #5\n\nในโลกของการอ่าน มีคำศัพท์ใหม่ๆถูกคิดค้น ปรับใช้ และหมุนเวียนอยู่เสมอ ร่วมค้นหาความหมายและที่มาที่ไปของคำสำคัญเหล่านี้ ผ่านการตีความอันของนักวิชาการหลากหลายสาขา ในซีรีย์เสวนา “คความจำกัดคำ | คำจำกัดความ” ร่วมจัดโดย ศูนย์ศึกษาสังคมและวัฒนธรรมร่วมสมัย คณะสังคมวิทยาและมานุษยวิทยา มหาวิทยาลัยธรรมศาสตร์ และ The Reading Room\n\nโดยในครั้งสุดท้ายนี้ รชฏ สาตราวุธ (คณะมนุษยศาสตร์และสังคมศาสตร์ มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตปัตตานี) & อรรณนพ ชินตะวัน (คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยศิลปากร) จะมาแนะนำและตีความคำว่า “Event” ที่เป็นกระแสความคิดสำคัญทางปรัชญาและมนุษย์ศาสตร์",
+    "en": "Definitions | Limits of Language #5\n\nIn the world of reading, new vocabulary is constantly invented, adapted, and put into circulation. Join us in tracing the meanings and genealogies of these key terms through the interpretations of scholars from a range of disciplines, in the discussion series \"Definitions | Limits of Language,\" co-organised by the Centre for the Study of Contemporary Society and Culture, Faculty of Sociology and Anthropology, Thammasat University, and The Reading Room.\n\nFor this final instalment, Rachot Satrawut (Faculty of Humanities and Social Sciences, Prince of Songkla University, Pattani Campus) and Annanop Chintawan (Faculty of Information and Communication Technology, Silpakorn University) introduced and interpreted the concept of \"Event\" — a key current in contemporary philosophy and the humanities.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "รชฏ สาตราวุธ",
+      "อรรณนพ ชินตะวัน"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "รชฏ สาตราวุธ",
+      "อรรณนพ ชินตะวัน"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

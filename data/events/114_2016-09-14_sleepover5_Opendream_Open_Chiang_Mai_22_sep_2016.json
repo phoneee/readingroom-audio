@@ -1,0 +1,46 @@
+{
+  "event_number": 114,
+  "key": "sleepover5 : \"Opendream : Open Chiang Mai\" 22 sep 2016",
+  "display_title": "sleepover5 : \"Opendream : Open Chiang Mai\" 22 sep 2016",
+  "event_date": "2016-09-14",
+  "year": "2016",
+  "series": "Sleepover",
+  "total_duration_seconds": 2648,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "W7yWqq144Qo",
+      "title": "sleepover5 : “Opendream : Open Chiang Mai” 22 sep 2016",
+      "url": "https://www.youtube.com/watch?v=W7yWqq144Qo",
+      "duration_seconds": 2648,
+      "upload_date": "20161008"
+    }
+  ],
+  "raw_description": "SLEEPOVER#5: YouPin!\nโดย เครือข่ายพลเมืองเน็ต, สถาบันเทคโนโลยีเพื่อนวัตกรรมสังคม\nและ บุญมีแล็บ\n14-30 กันยายน 2559 \n\nพฤหัสบดี 22 กันยายน \n19:00 - 21:00 “Opendream : Open Chiang Mai”\nองค์กร Opendream จะมาพูดคุยเรื่อง dodd แอพเมืองเชียงใหม่",
+  "bilingual": {
+    "th": "SLEEPOVER#5: YouPin!\nและ บุญมีแล็บ\n14-30 กันยายน 2559\n\nพฤหัสบดี 22 กันยายน\n19:00 - 21:00 “Opendream : Open Chiang Mai”\nองค์กร Opendream จะมาพูดคุยเรื่อง dodd แอพเมืองเชียงใหม่",
+    "en": "SLEEPOVER#5: YouPin!\nWith BoonMe Lab\n14–30 September 2016\n\nThursday 22 September\n19:00–21:00 \"Opendream: Open Chiang Mai\"\nOrganisation Opendream presented dodd, their civic app for Chiang Mai.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Architecture & Urbanism / สถาปัตยกรรม",
+      "Media / สื่อ"
+    ],
+    "partners": [
+      "Thai Netizen Network / เครือข่ายพลเมืองเน็ต"
+    ],
+    "formats": [
+      "Lecture / บรรยาย"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

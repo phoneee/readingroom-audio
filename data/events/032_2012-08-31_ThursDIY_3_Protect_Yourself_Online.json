@@ -1,0 +1,71 @@
+{
+  "event_number": 32,
+  "key": "ThursDIY #3: Protect Yourself Online",
+  "display_title": "ThursDIY #3: Protect Yourself Online",
+  "event_date": "2012-08-31",
+  "year": "2012",
+  "series": "Other",
+  "total_duration_seconds": 5843,
+  "video_count": 4,
+  "videos": [
+    {
+      "id": "0t15PqDtFZA",
+      "title": "ThursDIY #3: Protect Yourself Online part 1",
+      "url": "https://www.youtube.com/watch?v=0t15PqDtFZA",
+      "duration_seconds": 1730,
+      "upload_date": "20120901"
+    },
+    {
+      "id": "YqAUZWiybUw",
+      "title": "ThursDIY #3: Protect Yourself Online part 2",
+      "url": "https://www.youtube.com/watch?v=YqAUZWiybUw",
+      "duration_seconds": 1792,
+      "upload_date": "20120831"
+    },
+    {
+      "id": "tqDkprCARyg",
+      "title": "ThursDIY #3: Protect Yourself Online part 3",
+      "url": "https://www.youtube.com/watch?v=tqDkprCARyg",
+      "duration_seconds": 1792,
+      "upload_date": "20120831"
+    },
+    {
+      "id": "j6C-hbKWkR0",
+      "title": "ThursDIY #3: Protect Yourself Online part 4",
+      "url": "https://www.youtube.com/watch?v=j6C-hbKWkR0",
+      "duration_seconds": 529,
+      "upload_date": "20120831"
+    }
+  ],
+  "raw_description": "พฤหัด #3: ใช้เน็ตปลอดภัย\nกับ พิทยา สร้อยหลง\nวันพฤหัสที่ 23 กรกฏาคม 2555\n\nThe Reading Room และเครือข่ายพลเมืองเน็ตเสนอ โครงการ \"พฤหัด\" (ThursDIY) ชวนเรียนรู้อินเทอร์เน็ตด้วยการลงมือทำ\n\nชั้นเรียนที่ 3 เป็นการสอนให้รู้จักภัยบนอินเทอร์เน็ตและการป้องกันตนเอง รู้จักรูปแบบต่างๆ ของภัยออนไลน์ที่มากับการใช้งานโซเชียลเน็ตเวิร์ก, การซื้อขายของออนไลน์, การใช้เครือข่ายไร้สายในที่สาธารณะ เรียนรู้วิธีสังเกตและป้องกันตัว โดยการตั้งค่าความปลอดภัยเพิ่มเติม ให้กับทั้งเว็บไซต์และเว็บเบราว์เซอร์ ลงมือทำไปด้วยกันกับนักพัฒนาเว็บไซต์หนุ่ม พิทยา สร้อยหลง",
+  "bilingual": {
+    "th": "พฤหัด #3: ใช้เน็ตปลอดภัย\nกับ พิทยา สร้อยหลง\n\nThe Reading Room และเครือข่ายพลเมืองเน็ตเสนอ โครงการ \"พฤหัด\" (ThursDIY) ชวนเรียนรู้อินเทอร์เน็ตด้วยการลงมือทำ\n\nชั้นเรียนที่ 3 เป็นการสอนให้รู้จักภัยบนอินเทอร์เน็ตและการป้องกันตนเอง รู้จักรูปแบบต่างๆ ของภัยออนไลน์ที่มากับการใช้งานโซเชียลเน็ตเวิร์ก, การซื้อขายของออนไลน์, การใช้เครือข่ายไร้สายในที่สาธารณะ เรียนรู้วิธีสังเกตและป้องกันตัว โดยการตั้งค่าความปลอดภัยเพิ่มเติม ให้กับทั้งเว็บไซต์และเว็บเบราว์เซอร์ ลงมือทำไปด้วยกันกับนักพัฒนาเว็บไซต์หนุ่ม พิทยา สร้อยหลง",
+    "en": "ThursDIY #3: Protect Yourself Online\nWith Pithaya Sroylong\n\nThe Reading Room and Thai Netizen present ThursDIY, a series of hands-on workshops for learning about the internet through practice.\n\nSession 3 covered online threats and self-protection, introducing various forms of digital risk encountered through social networking, online shopping, and the use of public wireless networks. Participants learned to recognise threats and protect themselves by configuring additional security settings for websites and browsers, guided hands-on by web developer Pithaya Sroylong.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "พิทยา สร้อยหลง"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "พิทยา สร้อยหลง / Pithaya Sroylong"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Media / สื่อ",
+      "Human Rights / สิทธิมนุษยชน"
+    ],
+    "partners": [
+      "Thai Netizen Network / เครือข่ายพลเมืองเน็ต"
+    ],
+    "formats": [
+      "Workshop / เวิร์คช็อป"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

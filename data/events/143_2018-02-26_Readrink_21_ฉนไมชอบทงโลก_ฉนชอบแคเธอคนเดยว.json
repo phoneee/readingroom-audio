@@ -1,0 +1,52 @@
+{
+  "event_number": 143,
+  "key": "Readrink #21 — \"ฉันไม่ชอบทั้งโลก ฉันชอบแค่เธอคนเดียว",
+  "display_title": "Readrink #21 — \"ฉันไม่ชอบทั้งโลก ฉันชอบแค่เธอคนเดียว\"",
+  "event_date": "2018-02-26",
+  "year": "2018",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 4981,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Lx0HB2mT_TY",
+      "title": "Readrink #21 — “ฉันไม่ชอบทั้งโลก ฉันชอบแค่เธอคนเดียว” (1/2)",
+      "url": "https://www.youtube.com/watch?v=Lx0HB2mT_TY",
+      "duration_seconds": 3460,
+      "upload_date": "20180226"
+    },
+    {
+      "id": "9negSmw_21A",
+      "title": "Readrink #21 — “ฉันไม่ชอบทั้งโลก ฉันชอบแค่เธอคนเดียว” (2/2)",
+      "url": "https://www.youtube.com/watch?v=9negSmw_21A",
+      "duration_seconds": 1521,
+      "upload_date": "20180226"
+    }
+  ],
+  "raw_description": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 21 ชวนอ่านและล้อมวงคุยเรื่อง “ฉันไม่ชอบทั้งโลก ฉันชอบแค่เธอคนเดียว” แปลมาจากนิยายสุดฮ็อต 我不喜欢这世界，我只喜欢你 เรื่องราวความรักของเฉียวยี และนาย F ที่ดังตั้งแต่ตอนลงใน Weibo (บริการคล้ายๆ กับ Twitter ของจีน) พอเป็นหนังสือก็มียอดขายทะลุ 3 ล้านเล่มที่ประเทศจีน",
+  "bilingual": {
+    "th": "บุ๊คคลับรี้ดดริ๊งค์ครั้งที่ 21 ชวนอ่านและล้อมวงคุยเรื่อง “ฉันไม่ชอบทั้งโลก ฉันชอบแค่เธอคนเดียว” แปลมาจากนิยายสุดฮ็อต 我不喜欢这世界，我只喜欢你 เรื่องราวความรักของเฉียวยี และนาย F ที่ดังตั้งแต่ตอนลงใน Weibo (บริการคล้ายๆ กับ Twitter ของจีน) พอเป็นหนังสือก็มียอดขายทะลุ 3 ล้านเล่มที่ประเทศจีน",
+    "en": "Readrink Book Club #21 invites readers to discuss I Don't Like the World, I Only Like You (我不喜欢这世界，我只喜欢你), the love story of Qiao Yi and Mr F — a sensation that first circulated on Weibo and, upon publication, sold over three million copies in China.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "ฉันไม่ชอบทั้งโลก ฉันชอบแค่เธอคนเดียว"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "event_number": 117,
+  "key": "Readrink#8 สิ้นแสงฉาน 2 OCT 2016",
+  "display_title": "Readrink#8 สิ้นแสงฉาน 2 OCT 2016",
+  "event_date": "2016-10-02",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 8009,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "MTw0IZwypU8",
+      "title": "Readrink#8 สิ้นแสงฉาน 2 OCT 2016 part 1",
+      "url": "https://www.youtube.com/watch?v=MTw0IZwypU8",
+      "duration_seconds": 5592,
+      "upload_date": "20161106"
+    },
+    {
+      "id": "S_51FJHtxdc",
+      "title": "Readrink#8 สิ้นแสงฉาน 2 OCT 2016 part 2",
+      "url": "https://www.youtube.com/watch?v=S_51FJHtxdc",
+      "duration_seconds": 2417,
+      "upload_date": "20161109"
+    }
+  ],
+  "raw_description": "Readrink#8 สิ้นแสงฉาน\n2 ตุลาคม 2559\nที่ The Reading Room, Bangkok สีลม 19\n\n\nจากสาวออสเตรียนธรรมดาๆ อิงเง่ กลับกลายมาเป็นซินเดอเรลล่าตัวจริง เสียงจริง เมื่อค้นพบว่าสามีไม่ใช่แค่ชายธรรมดา แต่เขาคือเจ้าฟ้าจาแสง\n\nแต่แล้วชีวิตที่เคยสงบสุข กลับต้องมาพลิกผันเมื่อเกิดการยึดอำนาจขึ้นในพม่าโดยนายพลเนวิน เธอจึงต้องสูญเสียทุกอย่างที่รัก ทั้งบ้านและสามีผู้เป็นที่รัก",
+  "bilingual": {
+    "th": "Readrink #8 สนทนาวรรณกรรม \"สิ้นแสงฉาน\" (Twilight over Burma) โดย อิงเก ซาร์เจ้นท์ — เรื่องราวของหญิงชาวออสเตรียที่แต่งงานกับเจ้าฟ้าเจ้าชายแห่งรัฐฉาน และชีวิตที่เปลี่ยนไปอย่างสิ้นเชิงหลังรัฐประหารในพม่า ปี 2505",
+    "en": "Readrink #8 presents a discussion of Twilight over Burma (สิ้นแสงฉาน) by Inge Sargent — the story of an Austrian woman who married the Prince of Hsipaw, a Shan State, and the dramatic upheaval of her life following the 1962 military coup in Burma.",
+    "source_th": "manual",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Politics / การเมือง",
+      "History / ประวัติศาสตร์",
+      "Southeast Asia / อาเซียน"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [
+      "สิ้นแสงฉาน"
+    ],
+    "film_titles": [],
+    "event_time": "",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

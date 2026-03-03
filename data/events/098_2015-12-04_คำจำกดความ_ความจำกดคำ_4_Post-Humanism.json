@@ -1,0 +1,62 @@
+{
+  "event_number": 98,
+  "key": "คำจำกัดความ ความจำกัดคำ 4: Post-Humanism",
+  "display_title": "คำจำกัดความ ความจำกัดคำ 4: Post-Humanism",
+  "event_date": "2015-12-04",
+  "year": "2015",
+  "series": "Definitions Series",
+  "total_duration_seconds": 11682,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "CJa359nYq9w",
+      "title": "คำจำกัดความ ความจำกัดคำ 4: Post-Humanism part 1",
+      "url": "https://www.youtube.com/watch?v=CJa359nYq9w",
+      "duration_seconds": 3332,
+      "upload_date": "20151204"
+    },
+    {
+      "id": "0eievhDBtu0",
+      "title": "คำจำกัดความ ความจำกัดคำ 4: Post-Humanism part 2",
+      "url": "https://www.youtube.com/watch?v=0eievhDBtu0",
+      "duration_seconds": 4397,
+      "upload_date": "20151204"
+    },
+    {
+      "id": "Q0z2FNEqTiA",
+      "title": "คำจำกัดความ ความจำกัดคำ 4: Post-Humanism part 3",
+      "url": "https://www.youtube.com/watch?v=Q0z2FNEqTiA",
+      "duration_seconds": 3953,
+      "upload_date": "20151204"
+    }
+  ],
+  "raw_description": "วามจำกัดคำ | คำจำกัดความ #4: Post-Humanism\nโดย ธเนศ วงศ์ยานนาวา & ไกรวุฒิ จุลพงศธร\n\nในครั้งที่สี่นี้ ธเนศ วงศ์ยานนาวา (คณะรัฐศาสตร์ มหาวิทยาลัยธรรมศาสตร์) & ไกรวุฒิ จุลพงศธร (กำลังศึกษาปริญญาเอก ภาควิชาภาพยนตร์ศึกษา มหาวิทยาลัยลอนดอน) จะมาแนะนำและตีความคำว่า “Post-Humanism” ที่เป็นกระแสความคิดสำคัญในทางมนุษย์ศาสตร์และสังคมศาสตร์ในปัจจุบัน\n\nการสนทนาครั้งนี้จะไม่ได้จำกัดอยู่แค่คำว่า 'post-humanism' เพียงอย่างเดียว แต่ยังลามไปถึงคำในเครือญาติอย่าง '(post)anthropocentric' และ 'anthropocene' ชุดคำอันชวนฉงนที่ฟังดูคล้ายกันแต่จริงแล้วแตกต่างระหว่าง หลังมนุษย์ หลังมนุษย์เป็นศูนย์กลาง และยุคมนุษย์ รวมถึงปัญหาของมนุษย์ในกรอบความคิดแบบยิวและคริสต์ (Judeo-Christian) อีกด้วย",
+  "bilingual": {
+    "th": "ความจำกัดคำ | คำจำกัดความ #4: Post-Humanism\n\nในครั้งที่สี่นี้ ธเนศ วงศ์ยานนาวา (คณะรัฐศาสตร์ มหาวิทยาลัยธรรมศาสตร์) & ไกรวุฒิ จุลพงศธร (กำลังศึกษาปริญญาเอก ภาควิชาภาพยนตร์ศึกษา มหาวิทยาลัยลอนดอน) จะมาแนะนำและตีความคำว่า “Post-Humanism” ที่เป็นกระแสความคิดสำคัญในทางมนุษย์ศาสตร์และสังคมศาสตร์ในปัจจุบัน\n\nการสนทนาครั้งนี้จะไม่ได้จำกัดอยู่แค่คำว่า 'post-humanism' เพียงอย่างเดียว แต่ยังลามไปถึงคำในเครือญาติอย่าง '(post)anthropocentric' และ 'anthropocene' ชุดคำอันชวนฉงนที่ฟังดูคล้ายกันแต่จริงแล้วแตกต่างระหว่าง หลังมนุษย์ หลังมนุษย์เป็นศูนย์กลาง และยุคมนุษย์ รวมถึงปัญหาของมนุษย์ในกรอบความคิดแบบยิวและคริสต์ (Judeo-Christian) อีกด้วย",
+    "en": "Definitions | Limits of Language #4: Post-Humanism\n\nFor this fourth instalment, Thanet Wongyannawa (Faculty of Political Science, Thammasat University) and Kraiwut Chulaphongsathorn (PhD candidate, Department of Film Studies, University of London) introduced and interpreted the concept of \"Post-Humanism\" — one of the most significant intellectual currents in the contemporary humanities and social sciences.\n\nThis discussion did not confine itself to \"post-humanism\" alone, but extended to related terms such as \"(post)anthropocentric\" and \"anthropocene\" — a cluster of confusingly similar yet importantly distinct concepts: post-human, post-anthropocentrism, and the age of the human — as well as the problem of the human subject within the Judeo-Christian conceptual framework.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ธเนศ วงศ์ยานนาวา",
+      "ไกรวุฒิ จุลพงศธร"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ธเนศ วงศ์ยานนาวา / Thanes Wongyannava",
+      "ไกรวุฒิ จุลพงศธร / Kraiwut Chulaphongsathorn"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "event_number": 82,
+  "key": "Q&A กับผู้กำกับหนังทดลอง จุฬญาณนนท์ ศิริผล",
+  "display_title": "Q&A กับผู้กำกับหนังทดลอง จุฬญาณนนท์ ศิริผล",
+  "event_date": "2014-09-29",
+  "year": "2014",
+  "series": "Other",
+  "total_duration_seconds": 6780,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "VobfNp0uG7w",
+      "title": "Q&A กับผู้กำกับหนังทดลอง จุฬญาณนนท์ ศิริผล Part 1",
+      "url": "https://www.youtube.com/watch?v=VobfNp0uG7w",
+      "duration_seconds": 5439,
+      "upload_date": "20140929"
+    },
+    {
+      "id": "zhkIqcVU0Sg",
+      "title": "Q&A กับผู้กำกับหนังทดลอง จุฬญาณนนท์ ศิริผล Part 2",
+      "url": "https://www.youtube.com/watch?v=zhkIqcVU0Sg",
+      "duration_seconds": 1341,
+      "upload_date": "20140929"
+    }
+  ],
+  "raw_description": "",
+  "bilingual": {
+    "th": "การสนทนาและถาม-ตอบกับ จุฬญาณนนท์ ศิริผล ผู้กำกับภาพยนตร์ทดลองชาวไทย สำรวจแนวทางการสร้างสรรค์และมุมมองทางศิลปะในงานของเขา จัดขึ้นในปี 2557",
+    "en": "A Q&A session with Chulayarnnon Siriphol, Thai experimental filmmaker, exploring his creative approach and artistic vision, held in 2014.",
+    "source_th": "agent_fabricated",
+    "source_en": "agent_fabricated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "จุฬญาณนนท์ ศิริผล"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "จุฬญาณนนท์ ศิริผล"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Film / ภาพยนตร์"
+    ],
+    "partners": [],
+    "formats": [
+      "Screening / ฉายภาพยนตร์"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "event_number": 121,
+  "key": "READRINK10 #YourName",
+  "display_title": "READRINK10 #YourName",
+  "event_date": "2016-12-05",
+  "year": "2016",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 10514,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "2cL5XpqzAEY",
+      "title": "READRINK10 #YourName part 1",
+      "url": "https://www.youtube.com/watch?v=2cL5XpqzAEY",
+      "duration_seconds": 3707,
+      "upload_date": "20161205"
+    },
+    {
+      "id": "m8RdNjxO39M",
+      "title": "READRINK10 #YourName part 2",
+      "url": "https://www.youtube.com/watch?v=m8RdNjxO39M",
+      "duration_seconds": 3702,
+      "upload_date": "20161205"
+    },
+    {
+      "id": "Z2dIysU6fJ4",
+      "title": "READRINK10 #YourName part 3",
+      "url": "https://www.youtube.com/watch?v=Z2dIysU6fJ4",
+      "duration_seconds": 3105,
+      "upload_date": "20161205"
+    }
+  ],
+  "raw_description": "นิยามใหม่ของความเหงาที่งดงามอบอุ่น และตราตรึง... เมื่อหนุ่มสาวคู่หนึ่งซึ่งต่างคนต่างก็ไม่พอใจในชีวิตตัวเองต้องมาพบกับเหตุการณ์ประหลาดที่ทำให้พวกเขาสลับร่างกัน และอยากจะออกตามหาว่าอีกร่างที่ตัวเองอาศัยอยู่นั้น เป็นของใครกันแน่\n\nวงสนทนาวรรณกรรม Your Name หนังสือที่ทำให้หลายคนหลั่งน้ำตาพร้อมดื่มสาเกญี่ปุ่น  Readrink#10 Your Name",
+  "bilingual": {
+    "th": "นิยามใหม่ของความเหงาที่งดงามอบอุ่น และตราตรึง... เมื่อหนุ่มสาวคู่หนึ่งซึ่งต่างคนต่างก็ไม่พอใจในชีวิตตัวเองต้องมาพบกับเหตุการณ์ประหลาดที่ทำให้พวกเขาสลับร่างกัน และอยากจะออกตามหาว่าอีกร่างที่ตัวเองอาศัยอยู่นั้น เป็นของใครกันแน่\n\nวงสนทนาวรรณกรรม Your Name หนังสือที่ทำให้หลายคนหลั่งน้ำตาพร้อมดื่มสาเกญี่ปุ่น Readrink#10 Your Name",
+    "en": "A new definition of loneliness — beautiful, warm, and unforgettable. When a young man and woman, each dissatisfied with their own lives, encounter a strange phenomenon that causes them to swap bodies, they become desperately curious to find out who exactly it is they have been living inside.\n\nA literary discussion of Your Name — the book that moved so many readers to tears — accompanied by Japanese sake. Readrink #10: Your Name.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [],
+    "moderators_raw": [],
+    "display_speakers": [],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

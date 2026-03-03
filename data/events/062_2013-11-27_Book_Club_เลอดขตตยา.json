@@ -1,0 +1,47 @@
+{
+  "event_number": 62,
+  "key": "Book Club เลือดขัตติยา",
+  "display_title": "Book Club เลือดขัตติยา",
+  "event_date": "2013-11-27",
+  "year": "2013",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 6943,
+  "video_count": 1,
+  "videos": [
+    {
+      "id": "es8ikLP1GdQ",
+      "title": "Book Club เลือดขัตติยา",
+      "url": "https://www.youtube.com/watch?v=es8ikLP1GdQ",
+      "duration_seconds": 6943,
+      "upload_date": "20131127"
+    }
+  ],
+  "raw_description": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่สามนี้จะหยิบบทประพันธ์เรื่องดัง \"เลือดขัตติยา\" ของลักษณาวดี มาชวนกันอ่าน\nเลือดขัตติยา เป็นนิยายเกี่ยวกับความรักต้องห้ามระหว่างเจ้าหญิงและนายทหาร อันเป็นรักแท้ที่ทั้งสองเสียสละเพื่อค้ำจุนแผ่นดินที่อยู่ในระหว่างสงคราม ซึ่งได้รับการตอบรับจากผู้อ่านมาเป็นเวลานาน และดัดแปลงเป็นละครโทรทัศน์หลายครั้ง และล่าสุดได้รับการดัดแปลงเป็นละครเวที",
+  "bilingual": {
+    "th": "The Reading Room เสนอบุ๊คคลับหวานใส \"Strawberry Sunday Book Club: อ่านหนังสือป็อปกับคุณอรรถ บุนนาค\" โดยครั้งที่สามนี้จะหยิบบทประพันธ์เรื่องดัง \"เลือดขัตติยา\" ของลักษณาวดี มาชวนกันอ่าน\nเลือดขัตติยา เป็นนิยายเกี่ยวกับความรักต้องห้ามระหว่างเจ้าหญิงและนายทหาร อันเป็นรักแท้ที่ทั้งสองเสียสละเพื่อค้ำจุนแผ่นดินที่อยู่ในระหว่างสงคราม ซึ่งได้รับการตอบรับจากผู้อ่านมาเป็นเวลานาน และดัดแปลงเป็นละครโทรทัศน์หลายครั้ง และล่าสุดได้รับการดัดแปลงเป็นละครเวที",
+    "en": "The Reading Room presents the charming \"Strawberry Sunday Book Club: Reading Pop Fiction with Khun Attha Bunnak.\" For this third edition, the club takes up the celebrated novel \"Lueat Khattiya\" by Laksanawadi.\n\n\"Lueat Khattiya\" is a novel about a forbidden love between a princess and a military officer — a true love that both sacrifice for the sake of their war-torn homeland. Long cherished by readers of all backgrounds, the novel has been adapted for television drama on multiple occasions, with the most recent version adapted for the stage.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

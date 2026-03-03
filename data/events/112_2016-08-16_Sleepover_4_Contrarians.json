@@ -1,0 +1,58 @@
+{
+  "event_number": 112,
+  "key": "Sleepover 4 Contrarians",
+  "display_title": "Sleepover 4 Contrarians",
+  "event_date": "2016-08-16",
+  "year": "2016",
+  "series": "Sleepover",
+  "total_duration_seconds": 6947,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "Vnq370CLF2A",
+      "title": "Sleepover 4 Contrarians part1",
+      "url": "https://www.youtube.com/watch?v=Vnq370CLF2A",
+      "duration_seconds": 4097,
+      "upload_date": "20160909"
+    },
+    {
+      "id": "Z9gi3s_ZfpU",
+      "title": "Sleepover 4 Contrarians part2",
+      "url": "https://www.youtube.com/watch?v=Z9gi3s_ZfpU",
+      "duration_seconds": 2850,
+      "upload_date": "20160909"
+    }
+  ],
+  "raw_description": "SLEEPOVER#4: ห้องสมุดชั่วคราวของนักค้าน\nโดย ปราบดา หยุ่น\n10-28 สิงหาคม 2559 \nเสวนา กับ มา ถิดา 16 สิงหาคม 19:00-21:00น.\nที่ The Reading Room สีลม 19\n\nตลอดเดือนสิงหาคมนี้ ปราบดาจะคัดเลือกผลงานทั้งวรรณกรรม ดนตรี ภาพยนตร์ ของเหล่า “นักค้าน” จากหลากหลายวัฒนธรรมและยุคสมัย มาจัดเป็น “ห้องสมุดชั่วคราว” ที่ The Reading Room ซึ่งจะมีหนังสือให้อ่าน มี playlist ดนตรีมาแชร์ให้ฟัง มีภาพยนตร์ฉายเป็นรอบทุกสัปดาห์ และจะมีงานเสวนา กับนักเขียน นักเคลื่อนไหว และอดีตนักโทษการเมืองชาวพม่า มา ถิดา ในวันอังคารที่ 16 สิงหาคม เวลา 19:00-21:00น.\n\nThrough the month of August, Prabda will select literature, music, and movies by impassioned contrarians from different cultures and eras, in order to build a temporary “Little Library of Contratians” at The Reading Room. Books and music will be presented and played daily; and movies will be screened every week. On Tuesday August 16th, a talk will be held with an important Burmese writer, activist, and ex-political prisoner, Ma Thida, from 7-9pm.",
+  "bilingual": {
+    "th": "Sleepover #4: Contrarians — ภัณฑารักษ์โดย ปราบดา หยุ่น\n\nตลอดเดือนสิงหาคมนี้ ปราบดาจะคัดเลือกผลงานทั้งวรรณกรรม ดนตรี ภาพยนตร์ ของเหล่า \"นักค้าน\" จากหลากหลายวัฒนธรรมและยุคสมัย มาจัดเป็น \"ห้องสมุดชั่วคราว\" ให้มาอ่าน ฟัง ดู ที่ The Reading Room\n\nเสวนากับ มา ถิดา — วันอังคารที่ 16 สิงหาคม เวลา 19:30 น.",
+    "en": "Sleepover #4: Contrarians — curated by Prabda Yoon.\n\nThroughout August, Prabda curates a selection of literary, musical, and cinematic works by \"contrarians\" from diverse cultures and eras, assembled as a temporary \"Little Library of Contrarians\" for visitors to read, listen to, and watch at The Reading Room.\n\nA conversation with Ma Thida on Tuesday, 16 August at 7:30 pm.",
+    "source_th": "manual",
+    "source_en": "manual"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ปราบดา หยุ่น",
+      "มา ถิดา"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ปราบดา หยุ่น / Prabda Yoon",
+      "มา ถิดา"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม",
+      "Politics / การเมือง",
+      "Human Rights / สิทธิมนุษยชน"
+    ],
+    "partners": [],
+    "formats": [
+      "Panel / เสวนา"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "19:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

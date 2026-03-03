@@ -1,0 +1,57 @@
+{
+  "event_number": 54,
+  "key": "re:reading2",
+  "display_title": "re:reading2",
+  "event_date": "2013-08-14",
+  "year": "2013",
+  "series": "re:reading",
+  "total_duration_seconds": 9682,
+  "video_count": 2,
+  "videos": [
+    {
+      "id": "HKjMd0SP5fs",
+      "title": "re:reading2 part1",
+      "url": "https://www.youtube.com/watch?v=HKjMd0SP5fs",
+      "duration_seconds": 5752,
+      "upload_date": "20130814"
+    },
+    {
+      "id": "GL4Eq2Y6p1k",
+      "title": "re:reading2 part2",
+      "url": "https://www.youtube.com/watch?v=GL4Eq2Y6p1k",
+      "duration_seconds": 3930,
+      "upload_date": "20130814"
+    }
+  ],
+  "raw_description": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม โดยเดือนที่สองนี้เป็นการตีความตัวบท \"มานุษยวิทนา\" ใหม่ โดยเลือกอ่าน บทความสำคัญของ Clifford Geertz สองบทคือ Balinese Cockfight และ Thick Description ร่วมพูดคุยโดย อ. ยุกติ มุกดาวิจิตร และ อ. นิติ ภวัครพันธุ์",
+  "bilingual": {
+    "th": "The Reading Room ชวนอ่านหนังสือสายสังคมวัฒนธรรม โดยเดือนที่สองนี้เป็นการตีความตัวบท \"มานุษยวิทยา\" ใหม่ โดยเลือกอ่าน บทความสำคัญของ Clifford Geertz สองบทคือ Balinese Cockfight และ Thick Description ร่วมพูดคุยโดย อ. ยุกติ มุกดาวิจิตร และ อ. นิติ ภวัครพันธุ์",
+    "en": "The Reading Room invited readers of social and cultural texts to join Re:Reading Group for its second session, this time reinterpreting texts in anthropology. The group read two key essays by Clifford Geertz — \"Deep Play: Notes on the Balinese Cockfight\" and \"Thick Description: Toward an Interpretive Theory of Culture\" — discussed with Ajarn Yukti Mukdawijit and Ajarn Niti Phawakkhraphan.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "ยุกติ มุกดาวิจิตร",
+      "นิติ ภวัครพันธุ์"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "ยุกติ มุกดาวิจิตร",
+      "นิติ ภวัครพันธุ์"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Philosophy / ปรัชญา",
+      "Society / สังคม"
+    ],
+    "partners": [],
+    "formats": [
+      "Reading Group"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "",
+    "venue": ""
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "event_number": 40,
+  "key": "Charles LaBelle",
+  "display_title": "Charles LaBelle",
+  "event_date": "2012-12-21",
+  "year": "2012",
+  "series": "Artist Talk",
+  "total_duration_seconds": 4605,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "ZZmSObQVv-4",
+      "title": "Charles LaBelle part 1",
+      "url": "https://www.youtube.com/watch?v=ZZmSObQVv-4",
+      "duration_seconds": 1584,
+      "upload_date": "20120313"
+    },
+    {
+      "id": "gNwNy97NLMU",
+      "title": "Charles LaBelle part 2",
+      "url": "https://www.youtube.com/watch?v=gNwNy97NLMU",
+      "duration_seconds": 1792,
+      "upload_date": "20120316"
+    },
+    {
+      "id": "6gRTjTyvQsI",
+      "title": "Charles LaBelle part 3",
+      "url": "https://www.youtube.com/watch?v=6gRTjTyvQsI",
+      "duration_seconds": 1229,
+      "upload_date": "20120317"
+    }
+  ],
+  "raw_description": "The Reading Room presents an artist talk and book launch by a Hong Kong-based, American artist, Charles LaBelle on Wednesday, December 21st from 7pm, in conjunction with the artist's architecturally inspired drawing installation at Number 1 Gallery (Dec. 17 -- Jan. 21). LaBelle will present his 'Buildings Entered' project, an ongoing, lifetime project began fourteen years ago, in which he documents every building he physically enters. Conceptual in nature, the project is both a diary and a historical document in which the artist's own life and the space of the world intersect, highlighted in a newly published book, the Corpus drawings focus on buildings associated with the human body.\n\n---\n\nThe Reading Room เสนอเลคเชอร์/ทอล์คโดยศิลปินอเมริกัน Charles LaBelle ในวันพุธที่ 21 ธันวาคม ที่ The Reading Room กรุงเทพ และวันศุกร์ที่ 23 ธันวาคม ที่ The Reading Room เชียงใหม่ โดยเป็นการเชื่อมโยงกับงานแสดงเดี่ยวครั้งแรกของศิลปินในประเทศไทย ซึ่งจะเป็นงานวาดเส้นจัดวางที่เกี่ยวเนื่องและได้รับแรงบันดาลใจจากสถาปัตยกรรม ที่ Number 1 Gallery (17 ธ.ค. -- 21 ม.ค.)\n\nCharles LaBelle จะพูดคุยเกี่ยวกับโปรเจคของเขาที่ชื่อ 'Buildings Entered' ซึ่งเป็นโปรเจคที่เขาได้เริ่มทำเมื่อสิบสี่ปีที่แล้ว โดยเขาจะเก็บข้อมูลอาคารทุกแห่งที่เขาได้เข้าไปด้วยการวาดภาพหรือถ่ายภาพ โปรเจคนี้เป็นงาน conceptual ที่ทั้งเป็นเสมือนไดอารี่ส่วนตัว และเป็นบันทึกทางประวัติศาสตร์เกี่ยวกับความสัมพันธ์ของศิลปินและพื้นที่สาธารณะที่ไ­­ด้มาบรรจบกัน โดยงานศิลปะส่วนหนึ่งที่เน้นเรื่องความสัมพันธ์ของอาคารสถาปัตยกรรม ในแง่มุมของการเป็นส่วนเชื่อมต่อจากร่างกายของมนุษย์ จากโปรเจค Buildings Entered นี้ได้นำมาตีพิมพ์ลงในหนังสือ Corpus ที่จะนำมาเปิดตัวในงานทอล์คด้วย",
+  "bilingual": {
+    "th": "Charles LaBelle จะพูดคุยเกี่ยวกับโปรเจคของเขาที่ชื่อ 'Buildings Entered' ซึ่งเป็นโปรเจคที่เขาได้เริ่มทำเมื่อสิบสี่ปีที่แล้ว โดยเขาจะเก็บข้อมูลอาคารทุกแห่งที่เขาได้เข้าไปด้วยการวาดภาพหรือถ่ายภาพ โปรเจคนี้เป็นงาน conceptual ที่ทั้งเป็นเสมือนไดอารี่ส่วนตัว และเป็นบันทึกทางประวัติศาสตร์เกี่ยวกับความสัมพันธ์ของศิลปินและพื้นที่สาธารณะที่ได้มาบรรจบกัน โดยงานศิลปะส่วนหนึ่งที่เน้นเรื่องความสัมพันธ์ของอาคารสถาปัตยกรรม ในแง่มุมของการเป็นส่วนเชื่อมต่อจากร่างกายของมนุษย์ จากโปรเจค Buildings Entered นี้ได้นำมาตีพิมพ์ลงในหนังสือ Corpus ที่จะนำมาเปิดตัวในงานทอล์คด้วย",
+    "en": "Charles LaBelle will speak about his project \"Buildings Entered,\" which he began fourteen years ago. In this project, he documents every building he enters through drawing or photography. The work is at once conceptual and deeply personal — functioning simultaneously as a private diary and a historical record of the intersection between an artist's life and public space. Part of the work focuses on the relationship between architectural buildings as extensions and connections to the human body. The project \"Buildings Entered\" has been compiled into a book titled Corpus, which will be launched at this talk.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "Charles LaBelle"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "Charles LaBelle"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Art / ศิลปะ",
+      "Architecture & Urbanism / สถาปัตยกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Artist Talk",
+      "Book Launch / เปิดตัวหนังสือ"
+    ],
+    "book_titles": [
+      "Corpus"
+    ],
+    "film_titles": [],
+    "event_time": "19:00",
+    "venue": "The Reading Room, Chiang Mai"
+  }
+}

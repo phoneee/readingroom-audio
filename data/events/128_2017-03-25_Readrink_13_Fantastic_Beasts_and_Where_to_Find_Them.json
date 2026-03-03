@@ -1,0 +1,61 @@
+{
+  "event_number": 128,
+  "key": "Readrink #13 Fantastic Beasts and Where to Find Them",
+  "display_title": "Readrink #13 Fantastic Beasts and Where to Find Them",
+  "event_date": "2017-03-25",
+  "year": "2017",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 7725,
+  "video_count": 3,
+  "videos": [
+    {
+      "id": "tuqhX_NWCrc",
+      "title": "Readrink #13 Fantastic Beasts and Where to Find Them PRAT1",
+      "url": "https://www.youtube.com/watch?v=tuqhX_NWCrc",
+      "duration_seconds": 961,
+      "upload_date": "20170325"
+    },
+    {
+      "id": "XUBcW246mdc",
+      "title": "Readrink #13 Fantastic Beasts and Where to Find Them PRAT2",
+      "url": "https://www.youtube.com/watch?v=XUBcW246mdc",
+      "duration_seconds": 3702,
+      "upload_date": "20170325"
+    },
+    {
+      "id": "NJutU9OAKhY",
+      "title": "Readrink #13 Fantastic Beasts and Where to Find Them PRAT3",
+      "url": "https://www.youtube.com/watch?v=NJutU9OAKhY",
+      "duration_seconds": 3062,
+      "upload_date": "20170325"
+    }
+  ],
+  "raw_description": "Readrink #13 Fantastic Beasts and Where to Find Them\n\nงานบุ๊คคลับ Readrink ครั้งที่ 13 อ่าน Fantastic Beasts and Where to Find Them สัตว์มหัศจรรย์และถิ่นที่อยู่ ต้นฉบับบทภาพยนตร์\n\nหนังสือเล่มใหม่ล่าสุดในจักรวาล แฮร์รี พอตเตอร์ จากปลายปากกาของ เจ. เค. โรว์ลิ่ง ที่เขียนขึ้นจากหนึ่งในตำราเรียนชื่อดังของ โรงเรียนคาถาพ่อมดแม่มดและเวทมนตร์ศาสตร์ฮอกวอตส์ เพื่อสร้างเป็นภาพยนตร์ฟอร์มยักษ์ นำแสดงโดยนักแสดงรางวัลออสการ์ เอดดี เรดเมย์น\n\nวันเสาร์ที่ 25 มีนาคม เวลา 14:00-16:00 น. ปาร์ตี้หนังสือกับ อรรถ บุนนาค ที่ The Reading Room, Bangkok สีลมซอย 19",
+  "bilingual": {
+    "th": "งานบุ๊คคลับ Readrink ครั้งที่ 13 อ่าน Fantastic Beasts and Where to Find Them สัตว์มหัศจรรย์และถิ่นที่อยู่ ต้นฉบับบทภาพยนตร์\n\nหนังสือเล่มใหม่ล่าสุดในจักรวาล แฮร์รี พอตเตอร์ จากปลายปากกาของ เจ. เค. โรว์ลิ่ง ที่เขียนขึ้นจากหนึ่งในตำราเรียนชื่อดังของ โรงเรียนคาถาพ่อมดแม่มดและเวทมนตร์ศาสตร์ฮอกวอตส์ เพื่อสร้างเป็นภาพยนตร์ฟอร์มยักษ์ นำแสดงโดยนักแสดงรางวัลออสการ์ เอดดี เรดเมย์น",
+    "en": "Readrink Book Club #13 features a discussion of Fantastic Beasts and Where to Find Them — the latest entry in the Harry Potter universe, based on one of Hogwarts' most celebrated textbooks and adapted for the screen by J. K. Rowling, with Academy Award-winner Eddie Redmayne in the lead role.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "event_number": 126,
+  "key": "Readrink #12 Sotus",
+  "display_title": "Readrink #12 Sotus",
+  "event_date": "2017-02-26",
+  "year": "2017",
+  "series": "Readrink (Book Club)",
+  "total_duration_seconds": 11454,
+  "video_count": 4,
+  "videos": [
+    {
+      "id": "Gp0XsOrGFAY",
+      "title": "Readrink #12 Sotus PRAT1",
+      "url": "https://www.youtube.com/watch?v=Gp0XsOrGFAY",
+      "duration_seconds": 3691,
+      "upload_date": "20170228"
+    },
+    {
+      "id": "GKyABkz50Ms",
+      "title": "Readrink #12 Sotus PRAT2",
+      "url": "https://www.youtube.com/watch?v=GKyABkz50Ms",
+      "duration_seconds": 3704,
+      "upload_date": "20170228"
+    },
+    {
+      "id": "jZTH9Lqld5k",
+      "title": "Readrink #12 Sotus PRAT3",
+      "url": "https://www.youtube.com/watch?v=jZTH9Lqld5k",
+      "duration_seconds": 3703,
+      "upload_date": "20170228"
+    },
+    {
+      "id": "fdwGcACuiJI",
+      "title": "Readrink #12 Sotus PRAT4",
+      "url": "https://www.youtube.com/watch?v=fdwGcACuiJI",
+      "duration_seconds": 356,
+      "upload_date": "20170228"
+    }
+  ],
+  "raw_description": "งานบุ๊คคลับ #Readrink ครั้งที่ 12  Sotus พี่ว้ากตัวร้ายกับนายปีหนึ่ง\n\nเรื่องราวของ พี่อาทิตย์ และ ก้องภพ พี่ว้ากสุดโหดกับน้องเฟรชชี่ที่คิดปีนเกลียวไปชิงเกียร์ ทั้งสองคนจะทำให้รู้ว่า บางครั้งบนฟ้าก็ไม่ได้มีแค่ เดือนกับดาว\n\nวันอาทิตย์ที่ 26 กุมภาพันธ์นี้ เวลา 14:00-16:00 น. ปาร์ตี้หนังสือกับ อรรถ บุนนาค ที่ The Reading Room, Bangkok สีลมซอย 19",
+  "bilingual": {
+    "th": "งานบุ๊คคลับ ครั้งที่ 12 Sotus พี่ว้ากตัวร้ายกับนายปีหนึ่ง\n\nเรื่องราวของ พี่อาทิตย์ และ ก้องภพ พี่ว้ากสุดโหดกับน้องเฟรชชี่ที่คิดปีนเกลียวไปชิงเกียร์ ทั้งสองคนจะทำให้รู้ว่า บางครั้งบนฟ้าก็ไม่ได้มีแค่ เดือนกับดาว",
+    "en": "Book club session #12: Sotus — The Ruthless Senior and the Freshman.\n\nThe story of Arthit and Kongpob — a fearsome hazing senior and a first-year student bold enough to challenge the gear tradition. Together they prove that sometimes the sky holds more than just the moon and the stars.",
+    "source_th": "original",
+    "source_en": "agent_translated"
+  },
+  "baseline_extraction": {
+    "speakers_raw": [
+      "อรรถ บุนนาค"
+    ],
+    "moderators_raw": [],
+    "display_speakers": [
+      "อรรถ บุนนาค / Attha Bunnak"
+    ],
+    "display_moderators": [],
+    "topics": [
+      "Literature / วรรณกรรม"
+    ],
+    "partners": [],
+    "formats": [
+      "Book Club / บุ๊คคลับ"
+    ],
+    "book_titles": [],
+    "film_titles": [],
+    "event_time": "14:00",
+    "venue": "The Reading Room, Silom 19"
+  }
+}
