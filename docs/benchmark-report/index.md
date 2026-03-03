@@ -50,6 +50,18 @@ Distribution of DNSMOS OVRL scores across all segments for each pipeline.
 
 ![Score Distribution](images/pipeline_boxplot.png)
 
+## UTMOS Score Distribution
+
+UTMOS (UTokyo-SaruLab MOS predictor) distribution across pipelines.
+
+![UTMOS Score Distribution](images/utmos_boxplot.png)
+
+## Baseline Quality Histogram
+
+Distribution of original recording quality (DNSMOS OVRL) across the 40 benchmark segments.
+
+![Baseline Quality Histogram](images/baseline_histogram.png)
+
 ## Signal vs Background Tradeoff
 
 Each point is one segment. Upper-right corner = best (high signal quality + high background suppression).
@@ -79,6 +91,12 @@ Mean DNSMOS OVRL improvement over original, broken down by content series.
 Pipeline means with 95% bootstrap confidence intervals across all metrics.
 
 ![Confidence Intervals](images/ci_forest_plot.png)
+
+## Pairwise Statistical Significance
+
+Wilcoxon signed-rank test results (Bonferroni corrected) between all pipeline pairs.
+
+![Pairwise Significance](images/pairwise_significance.png)
 
 ## Audio Comparison
 

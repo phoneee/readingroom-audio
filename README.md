@@ -2,168 +2,87 @@
 
 Audio quality enhancement for 429 YouTube recordings (341 hours) from [The Reading Room BKK](https://www.facebook.com/TheReadingRoomBKK/), an independent art and intellectual space in Bangkok (2011–2019).
 
-21 enhancement pipelines are evaluated through systematic benchmarks to find the best approach for improving archival audio quality while preserving ambient character (laughter, room atmosphere).
+9 ML and DSP pipelines benchmarked across 40 stratified samples using DNSMOS, NISQA, and UTMOS quality metrics. Goal: improve archival audio while preserving ambient character (laughter, room atmosphere).
 
-## Pipeline catalog
+## Benchmark Results
 
-| # | Pipeline | Method |
-|---|----------|--------|
-| 1 | `deepfilter_full` | DeepFilterNet3, full suppression |
-| 2 | `deepfilter_12dB` | DeepFilterNet3, 12dB attenuation limit |
-| 3 | `deepfilter_6dB` | DeepFilterNet3, 6dB (minimal) |
-| 4 | `deepfilter_18dB` | DeepFilterNet3, 18dB (strong) |
-| 5 | `mossformer2_48k` | ClearVoice MossFormer2 48kHz |
-| 6 | `mossformergan_16k` | ClearVoice MossFormerGAN 16kHz |
-| 7 | `frcrn_16k` | ClearVoice FRCRN 16kHz |
-| 8 | `demucs_vocals` | Demucs htdemucs vocal separation |
-| 9 | `demucs_ft_vocals` | Demucs htdemucs_ft (fine-tuned) |
-| 10 | `ffmpeg_gentle` | Traditional DSP chain (highpass + afftdn + acompressor + loudnorm) |
-| 11 | `hybrid_demucs_df` | Demucs vocals → DeepFilter 12dB → loudnorm |
-| 12 | `hybrid_demucs_ft_df` | Demucs_ft vocals → DeepFilter 12dB → loudnorm |
-| 13 | `hybrid_demucs_ft_mossformer` | Demucs_ft → MossFormer2 48K → loudnorm |
-| 14 | `hybrid_mossformergan_sr` | MossFormerGAN 16K → SuperRes 48K → loudnorm |
-| 15 | `superres_48k` | ClearVoice MossFormer2 super-resolution |
-| 16 | `mpsenet_dns` | MP-SENet magnitude+phase 16kHz |
-| 17 | `hybrid_mpsenet_sr` | MP-SENet → SuperRes 48K → loudnorm |
-| 18 | `resemble_denoise` | Resemble Enhance denoise-only 44.1kHz |
-| 19 | `resemble_full` | Resemble Enhance denoise + upscale 44.1kHz |
-| 20 | `sepformer_wham16k` | SpeechBrain SepFormer WHAM! 16kHz |
-| 21 | `original` | No processing (baseline) |
+### Score Distribution
 
-## Setup
+![Pipeline DNSMOS OVRL box plots](docs/benchmark-report/images/pipeline_boxplot.png)
 
-### Prerequisites
+### Signal vs Background Tradeoff
 
-- Python 3.12+
-- [uv](https://docs.astral.sh/uv/) for dependency management
-- System: `ffmpeg` (via Homebrew on macOS: `brew install ffmpeg`)
+Aggressive pipelines suppress more noise but can remove ambient atmosphere. The upper-right corner is best — high signal quality with strong background suppression.
 
-### Install
+![Signal vs Background Tradeoff](docs/benchmark-report/images/sig_bak_tradeoff.png)
+
+### Confidence Intervals
+
+Pipeline means with 95% bootstrap CIs across all metrics.
+
+![Confidence Intervals](docs/benchmark-report/images/ci_forest_plot.png)
+
+### Recommended Pipeline
+
+**`hybrid_demucs_df`** — Demucs vocal separation → DeepFilterNet 12dB → ffmpeg loudnorm. Not the highest DNSMOS OVRL, but best subjective quality — preserves ambient atmosphere that gives these archival recordings their documentary value.
+
+| Pipeline | OVRL | SIG | BAK | UTMOS | NISQA |
+|----------|------|-----|-----|-------|-------|
+| original | 1.19 | 1.39 | 1.25 | 1.28 | 1.23 |
+| **hybrid_demucs_df** | **2.13** | **2.78** | **2.54** | **1.25** | **1.82** |
+| deepfilter_full | 2.55 | 2.91 | 3.71 | 1.26 | 2.18 |
+| mossformergan_16k | 2.53 | 3.02 | 3.39 | 1.27 | 2.24 |
+
+> Full benchmark with 9 pipelines, statistical tests, and audio samples:
+> **[Benchmark Report](https://phoneee.github.io/readingroom-audio/benchmark-report/)** ·
+> **[Audio Preview](https://phoneee.github.io/readingroom-audio/audio-preview/)** (8 segments × 9 pipelines with seekbar)
+
+## Quick Start
 
 ```bash
-# Core + scoring
-uv sync --extra score
-
-# Everything (all 21 pipelines + scoring + visualization)
+# Prerequisites: Python 3.12+, uv, ffmpeg
 uv sync --extra all
-```
 
-### DeepFilterNet patch
-
-DeepFilterNet requires a compatibility patch for torchaudio:
-
-```
-In .venv/lib/python3.12/site-packages/df/io.py, replace:
-  from torchaudio.backend.common import AudioMetaData
-with a soundfile-based fallback.
-```
-
-### Data setup
-
-Event metadata (161 JSON files) is committed in `data/events/`. Audio files are downloaded at runtime.
-
-## Commands
-
-### Pipeline comparison
-
-```bash
-python -m readingroom_audio.compare
-python -m readingroom_audio.compare --pipelines original deepfilter_12dB hybrid_demucs_df
-python -m readingroom_audio.compare --input-dir data/audio/raw --output-dir data/audio/enhanced
-```
-
-### Batch processing (all 429 videos)
-
-```bash
-python -m readingroom_audio.batch run --pipeline hybrid_demucs_df
-python -m readingroom_audio.batch run --pipeline ffmpeg_gentle --limit 2
-python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
-python -m readingroom_audio.batch status
-```
-
-### Systematic benchmark
-
-```bash
-# Full benchmark (~3 hours): stratified sample → download → VAD segment → enhance → analyze
+# Run benchmark (40 samples × 9 pipelines, ~3 hours)
 python -m readingroom_audio.benchmark run-all
 
 # Quick test (5 samples, 3 pipelines)
 python -m readingroom_audio.benchmark run-all --target-n 5 \
     --pipelines original ffmpeg_gentle hybrid_demucs_df
 
-# Individual phases
-python -m readingroom_audio.benchmark select
-python -m readingroom_audio.benchmark download
-python -m readingroom_audio.benchmark extract
-python -m readingroom_audio.benchmark baseline
-python -m readingroom_audio.benchmark enhance
-python -m readingroom_audio.benchmark analyze
+# Batch process all 429 videos with preferred pipeline
+python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
+
+# Generate GitHub Pages reports
+python -m readingroom_audio.benchmark export
+python -m readingroom_audio.benchmark preview
 ```
 
-### Listening test
+See `python -m readingroom_audio --help` for all commands.
 
-```bash
-python -m readingroom_audio.listening_test run-all
-python -m readingroom_audio.listening_test run-all --target-n 2 --pipelines original ffmpeg_gentle
-```
-
-### Video mux
-
-```bash
-python -m readingroom_audio.mux verify --pipeline ffmpeg_gentle
-python -m readingroom_audio.mux run --pipeline hybrid_demucs_df --limit 2
-python -m readingroom_audio.mux run --pipeline hybrid_demucs_df --resume
-python -m readingroom_audio.mux status
-```
-
-### Download
-
-```bash
-python -m readingroom_audio.download
-python -m readingroom_audio.download --video-id VIDEO_ID
-python -m readingroom_audio.download --limit 10
-```
-
-### Unified CLI
-
-```bash
-python -m readingroom_audio --help
-python -m readingroom_audio benchmark run-all --target-n 5
-python -m readingroom_audio batch status
-```
-
-## Quality metrics
-
-- **DNSMOS** — Deep Noise Suppression MOS (P.808): SIG, BAK, OVRL scores 1–5
-- **NISQA** — Non-Intrusive Speech Quality Assessment (chunked to 9s windows)
-- **UTMOS** — UTokyo-SaruLab MOS prediction
-
-## Project structure
+## Project Structure
 
 ```
 readingroom-audio/
-├── pyproject.toml
 ├── src/readingroom_audio/
-│   ├── __init__.py
-│   ├── __main__.py         # Unified CLI dispatcher
 │   ├── enhance.py          # 21 enhancement pipelines
 │   ├── score.py            # DNSMOS/NISQA/UTMOS scoring
-│   ├── compare.py          # Pipeline comparison orchestrator
-│   ├── download.py         # yt-dlp batch download
+│   ├── benchmark.py        # Benchmark runner + analysis + export
 │   ├── batch.py            # Batch processor for 429 videos
-│   ├── benchmark.py        # Systematic benchmark runner
-│   ├── mux.py              # Video mux pipeline
-│   ├── listening_test.py   # Listening test generator (HTML + MP3s)
+│   ├── mux.py              # Video mux (enhanced audio → MP4)
+│   ├── compare.py          # Interactive pipeline comparison
+│   ├── listening_test.py   # Listening test generator
+│   ├── download.py         # yt-dlp batch download
 │   ├── sampling.py         # Stratified sample selection
 │   ├── segment.py          # Silero VAD segment extraction
 │   └── utils.py            # ffmpeg wrappers, shared helpers
 ├── data/events/            # 161 event JSONs (committed)
-├── docs/audio-pipeline.md  # Full documentation
-└── notebooks/audio_comparison.ipynb
+├── docs/                   # GitHub Pages (benchmark report, audio preview)
+└── notebooks/              # Interactive analysis with Altair
 ```
 
-## Preferred pipeline
+## Documentation
 
-**`hybrid_demucs_df`** — three-stage: Demucs vocal separation → DeepFilterNet 12dB → ffmpeg loudnorm. Best subjective quality in listening tests, preserves ambient atmosphere.
-
-See `docs/audio-pipeline.md` for full documentation, pilot results, and decision log.
+- **[Audio Pipeline](docs/audio-pipeline.md)** — full pipeline catalog (21 pipelines), pilot results, decision log
+- **[Benchmark Report](https://phoneee.github.io/readingroom-audio/benchmark-report/)** — statistical analysis, charts, audio comparison
+- **[Audio Preview](https://phoneee.github.io/readingroom-audio/audio-preview/)** — interactive side-by-side listening
