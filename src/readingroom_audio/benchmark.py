@@ -1596,7 +1596,7 @@ def _select_representative_segments(
 
 def _select_preview_segments(
     segments: list[dict],
-    n: int = 12,
+    n: int = 20,
     include_sids: list[str] | None = None,
 ) -> list[str]:
     """Select diverse segments for audio preview across quality and content.
@@ -1982,7 +1982,7 @@ def cmd_export(output_dir: str | None = None, n_samples: int = 3):
 
 # ── Phase: preview ──────────────────────────────────────────────────
 
-def cmd_preview(output_dir: str | None = None, n_samples: int = 12):
+def cmd_preview(output_dir: str | None = None, n_samples: int = 20):
     """Generate HTML audio preview page for benchmark results."""
     results = _load_results()
     if not results:
@@ -2078,6 +2078,15 @@ def _generate_preview_html(
                 "n": len(ovrl_vals),
             }
 
+    # Find best mean per metric for summary highlighting
+    summary_metrics = ["mean_ovrl", "mean_sig", "mean_bak", "mean_utmos"]
+    summary_best: dict[str, float] = {}
+    non_orig_pipes = [p for p in pipeline_names if p != "original"]
+    for mk in summary_metrics:
+        vals = [summary.get(p, {}).get(mk) for p in non_orig_pipes]
+        valid = [v for v in vals if v is not None]
+        summary_best[mk] = max(valid) if valid else 0
+
     # Summary table rows (sorted by mean OVRL desc)
     sorted_pipes = sorted(
         pipeline_names,
@@ -2095,25 +2104,70 @@ def _generate_preview_html(
         n = s.get("n", 0)
         bar_w = (mean_ovrl / 5.0 * 100) if mean_ovrl else 0
         desc = html_mod.escape(PIPELINE_DESCRIPTIONS.get(pipe_name, ""))
-        is_recommended = pipe_name == "hybrid_demucs_df"
-        cls = ' class="recommended-row"' if is_recommended else ""
+
+        is_orig = pipe_name == "original"
+        # Highlight best-in-column for non-original pipelines
+        def _best_cls(val, key):
+            if is_orig or val is None:
+                return ""
+            return " best-score" if abs(val - summary_best.get(key, -1)) < 0.001 else ""
+
+        ovrl_cls = _best_cls(mean_ovrl, "mean_ovrl")
+        sig_cls = _best_cls(mean_sig, "mean_sig")
+        bak_cls = _best_cls(mean_bak, "mean_bak")
+        utmos_cls = _best_cls(mean_utmos, "mean_utmos")
 
         sig_s = f"{mean_sig:.3f}" if mean_sig is not None else "—"
         bak_s = f"{mean_bak:.3f}" if mean_bak is not None else "—"
         utmos_s = f"{mean_utmos:.3f}" if mean_utmos is not None else "—"
 
         summary_rows.append(
-            f'      <tr{cls} title="{desc}">'
-            f'<td class="pipe-name">{html_mod.escape(pipe_name)}'
-            f'{"<span class=\"star\">★</span>" if is_recommended else ""}</td>'
-            f'<td class="score"><strong>{mean_ovrl:.3f}</strong></td>'
-            f'<td class="score">{sig_s}</td>'
-            f'<td class="score">{bak_s}</td>'
-            f'<td class="score">{utmos_s}</td>'
+            f'      <tr title="{desc}">'
+            f'<td class="pipe-name">{html_mod.escape(pipe_name)}</td>'
+            f'<td class="score{ovrl_cls}"><strong>{mean_ovrl:.3f}</strong></td>'
+            f'<td class="score{sig_cls}">{sig_s}</td>'
+            f'<td class="score{bak_cls}">{bak_s}</td>'
+            f'<td class="score{utmos_cls}">{utmos_s}</td>'
             f'<td class="score">{n}</td>'
             f'<td class="bar-cell"><div class="bar summary-bar" style="width:{bar_w:.0f}%"></div></td>'
             f"</tr>"
         )
+
+    # Per-metric win count (across all benchmark segments, not just preview)
+    win_metrics = [
+        ("dnsmos_ovrl", "OVRL"), ("dnsmos_sig", "SIG"),
+        ("dnsmos_bak", "BAK"), ("utmos_score", "UTMOS"),
+        ("nisqa_mos", "NISQA"),
+    ]
+    from collections import Counter
+    win_counts: dict[str, Counter] = {mk: Counter() for mk, _ in win_metrics}
+    for seg in segments:
+        for mk, _ in win_metrics:
+            best_pipe = None
+            best_val = -1.0
+            for p in pipeline_names:
+                if p == "original":
+                    continue
+                val = seg["scores"].get(p, {}).get(mk)
+                if val is not None and val > best_val:
+                    best_val = val
+                    best_pipe = p
+            if best_pipe:
+                win_counts[mk][best_pipe] += 1
+
+    # Build win-count table rows
+    win_table_rows = []
+    for pipe_name in sorted_pipes:
+        if pipe_name == "original":
+            continue
+        cells = [f'<td class="pipe-name">{html_mod.escape(pipe_name)}</td>']
+        for mk, _ in win_metrics:
+            cnt = win_counts[mk].get(pipe_name, 0)
+            pct = cnt / len(segments) * 100 if segments else 0
+            is_top = cnt == win_counts[mk].most_common(1)[0][1] if cnt > 0 else False
+            cls = " best-score" if is_top else ""
+            cells.append(f'<td class="score{cls}">{cnt} ({pct:.0f}%)</td>')
+        win_table_rows.append(f'      <tr>{"".join(cells)}</tr>')
 
     # Pipeline descriptions
     legend_rows = []
@@ -2124,6 +2178,7 @@ def _generate_preview_html(
         )
 
     # Sample cards
+    score_keys = ["dnsmos_ovrl", "dnsmos_sig", "dnsmos_bak", "utmos_score"]
     sample_cards = []
     for sid in preview_sids:
         seg = seg_by_id.get(sid)
@@ -2132,7 +2187,20 @@ def _generate_preview_html(
         strata = seg.get("strata", {})
         series_group = html_mod.escape(strata.get("series_group", ""))
         era = html_mod.escape(strata.get("era", ""))
-        orig_ovrl = seg["scores"].get("original", {}).get("dnsmos_ovrl", 0)
+        orig_scores = seg["scores"].get("original", {})
+        orig_ovrl = orig_scores.get("dnsmos_ovrl", 0)
+
+        # Find best score per metric (excluding original)
+        seg_best: dict[str, float] = {}
+        for mk in score_keys:
+            vals = []
+            for p in pipeline_names:
+                if p == "original":
+                    continue
+                v = seg["scores"].get(p, {}).get(mk)
+                if v is not None:
+                    vals.append(v)
+            seg_best[mk] = max(vals) if vals else 0
 
         # Player rows
         player_rows = []
@@ -2143,24 +2211,41 @@ def _generate_preview_html(
             bak = ps.get("dnsmos_bak")
             utmos = ps.get("utmos_score")
 
-            ovrl_s = f"{ovrl:.2f}" if ovrl is not None else "—"
-            sig_s = f"{sig:.2f}" if sig is not None else "—"
-            bak_s = f"{bak:.2f}" if bak is not None else "—"
-            utmos_s = f"{utmos:.2f}" if utmos is not None else "—"
+            is_orig = pipe_name == "original"
+
+            def _fmt(val, key):
+                if val is None:
+                    return "—", ""
+                s = f"{val:.2f}"
+                if not is_orig and abs(val - seg_best.get(key, -1)) < 0.001:
+                    return s, " best-score"
+                return s, ""
+
+            ovrl_s, ovrl_cls = _fmt(ovrl, "dnsmos_ovrl")
+            sig_s, sig_cls = _fmt(sig, "dnsmos_sig")
+            bak_s, bak_cls = _fmt(bak, "dnsmos_bak")
+            utmos_s, utmos_cls = _fmt(utmos, "utmos_score")
+
+            # Delta from original
+            orig_ovrl_v = orig_scores.get("dnsmos_ovrl")
+            if not is_orig and ovrl is not None and orig_ovrl_v is not None:
+                delta = ovrl - orig_ovrl_v
+                delta_s = f'<span class="delta {"pos" if delta >= 0 else "neg"}">{"+" if delta >= 0 else ""}{delta:.2f}</span>'
+            else:
+                delta_s = ""
+
             bar_w = (ovrl / 5.0 * 100) if ovrl else 0
-            is_recommended = pipe_name == "hybrid_demucs_df"
 
             player_rows.append(
-                f'      <tr class="player-row{" recommended" if is_recommended else ""}">'
-                f'<td class="pipe-name">{html_mod.escape(pipe_name)}'
-                f'{"<span class=\"star\">★</span>" if is_recommended else ""}</td>'
+                f'      <tr class="player-row{" orig-row" if is_orig else ""}">'
+                f'<td class="pipe-name">{html_mod.escape(pipe_name)}</td>'
                 f'<td class="player-cell">'
                 f'<audio controls preload="none" src="audio/{sid}/{pipe_name}.mp3"></audio>'
                 f"</td>"
-                f'<td class="score">{ovrl_s}</td>'
-                f'<td class="score">{sig_s}</td>'
-                f'<td class="score">{bak_s}</td>'
-                f'<td class="score">{utmos_s}</td>'
+                f'<td class="score{ovrl_cls}">{ovrl_s} {delta_s}</td>'
+                f'<td class="score{sig_cls}">{sig_s}</td>'
+                f'<td class="score{bak_cls}">{bak_s}</td>'
+                f'<td class="score{utmos_cls}">{utmos_s}</td>'
                 f'<td class="bar-cell"><div class="bar" style="width:{bar_w:.0f}%"></div></td>'
                 f"</tr>"
             )
@@ -2253,6 +2338,29 @@ def _generate_preview_html(
   </table>
 </section>
 
+<section id="metric-wins">
+  <h2>Per-Metric Best Pipeline ({len(segments)} segments)</h2>
+  <p class="section-desc">
+    How often each pipeline achieves the best score for a given metric.
+    Different pipelines excel on different dimensions &mdash; no single pipeline dominates all metrics.
+  </p>
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Pipeline</th>
+        <th>OVRL</th>
+        <th>SIG</th>
+        <th>BAK</th>
+        <th>UTMOS</th>
+        <th>NISQA</th>
+      </tr>
+    </thead>
+    <tbody>
+{"".join(win_table_rows)}
+    </tbody>
+  </table>
+</section>
+
 <section id="pipelines">
   <h2>Pipeline Descriptions</h2>
   <table class="legend-table">
@@ -2269,7 +2377,8 @@ def _generate_preview_html(
     {len(preview_sids)} segments selected for diversity across quality range
     and content types. Sorted by ascending baseline OVRL.
     <br>
-    <strong>★ hybrid_demucs_df</strong> = recommended pipeline (highlighted in blue).
+    <span class="best-score-legend">Green</span> = best score in column for this segment.
+    OVRL column shows delta (&Delta;) from original.
   </p>
 {"".join(sample_cards)}
 </section>
@@ -2298,7 +2407,6 @@ def _preview_css() -> str:
   --accent: #2563eb;
   --accent-light: #dbeafe;
   --bar-color: #3b82f6;
-  --recommended-bg: #eff6ff;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2367,7 +2475,30 @@ h2 {
   letter-spacing: 0.03em;
 }
 
-.recommended-row { background: var(--recommended-bg); }
+.best-score {
+  background: #ecfdf5;
+  font-weight: 600;
+}
+
+.best-score-legend {
+  display: inline-block;
+  background: #ecfdf5;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.delta {
+  font-size: 0.72rem;
+  font-weight: 500;
+  margin-left: 0.15rem;
+}
+
+.delta.pos { color: #16a34a; }
+.delta.neg { color: #dc2626; }
+
+.orig-row { background: #f9fafb; color: var(--text-muted); }
 
 .sample-card {
   background: var(--card-bg);
@@ -2446,15 +2577,11 @@ h2 {
   letter-spacing: 0.03em;
 }
 
-.player-row.recommended { background: var(--recommended-bg); }
-
 .pipe-name {
   font-family: monospace;
   font-size: 0.8rem;
   white-space: nowrap;
 }
-
-.star { color: #f59e0b; margin-left: 0.3rem; }
 
 .player-cell { min-width: 200px; }
 
@@ -2668,7 +2795,7 @@ Available pipelines:
     p_preview = subparsers.add_parser("preview", help="Generate HTML audio preview page")
     p_preview.add_argument("--output-dir", type=str, default=None,
                            help="Output directory (default: docs/audio-preview)")
-    p_preview.add_argument("--n-samples", type=int, default=12,
+    p_preview.add_argument("--n-samples", type=int, default=20,
                            help="Number of preview segments (default: 8)")
 
     # sensitivity
