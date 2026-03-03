@@ -1594,11 +1594,16 @@ def _select_representative_segments(
     return selected[:n]
 
 
-def _select_preview_segments(segments: list[dict], n: int = 8) -> list[str]:
+def _select_preview_segments(
+    segments: list[dict],
+    n: int = 12,
+    include_sids: list[str] | None = None,
+) -> list[str]:
     """Select diverse segments for audio preview across quality and content.
 
-    Strategy: sort by original DNSMOS OVRL, pick evenly spaced samples,
-    then swap duplicates to ensure coverage of different series_group values.
+    Strategy: include anchor segments first (e.g. from export), then fill
+    remaining slots with evenly spaced samples across the quality range,
+    swapping duplicates to ensure series_group diversity.
     """
     scored = []
     for seg in segments:
@@ -1616,24 +1621,44 @@ def _select_preview_segments(segments: list[dict], n: int = 8) -> list[str]:
 
     scored.sort(key=lambda x: x["ovrl"])
 
+    # Start with anchor segments (from export)
+    used_sids: set[str] = set()
+    if include_sids:
+        for sid in include_sids:
+            if any(s["sid"] == sid for s in scored):
+                used_sids.add(sid)
+
     if len(scored) <= n:
         return [s["sid"] for s in scored]
 
-    # Pick evenly spaced indices across the quality range
-    step = (len(scored) - 1) / (n - 1)
-    indices = [round(i * step) for i in range(n)]
-    selected = [scored[i] for i in indices]
+    # Fill remaining slots with evenly spaced picks
+    remaining = n - len(used_sids)
+    available = [s for s in scored if s["sid"] not in used_sids]
+    if remaining > 0 and available:
+        step = (len(available) - 1) / max(remaining - 1, 1)
+        indices = [round(i * step) for i in range(remaining)]
+        selected = [available[i] for i in indices]
+    else:
+        selected = []
 
     # Ensure series_group diversity: swap duplicates with nearest unused
     seen_groups: set[str] = set()
-    used_sids = {s["sid"] for s in selected}
+    # Count groups from anchor segments
+    scored_by_sid = {s["sid"]: s for s in scored}
+    for sid in used_sids:
+        if sid in scored_by_sid:
+            seen_groups.add(scored_by_sid[sid]["series_group"])
+
+    for sid in [s["sid"] for s in selected]:
+        used_sids.add(sid)
+
     for i, entry in enumerate(selected):
         group = entry["series_group"]
         if group not in seen_groups:
             seen_groups.add(group)
             continue
         # Find nearest unused segment with a different group
-        idx = indices[i]
+        idx = scored.index(entry)
         for offset in range(1, len(scored)):
             for candidate_idx in [idx + offset, idx - offset]:
                 if candidate_idx < 0 or candidate_idx >= len(scored):
@@ -1652,9 +1677,11 @@ def _select_preview_segments(segments: list[dict], n: int = 8) -> list[str]:
         else:
             seen_groups.add(group)
 
-    # Sort final selection by OVRL for display order
-    selected.sort(key=lambda x: x["ovrl"])
-    return [s["sid"] for s in selected]
+    # Combine anchors + selected, sort by OVRL
+    all_sids = used_sids
+    final = [s for s in scored if s["sid"] in all_sids]
+    final.sort(key=lambda x: x["ovrl"])
+    return [s["sid"] for s in final]
 
 
 def _encode_mp3(input_wav: str, output_mp3: str, bitrate: str = "192k"):
@@ -1783,8 +1810,18 @@ def _generate_export_markdown(
         era = strata.get("era", "")
         orig_ovrl = seg["scores"].get("original", {}).get("dnsmos_ovrl", 0)
 
+        # Use event title + YouTube link if available
+        m_entry = manifest_by_sid.get(sid, {})
+        event_title = m_entry.get("event_key", sid)
+        video_id = m_entry.get("video_id", "")
+        if video_id:
+            yt_url = f"https://www.youtube.com/watch?v={video_id}"
+            title_part = f"[{event_title}]({yt_url})"
+        else:
+            title_part = f"`{sid}`"
+
         lines.append(
-            f"### Segment: `{sid}` ({series_group}/{era}) "
+            f"### {title_part} ({series_group}/{era}) "
             f"— Baseline OVRL: {orig_ovrl:.2f}\n"
         )
 
@@ -1945,7 +1982,7 @@ def cmd_export(output_dir: str | None = None, n_samples: int = 3):
 
 # ── Phase: preview ──────────────────────────────────────────────────
 
-def cmd_preview(output_dir: str | None = None, n_samples: int = 8):
+def cmd_preview(output_dir: str | None = None, n_samples: int = 12):
     """Generate HTML audio preview page for benchmark results."""
     results = _load_results()
     if not results:
@@ -1959,22 +1996,39 @@ def cmd_preview(output_dir: str | None = None, n_samples: int = 8):
 
     out = Path(output_dir) if output_dir else (ROOT / "docs" / "audio-preview")
 
-    # 1. Select diverse segments
-    preview_sids = _select_preview_segments(segments, n=n_samples)
+    # Include export's representative segments (lowest/median/highest)
+    anchor_sids = _select_representative_segments(segments, n=3)
+
+    # 1. Select diverse segments including anchors
+    preview_sids = _select_preview_segments(
+        segments, n=n_samples, include_sids=anchor_sids,
+    )
     if not preview_sids:
         print("No segments with scores available.")
         return
 
+    # 2. Build segment metadata from manifest (titles + video URLs)
+    manifest = _load_manifest()
+    seg_meta = {}
+    for entry in manifest:
+        sid = entry["segment_id"]
+        seg_meta[sid] = {
+            "title": entry.get("event_key", sid),
+            "date": entry.get("event_date", ""),
+            "video_id": entry.get("video_id", ""),
+        }
+
     print(f"Preview: {len(preview_sids)} segments, {len(pipeline_names)} pipelines")
+    print(f"  Anchors:  {anchor_sids}")
     print(f"  Segments: {preview_sids}")
     print(f"  Output:   {out}\n")
 
-    # 2. Encode WAV→MP3 (skip cached)
+    # 3. Encode WAV→MP3 (skip cached)
     _export_audio_samples(preview_sids, pipeline_names, out)
 
-    # 3. Generate HTML
+    # 4. Generate HTML
     html_content = _generate_preview_html(
-        segments, pipeline_names, preview_sids, results,
+        segments, pipeline_names, preview_sids, results, seg_meta=seg_meta,
     )
     out.mkdir(parents=True, exist_ok=True)
     (out / "index.html").write_text(html_content, encoding="utf-8")
@@ -1988,9 +2042,13 @@ def _generate_preview_html(
     pipeline_names: list[str],
     preview_sids: list[str],
     results: dict,
+    seg_meta: dict[str, dict] | None = None,
 ) -> str:
     """Generate self-contained HTML audio preview page."""
     import html as html_mod
+
+    if seg_meta is None:
+        seg_meta = {}
 
     seg_by_id = {s["segment_id"]: s for s in segments}
 
@@ -2107,11 +2165,23 @@ def _generate_preview_html(
                 f"</tr>"
             )
 
+        # Event title and YouTube link
+        meta = seg_meta.get(sid, {})
+        event_title = html_mod.escape(meta.get("title", sid))
+        video_id = meta.get("video_id", "")
+        event_date = html_mod.escape(meta.get("date", ""))
+        if video_id:
+            yt_url = f"https://www.youtube.com/watch?v={video_id}"
+            title_html = f'<a href="{yt_url}" target="_blank" rel="noopener">{event_title}</a>'
+        else:
+            title_html = event_title
+
         sample_cards.append(f"""
   <div class="sample-card" id="{sid}">
     <div class="card-header">
-      <h3>{html_mod.escape(sid)}</h3>
+      <h3>{title_html}</h3>
       <div class="card-meta">
+        <span class="meta-date">{event_date}</span>
         <span class="meta-series">{series_group}</span>
         <span class="meta-era">{era}</span>
         <span class="meta-ovrl">Baseline OVRL: {orig_ovrl:.2f}</span>
@@ -2314,8 +2384,16 @@ h2 {
 
 .card-header h3 {
   font-size: 1.05rem;
-  font-family: monospace;
   margin-bottom: 0.3rem;
+}
+
+.card-header h3 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.card-header h3 a:hover {
+  text-decoration: underline;
 }
 
 .card-meta {
@@ -2324,6 +2402,10 @@ h2 {
   flex-wrap: wrap;
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+.meta-date {
+  font-weight: 500;
 }
 
 .meta-series {
@@ -2586,7 +2668,7 @@ Available pipelines:
     p_preview = subparsers.add_parser("preview", help="Generate HTML audio preview page")
     p_preview.add_argument("--output-dir", type=str, default=None,
                            help="Output directory (default: docs/audio-preview)")
-    p_preview.add_argument("--n-samples", type=int, default=8,
+    p_preview.add_argument("--n-samples", type=int, default=12,
                            help="Number of preview segments (default: 8)")
 
     # sensitivity
