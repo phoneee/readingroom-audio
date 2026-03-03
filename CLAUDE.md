@@ -30,6 +30,7 @@ python -m readingroom_audio.benchmark baseline
 python -m readingroom_audio.benchmark enhance   [--pipelines ...]
 python -m readingroom_audio.benchmark analyze
 python -m readingroom_audio.benchmark export    [--output-dir ...] [--n-samples 3]
+python -m readingroom_audio.benchmark preview   [--output-dir ...] [--n-samples 8]
 
 # Listening test
 python -m readingroom_audio.listening_test run-all

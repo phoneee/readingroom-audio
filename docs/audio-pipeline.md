@@ -175,7 +175,7 @@ Tested 3 representative files across all 7 pipelines:
 3. **ffmpeg_gentle** provides minimal improvement — ML methods significantly outperform traditional DSP
 4. **demucs_vocals** alone doesn't help much — needs post-processing (as in hybrid pipeline)
 5. DNSMOS scores don't fully capture perceived quality — listening tests are essential
-6. All NISQA scores failed due to audio length limitation
+6. All NISQA scores failed due to audio length limitation (fixed via 9s chunked scoring)
 
 ## Expanded Pipelines (Phase 1 — zero new installs)
 
@@ -290,20 +290,23 @@ uv run python -m readingroom_audio.batch status
 - [x] Expand to 21 pipelines (8 Phase 1 + 5 Phase 2)
 - [x] Batch processing script for all 429 files
 - [x] Resemble Enhance integration (installed with --no-deps)
+- [x] Run full benchmark on 40 stratified samples (9 of 21 pipelines scored — 12 had import/dependency failures)
+- [x] Per-content-type pipeline selection — per-stratum Friedman tests + series heatmap chart
+- [x] A/B listening test framework (`listening_test.py` — 6-phase CLI with HTML audio player)
+- [x] Audio preview page (`benchmark preview` — 8 diverse segments, interactive playback)
+- [x] Benchmark export with PNG charts and audio samples (`benchmark export`)
+- [x] Video mux pipeline (`mux.py` — remux enhanced audio into original video)
+- [x] Multi-seed sensitivity analysis (`benchmark sensitivity`)
 
-### In Progress
-- [ ] Run full benchmark on 40 stratified samples across all 21 pipelines
-
-### Planned
-- [ ] Per-content-type pipeline selection (based on benchmark results)
-- [ ] A/B listening test framework
-- [ ] Explore ensemble approaches (combine pipeline strengths)
+### Not Started
+- [ ] Explore ensemble approaches (combine pipeline strengths per content type)
+- [ ] Formal MUSHRA/AB listening test at scale (current framework is informal comparison)
 
 ## Systematic Benchmark
 
 ### Overview
 
-The pilot tested only 3 files — statistically insufficient to pick a best pipeline. The systematic benchmark tests all 8 pipelines on ~40 stratified samples drawn from 161 events across 15 series, 10 years, and multiple formats. Uses proper statistical tests (Friedman + post-hoc Wilcoxon) to find the best pipeline overall and per content type.
+The pilot tested only 3 files — statistically insufficient to pick a best pipeline. The systematic benchmark tests 9 enhancement pipelines (of 21 defined — 12 failed due to dependency issues) on 40 stratified samples drawn from 161 events across 15 series, 10 years, and multiple formats. Uses proper statistical tests (Friedman + post-hoc Wilcoxon) to find the best pipeline overall and per content type.
 
 ### Sampling Strategy
 
@@ -358,7 +361,10 @@ Tests are run for each metric independently (DNSMOS OVRL, UTMOS, NISQA MOS):
 # Full benchmark (~3 hours)
 uv run python -m readingroom_audio.benchmark run-all
 
-# Quick test (5 samples, 3 pipelines)
+# Quick test (5 samples, 3 pipelines, DNSMOS only, 15s segments)
+uv run python -m readingroom_audio.benchmark run-all --quick
+
+# Custom pipeline selection
 uv run python -m readingroom_audio.benchmark run-all --target-n 5 \
     --pipelines original ffmpeg_gentle hybrid_demucs_df
 
@@ -370,6 +376,12 @@ uv run python -m readingroom_audio.benchmark baseline
 uv run python -m readingroom_audio.benchmark enhance
 uv run python -m readingroom_audio.benchmark analyze
 
+# Export report with PNG charts + audio samples
+uv run python -m readingroom_audio.benchmark export [--output-dir ...] [--n-samples 3]
+
+# Generate interactive HTML audio preview page
+uv run python -m readingroom_audio.benchmark preview [--output-dir ...] [--n-samples 8]
+
 # Multi-seed sensitivity analysis
 uv run python -m readingroom_audio.benchmark sensitivity --target-n 40 --seeds 42 123 456 789 1337
 ```
@@ -377,9 +389,103 @@ uv run python -m readingroom_audio.benchmark sensitivity --target-n 40 --seeds 4
 ### Outputs
 
 - `data/audio/benchmark_manifest.json` — sample selection + status tracking
-- `data/audio/benchmark_results.json` — all pipeline scores per segment
-- `data/audio/benchmark_report.md` — statistical analysis report
-- `data/audio/benchmark_charts/` — Altair HTML visualizations
+- `data/audio/benchmark_results.json` — all pipeline scores per segment (40 segments × 9 pipelines)
+- `data/audio/benchmark_report.md` — statistical analysis report with per-stratum breakdown
+- `data/audio/benchmark_charts/` — 9 Altair HTML visualizations (boxplot, heatmap, CI forest, etc.)
+- `docs/benchmark-report/` — exported report with PNG charts + audio samples (via `export`)
+- `docs/audio-preview/` — interactive HTML audio preview page (via `preview`)
+
+## Listening Test
+
+Interactive HTML audio comparison page for side-by-side pipeline evaluation. Separate from the benchmark — uses its own 10-sample selection with 30-second segments.
+
+### Pipeline
+
+```
+select   → listening-test/manifest.json (10 stratified samples)
+download → raw/*.m4a (shared cache with benchmark)
+extract  → listening-test/segments/*.wav (30s via VAD)
+enhance  → listening-test/enhanced/{pipeline}/*.wav
+score    → listening-test/scores.json (DNSMOS + NISQA + UTMOS)
+build    → docs/listening-test/index.html + audio/*.mp3
+```
+
+### Commands
+
+```bash
+# Full pipeline (all 6 phases)
+uv run python -m readingroom_audio.listening_test run-all
+
+# Quick test
+uv run python -m readingroom_audio.listening_test run-all --target-n 2 \
+    --pipelines original ffmpeg_gentle hybrid_demucs_df
+
+# Individual phases
+uv run python -m readingroom_audio.listening_test select
+uv run python -m readingroom_audio.listening_test download
+uv run python -m readingroom_audio.listening_test extract
+uv run python -m readingroom_audio.listening_test enhance
+uv run python -m readingroom_audio.listening_test score
+uv run python -m readingroom_audio.listening_test build
+```
+
+### Output
+
+Self-contained HTML page at `docs/listening-test/index.html` with:
+- Summary table (mean OVRL, UTMOS per pipeline)
+- Pipeline descriptions
+- Per-sample cards with audio players (singleton playback — clicking one stops the previous)
+- DNSMOS SIG/BAK/OVRL + UTMOS scores with visual bars
+- `hybrid_demucs_df` highlighted as recommended pipeline
+- Mobile-responsive, `preload="none"` for fast page load
+
+## Audio Preview (Benchmark)
+
+Lightweight audio preview page generated directly from benchmark results (no separate pipeline needed). Selects 8 diverse segments from the 40 benchmarked samples.
+
+### Commands
+
+```bash
+uv run python -m readingroom_audio.benchmark preview
+uv run python -m readingroom_audio.benchmark preview --n-samples 12
+```
+
+### Output
+
+`docs/audio-preview/index.html` — same interactive player design as the listening test, but sourced from benchmark data. Segments selected for diversity across quality range (DNSMOS OVRL) and content types (series_group).
+
+## Video Mux
+
+Remux enhanced audio back into the original YouTube video stream. Downloads video-only (no audio), verifies duration alignment, and produces MP4 with AAC audio.
+
+### Per-video flow
+
+```
+identify enhanced FLAC (from batch processing)
+  → download video-only stream (yt-dlp, best quality)
+  → verify duration match (±0.5s tolerance)
+  → mux video + enhanced audio → MP4 (AAC 192kbps)
+  → update mux_status.json
+```
+
+### Commands
+
+```bash
+uv run python -m readingroom_audio.mux run --pipeline hybrid_demucs_df
+uv run python -m readingroom_audio.mux run --pipeline hybrid_demucs_df --resume
+uv run python -m readingroom_audio.mux run --pipeline hybrid_demucs_df --limit 10
+uv run python -m readingroom_audio.mux verify --pipeline ffmpeg_gentle
+uv run python -m readingroom_audio.mux status
+```
+
+### Output structure
+
+```
+data/video/
+  raw/                          # Video-only streams (no audio)
+  muxed/{pipeline}/*.mp4        # Final video with enhanced audio
+  mux_status.json               # Per-video status tracking
+```
 
 ## Evaluation Methodology
 
@@ -417,7 +523,7 @@ The evaluation explicitly flags BAK delta > 1.0 combined with SIG delta < 0 as a
 
 #### 4. Multiple Comparisons
 
-With 8 pipelines and 3 metrics, naive pairwise testing inflates false discovery rate. Bonferroni
+With 9 pipelines and 3 metrics, naive pairwise testing inflates false discovery rate. Bonferroni
 correction is applied to Wilcoxon post-hoc tests, and practical significance requires both
 statistical significance (corrected p-value) and meaningful effect size (rank-biserial |r| > 0.3).
 
@@ -469,15 +575,25 @@ uv run python -m readingroom_audio.download --video-id VIDEO_ID
 
 # Run full pipeline comparison on pilot files
 uv run python -m readingroom_audio.compare
-
-# Run specific pipelines only
 uv run python -m readingroom_audio.compare --pipelines original hybrid_demucs_df deepfilter_full
 
-# Compare on custom input directory
-uv run python -m readingroom_audio.compare \
-    --input-dir data/audio/raw \
-    --output-dir data/audio/enhanced \
-    --report data/audio/quality_report.json
+# Systematic benchmark (40 stratified samples)
+uv run python -m readingroom_audio.benchmark run-all
+uv run python -m readingroom_audio.benchmark preview   # HTML audio preview
+
+# Listening test (10 samples, interactive HTML)
+uv run python -m readingroom_audio.listening_test run-all
+
+# Batch processing (all 429 videos)
+uv run python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
+uv run python -m readingroom_audio.batch status
+
+# Video mux (remux enhanced audio into video)
+uv run python -m readingroom_audio.mux run --pipeline hybrid_demucs_df --resume
+uv run python -m readingroom_audio.mux status
+
+# Unified CLI (all modules accessible)
+uv run python -m readingroom_audio --help
 ```
 
 ### Interactive Analysis
@@ -511,3 +627,10 @@ Open `notebooks/audio_comparison.ipynb` for:
 | 2026-03-03 | Bootstrap 95% CIs | Report uncertainty on pipeline means (10K resamples) — bare means without CIs invite over-interpretation |
 | 2026-03-03 | Cross-metric agreement | Spearman ρ between improvement deltas flags when metrics disagree on pipeline ranking |
 | 2026-03-03 | Multi-seed sensitivity | Test sampling stability across 5 seeds — ensures pipeline rankings aren't artifacts of a single random draw |
+| 2026-03-03 | Listening test HTML page | Interactive A/B comparison via GitHub Pages — GitHub README doesn't support `<audio>` tags |
+| 2026-03-03 | Video mux pipeline | Remux enhanced FLAC back into original video stream for distribution (AAC 192kbps) |
+| 2026-03-03 | Fail-fast tracker | Auto-disable pipelines after 2 consecutive same-category failures — prevents wasting hours on broken dependencies |
+| 2026-03-03 | Benchmark structured logger | JSONL per-run logs for crash safety and post-hoc analysis of enhance/score timings |
+| 2026-03-04 | Benchmark export subcommand | Export report with PNG charts (Altair → static images) and representative audio samples for offline review |
+| 2026-03-04 | Benchmark preview subcommand | Lightweight HTML audio preview from existing benchmark data — 8 diverse segments, no separate pipeline needed |
+| 2026-03-04 | 9 of 21 pipelines scored | 12 pipelines failed due to dependency issues (TorchCodec, model weights); 9 provide sufficient coverage of approach families |

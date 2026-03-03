@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reading Room BKK — Audio Enhancement</title>
+<style>
+:root {
+  --bg: #fafafa;
+  --card-bg: #fff;
+  --border: #e0e0e0;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.overview {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  line-height: 1.7;
+}
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 1.8rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-color: var(--accent);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.card .meta {
+  font-size: 0.8rem;
+  color: #999;
+  font-family: monospace;
+}
+
+footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+  body { padding: 2rem 0.8rem; }
+  header h1 { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The Reading Room BKK<br><span class="subtitle">Audio Enhancement Project</span></h1>
+  <p class="overview">
+    Improving audio quality for 429 YouTube recordings (341 hours, 2010&ndash;2019)
+    from The Reading Room Bangkok &mdash; an independent art and intellectual space.
+    <br>
+    9 enhancement pipelines benchmarked across 40 stratified samples using
+    DNSMOS, NISQA, and UTMOS quality metrics.
+  </p>
+</header>
+
+<div class="cards">
+  <a class="card" href="audio-preview/">
+    <h2>Audio Preview</h2>
+    <p>
+      Interactive side-by-side comparison of all 9 pipelines on 8 diverse segments.
+      Listen and compare original vs. enhanced audio with quality scores.
+    </p>
+    <span class="meta">8 segments &times; 9 pipelines &bull; 63 audio samples</span>
+  </a>
+
+  <a class="card" href="benchmark-report/">
+    <h2>Benchmark Report</h2>
+    <p>
+      Statistical analysis with 9 PNG charts: pipeline box plots, confidence intervals,
+      signal vs. background tradeoff, cross-metric correlation, NISQA sub-dimensions,
+      and per-series-group heatmap.
+    </p>
+    <span class="meta">40 segments &times; 9 pipelines &bull; Friedman + Wilcoxon tests</span>
+  </a>
+</div>
+
+<footer>
+  <p>
+    <a href="https://github.com/phoneee/readingroom-audio">github.com/phoneee/readingroom-audio</a>
+    &mdash; The Reading Room BKK Retrospective Project
+  </p>
+</footer>
+
+</body>
+</html>
