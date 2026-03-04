@@ -2185,25 +2185,7 @@ def cmd_preview(output_dir: str | None = None, n_samples: int = 0):
 
     out = Path(output_dir) if output_dir else (ROOT / "docs" / "audio-preview")
 
-    # n_samples=0 → all segments
-    if n_samples <= 0:
-        preview_sids = sorted(
-            [s["segment_id"] for s in segments],
-            key=lambda sid: next(
-                (s["scores"].get("original", {}).get("dnsmos_ovrl", 0)
-                 for s in segments if s["segment_id"] == sid), 0,
-            ),
-        )
-    else:
-        anchor_sids = _select_representative_segments(segments, n=3)
-        preview_sids = _select_preview_segments(
-            segments, n=n_samples, include_sids=anchor_sids,
-        )
-    if not preview_sids:
-        print("No segments with scores available.")
-        return
-
-    # 2. Build segment metadata from manifest (titles + video URLs)
+    # Build segment metadata from manifest (titles + video URLs)
     manifest = _load_manifest()
     seg_meta = {}
     for entry in manifest:
@@ -2213,6 +2195,22 @@ def cmd_preview(output_dir: str | None = None, n_samples: int = 0):
             "date": entry.get("event_date", ""),
             "video_id": entry.get("video_id", ""),
         }
+
+    # Select and sort segments
+    if n_samples <= 0:
+        # All segments, sorted by event date
+        preview_sids = sorted(
+            [s["segment_id"] for s in segments],
+            key=lambda sid: seg_meta.get(sid, {}).get("date", ""),
+        )
+    else:
+        anchor_sids = _select_representative_segments(segments, n=3)
+        preview_sids = _select_preview_segments(
+            segments, n=n_samples, include_sids=anchor_sids,
+        )
+    if not preview_sids:
+        print("No segments with scores available.")
+        return
 
     print(f"Preview: {len(preview_sids)} segments, {len(pipeline_names)} pipelines")
     print(f"  Output:   {out}\n")
@@ -2569,7 +2567,7 @@ def _generate_preview_html(
   <h2>Audio Samples</h2>
   <p class="section-desc">
     {len(preview_sids)} segments selected for diversity across quality range
-    and content types. Sorted by ascending baseline OVRL.
+    and content types. Sorted by event date (oldest first).
     <br>
     <span class="best-score-legend">Green</span> = best score in column for this segment.
     OVRL column shows delta (&Delta;) from original.
