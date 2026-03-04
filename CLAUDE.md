@@ -9,10 +9,6 @@ Audio enhancement pipeline for 429 YouTube recordings (341 hours) from The Readi
 ## Commands
 
 ```bash
-# Pipeline comparison
-python -m readingroom_audio.compare
-python -m readingroom_audio.compare --pipelines original deepfilter_12dB hybrid_demucs_df
-
 # Batch processing (all 429 videos)
 python -m readingroom_audio.batch run --pipeline hybrid_demucs_df
 python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
@@ -57,7 +53,6 @@ python -m readingroom_audio benchmark run-all
 `src/readingroom_audio/` — modular pipeline package:
 - `enhance.py` — 21 enhancement pipelines (DeepFilterNet, Demucs, ClearVoice, MP-SENet, Resemble, SpeechBrain, ffmpeg, hybrids)
 - `score.py` — DNSMOS/NISQA/UTMOS quality scoring (NISQA chunked to 9s windows)
-- `compare.py` — orchestrated comparison with CLI
 - `download.py` — yt-dlp batch download with resume
 - `batch.py` — batch processor for all 429 videos (download → enhance → FLAC)
 - `mux.py` — video mux pipeline (download video → verify duration → mux enhanced audio)

@@ -146,6 +146,17 @@ def get_video_stream_info(path: str) -> dict:
     }
 
 
+def encode_mp3(input_wav: str, output_mp3: str, bitrate: str = "192k"):
+    """Encode WAV to MP3 using ffmpeg."""
+    Path(output_mp3).parent.mkdir(parents=True, exist_ok=True)
+    cmd = [
+        "ffmpeg", "-y", "-threads", "0", "-i", input_wav,
+        "-c:a", "libmp3lame", "-b:a", bitrate,
+        output_mp3,
+    ]
+    subprocess.run(cmd, capture_output=True, check=True, timeout=120)
+
+
 def check_ffmpeg():
     """Verify ffmpeg is available."""
     try:
