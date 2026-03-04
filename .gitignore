@@ -21,5 +21,8 @@ checkpoints/
 !docs/**/*.mp3
 !docs/**/*.png
 
+# Audio preview MP3s too large for git (1.7GB) — serve locally or via GH release
+docs/audio-preview/audio/
+
 # Legacy
 pilot/

@@ -1,13 +1,15 @@
 ---
 layout: default
-title: Benchmark Report
+title: Benchmark Report — The Reading Room BKK
+description: Statistical analysis of 9 audio enhancement pipelines across 161 events from The Reading Room Bangkok (2010–2019). DNSMOS, NISQA, UTMOS quality metrics with Friedman and Wilcoxon significance tests.
+image: /readingroom-audio/og-image.png
 ---
 
 # Audio Enhancement Benchmark Report
 
 ## Overview
 
-Benchmark of **9 audio enhancement pipelines** across **40 stratified segments** (45-second speech-active excerpts selected via Silero VAD) from 429 YouTube recordings of The Reading Room BKK (2011-2019).
+Benchmark of **9 audio enhancement pipelines** across **all 161 events** (45-second speech-active excerpts selected via Silero VAD) from 429 YouTube recordings of The Reading Room BKK (2011-2019).
 
 Generated: 2026-03-04
 
@@ -157,7 +159,7 @@ More aggressive pipelines (e.g., `deepfilter_full`) score higher on objective me
 
 ## Methodology
 
-- **Sampling**: N=40 segments, stratified by series group and era
+- **Sampling**: N=161 segments (all events), covering 8 series groups and 3 eras
 - **Segment extraction**: 45-second speech-active windows via Silero VAD
 - **Metrics**: Non-intrusive quality (DNSMOS P.835, UTMOS, NISQA) — 10 sub-metrics from 3 independent model families
 - **Statistics**: Friedman test (omnibus) + Wilcoxon signed-rank (pairwise, Bonferroni corrected) + bootstrap 95% CIs
