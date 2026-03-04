@@ -1855,6 +1855,7 @@ def _export_audio_samples(
     segment_ids: list[str],
     pipeline_names: list[str],
     output_dir: Path,
+    bitrate: str = "192k",
 ):
     """Encode representative segments as MP3 for the export report."""
     audio_dir = output_dir / "audio"
@@ -1870,7 +1871,7 @@ def _export_audio_samples(
             mp3_path = sid_dir / "original.mp3"
             if not mp3_path.exists():
                 print(f"  {sid}/original.mp3...", end=" ", flush=True)
-                encode_mp3(str(orig_wav), str(mp3_path))
+                encode_mp3(str(orig_wav), str(mp3_path), bitrate=bitrate)
                 print("done")
             total += 1
 
@@ -1882,7 +1883,7 @@ def _export_audio_samples(
             mp3_path = sid_dir / f"{pipe}.mp3"
             if enhanced_wav.exists() and not mp3_path.exists():
                 print(f"  {sid}/{pipe}.mp3...", end=" ", flush=True)
-                encode_mp3(str(enhanced_wav), str(mp3_path))
+                encode_mp3(str(enhanced_wav), str(mp3_path), bitrate=bitrate)
                 print("done")
             if mp3_path.exists():
                 total += 1
@@ -2215,8 +2216,8 @@ def cmd_preview(output_dir: str | None = None, n_samples: int = 0):
     print(f"Preview: {len(preview_sids)} segments, {len(pipeline_names)} pipelines")
     print(f"  Output:   {out}\n")
 
-    # 3. Encode WAV→MP3 (skip cached)
-    _export_audio_samples(preview_sids, pipeline_names, out)
+    # 3. Encode WAV→MP3 at 64kbps for web preview (skip cached)
+    _export_audio_samples(preview_sids, pipeline_names, out, bitrate="64k")
 
     # 4. Generate HTML
     html_content = _generate_preview_html(

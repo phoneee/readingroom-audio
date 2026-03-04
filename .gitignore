@@ -17,12 +17,9 @@ data/video/
 # ML model checkpoints
 checkpoints/
 
-# GitHub Pages — allow docs/ assets including MP3s and PNGs
+# GitHub Pages — allow docs/ assets (MP3s via LFS, PNGs direct)
 !docs/**/*.mp3
 !docs/**/*.png
-
-# Audio preview MP3s too large for git (1.7GB) — serve locally or via GH release
-docs/audio-preview/audio/
 
 # Legacy
 pilot/
