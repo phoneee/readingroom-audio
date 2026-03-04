@@ -26,7 +26,7 @@ from .download import download_audio
 from .enhance import PIPELINES, PIPELINE_DESCRIPTIONS
 from .sampling import load_all_events, stratified_sample
 from .score import score_segment
-from .utils import ensure_wav, get_project_root
+from .utils import encode_mp3, ensure_wav, get_project_root
 
 # ── Config ──────────────────────────────────────────────────────────
 
@@ -369,17 +369,6 @@ def cmd_score():
 
 # ── Phase: build ────────────────────────────────────────────────────
 
-def _encode_mp3(input_wav: str, output_mp3: str, bitrate: str = "192k"):
-    """Encode WAV to MP3 using ffmpeg."""
-    Path(output_mp3).parent.mkdir(parents=True, exist_ok=True)
-    cmd = [
-        "ffmpeg", "-y", "-threads", "0", "-i", input_wav,
-        "-c:a", "libmp3lame", "-b:a", bitrate,
-        output_mp3,
-    ]
-    subprocess.run(cmd, capture_output=True, check=True, timeout=120)
-
-
 def cmd_build():
     """Encode MP3s and generate static HTML listening test page."""
     manifest = _load_manifest()
@@ -422,7 +411,7 @@ def cmd_build():
         mp3_path = mp3_dir / "original.mp3"
         if not mp3_path.exists():
             print(f"  {sid}/original.mp3...", end=" ", flush=True)
-            _encode_mp3(str(segment_path), str(mp3_path))
+            encode_mp3(str(segment_path), str(mp3_path))
             print("done")
         total_files += 1
 
@@ -434,7 +423,7 @@ def cmd_build():
             mp3_path = mp3_dir / f"{pipe_name}.mp3"
             if enhanced_wav.exists() and not mp3_path.exists():
                 print(f"  {sid}/{pipe_name}.mp3...", end=" ", flush=True)
-                _encode_mp3(str(enhanced_wav), str(mp3_path))
+                encode_mp3(str(enhanced_wav), str(mp3_path))
                 print("done")
             if mp3_path.exists():
                 total_files += 1

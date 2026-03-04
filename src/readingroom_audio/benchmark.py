@@ -27,7 +27,7 @@ from .download import download_audio
 from .enhance import PIPELINES, PIPELINE_DESCRIPTIONS, get_available_pipelines
 from .sampling import FORMAT_PIPELINE_MAP, load_all_events, stratified_sample
 from .score import save_report, score_segment
-from .utils import ensure_wav, get_project_root
+from .utils import encode_mp3, ensure_wav, get_project_root
 
 # ── Curated defaults ────────────────────────────────────────────────
 
@@ -1851,17 +1851,6 @@ def _select_preview_segments(
     return [s["sid"] for s in final]
 
 
-def _encode_mp3(input_wav: str, output_mp3: str, bitrate: str = "192k"):
-    """Encode WAV to MP3 using ffmpeg."""
-    Path(output_mp3).parent.mkdir(parents=True, exist_ok=True)
-    cmd = [
-        "ffmpeg", "-y", "-threads", "0", "-i", input_wav,
-        "-c:a", "libmp3lame", "-b:a", bitrate,
-        output_mp3,
-    ]
-    subprocess.run(cmd, capture_output=True, check=True, timeout=120)
-
-
 def _export_audio_samples(
     segment_ids: list[str],
     pipeline_names: list[str],
@@ -1881,7 +1870,7 @@ def _export_audio_samples(
             mp3_path = sid_dir / "original.mp3"
             if not mp3_path.exists():
                 print(f"  {sid}/original.mp3...", end=" ", flush=True)
-                _encode_mp3(str(orig_wav), str(mp3_path))
+                encode_mp3(str(orig_wav), str(mp3_path))
                 print("done")
             total += 1
 
@@ -1893,7 +1882,7 @@ def _export_audio_samples(
             mp3_path = sid_dir / f"{pipe}.mp3"
             if enhanced_wav.exists() and not mp3_path.exists():
                 print(f"  {sid}/{pipe}.mp3...", end=" ", flush=True)
-                _encode_mp3(str(enhanced_wav), str(mp3_path))
+                encode_mp3(str(enhanced_wav), str(mp3_path))
                 print("done")
             if mp3_path.exists():
                 total += 1

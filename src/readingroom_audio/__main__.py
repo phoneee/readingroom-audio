@@ -4,7 +4,6 @@ Usage:
     python -m readingroom_audio <command> [args...]
 
 Commands:
-    compare        Run enhancement pipeline comparison
     download       Download audio from YouTube
     batch          Batch enhance all 429 videos
     benchmark      Systematic benchmark with statistical analysis
@@ -16,7 +15,6 @@ import sys
 
 
 COMMANDS = {
-    "compare": "readingroom_audio.compare",
     "download": "readingroom_audio.download",
     "batch": "readingroom_audio.batch",
     "benchmark": "readingroom_audio.benchmark",
