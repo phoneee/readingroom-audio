@@ -1,6 +1,6 @@
 """Systematic audio enhancement benchmark with statistical analysis.
 
-Sub-command CLI for running stratified benchmark across ~40 samples:
+Sub-command CLI for running stratified benchmark across all 161 events:
 
     python -m readingroom_audio.benchmark select       [--target-n 40] [--seed 42]
     python -m readingroom_audio.benchmark download
@@ -25,7 +25,7 @@ from pathlib import Path
 
 from .download import download_audio
 from .enhance import PIPELINES, PIPELINE_DESCRIPTIONS, get_available_pipelines
-from .sampling import load_all_events, stratified_sample
+from .sampling import FORMAT_PIPELINE_MAP, load_all_events, stratified_sample
 from .score import save_report, score_segment
 from .utils import ensure_wav, get_project_root
 
@@ -643,14 +643,28 @@ def cmd_analyze():
     print(f"Charts: {CHARTS_DIR}/")
 
 
-def _collect_analysis_data(results: dict) -> tuple[list[dict], list[str]]:
-    """Extract structured analysis data from results."""
-    # Find all pipelines that have at least some scores
-    all_pipes = set()
+def _collect_analysis_data(
+    results: dict, min_coverage: float = 0.8,
+) -> tuple[list[dict], list[str]]:
+    """Extract structured analysis data from results.
+
+    Only includes pipelines that have scores for at least `min_coverage`
+    fraction of segments. This prevents partial pipelines (e.g., run on
+    only 30/161 segments) from forcing the statistical tests to drop the
+    other 131 segments that lack those pipelines.
+    """
+    n_total = len(results)
+
+    # Count per-pipeline coverage
+    pipe_counts: dict[str, int] = {}
     for sid, data in results.items():
         for pipe_name, pipe_data in data.get("pipelines", {}).items():
             if pipe_data.get("scores", {}).get("dnsmos_ovrl") is not None:
-                all_pipes.add(pipe_name)
+                pipe_counts[pipe_name] = pipe_counts.get(pipe_name, 0) + 1
+
+    # Filter to pipelines with sufficient coverage
+    threshold = int(n_total * min_coverage)
+    all_pipes = {p for p, c in pipe_counts.items() if c >= threshold}
 
     pipeline_names = ["original"] + sorted(p for p in all_pipes if p != "original")
 
@@ -745,6 +759,7 @@ def _run_statistical_tests(
     result["pairwise"] = primary.get("pairwise", {})
     result["alpha_corrected"] = primary.get("alpha_corrected", 0)
     result["per_stratum"] = primary.get("per_stratum", {})
+    result["per_format"] = primary.get("per_format", {})
 
     return result
 
@@ -854,6 +869,11 @@ def _run_tests_for_metric(
         valid_segments, matrix, pipeline_names
     )
 
+    # Per-format (content type) analysis
+    result["per_format"] = _per_format_analysis(
+        valid_segments, matrix, pipeline_names
+    )
+
     return result
 
 
@@ -904,6 +924,83 @@ def _per_stratum_analysis(
             strata_results[sg] = {"n": n, "error": str(e)}
 
     return strata_results
+
+
+def _per_format_analysis(
+    segments: list[dict],
+    matrix,
+    pipeline_names: list[str],
+) -> dict:
+    """Run Friedman test per format_group (content type) stratum.
+
+    Also computes best_pipeline per format group (highest mean OVRL
+    excluding original) to support content-type-aware pipeline selection.
+    """
+    import numpy as np
+    from scipy import stats as sp_stats
+
+    format_results = {}
+    groups: dict[str, list[int]] = {}
+    for idx, seg in enumerate(segments):
+        fg = seg["strata"].get("format_group", "lecture")
+        groups.setdefault(fg, []).append(idx)
+
+    enhanced_indices = [
+        i for i, p in enumerate(pipeline_names) if p != "original"
+    ]
+
+    for fg, indices in sorted(groups.items()):
+        sub_matrix = matrix[indices]
+        n = len(indices)
+        means = {
+            pipe: float(np.mean(sub_matrix[:, i]))
+            for i, pipe in enumerate(pipeline_names)
+        }
+
+        # Best pipeline (highest mean, excluding original)
+        if enhanced_indices:
+            best_idx = max(
+                enhanced_indices, key=lambda i: float(np.mean(sub_matrix[:, i]))
+            )
+            best_pipeline = pipeline_names[best_idx]
+            best_mean = float(np.mean(sub_matrix[:, best_idx]))
+        else:
+            best_pipeline = ""
+            best_mean = 0.0
+
+        if n < 3:
+            format_results[fg] = {
+                "n": n,
+                "note": "too few samples for Friedman test",
+                "means": means,
+                "best_pipeline": best_pipeline,
+                "best_mean": best_mean,
+            }
+            continue
+
+        try:
+            stat, p = sp_stats.friedmanchisquare(
+                *[sub_matrix[:, i] for i in range(len(pipeline_names))]
+            )
+            format_results[fg] = {
+                "n": n,
+                "friedman_statistic": float(stat),
+                "friedman_p": float(p),
+                "significant": p < 0.05,
+                "means": means,
+                "best_pipeline": best_pipeline,
+                "best_mean": best_mean,
+            }
+        except Exception as e:
+            format_results[fg] = {
+                "n": n,
+                "error": str(e),
+                "means": means,
+                "best_pipeline": best_pipeline,
+                "best_mean": best_mean,
+            }
+
+    return format_results
 
 
 def _cross_metric_agreement(
@@ -1237,6 +1334,46 @@ def _generate_report(
                         lines.append(f"| {pipe} | {means[pipe]:.3f} |")
                 lines.append("")
 
+    # Per-format (content type) results
+    per_format = stats.get("per_format", {})
+    if per_format:
+        lines.append("## Per-Content-Type Analysis (DNSMOS OVRL)\n")
+        lines.append("| Content Type | N | Best Pipeline | Mean OVRL | Recommended | Notes |")
+        lines.append("|---|---|---|---|---|---|")
+        for fg, fg_data in sorted(per_format.items()):
+            n = fg_data.get("n", 0)
+            best = fg_data.get("best_pipeline", "")
+            best_mean = fg_data.get("best_mean", 0)
+            recommended = FORMAT_PIPELINE_MAP.get(fg, "hybrid_demucs_df")
+            note = ""
+            if "note" in fg_data:
+                note = fg_data["note"]
+            elif fg_data.get("significant"):
+                note = f"Friedman p={fg_data.get('friedman_p', 1):.4f}"
+            lines.append(
+                f"| {fg} | {n} | {best} | {best_mean:.3f} | "
+                f"{recommended} | {note} |"
+            )
+        lines.append("")
+
+        for fg, fg_data in sorted(per_format.items()):
+            n = fg_data.get("n", 0)
+            lines.append(f"### {fg} (n={n})\n")
+            if "error" in fg_data or "note" in fg_data:
+                lines.append(f"_{fg_data.get('note', fg_data.get('error', ''))}_\n")
+            else:
+                fp = fg_data.get("friedman_p", 1)
+                sig = "Yes" if fg_data.get("significant") else "No"
+                lines.append(f"Friedman p={fp:.4f} (significant: {sig})\n")
+            means = fg_data.get("means", {})
+            if means:
+                lines.append("| Pipeline | Mean OVRL |")
+                lines.append("|---|---|")
+                for pipe in pipeline_names:
+                    if pipe in means:
+                        lines.append(f"| {pipe} | {means[pipe]:.3f} |")
+                lines.append("")
+
     with open(REPORT_PATH, "w") as f:
         f.write("\n".join(lines))
 
@@ -1280,6 +1417,7 @@ def _build_charts(
                 "nisqa_discontinuity": scores.get("nisqa_discontinuity"),
                 "nisqa_loudness": scores.get("nisqa_loudness"),
                 "series_group": strata.get("series_group", ""),
+                "format_group": strata.get("format_group", ""),
                 "era": strata.get("era", ""),
             })
 
@@ -1345,6 +1483,35 @@ def _build_charts(
             )
             .properties(
                 title="Mean DNSMOS OVRL Improvement over Original",
+                width=450, height=300,
+            )
+        )
+
+    # 2b. Format heatmap (pipeline x format_group, mean improvement)
+    format_heatmap_data = (
+        df_merged[df_merged["pipeline"] != "original"]
+        .groupby(["pipeline", "format_group"])["improvement"]
+        .mean()
+        .reset_index()
+    )
+
+    if not format_heatmap_data.empty:
+        charts["format_heatmap"] = (
+            alt.Chart(format_heatmap_data)
+            .mark_rect()
+            .encode(
+                x=alt.X("format_group:N", title="Content Type"),
+                y=alt.Y("pipeline:N", title="Pipeline"),
+                color=alt.Color(
+                    "improvement:Q",
+                    title="Mean OVRL Improvement",
+                    scale=alt.Scale(scheme="redyellowgreen", domainMid=0),
+                ),
+                tooltip=["pipeline", "format_group",
+                          alt.Tooltip("improvement:Q", format=".3f")],
+            )
+            .properties(
+                title="Mean DNSMOS OVRL Improvement by Content Type",
                 width=450, height=300,
             )
         )
@@ -1778,6 +1945,8 @@ def _generate_export_markdown(
          "DNSMOS OVRL vs UTMOS — assessing agreement between two independent quality metrics."),
         ("series_heatmap", "Pipeline Scores by Series Group",
          "Mean DNSMOS OVRL improvement over original, broken down by content series."),
+        ("format_heatmap", "Pipeline Scores by Content Type",
+         "Mean DNSMOS OVRL improvement over original, broken down by content type (lecture, screening, performance, etc.)."),
         ("ci_forest_plot", "Confidence Intervals",
          "Pipeline means with 95% bootstrap confidence intervals across all metrics."),
     ]
@@ -1899,10 +2068,38 @@ def _generate_export_markdown(
         "The SIG vs BAK tradeoff chart above illustrates this tension.\n"
     )
 
+    # Pipeline by Content Type
+    per_format = stats.get("per_format", {})
+    if per_format:
+        lines.append("## Pipeline by Content Type\n")
+        lines.append(
+            "Not all content types benefit from the same pipeline. Demucs-based "
+            "pipelines use source separation that strips non-speech audio — "
+            "destructive for screenings (film audio) and performances (music).\n"
+        )
+        lines.append("| Content Type | N | Default Pipeline | Rationale |")
+        lines.append("|---|---|---|---|")
+        rationale = {
+            "lecture": "Speech-dominant; Demucs isolates voice cleanly",
+            "panel": "Multi-speaker speech; same approach as lecture",
+            "book_club": "Reading/discussion; same approach as lecture",
+            "screening": "Film audio through speakers; Demucs strips it. Mild filtering preserves film sound",
+            "performance": "Music/sound art IS the content; minimal processing only",
+        }
+        for fg in sorted(per_format.keys()):
+            fg_data = per_format[fg]
+            n = fg_data.get("n", 0)
+            rec = FORMAT_PIPELINE_MAP.get(fg, "hybrid_demucs_df")
+            rat = rationale.get(fg, "")
+            lines.append(f"| {fg} | {n} | `{rec}` | {rat} |")
+        lines.append("")
+        lines.append("![Content Type Heatmap](images/format_heatmap.png)\n")
+
     # Methodology
     lines.append("## Methodology\n")
     lines.append(
-        f"- **Sampling**: N={n_seg} segments, stratified by series group and era\n"
+        f"- **Sampling**: N={n_seg} segments (one representative clip per event, "
+        f"from 429 total clips), stratified by series group, content type, and era\n"
         f"- **Segment extraction**: 45-second speech-active windows via Silero VAD\n"
         f"- **Metrics**: Non-intrusive quality (DNSMOS P.835, UTMOS, NISQA) "
         f"— 10 sub-metrics from 3 independent model families\n"
@@ -2681,6 +2878,33 @@ function stopAllInCard(stopBtn) {
 
 # ── Phase: run-all ───────────────────────────────────────────────────
 
+def cmd_publish(output_dir: str | None = None, n_samples: int = 3):
+    """Regenerate all outputs: analyze → export → preview.
+
+    One-shot command to refresh docs after model improvements.
+    """
+    print("=" * 70)
+    print("PUBLISH: ANALYZE")
+    print("=" * 70)
+    cmd_analyze()
+
+    print("\n" + "=" * 70)
+    print("PUBLISH: EXPORT")
+    print("=" * 70)
+    export_dir = str(Path(output_dir) / "benchmark-report") if output_dir else None
+    cmd_export(output_dir=export_dir, n_samples=n_samples)
+
+    print("\n" + "=" * 70)
+    print("PUBLISH: PREVIEW")
+    print("=" * 70)
+    preview_dir = str(Path(output_dir) / "audio-preview") if output_dir else None
+    cmd_preview(output_dir=preview_dir)
+
+    print("\n" + "=" * 70)
+    print("PUBLISH COMPLETE — docs/ ready for deployment")
+    print("=" * 70)
+
+
 def cmd_run_all(
     target_n: int = 40,
     seed: int = 42,
@@ -2753,6 +2977,7 @@ Sub-commands:
   analyze      Statistical analysis + report + charts
   export       Export report with PNG charts + audio samples
   preview      Generate HTML audio preview page
+  publish      Regenerate all outputs (analyze+export+preview)
   sensitivity  Multi-seed sensitivity analysis for sampling
   run-all      Run all phases sequentially
 
@@ -2812,6 +3037,13 @@ Available pipelines:
     p_sens.add_argument("--seeds", nargs="+", type=int, default=None,
                         help="Seeds to test (default: 42 123 7 2024 999)")
 
+    # publish (analyze + export + preview)
+    p_pub = subparsers.add_parser("publish", help="Regenerate all outputs (analyze+export+preview)")
+    p_pub.add_argument("--output-dir", type=str, default=None,
+                       help="Output base directory (default: docs/)")
+    p_pub.add_argument("--n-samples", type=int, default=3,
+                       help="Number of representative audio samples (default: 3)")
+
     # run-all
     p_all = subparsers.add_parser("run-all", help="Run all phases")
     p_all.add_argument("--target-n", type=int, default=40)
@@ -2852,6 +3084,8 @@ Available pipelines:
         cmd_preview(output_dir=args.output_dir, n_samples=args.n_samples)
     elif args.command == "sensitivity":
         cmd_sensitivity(target_n=args.target_n, seeds=args.seeds)
+    elif args.command == "publish":
+        cmd_publish(output_dir=args.output_dir, n_samples=args.n_samples)
     elif args.command == "run-all":
         cmd_run_all(
             target_n=args.target_n,

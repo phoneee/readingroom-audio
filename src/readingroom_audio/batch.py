@@ -21,7 +21,7 @@ from pathlib import Path
 
 from .download import batch_download_parallel, download_audio
 from .enhance import PIPELINES, PIPELINE_DESCRIPTIONS
-from .sampling import load_all_events
+from .sampling import FORMAT_PIPELINE_MAP, load_all_events
 from .utils import encode_flac, ensure_wav, get_project_root
 
 # ── Paths ────────────────────────────────────────────────────────────
@@ -108,6 +108,7 @@ def load_all_videos() -> list[dict]:
                 "event_number": event_num,
                 "event_key": event_key,
                 "duration_seconds": video.get("duration_seconds", 0),
+                "format_group": event.get("_format_group", "lecture"),
             })
 
     return videos
@@ -257,8 +258,13 @@ def cmd_run(
     resume: bool = False,
     workers: int = 2,
     download_workers: int = 4,
+    _videos_override: list[dict] | None = None,
 ):
-    """Main batch processing loop with parallel download + parallel enhance."""
+    """Main batch processing loop with parallel download + parallel enhance.
+
+    When _videos_override is provided, uses that list instead of loading all
+    videos. This allows cmd_run_auto() to reuse all download/enhance logic.
+    """
     if pipeline_name not in PIPELINES:
         print(f"Unknown pipeline: {pipeline_name}")
         print(f"Available: {', '.join(PIPELINES.keys())}")
@@ -278,7 +284,7 @@ def cmd_run(
     print(f"Workers: {workers} enhance, {download_workers} download")
 
     # Load videos
-    videos = load_all_videos()
+    videos = _videos_override if _videos_override is not None else load_all_videos()
     print(f"Total videos: {len(videos)}")
 
     # Load status
@@ -462,6 +468,56 @@ def cmd_run(
     print(f"Output: {output_dir}")
 
 
+def cmd_run_auto(
+    limit: int | None = None,
+    resume: bool = False,
+    workers: int = 2,
+    download_workers: int = 4,
+):
+    """Auto-select pipeline per content type and run batch enhancement.
+
+    Groups videos by format_group → maps to pipeline via FORMAT_PIPELINE_MAP
+    → calls cmd_run() per pipeline group.
+    """
+    from collections import Counter
+
+    videos = load_all_videos()
+    print(f"Total videos: {len(videos)}")
+
+    if limit:
+        videos = videos[:limit]
+        print(f"Limited to: {limit} videos")
+
+    # Group by format → pipeline
+    groups: dict[str, list[dict]] = {}
+    for v in videos:
+        fg = v.get("format_group", "lecture")
+        pipeline = FORMAT_PIPELINE_MAP.get(fg, "hybrid_demucs_df")
+        groups.setdefault(pipeline, []).append(v)
+
+    # Summary
+    print(f"\nAuto-pipeline assignment:")
+    format_counts = Counter(v.get("format_group", "lecture") for v in videos)
+    for fg, count in sorted(format_counts.items()):
+        pipeline = FORMAT_PIPELINE_MAP.get(fg, "hybrid_demucs_df")
+        print(f"  {fg}: {count} videos → {pipeline}")
+    print()
+
+    # Process each pipeline group
+    for pipeline_name, group_videos in sorted(groups.items()):
+        print(f"\n{'='*60}")
+        print(f"Processing {len(group_videos)} videos with {pipeline_name}")
+        print(f"{'='*60}")
+        cmd_run(
+            pipeline_name=pipeline_name,
+            limit=None,  # already limited above
+            resume=resume,
+            workers=workers,
+            download_workers=download_workers,
+            _videos_override=group_videos,
+        )
+
+
 def cmd_status():
     """Print batch processing status summary."""
     status = _load_status()
@@ -544,10 +600,16 @@ Worker guidelines:
 
     # run
     p_run = subparsers.add_parser("run", help="Run batch enhancement")
-    p_run.add_argument(
-        "--pipeline", required=True,
+    pipeline_group = p_run.add_mutually_exclusive_group(required=True)
+    pipeline_group.add_argument(
+        "--pipeline",
         choices=[k for k in PIPELINES if k != "original"],
         help="Enhancement pipeline to use",
+    )
+    pipeline_group.add_argument(
+        "--auto-pipeline", action="store_true",
+        help="Auto-select pipeline per content type (lecture→hybrid_demucs_df, "
+             "screening→deepfilter_12dB, performance→ffmpeg_gentle)",
     )
     p_run.add_argument(
         "--limit", type=int, default=None,
@@ -572,13 +634,21 @@ Worker guidelines:
     args = parser.parse_args()
 
     if args.command == "run":
-        cmd_run(
-            pipeline_name=args.pipeline,
-            limit=args.limit,
-            resume=args.resume,
-            workers=args.workers,
-            download_workers=args.download_workers,
-        )
+        if args.auto_pipeline:
+            cmd_run_auto(
+                limit=args.limit,
+                resume=args.resume,
+                workers=args.workers,
+                download_workers=args.download_workers,
+            )
+        else:
+            cmd_run(
+                pipeline_name=args.pipeline,
+                limit=args.limit,
+                resume=args.resume,
+                workers=args.workers,
+                download_workers=args.download_workers,
+            )
     elif args.command == "status":
         cmd_status()
 

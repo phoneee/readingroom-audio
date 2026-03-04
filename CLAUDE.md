@@ -16,6 +16,7 @@ python -m readingroom_audio.compare --pipelines original deepfilter_12dB hybrid_
 # Batch processing (all 429 videos)
 python -m readingroom_audio.batch run --pipeline hybrid_demucs_df
 python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
+python -m readingroom_audio.batch run --auto-pipeline --resume  # auto-select by content type
 python -m readingroom_audio.batch status
 
 # Systematic benchmark
@@ -31,6 +32,7 @@ python -m readingroom_audio.benchmark enhance   [--pipelines ...]
 python -m readingroom_audio.benchmark analyze
 python -m readingroom_audio.benchmark export    [--output-dir ...] [--n-samples 3]
 python -m readingroom_audio.benchmark preview   [--output-dir ...] [--n-samples 8]
+python -m readingroom_audio.benchmark publish   # analyze + export + preview in one shot
 
 # Listening test
 python -m readingroom_audio.listening_test run-all
@@ -97,6 +99,12 @@ Python 3.12 required.
 
 DeepFilterNet requires patch in `.venv/lib/python3.12/site-packages/df/io.py` (replace `torchaudio.backend.common.AudioMetaData` with soundfile fallback).
 
-## Preferred pipeline
+## Default pipeline
 
-**`hybrid_demucs_df`** — Demucs vocals → DeepFilterNet 12dB → ffmpeg loudnorm. Best subjective quality, preserves ambient atmosphere (laughter, room sound).
+**`hybrid_demucs_df`** — Demucs vocals → DeepFilterNet 12dB → ffmpeg loudnorm. Best subjective quality for speech-dominant content, preserves ambient atmosphere (laughter, room sound).
+
+Content-type exceptions (Demucs strips non-speech audio):
+- **Screenings** (film audio through speakers) → `deepfilter_12dB`
+- **Performances** (music, sound art) → `ffmpeg_gentle`
+
+Use `--auto-pipeline` in batch mode to auto-select per content type. See `FORMAT_PIPELINE_MAP` in `sampling.py`.
