@@ -59,14 +59,16 @@ This pipeline aims to improve audio quality for archival purposes and potential 
 - **Pros**: No ML required, fast, deterministic, preserves ambient
 - **Cons**: Limited noise reduction compared to ML methods
 
-### 7. Hybrid Demucs + DeepFilter (`hybrid_demucs_df`)
+### 7. Hybrid Demucs + DeepFilter (`hybrid_demucs_df`) — Default Pipeline
 - **Method**: Three-stage pipeline
   1. Demucs vocal separation (isolate speech)
   2. DeepFilterNet 12dB (gentle noise suppression on vocals)
   3. ffmpeg loudnorm (normalize loudness)
 - **Pros**: Best overall quality in pilot testing, preserves ambient atmosphere
 - **Cons**: Slowest processing (two ML models + ffmpeg)
-- **Status**: User's current preferred pipeline
+- **Status**: Default pipeline for speech-dominant content (lectures, panels, book clubs)
+
+> **Content-type caveat**: Demucs-based pipelines use source separation that treats non-speech audio as "background." This is destructive for screenings (film audio through speakers) and performances (music/sound art). Use `--auto-pipeline` to automatically select the right pipeline per content type.
 
 ## Quality Metrics
 
@@ -238,7 +240,7 @@ Tested 3 representative files across all 7 pipelines:
 
 ## Batch Processing
 
-Process all 429 videos with the winning pipeline, output as FLAC (lossless).
+Process all 429 videos with the chosen pipeline, output as FLAC (lossless).
 
 ### Per-video flow
 
@@ -266,6 +268,7 @@ data/audio/
 uv run python -m readingroom_audio.batch run --pipeline hybrid_demucs_df
 uv run python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --limit 10
 uv run python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
+uv run python -m readingroom_audio.batch run --auto-pipeline --resume  # auto-select by content type
 uv run python -m readingroom_audio.batch status
 ```
 
@@ -291,7 +294,7 @@ uv run python -m readingroom_audio.batch status
 - [x] Batch processing script for all 429 files
 - [x] Resemble Enhance integration (installed with --no-deps)
 - [x] Run full benchmark on 40 stratified samples (9 of 21 pipelines scored — 12 had import/dependency failures)
-- [x] Per-content-type pipeline selection — per-stratum Friedman tests + series heatmap chart
+- [x] Per-content-type pipeline selection — per-format Friedman tests + format heatmap chart + `--auto-pipeline` batch flag
 - [x] A/B listening test framework (`listening_test.py` — 6-phase CLI with HTML audio player)
 - [x] Audio preview page (`benchmark preview` — 8 diverse segments, interactive playback)
 - [x] Benchmark export with PNG charts and audio samples (`benchmark export`)
@@ -306,11 +309,11 @@ uv run python -m readingroom_audio.batch status
 
 ### Overview
 
-The pilot tested only 3 files — statistically insufficient to pick a best pipeline. The systematic benchmark tests 9 enhancement pipelines (of 21 defined — 12 failed due to dependency issues) on 40 stratified samples drawn from 161 events across 15 series, 10 years, and multiple formats. Uses proper statistical tests (Friedman + post-hoc Wilcoxon) to find the best pipeline overall and per content type.
+The pilot tested only 3 files — statistically insufficient to pick a best pipeline. The systematic benchmark tests 9 enhancement pipelines (of 21 defined — 12 failed due to dependency issues) on all 161 events (one representative clip per event, from 429 total clips) across 15 series, 10 years, and 5 content types (lecture, panel, book club, screening, performance). Uses proper statistical tests (Friedman + post-hoc Wilcoxon) to find the best pipeline overall and per content type.
 
 ### Sampling Strategy
 
-Events are classified into 8 series groups and 3 eras, then ~40 are selected via proportional stratified sampling:
+Events are classified into 8 series groups, 5 content types (lecture, panel, book\_club, screening, performance), and 3 eras. For benchmark, all 161 events are included (one representative clip per event — longest video). Original sampling targets for the initial pilot:
 
 | Group | Includes | Pop | Sample |
 |-------|----------|-----|--------|
@@ -328,7 +331,7 @@ For each selected event, a 45-second speech-active segment is extracted using Si
 ### Pipeline Flow
 
 ```
-select   → benchmark_manifest.json (40 entries with strata labels)
+select   → benchmark_manifest.json (161 entries with strata labels)
 download → benchmark_downloads/*.m4a (yt-dlp, resumable)
 extract  → benchmark_segments/E{NNN}_{vid}.wav (45s via VAD)
 baseline → update manifest with baseline_scores
@@ -344,7 +347,8 @@ Tests are run for each metric independently (DNSMOS OVRL, UTMOS, NISQA MOS):
 2. **Post-hoc Wilcoxon** signed-rank with Bonferroni correction (28 pairs, α≈0.0018)
 3. **Bootstrap 95% CIs** — 10,000 resamples on pipeline means (percentile method)
 4. **Cross-metric agreement** — Spearman ρ between improvement deltas across metric pairs
-5. **Per-stratum** — same tests per series_group to detect content-type interactions
+5. **Per-stratum** — same tests per series_group to detect content-series interactions
+6. **Per-format** — same tests per format_group (content type) to detect content-type interactions
 6. **Effect sizes** — rank-biserial correlation (practical significance: |r| > 0.3)
 
 | Test | Purpose | Threshold |
@@ -389,9 +393,9 @@ uv run python -m readingroom_audio.benchmark sensitivity --target-n 40 --seeds 4
 ### Outputs
 
 - `data/audio/benchmark_manifest.json` — sample selection + status tracking
-- `data/audio/benchmark_results.json` — all pipeline scores per segment (40 segments × 9 pipelines)
-- `data/audio/benchmark_report.md` — statistical analysis report with per-stratum breakdown
-- `data/audio/benchmark_charts/` — 9 Altair HTML visualizations (boxplot, heatmap, CI forest, etc.)
+- `data/audio/benchmark_results.json` — all pipeline scores per segment (161 segments × 9 pipelines)
+- `data/audio/benchmark_report.md` — statistical analysis report with per-stratum and per-content-type breakdown
+- `data/audio/benchmark_charts/` — 10 Altair HTML visualizations (boxplot, series heatmap, format heatmap, CI forest, etc.)
 - `docs/benchmark-report/` — exported report with PNG charts + audio samples (via `export`)
 - `docs/audio-preview/` — interactive HTML audio preview page (via `preview`)
 
@@ -510,9 +514,7 @@ rather than relying on any single ranking.
 #### 2. Sample Selection Bias
 
 The 429-video population is heterogeneous (Thai/English, talks/performances, 2010–2019 equipment).
-Stratified sampling by `series_group` and `era` ensures the benchmark sample (n=40) reflects this
-diversity proportionally. Multi-seed sensitivity analysis (`benchmark sensitivity`) tests whether
-pipeline rankings are stable across different random samples.
+The full benchmark uses all 161 events (n=161), stratified by `series_group`, `format_group` (content type), and `era` to ensure comprehensive coverage across content types and recording eras.
 
 #### 3. Confirmation Bias (BAK Trap)
 
@@ -577,7 +579,7 @@ uv run python -m readingroom_audio.download --video-id VIDEO_ID
 uv run python -m readingroom_audio.compare
 uv run python -m readingroom_audio.compare --pipelines original hybrid_demucs_df deepfilter_full
 
-# Systematic benchmark (40 stratified samples)
+# Systematic benchmark (161 events)
 uv run python -m readingroom_audio.benchmark run-all
 uv run python -m readingroom_audio.benchmark preview   # HTML audio preview
 
@@ -586,6 +588,7 @@ uv run python -m readingroom_audio.listening_test run-all
 
 # Batch processing (all 429 videos)
 uv run python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
+uv run python -m readingroom_audio.batch run --auto-pipeline --resume  # auto-select by content type
 uv run python -m readingroom_audio.batch status
 
 # Video mux (remux enhanced audio into video)
@@ -634,3 +637,5 @@ Open `notebooks/audio_comparison.ipynb` for:
 | 2026-03-04 | Benchmark export subcommand | Export report with PNG charts (Altair → static images) and representative audio samples for offline review |
 | 2026-03-04 | Benchmark preview subcommand | Lightweight HTML audio preview from existing benchmark data — 8 diverse segments, no separate pipeline needed |
 | 2026-03-04 | 9 of 21 pipelines scored | 12 pipelines failed due to dependency issues (TorchCodec, model weights); 9 provide sufficient coverage of approach families |
+| 2026-03-05 | Content-type-aware pipeline selection | Demucs strips non-speech audio — destructive for screenings/performances; `FORMAT_PIPELINE_MAP` maps content types to appropriate pipelines; `--auto-pipeline` flag in batch.py |
+| 2026-03-05 | Full 161-event benchmark | Expanded from 40 stratified samples to all 161 events; coverage filter (≥80%) prevents partial pipelines from dropping valid segments |

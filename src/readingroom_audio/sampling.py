@@ -1,7 +1,7 @@
 """Stratified sample selection from 161 events for audio benchmark.
 
-Classifies events into 8 series groups, then selects ~40 samples
-using proportional stratified sampling with era/format balancing.
+Classifies events into 8 series groups and 5 content types, then selects
+samples using proportional stratified sampling with era/format balancing.
 """
 
 import json
@@ -40,6 +40,15 @@ GROUP_TARGETS = {
     "sleepover": 2,
     "night_school": 2,
     "re_reading": 2,
+}
+
+# Pipeline recommendation per content type (used by batch --auto-pipeline)
+FORMAT_PIPELINE_MAP: dict[str, str] = {
+    "lecture": "hybrid_demucs_df",
+    "panel": "hybrid_demucs_df",
+    "book_club": "hybrid_demucs_df",
+    "screening": "deepfilter_12dB",
+    "performance": "ffmpeg_gentle",
 }
 
 
@@ -145,7 +154,11 @@ def _classify_era(date_str: str) -> str:
 
 
 def _classify_format(event: dict) -> str:
-    """Classify event into format group from baseline_extraction.formats."""
+    """Classify event into format group from baseline_extraction.formats.
+
+    Order matters: explicit "lecture" check fires before "performance" so that
+    events like "Lecture-Performance" (E059) classify as lecture (speech-dominant).
+    """
     formats = event.get("baseline_extraction", {}).get("formats", [])
     formats_lower = " ".join(formats).lower()
     if "screening" in formats_lower or "film" in formats_lower:
@@ -154,6 +167,10 @@ def _classify_format(event: dict) -> str:
         return "book_club"
     if "panel" in formats_lower or "discussion" in formats_lower:
         return "panel"
+    if "lecture" in formats_lower:
+        return "lecture"
+    if "performance" in formats_lower or "การแสดง" in formats_lower:
+        return "performance"
     return "lecture"
 
 
