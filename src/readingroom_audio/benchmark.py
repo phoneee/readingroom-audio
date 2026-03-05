@@ -2866,11 +2866,130 @@ function stopAllInCard(stopBtn) {
 
 # ── Phase: run-all ───────────────────────────────────────────────────
 
+def _generate_og_image(output_path: Path):
+    """Generate OG image (1200x630) from benchmark results."""
+    from collections import defaultdict
+
+    from PIL import Image, ImageDraw, ImageFont
+
+    results = _load_results()
+    if not results:
+        print("  No results for OG image, skipping.")
+        return
+
+    # Collect pipeline mean OVRL (only pipelines with >=80% coverage)
+    pipe_scores = defaultdict(list)
+    for sid, data in results.items():
+        for pipe, pdata in data.get("pipelines", {}).items():
+            ovrl = pdata.get("scores", {}).get("dnsmos_ovrl")
+            if ovrl is not None:
+                pipe_scores[pipe].append(ovrl)
+
+    n_total = len(results)
+    threshold = int(n_total * 0.8)
+    ranked = sorted(
+        [(p, sum(v) / len(v)) for p, v in pipe_scores.items() if len(v) >= threshold],
+        key=lambda x: x[1],
+        reverse=True,
+    )
+
+    n_pipelines = len(ranked)
+    default_pipe = "hybrid_demucs_df"
+
+    # --- Drawing ---
+    W, H = 1200, 630
+    bg = (22, 22, 42)
+    accent = (37, 99, 235)
+    white = (240, 240, 240)
+    muted = (140, 140, 160)
+    bar_colors = [
+        (239, 68, 68), (249, 115, 22), (234, 179, 8),
+        (6, 182, 212), (34, 197, 94), (168, 85, 247),
+        (236, 72, 153), (99, 102, 241), (156, 163, 175),
+    ]
+
+    img = Image.new("RGB", (W, H), bg)
+    draw = ImageDraw.Draw(img)
+
+    try:
+        title_font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 44)
+        subtitle_font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 24)
+        stat_font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 48)
+        label_font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 18)
+        small_font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 16)
+    except (OSError, IOError):
+        title_font = ImageFont.load_default()
+        subtitle_font = title_font
+        stat_font = title_font
+        label_font = title_font
+        small_font = title_font
+
+    # Title
+    draw.text((60, 40), "The Reading Room BKK", fill=white, font=title_font)
+    draw.text((60, 95), "Audio Enhancement Project", fill=muted, font=subtitle_font)
+    draw.rectangle([60, 135, W - 60, 137], fill=accent)
+
+    # Stats row
+    stats = [
+        (str(n_total), "Events"),
+        ("429", "Videos"),
+        ("341h", "Audio"),
+        (str(n_pipelines), "Pipelines"),
+    ]
+    stat_x = 60
+    for value, label in stats:
+        draw.text((stat_x, 155), value, fill=accent, font=stat_font)
+        draw.text((stat_x, 210), label, fill=muted, font=label_font)
+        stat_x += 220
+
+    # Bar chart — top 5 pipelines + original
+    show_pipes = [p for p in ranked if p[0] != "original"][:5]
+    original = next((p for p in ranked if p[0] == "original"), ("original", 1.0))
+    show_pipes.append(original)
+    max_score = max(s for _, s in show_pipes) if show_pipes else 3.0
+
+    bar_y = 260
+    bar_h = 30
+    bar_gap = 12
+    bar_left = 310
+    bar_max_w = 400
+
+    for i, (pipe_name, mean_ovrl) in enumerate(show_pipes):
+        y = bar_y + i * (bar_h + bar_gap)
+        color = bar_colors[i % len(bar_colors)] if pipe_name != "original" else muted
+
+        draw.text((60, y + 4), pipe_name, fill=white, font=label_font)
+        bar_w = int((mean_ovrl / max_score) * bar_max_w)
+        draw.rectangle([bar_left, y, bar_left + bar_w, y + bar_h], fill=color)
+        draw.text((bar_left + bar_w + 15, y + 4), f"{mean_ovrl:.2f}", fill=white, font=label_font)
+
+        if pipe_name == default_pipe:
+            tag_x = bar_left + bar_w + 80
+            draw.rounded_rectangle(
+                [tag_x, y + 2, tag_x + 90, y + bar_h - 2],
+                radius=4, fill=(34, 197, 94),
+            )
+            draw.text((tag_x + 10, y + 5), "default", fill=bg, font=small_font)
+
+    # Footer
+    draw.text(
+        (60, H - 45),
+        "DNSMOS / NISQA / UTMOS quality metrics  |  2010\u20132019 archival recordings",
+        fill=muted, font=small_font,
+    )
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(str(output_path), "PNG", optimize=True)
+    print(f"  OG image saved: {output_path}")
+
+
 def cmd_publish(output_dir: str | None = None, n_samples: int = 3):
-    """Regenerate all outputs: analyze → export → preview.
+    """Regenerate all outputs: analyze → export → preview → OG image.
 
     One-shot command to refresh docs after model improvements.
     """
+    docs_dir = Path(output_dir) if output_dir else (ROOT / "docs")
+
     print("=" * 70)
     print("PUBLISH: ANALYZE")
     print("=" * 70)
@@ -2879,14 +2998,19 @@ def cmd_publish(output_dir: str | None = None, n_samples: int = 3):
     print("\n" + "=" * 70)
     print("PUBLISH: EXPORT")
     print("=" * 70)
-    export_dir = str(Path(output_dir) / "benchmark-report") if output_dir else None
+    export_dir = str(docs_dir / "benchmark-report") if output_dir else None
     cmd_export(output_dir=export_dir, n_samples=n_samples)
 
     print("\n" + "=" * 70)
     print("PUBLISH: PREVIEW")
     print("=" * 70)
-    preview_dir = str(Path(output_dir) / "audio-preview") if output_dir else None
+    preview_dir = str(docs_dir / "audio-preview") if output_dir else None
     cmd_preview(output_dir=preview_dir)
+
+    print("\n" + "=" * 70)
+    print("PUBLISH: OG IMAGE")
+    print("=" * 70)
+    _generate_og_image(docs_dir / "og-image.png")
 
     print("\n" + "=" * 70)
     print("PUBLISH COMPLETE — docs/ ready for deployment")
