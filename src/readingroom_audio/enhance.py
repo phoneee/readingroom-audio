@@ -16,7 +16,6 @@ import soundfile as sf
 
 from .utils import load_audio, save_audio
 
-
 # ── DeepFilterNet compatibility shim ─────────────────────────────────
 # df/io.py imports torchaudio.backend.common.AudioMetaData which was
 # removed in torchaudio 2.1+.  Inject a minimal stand-in so df can
@@ -116,8 +115,8 @@ def enhance_deepfilternet(input_wav: str, output_wav: str,
 
     Best for: targeted noise suppression while preserving speech naturalness.
     """
-    from df.enhance import enhance, init_df
     import torchaudio
+    from df.enhance import enhance, init_df
 
     model, df_state = _get_cached_model(
         "deepfilternet3",
@@ -190,6 +189,42 @@ def enhance_ffmpeg_gentle(input_wav: str, output_wav: str):
     subprocess.run(cmd, capture_output=True, timeout=300)
 
 
+def _run_staged_pipeline(
+    input_wav: str,
+    output_wav: str,
+    stages: list[tuple[str, callable]],
+    loudnorm_lra: int = 7,
+):
+    """Run a multi-stage enhancement pipeline with loudnorm and temp cleanup.
+
+    Each stage is (suffix, fn) where fn(input, output) enhances audio.
+    Intermediate files are created as output_wav with suffix replacement.
+    Final stage applies ffmpeg loudnorm. All temps are cleaned up.
+    """
+    tmp_files = []
+    prev_output = input_wav
+
+    try:
+        for suffix, stage_fn in stages:
+            tmp_path = output_wav.replace(".wav", f"_tmp_{suffix}.wav")
+            tmp_files.append(tmp_path)
+            stage_fn(prev_output, tmp_path)
+            if not os.path.exists(tmp_path):
+                return
+            prev_output = tmp_path
+
+        cmd = [
+            "ffmpeg", "-y", "-threads", "0", "-i", prev_output,
+            "-af", f"highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA={loudnorm_lra}",
+            output_wav,
+        ]
+        subprocess.run(cmd, capture_output=True, timeout=300)
+    finally:
+        for f in tmp_files:
+            if os.path.exists(f):
+                os.remove(f)
+
+
 def enhance_hybrid_demucs_df(input_wav: str, output_wav: str):
     """Hybrid: Demucs vocals -> DeepFilterNet 12dB -> loudnorm.
 
@@ -197,29 +232,10 @@ def enhance_hybrid_demucs_df(input_wav: str, output_wav: str):
     Characteristics: three-stage pipeline combining vocal separation,
     gentle noise suppression, and loudness normalization. User's preferred pipeline.
     """
-    tmp_vocals = output_wav.replace(".wav", "_tmp_vocals.wav")
-    tmp_df = output_wav.replace(".wav", "_tmp_df.wav")
-
-    try:
-        # Stage 1: Demucs vocal separation
-        enhance_demucs_vocals(input_wav, tmp_vocals)
-        if not os.path.exists(tmp_vocals):
-            return
-
-        # Stage 2: DeepFilterNet on vocals (gentle, atten_lim=12)
-        enhance_deepfilternet(tmp_vocals, tmp_df, atten_lim=12)
-
-        # Stage 3: ffmpeg loudnorm
-        cmd = [
-            "ffmpeg", "-y", "-threads", "0", "-i", tmp_df,
-            "-af", "highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=7",
-            output_wav,
-        ]
-        subprocess.run(cmd, capture_output=True, timeout=300)
-    finally:
-        for f in [tmp_vocals, tmp_df]:
-            if os.path.exists(f):
-                os.remove(f)
+    _run_staged_pipeline(input_wav, output_wav, [
+        ("vocals", enhance_demucs_vocals),
+        ("df", lambda i, o: enhance_deepfilternet(i, o, atten_lim=12)),
+    ])
 
 
 def enhance_hybrid_demucs_remix(input_wav: str, output_wav: str):
@@ -315,6 +331,7 @@ def enhance_hybrid_demucs_remix(input_wav: str, output_wav: str):
         # Run Silero VAD on original audio to detect speech regions
         import torch
         import torchaudio
+
         from .segment import load_vad_model
 
         orig_data, orig_sr = sf.read(input_wav)
@@ -456,31 +473,10 @@ def enhance_hybrid_mossformergan_sr(input_wav: str, output_wav: str):
     Characteristics: GAN denoising at 16kHz, then super-resolution
     recovers high frequencies, loudnorm normalizes output.
     """
-    tmp_gan = output_wav.replace(".wav", "_tmp_gan.wav")
-    tmp_sr = output_wav.replace(".wav", "_tmp_sr.wav")
-
-    try:
-        # Stage 1: MossFormerGAN denoising at 16kHz
-        enhance_mossformergan_16k(input_wav, tmp_gan)
-        if not os.path.exists(tmp_gan):
-            return
-
-        # Stage 2: Super-resolution to 48kHz
-        enhance_superres_48k(tmp_gan, tmp_sr)
-        if not os.path.exists(tmp_sr):
-            return
-
-        # Stage 3: loudnorm
-        cmd = [
-            "ffmpeg", "-y", "-threads", "0", "-i", tmp_sr,
-            "-af", "highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=7",
-            output_wav,
-        ]
-        subprocess.run(cmd, capture_output=True, timeout=300)
-    finally:
-        for f in [tmp_gan, tmp_sr]:
-            if os.path.exists(f):
-                os.remove(f)
+    _run_staged_pipeline(input_wav, output_wav, [
+        ("gan", enhance_mossformergan_16k),
+        ("sr", enhance_superres_48k),
+    ])
 
 
 def enhance_hybrid_demucs_ft_df(input_wav: str, output_wav: str):
@@ -489,29 +485,10 @@ def enhance_hybrid_demucs_ft_df(input_wav: str, output_wav: str):
     Best for: premium vocal separation + gentle noise suppression.
     Characteristics: like hybrid_demucs_df but with fine-tuned Demucs model.
     """
-    tmp_vocals = output_wav.replace(".wav", "_tmp_ft_vocals.wav")
-    tmp_df = output_wav.replace(".wav", "_tmp_ft_df.wav")
-
-    try:
-        # Stage 1: Fine-tuned Demucs vocal separation
-        enhance_demucs_ft_vocals(input_wav, tmp_vocals)
-        if not os.path.exists(tmp_vocals):
-            return
-
-        # Stage 2: DeepFilterNet gentle suppression
-        enhance_deepfilternet(tmp_vocals, tmp_df, atten_lim=12)
-
-        # Stage 3: loudnorm
-        cmd = [
-            "ffmpeg", "-y", "-threads", "0", "-i", tmp_df,
-            "-af", "highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=7",
-            output_wav,
-        ]
-        subprocess.run(cmd, capture_output=True, timeout=300)
-    finally:
-        for f in [tmp_vocals, tmp_df]:
-            if os.path.exists(f):
-                os.remove(f)
+    _run_staged_pipeline(input_wav, output_wav, [
+        ("ft_vocals", enhance_demucs_ft_vocals),
+        ("ft_df", lambda i, o: enhance_deepfilternet(i, o, atten_lim=12)),
+    ])
 
 
 def enhance_hybrid_demucs_ft_mossformer(input_wav: str, output_wav: str):
@@ -521,29 +498,10 @@ def enhance_hybrid_demucs_ft_mossformer(input_wav: str, output_wav: str):
     Characteristics: combines best vocal isolation with MossFormer2's
     natural speech enhancement, maintains 48kHz output.
     """
-    tmp_vocals = output_wav.replace(".wav", "_tmp_ft_vocals2.wav")
-    tmp_mf = output_wav.replace(".wav", "_tmp_ft_mf.wav")
-
-    try:
-        # Stage 1: Fine-tuned Demucs vocal separation
-        enhance_demucs_ft_vocals(input_wav, tmp_vocals)
-        if not os.path.exists(tmp_vocals):
-            return
-
-        # Stage 2: MossFormer2 48K enhancement
-        enhance_clearvoice_mossformer2(tmp_vocals, tmp_mf)
-
-        # Stage 3: loudnorm
-        cmd = [
-            "ffmpeg", "-y", "-threads", "0", "-i", tmp_mf,
-            "-af", "highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=7",
-            output_wav,
-        ]
-        subprocess.run(cmd, capture_output=True, timeout=300)
-    finally:
-        for f in [tmp_vocals, tmp_mf]:
-            if os.path.exists(f):
-                os.remove(f)
+    _run_staged_pipeline(input_wav, output_wav, [
+        ("ft_vocals2", enhance_demucs_ft_vocals),
+        ("ft_mf", enhance_clearvoice_mossformer2),
+    ])
 
 
 # ── Phase 2: New-package pipelines ──────────────────────────────────
@@ -558,10 +516,9 @@ def enhance_mpsenet(input_wav: str, output_wav: str):
     """
     try:
         from MPSENet import MPSENet
-    except ImportError:
-        raise RuntimeError("MPSENet not installed: pip install MPSENet")
+    except ImportError as e:
+        raise RuntimeError("MPSENet not installed: pip install MPSENet") from e
 
-    import numpy as np
     import torch
     import torchaudio
 
@@ -587,28 +544,10 @@ def enhance_hybrid_mpsenet_sr(input_wav: str, output_wav: str):
 
     Best for: MP-SENet quality with wideband output via super-resolution.
     """
-    tmp_mpsenet = output_wav.replace(".wav", "_tmp_mpsenet.wav")
-    tmp_sr = output_wav.replace(".wav", "_tmp_mpsenet_sr.wav")
-
-    try:
-        enhance_mpsenet(input_wav, tmp_mpsenet)
-        if not os.path.exists(tmp_mpsenet):
-            return
-
-        enhance_superres_48k(tmp_mpsenet, tmp_sr)
-        if not os.path.exists(tmp_sr):
-            return
-
-        cmd = [
-            "ffmpeg", "-y", "-threads", "0", "-i", tmp_sr,
-            "-af", "highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=7",
-            output_wav,
-        ]
-        subprocess.run(cmd, capture_output=True, timeout=300)
-    finally:
-        for f in [tmp_mpsenet, tmp_sr]:
-            if os.path.exists(f):
-                os.remove(f)
+    _run_staged_pipeline(input_wav, output_wav, [
+        ("mpsenet", enhance_mpsenet),
+        ("mpsenet_sr", enhance_superres_48k),
+    ])
 
 
 def enhance_resemble_denoise(input_wav: str, output_wav: str):
@@ -624,7 +563,7 @@ def enhance_resemble_denoise(input_wav: str, output_wav: str):
         raise RuntimeError(
             f"resemble-enhance not available: {e}. "
             "Requires deepspeed (CUDA only, not available on macOS)."
-        )
+        ) from e
 
     import torch
     import torchaudio
@@ -654,7 +593,7 @@ def enhance_resemble_full(input_wav: str, output_wav: str):
         raise RuntimeError(
             f"resemble-enhance not available: {e}. "
             "Requires deepspeed (CUDA only, not available on macOS)."
-        )
+        ) from e
 
     import torch
     import torchaudio
@@ -686,9 +625,8 @@ def enhance_sepformer_wham16k(input_wav: str, output_wav: str):
         raise RuntimeError(
             f"speechbrain not available: {e}. "
             "May need compatible torchaudio version."
-        )
+        ) from e
 
-    import torchaudio
 
     model = SepformerSeparation.from_hparams(
         source="speechbrain/sepformer-wham16k-enhancement",

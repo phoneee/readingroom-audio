@@ -5,30 +5,30 @@ description = "Audio enhancement pipeline for Reading Room BKK YouTube recording
 readme = "README.md"
 requires-python = ">=3.12, <3.14"
 dependencies = [
-    "soundfile",
-    "torch",
-    "torchaudio",
-    "torchcodec",
+    "soundfile>=0.12,<1",
+    "torch>=2.1,<3",
+    "torchaudio>=2.1,<3",
+    "torchcodec>=0.1,<1",
 ]
 
 [project.optional-dependencies]
 # For pip install readingroom-audio[enhance] (package consumers)
 enhance = [
-    "deepfilternet",
-    "demucs",
+    "deepfilternet>=0.5,<1",
+    "demucs>=4.0,<5",
     "MPSENet",
-    "speechbrain",
+    "speechbrain>=1.0,<2",
 ]
 score = [
-    "torchmetrics[audio]",
+    "torchmetrics[audio]>=1.0,<2",
 ]
 viz = [
-    "altair",
-    "pandas",
-    "polars",
-    "scipy",
-    "numpy",
-    "vl-convert-python",
+    "altair>=5.0,<6",
+    "pandas>=2.0,<3",
+    "polars>=0.20,<2",
+    "scipy>=1.11,<2",
+    "numpy>=1.24,<3",
+    "vl-convert-python>=1.0,<2",
 ]
 # NOTE: clearvoice and resemble-enhance have conflicting librosa pins.
 # Install ONE of them manually: uv pip install clearvoice
@@ -36,18 +36,20 @@ viz = [
 
 [dependency-groups]
 dev = [
-    "deepfilternet",
-    "demucs",
+    "deepfilternet>=0.5,<1",
+    "demucs>=4.0,<5",
     "MPSENet",
-    "speechbrain",
-    "torchcodec",
-    "torchmetrics[audio]",
-    "altair",
-    "pandas",
-    "polars",
-    "scipy",
-    "numpy",
-    "vl-convert-python",
+    "speechbrain>=1.0,<2",
+    "torchcodec>=0.1,<1",
+    "torchmetrics[audio]>=1.0,<2",
+    "altair>=5.0,<6",
+    "pandas>=2.0,<3",
+    "polars>=0.20,<2",
+    "scipy>=1.11,<2",
+    "numpy>=1.24,<3",
+    "vl-convert-python>=1.0,<2",
+    "pytest>=8.0,<9",
+    "ruff>=0.8,<1",
 ]
 
 [tool.uv]
@@ -59,3 +61,49 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/readingroom_audio"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
+ignore = [
+    "E501",   # line length (handled by formatter)
+    "SIM108", # ternary operator
+    "B905",   # zip strict
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["readingroom_audio"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests that require ML model loading",
+]
+
+[tool.readingroom-audio]
+# Default worker counts
+enhance-workers = 2
+download-workers = 4
+mux-workers = 2
+
+# Duration tolerance for mux verification (seconds)
+mux-duration-tolerance = 0.5
+
+# AAC bitrate for muxed output
+mux-aac-bitrate = "192k"
+
+# FLAC compression level (0-12)
+flac-compression-level = 5
+
+# Default pipeline
+default-pipeline = "hybrid_demucs_df"

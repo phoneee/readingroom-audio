@@ -516,6 +516,53 @@ def cmd_verify(pipeline_name: str, limit: int | None = None):
         print("All files within tolerance.")
 
 
+def cmd_dry_run(
+    pipeline_name: str,
+    limit: int | None = None,
+    resume: bool = False,
+):
+    """Preview what would be muxed without running."""
+    videos = load_all_videos()
+    flac_dir = ENHANCED_DIR / pipeline_name
+    output_dir = VIDEO_MUXED_DIR / pipeline_name
+
+    if not flac_dir.exists():
+        print(f"No enhanced FLACs found at {flac_dir}")
+        return
+
+    status = _load_status()
+    pipeline_status = status.get(pipeline_name, {})
+
+    available = []
+    for v in videos:
+        flac_path = flac_dir / f"E{v['event_number']:03d}_{v['video_id']}.flac"
+        if flac_path.exists():
+            available.append(v)
+
+    if resume:
+        pending = [
+            v for v in available
+            if pipeline_status.get(v["video_id"], {}).get("status") != "completed"
+        ]
+    else:
+        pending = available
+
+    if limit:
+        pending = pending[:limit]
+
+    need_dl = [v for v in pending if not (VIDEO_RAW_DIR / f"{v['video_id']}.mp4").exists()]
+    already_muxed = [
+        v for v in pending
+        if (output_dir / f"E{v['event_number']:03d}_{v['video_id']}.mp4").exists()
+    ]
+
+    print(f"Mux dry-run: {pipeline_name}")
+    print(f"  Enhanced FLACs available: {len(available)}/{len(videos)}")
+    print(f"  Would mux: {len(pending) - len(already_muxed)}")
+    print(f"  Would download video: {len(need_dl)}")
+    print(f"  Already muxed: {len(already_muxed)}")
+
+
 def cmd_status():
     """Print mux pipeline status summary."""
     status = _load_status()
@@ -563,7 +610,7 @@ def cmd_status():
         print(f"  Enhanced FLACs available: {flac_count}")
         print(f"  Muxed: {completed}/{flac_count} "
               f"({completed/flac_count*100:.1f}%)" if flac_count else
-              f"  Muxed: 0")
+              "  Muxed: 0")
         if muxed_on_disk != completed:
             print(f"  Muxed on disk: {muxed_on_disk}")
         if failed:
@@ -665,6 +712,10 @@ Examples:
         "--skip-verify", action="store_true",
         help="Skip duration verification before mux",
     )
+    p_run.add_argument(
+        "--dry-run", action="store_true",
+        help="Show what would be processed without actually running",
+    )
 
     # verify
     p_verify = subparsers.add_parser("verify", help="Dry-run duration verification")
@@ -683,14 +734,21 @@ Examples:
     args = parser.parse_args()
 
     if args.command == "run":
-        cmd_run(
-            pipeline_name=args.pipeline,
-            limit=args.limit,
-            resume=args.resume,
-            workers=args.workers,
-            download_workers=args.download_workers,
-            skip_verify=args.skip_verify,
-        )
+        if args.dry_run:
+            cmd_dry_run(
+                pipeline_name=args.pipeline,
+                limit=args.limit,
+                resume=args.resume,
+            )
+        else:
+            cmd_run(
+                pipeline_name=args.pipeline,
+                limit=args.limit,
+                resume=args.resume,
+                workers=args.workers,
+                download_workers=args.download_workers,
+                skip_verify=args.skip_verify,
+            )
     elif args.command == "verify":
         cmd_verify(
             pipeline_name=args.pipeline,

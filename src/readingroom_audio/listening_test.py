@@ -18,12 +18,10 @@ import argparse
 import html
 import json
 import os
-import subprocess
 import time
-from pathlib import Path
 
 from .download import download_audio
-from .enhance import PIPELINES, PIPELINE_DESCRIPTIONS
+from .enhance import PIPELINE_DESCRIPTIONS, PIPELINES
 from .sampling import load_all_events, stratified_sample
 from .score import score_segment
 from .utils import encode_mp3, ensure_wav, get_project_root

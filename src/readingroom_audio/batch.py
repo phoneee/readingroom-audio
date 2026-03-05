@@ -20,7 +20,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from .download import batch_download_parallel, download_audio
-from .enhance import PIPELINES, PIPELINE_DESCRIPTIONS
+from .enhance import PIPELINE_DESCRIPTIONS, PIPELINES
 from .sampling import FORMAT_PIPELINE_MAP, load_all_events
 from .utils import encode_flac, ensure_wav, get_project_root
 
@@ -496,7 +496,7 @@ def cmd_run_auto(
         groups.setdefault(pipeline, []).append(v)
 
     # Summary
-    print(f"\nAuto-pipeline assignment:")
+    print("\nAuto-pipeline assignment:")
     format_counts = Counter(v.get("format_group", "lecture") for v in videos)
     for fg, count in sorted(format_counts.items()):
         pipeline = FORMAT_PIPELINE_MAP.get(fg, "hybrid_demucs_df")
@@ -516,6 +516,65 @@ def cmd_run_auto(
             download_workers=download_workers,
             _videos_override=group_videos,
         )
+
+
+def cmd_dry_run(
+    pipeline_name: str | None = None,
+    auto_pipeline: bool = False,
+    limit: int | None = None,
+    resume: bool = False,
+):
+    """Preview what would be processed without running."""
+
+    videos = load_all_videos()
+    status = _load_status()
+
+    if auto_pipeline:
+        groups: dict[str, list[dict]] = {}
+        for v in videos:
+            fg = v.get("format_group", "lecture")
+            pipeline = FORMAT_PIPELINE_MAP.get(fg, "hybrid_demucs_df")
+            groups.setdefault(pipeline, []).append(v)
+    else:
+        groups = {pipeline_name: videos}
+
+    total_pending = 0
+    total_download = 0
+    total_skip = 0
+
+    for pname, group_videos in sorted(groups.items()):
+        pipeline_status = status.get(pname, {})
+        output_dir = ENHANCED_DIR / pname
+
+        pending = []
+        for v in group_videos:
+            vid = v["video_id"]
+            flac = output_dir / f"E{v['event_number']:03d}_{vid}.flac"
+            if resume and pipeline_status.get(vid, {}).get("status") == "completed":
+                continue
+            if flac.exists():
+                continue
+            pending.append(v)
+
+        if limit and not auto_pipeline:
+            pending = pending[:limit]
+
+        need_dl = [v for v in pending if not (RAW_DIR / f"{v['video_id']}.m4a").exists()]
+
+        print(f"\nPipeline: {pname}")
+        print(f"  Total videos: {len(group_videos)}")
+        print(f"  Would enhance: {len(pending)}")
+        print(f"  Would download: {len(need_dl)}")
+        print(f"  Already done: {len(group_videos) - len(pending)}")
+
+        total_pending += len(pending)
+        total_download += len(need_dl)
+        total_skip += len(group_videos) - len(pending)
+
+    print("\nDry-run summary:")
+    print(f"  Total to enhance: {total_pending}")
+    print(f"  Total to download: {total_download}")
+    print(f"  Total skipped: {total_skip}")
 
 
 def cmd_status():
@@ -627,6 +686,10 @@ Worker guidelines:
         "--download-workers", type=int, default=4,
         help="Parallel download workers (default: 4)",
     )
+    p_run.add_argument(
+        "--dry-run", action="store_true",
+        help="Show what would be processed without actually running",
+    )
 
     # status
     subparsers.add_parser("status", help="Show batch processing status")
@@ -634,7 +697,14 @@ Worker guidelines:
     args = parser.parse_args()
 
     if args.command == "run":
-        if args.auto_pipeline:
+        if args.dry_run:
+            cmd_dry_run(
+                pipeline_name=args.pipeline if not args.auto_pipeline else None,
+                auto_pipeline=args.auto_pipeline,
+                limit=args.limit,
+                resume=args.resume,
+            )
+        elif args.auto_pipeline:
             cmd_run_auto(
                 limit=args.limit,
                 resume=args.resume,

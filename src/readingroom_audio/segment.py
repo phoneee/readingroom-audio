@@ -9,7 +9,6 @@ import torchaudio
 
 from .utils import load_audio, save_audio
 
-
 _VAD_MODEL = None
 _VAD_UTILS = None
 

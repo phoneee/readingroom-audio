@@ -13,7 +13,6 @@ Commands:
 
 import sys
 
-
 COMMANDS = {
     "download": "readingroom_audio.download",
     "batch": "readingroom_audio.batch",

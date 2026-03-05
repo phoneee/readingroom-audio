@@ -9,7 +9,6 @@ import math
 import random
 from pathlib import Path
 
-
 # ── Series grouping (15 series → 8 groups) ──────────────────────────
 
 SERIES_GROUP_MAP = {

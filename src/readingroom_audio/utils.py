@@ -1,11 +1,9 @@
 """Shared helpers for audio enhancement pipeline — ffmpeg wrappers, file conversion."""
 
 import json
-import os
 import subprocess
 from pathlib import Path
 
-import numpy as np
 import soundfile as sf
 import torch
 
@@ -164,3 +162,41 @@ def check_ffmpeg():
         return True
     except (subprocess.CalledProcessError, FileNotFoundError):
         return False
+
+
+_CONFIG_CACHE: dict | None = None
+
+
+def load_config() -> dict:
+    """Load project configuration from pyproject.toml [tool.readingroom-audio].
+
+    Returns dict with config values, falling back to defaults if not found.
+    """
+    global _CONFIG_CACHE
+    if _CONFIG_CACHE is not None:
+        return _CONFIG_CACHE
+
+    defaults = {
+        "enhance-workers": 2,
+        "download-workers": 4,
+        "mux-workers": 2,
+        "mux-duration-tolerance": 0.5,
+        "mux-aac-bitrate": "192k",
+        "flac-compression-level": 5,
+        "default-pipeline": "hybrid_demucs_df",
+    }
+
+    try:
+        import tomllib
+
+        pyproject = get_project_root() / "pyproject.toml"
+        if pyproject.exists():
+            with open(pyproject, "rb") as f:
+                data = tomllib.load(f)
+            config = data.get("tool", {}).get("readingroom-audio", {})
+            defaults.update(config)
+    except Exception:
+        pass
+
+    _CONFIG_CACHE = defaults
+    return defaults
