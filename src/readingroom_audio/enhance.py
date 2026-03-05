@@ -222,6 +222,155 @@ def enhance_hybrid_demucs_df(input_wav: str, output_wav: str):
                 os.remove(f)
 
 
+def enhance_hybrid_demucs_remix(input_wav: str, output_wav: str):
+    """Hybrid: Demucs separate → enhance vocals → VAD-weighted dynamic remix.
+
+    Best for: mixed content (talk + music/performance) where discarding
+    accompaniment destroys musical content.
+
+    Content-adaptive mixing via Silero VAD speech detection:
+      - Speech regions: enhanced vocals (DeepFilter) dominant + quiet accompaniment
+      - Music regions: full accompaniment + silent vocals
+      - Smooth 500ms crossfade at transitions
+
+    Pipeline:
+      1. Demucs htdemucs --two-stems vocals → vocals.wav + no_vocals.wav
+      2. DeepFilterNet 12dB on vocals only (clean speech)
+      3. ffmpeg gentle on accompaniment (preserve music, mild denoise)
+      4. Silero VAD on original → speech probability curve
+      5. VAD-weighted mix: vocals * p_speech + accomp * (1 - 0.85 * p_speech)
+      6. ffmpeg loudnorm
+    """
+    import numpy as np
+    from scipy.ndimage import uniform_filter1d
+
+    tmp_dir = Path(output_wav).parent / "_demucs_remix_tmp"
+    tmp_vocals = str(tmp_dir / "vocals.wav")
+    tmp_accomp = str(tmp_dir / "accompaniment.wav")
+    tmp_vocals_df = str(tmp_dir / "vocals_df.wav")
+    tmp_accomp_clean = str(tmp_dir / "accomp_clean.wav")
+    tmp_remix = str(tmp_dir / "remix.wav")
+
+    try:
+        tmp_dir.mkdir(parents=True, exist_ok=True)
+        device = _best_demucs_device()
+        demucs_out = str(tmp_dir / "demucs_out")
+
+        # Stage 1: Demucs separate into vocals + no_vocals
+        cmd = [
+            sys.executable, "-m", "demucs",
+            "-n", "htdemucs",
+            "--two-stems", "vocals",
+            "--device", device,
+            "-o", demucs_out,
+            input_wav,
+        ]
+        result = subprocess.run(cmd, capture_output=True, timeout=1200)
+        if result.returncode != 0 and device == "mps":
+            cmd[cmd.index("--device") + 1] = "cpu"
+            result = subprocess.run(cmd, capture_output=True, timeout=1200)
+        if result.returncode != 0:
+            stderr = result.stderr.decode(errors="replace")[-500:]
+            raise RuntimeError(f"Demucs failed: {stderr}")
+
+        stem_name = Path(input_wav).stem
+        vocals_path = Path(demucs_out) / "htdemucs" / stem_name / "vocals.wav"
+        accomp_path = Path(demucs_out) / "htdemucs" / stem_name / "no_vocals.wav"
+
+        if not vocals_path.exists() or not accomp_path.exists():
+            raise RuntimeError("Demucs did not produce expected stems")
+
+        # Copy stems to working dir
+        data, sr = sf.read(str(vocals_path))
+        sf.write(tmp_vocals, data, sr)
+        data, sr = sf.read(str(accomp_path))
+        sf.write(tmp_accomp, data, sr)
+
+        # Stage 2: DeepFilterNet 12dB on vocals
+        enhance_deepfilternet(tmp_vocals, tmp_vocals_df, atten_lim=12)
+
+        # Stage 3: ffmpeg gentle denoise on accompaniment
+        cmd = [
+            "ffmpeg", "-y", "-threads", "0", "-i", tmp_accomp,
+            "-af", "highpass=f=60,afftdn=nf=-30:nr=8:nt=w",
+            tmp_accomp_clean,
+        ]
+        subprocess.run(cmd, capture_output=True, timeout=300)
+        if not os.path.exists(tmp_accomp_clean):
+            tmp_accomp_clean = tmp_accomp
+
+        # Stage 4: VAD-weighted dynamic remix
+        vocals_enh, sr_v = sf.read(tmp_vocals_df)
+        accomp_cln, sr_a = sf.read(tmp_accomp_clean)
+
+        if vocals_enh.ndim > 1:
+            vocals_enh = vocals_enh.mean(axis=1)
+        if accomp_cln.ndim > 1:
+            accomp_cln = accomp_cln.mean(axis=1)
+
+        min_len = min(len(vocals_enh), len(accomp_cln))
+        vocals_enh = vocals_enh[:min_len].astype(np.float32)
+        accomp_cln = accomp_cln[:min_len].astype(np.float32)
+
+        # Run Silero VAD on original audio to detect speech regions
+        import torch
+        import torchaudio
+        from .segment import load_vad_model
+
+        orig_data, orig_sr = sf.read(input_wav)
+        if orig_data.ndim > 1:
+            orig_data = orig_data.mean(axis=1)
+        orig_tensor = torch.from_numpy(orig_data.astype(np.float32))
+        if orig_sr != 16000:
+            orig_16k = torchaudio.functional.resample(orig_tensor, orig_sr, 16000)
+        else:
+            orig_16k = orig_tensor
+
+        vad_model, vad_utils = load_vad_model()
+        speech_ts = vad_utils[0](orig_16k, vad_model, sampling_rate=16000)
+
+        # Build speech mask at stems' sample rate
+        speech_mask = np.zeros(min_len, dtype=np.float32)
+        for ts in speech_ts:
+            start_s = ts["start"] / 16000.0
+            end_s = ts["end"] / 16000.0
+            start_idx = int(start_s * sr_v)
+            end_idx = min(int(end_s * sr_v), min_len)
+            speech_mask[start_idx:end_idx] = 1.0
+
+        # Smooth for gradual crossfade (500ms window)
+        smooth_win = max(int(sr_v * 0.5), 1)
+        speech_prob = uniform_filter1d(speech_mask, size=smooth_win)
+        speech_prob = np.clip(speech_prob, 0.0, 1.0)
+
+        # Dynamic gain:
+        #   Speech (p=1): vocals=1.0, accomp=0.15 (room ambience bed)
+        #   Music  (p=0): vocals=0.0, accomp=1.0 (full music)
+        vocal_gain = speech_prob
+        accomp_gain = 1.0 - 0.85 * speech_prob
+
+        mixed = vocals_enh * vocal_gain + accomp_cln * accomp_gain
+
+        # Prevent clipping
+        peak = np.abs(mixed).max()
+        if peak > 0.95:
+            mixed *= 0.95 / peak
+
+        sf.write(tmp_remix, mixed, sr_v)
+
+        # Stage 5: ffmpeg loudnorm
+        cmd = [
+            "ffmpeg", "-y", "-threads", "0", "-i", tmp_remix,
+            "-af", "highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=9",
+            output_wav,
+        ]
+        subprocess.run(cmd, capture_output=True, timeout=300)
+
+    finally:
+        if tmp_dir.exists():
+            shutil.rmtree(str(tmp_dir), ignore_errors=True)
+
+
 # ── Phase 1: Zero-install pipelines ─────────────────────────────────
 
 
@@ -604,6 +753,7 @@ PIPELINES = {
     "ffmpeg_gentle": enhance_ffmpeg_gentle,
     # Hybrid pipelines
     "hybrid_demucs_df": enhance_hybrid_demucs_df,
+    "hybrid_demucs_remix": enhance_hybrid_demucs_remix,
     "hybrid_mossformergan_sr": enhance_hybrid_mossformergan_sr,
     "hybrid_demucs_ft_df": enhance_hybrid_demucs_ft_df,
     "hybrid_demucs_ft_mossformer": enhance_hybrid_demucs_ft_mossformer,
@@ -629,6 +779,7 @@ PIPELINE_DESCRIPTIONS = {
     "superres_48k": "ClearVoice MossFormer2 super-resolution to 48kHz",
     "ffmpeg_gentle": "ffmpeg high-pass + FFT denoise + compression + loudnorm",
     "hybrid_demucs_df": "Demucs vocals → DeepFilterNet 12dB → loudnorm",
+    "hybrid_demucs_remix": "Demucs separate → enhance vocals + preserve accompaniment → remix",
     "hybrid_mossformergan_sr": "MossFormerGAN 16K → SuperRes 48K → loudnorm",
     "hybrid_demucs_ft_df": "Demucs_ft vocals → DeepFilter 12dB → loudnorm",
     "hybrid_demucs_ft_mossformer": "Demucs_ft vocals → MossFormer2 48K → loudnorm",

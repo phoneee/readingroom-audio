@@ -53,13 +53,13 @@ The highest scorers (`deepfilter_full`, `mossformergan_16k`) optimize for clean-
 
 > **Content-type caveat**: Demucs-based pipelines use source separation that treats non-speech audio as "background noise." This is destructive for:
 > - **Screenings** (film audio played through speakers) → use `deepfilter_12dB` instead
-> - **Performances** (music, sound art, capoeira) → use `ffmpeg_gentle` instead
+> - **Performances** (music, sound art, capoeira) → use `hybrid_demucs_remix` instead — VAD-weighted dynamic remix that enhances speech portions while preserving music/accompaniment
 >
 > Use `--auto-pipeline` in batch mode to automatically select the right pipeline per content type.
 
-### Known Limitation: Within-File Content Changes
+### Within-File Content Changes
 
-Some events have content transitions within a single recording — e.g. a lecture intro → film screening → Q&A discussion. The current pipeline assignment is per-event based on the dominant content type from event metadata. Future work: VAD + content classifier for per-segment pipeline switching.
+Some events have content transitions within a single recording — e.g. a lecture intro → film screening → Q&A discussion. The `hybrid_demucs_remix` pipeline handles this via Silero VAD: speech regions get enhanced vocals (DeepFilter), music regions pass through the accompaniment stem unchanged, with 500ms crossfades at transitions. For speech-dominant events, per-event pipeline assignment (via `--auto-pipeline`) remains sufficient.
 
 ## Methodology
 
@@ -109,7 +109,7 @@ python -m readingroom_audio.benchmark run-all --target-n 5 \
 # Batch process all 429 videos with default pipeline
 python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
 
-# Auto-select pipeline per content type (lecture→hybrid_demucs_df, screening→deepfilter_12dB, performance→ffmpeg_gentle)
+# Auto-select pipeline per content type (lecture→hybrid_demucs_df, screening→deepfilter_12dB, performance→hybrid_demucs_remix)
 python -m readingroom_audio.batch run --auto-pipeline --resume
 
 # Generate GitHub Pages reports
