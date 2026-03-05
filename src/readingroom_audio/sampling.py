@@ -48,7 +48,7 @@ FORMAT_PIPELINE_MAP: dict[str, str] = {
     "panel": "hybrid_demucs_df",
     "book_club": "hybrid_demucs_df",
     "screening": "deepfilter_12dB",
-    "performance": "ffmpeg_gentle",
+    "performance": "hybrid_demucs_remix",
 }
 
 

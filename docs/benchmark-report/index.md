@@ -7,7 +7,7 @@ title: Benchmark Report
 
 ## Overview
 
-Benchmark of **9 audio enhancement pipelines** across **161 stratified segments** (45-second speech-active excerpts selected via Silero VAD) from 429 YouTube recordings of The Reading Room BKK (2011-2019).
+Benchmark of **10 audio enhancement pipelines** across **161 stratified segments** (45-second speech-active excerpts selected via Silero VAD) from 429 YouTube recordings of The Reading Room BKK (2011-2019).
 
 Generated: 2026-03-05
 
@@ -24,6 +24,7 @@ Mean scores across all sub-metrics (higher = better for all except Noise).
 | ffmpeg_gentle | 1.31 | 1.61 | 1.43 | 2.70 | 1.27 | 1.50 | 1.49 | 2.06 | 3.09 | 2.27 |
 | frcrn_16k | 2.10 | 2.65 | 2.65 | 3.06 | 1.28 | 2.09 | 2.27 | 2.46 | 3.31 | 2.73 |
 | hybrid_demucs_df | 2.08 | 2.71 | 2.47 | 3.12 | 1.27 | 1.81 | 1.85 | 2.30 | 3.00 | 2.78 |
+| hybrid_demucs_remix | 1.96 | 2.65 | 2.24 | 3.07 | 1.26 | 1.79 | 1.85 | 2.31 | 3.05 | 2.57 |
 | mossformer2_48k | 2.22 | 2.76 | 2.93 | 3.20 | 1.27 | 2.07 | 2.49 | 2.47 | 3.30 | 2.86 |
 | mossformergan_16k | 2.50 | 3.00 | 3.29 | 3.21 | 1.29 | 2.30 | 2.71 | 2.47 | 3.11 | 3.08 |
 
@@ -41,6 +42,7 @@ Mean improvement delta (pipeline − original). Positive = better.
 | ffmpeg_gentle | +0.06 | +0.14 | +0.10 | +0.05 | -0.03 | +0.28 | +0.03 | +0.20 | +0.27 | +0.28 |
 | frcrn_16k | +0.86 | +1.19 | +1.32 | +0.42 | -0.03 | +0.86 | +0.80 | +0.59 | +0.49 | +0.74 |
 | hybrid_demucs_df | +0.83 | +1.25 | +1.14 | +0.47 | -0.04 | +0.59 | +0.38 | +0.44 | +0.18 | +0.79 |
+| hybrid_demucs_remix | +0.72 | +1.18 | +0.91 | +0.43 | -0.04 | +0.57 | +0.38 | +0.44 | +0.23 | +0.58 |
 | mossformer2_48k | +0.97 | +1.29 | +1.61 | +0.56 | -0.03 | +0.85 | +1.02 | +0.60 | +0.48 | +0.86 |
 | mossformergan_16k | +1.25 | +1.53 | +1.96 | +0.56 | -0.02 | +1.08 | +1.24 | +0.61 | +0.30 | +1.08 |
 
@@ -101,6 +103,7 @@ Representative segments selected for diversity: lowest, median, and highest orig
 | ffmpeg_gentle | 1.09 | 1.20 | 1.15 | <audio controls src="audio/E117_MTw0IZwypU8/ffmpeg_gentle.mp3"></audio> |
 | frcrn_16k | 2.33 | 2.93 | 3.06 | <audio controls src="audio/E117_MTw0IZwypU8/frcrn_16k.mp3"></audio> |
 | hybrid_demucs_df | 1.73 | 2.52 | 1.79 | <audio controls src="audio/E117_MTw0IZwypU8/hybrid_demucs_df.mp3"></audio> |
+| hybrid_demucs_remix | 1.90 | 2.80 | 1.96 | <audio controls src="audio/E117_MTw0IZwypU8/hybrid_demucs_remix.mp3"></audio> |
 | mossformer2_48k | 1.87 | 2.61 | 2.16 | <audio controls src="audio/E117_MTw0IZwypU8/mossformer2_48k.mp3"></audio> |
 | mossformergan_16k | 2.05 | 2.55 | 2.51 | <audio controls src="audio/E117_MTw0IZwypU8/mossformergan_16k.mp3"></audio> |
 
@@ -115,6 +118,7 @@ Representative segments selected for diversity: lowest, median, and highest orig
 | ffmpeg_gentle | 1.52 | 2.26 | 1.64 | <audio controls src="audio/E107_RHiBru--TYw/ffmpeg_gentle.mp3"></audio> |
 | frcrn_16k | 2.21 | 2.90 | 2.76 | <audio controls src="audio/E107_RHiBru--TYw/frcrn_16k.mp3"></audio> |
 | hybrid_demucs_df | 2.03 | 2.99 | 2.18 | <audio controls src="audio/E107_RHiBru--TYw/hybrid_demucs_df.mp3"></audio> |
+| hybrid_demucs_remix | 2.24 | 3.19 | 2.47 | <audio controls src="audio/E107_RHiBru--TYw/hybrid_demucs_remix.mp3"></audio> |
 | mossformer2_48k | 2.32 | 2.84 | 3.28 | <audio controls src="audio/E107_RHiBru--TYw/mossformer2_48k.mp3"></audio> |
 | mossformergan_16k | 2.71 | 3.15 | 3.64 | <audio controls src="audio/E107_RHiBru--TYw/mossformergan_16k.mp3"></audio> |
 
@@ -129,6 +133,7 @@ Representative segments selected for diversity: lowest, median, and highest orig
 | ffmpeg_gentle | 2.95 | 3.31 | 3.80 | <audio controls src="audio/E123_tQpM9aZapc0/ffmpeg_gentle.mp3"></audio> |
 | frcrn_16k | 3.19 | 3.54 | 3.95 | <audio controls src="audio/E123_tQpM9aZapc0/frcrn_16k.mp3"></audio> |
 | hybrid_demucs_df | 3.16 | 3.48 | 3.97 | <audio controls src="audio/E123_tQpM9aZapc0/hybrid_demucs_df.mp3"></audio> |
+| hybrid_demucs_remix | 3.16 | 3.46 | 4.01 | <audio controls src="audio/E123_tQpM9aZapc0/hybrid_demucs_remix.mp3"></audio> |
 | mossformer2_48k | 3.39 | 3.63 | 4.19 | <audio controls src="audio/E123_tQpM9aZapc0/mossformer2_48k.mp3"></audio> |
 | mossformergan_16k | 3.31 | 3.59 | 4.11 | <audio controls src="audio/E123_tQpM9aZapc0/mossformergan_16k.mp3"></audio> |
 
@@ -138,21 +143,21 @@ Representative segments selected for diversity: lowest, median, and highest orig
 
 | Metric | Statistic | p-value | Significant |
 |--------|-----------|---------|-------------|
-| DNSMOS OVRL | 1054.778 | 0.000000 | Yes |
-| DNSMOS SIG | 926.764 | 0.000000 | Yes |
-| DNSMOS BAK | 1095.106 | 0.000000 | Yes |
-| UTMOS | 171.126 | 0.000000 | Yes |
-| NISQA MOS | 975.150 | 0.000000 | Yes |
+| DNSMOS OVRL | 1155.311 | 0.000000 | Yes |
+| DNSMOS SIG | 986.124 | 0.000000 | Yes |
+| DNSMOS BAK | 1203.207 | 0.000000 | Yes |
+| UTMOS | 189.284 | 0.000000 | Yes |
+| NISQA MOS | 1071.292 | 0.000000 | Yes |
 
 ### Key Findings
 
-- **Strong agreement** between DNSMOS BAK vs DNSMOS OVRL (rho=0.964)
-- **Strong agreement** between DNSMOS BAK vs DNSMOS SIG (rho=0.863)
-- **Strong agreement** between DNSMOS OVRL vs DNSMOS SIG (rho=0.939)
-- **Weak agreement** between DNSMOS BAK vs UTMOS (rho=0.084)
-- **Weak agreement** between DNSMOS OVRL vs UTMOS (rho=0.095)
-- **Weak agreement** between DNSMOS SIG vs UTMOS (rho=-0.028)
-- **Weak agreement** between NISQA MOS vs UTMOS (rho=0.027)
+- **Strong agreement** between DNSMOS BAK vs DNSMOS OVRL (rho=0.963)
+- **Strong agreement** between DNSMOS BAK vs DNSMOS SIG (rho=0.842)
+- **Strong agreement** between DNSMOS OVRL vs DNSMOS SIG (rho=0.929)
+- **Weak agreement** between DNSMOS BAK vs UTMOS (rho=0.098)
+- **Weak agreement** between DNSMOS OVRL vs UTMOS (rho=0.098)
+- **Weak agreement** between DNSMOS SIG vs UTMOS (rho=-0.030)
+- **Weak agreement** between NISQA MOS vs UTMOS (rho=0.025)
 
 ## Recommendation
 
@@ -169,7 +174,7 @@ Not all content types benefit from the same pipeline. Demucs-based pipelines use
 | book_club | 53 | `hybrid_demucs_df` | Reading/discussion; same approach as lecture |
 | lecture | 37 | `hybrid_demucs_df` | Speech-dominant; Demucs isolates voice cleanly |
 | panel | 41 | `hybrid_demucs_df` | Multi-speaker speech; same approach as lecture |
-| performance | 2 | `ffmpeg_gentle` | Music/sound art IS the content; minimal processing only |
+| performance | 2 | `hybrid_demucs_remix` | Music/sound art IS the content; minimal processing only |
 | screening | 28 | `deepfilter_12dB` | Film audio through speakers; Demucs strips it. Mild filtering preserves film sound |
 
 ![Content Type Heatmap](images/format_heatmap.png)

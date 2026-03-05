@@ -100,6 +100,6 @@ DeepFilterNet requires patch in `.venv/lib/python3.12/site-packages/df/io.py` (r
 
 Content-type exceptions (Demucs strips non-speech audio):
 - **Screenings** (film audio through speakers) → `deepfilter_12dB`
-- **Performances** (music, sound art) → `ffmpeg_gentle`
+- **Performances** (music, sound art) → `hybrid_demucs_remix` (VAD-weighted: enhanced vocals during speech, full accompaniment during music)
 
 Use `--auto-pipeline` in batch mode to auto-select per content type. See `FORMAT_PIPELINE_MAP` in `sampling.py`.
