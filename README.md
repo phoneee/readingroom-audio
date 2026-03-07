@@ -89,32 +89,50 @@ Some events have content transitions within a single recording — e.g. a lectur
 
 ## Live Demo
 
-- **[Audio Preview](https://phoneee.github.io/readingroom-audio/audio-preview/)** — 161 segments × 9 pipelines, interactive per-metric highlighting
 - **[Benchmark Report](https://phoneee.github.io/readingroom-audio/benchmark-report/)** — full statistical analysis, charts, pairwise comparisons
 
-## Reproducing the Benchmark
+## Reproducing from Scratch
+
+The repo is code-only (~3 MB). All audio data, model checkpoints, and preview assets are generated at runtime.
+
+### Prerequisites
+
+- Python 3.12+, [uv](https://docs.astral.sh/uv/), ffmpeg (`brew install ffmpeg` on macOS)
+- ~20 GB disk for raw audio downloads, ~70 GB per enhanced pipeline
+- GPU recommended for ML pipelines (CPU works but is slow)
+
+### Quick start
 
 ```bash
-# Prerequisites: Python 3.12+, uv, ffmpeg
 git clone https://github.com/phoneee/readingroom-audio && cd readingroom-audio
-uv sync --extra all
+uv sync
 
+# Quick benchmark (5 samples, 3 pipelines — ~10 min)
+python -m readingroom_audio.benchmark run-all --target-n 5 \
+    --pipelines original ffmpeg_gentle hybrid_demucs_df
+```
+
+### Full benchmark
+
+```bash
 # Full benchmark (161 samples × 14 pipelines)
 python -m readingroom_audio.benchmark run-all
 
-# Quick test (5 samples, 3 pipelines)
-python -m readingroom_audio.benchmark run-all --target-n 5 \
-    --pipelines original ffmpeg_gentle hybrid_demucs_df
+# Generate report charts + audio preview page
+python -m readingroom_audio.benchmark publish
+```
 
-# Batch process all 429 videos with default pipeline
+### Batch processing (all 429 videos)
+
+```bash
+# Single pipeline
 python -m readingroom_audio.batch run --pipeline hybrid_demucs_df --resume
 
-# Auto-select pipeline per content type (lecture→hybrid_demucs_df, screening→deepfilter_12dB, performance→hybrid_demucs_remix)
+# Auto-select per content type (lecture→hybrid_demucs_df, screening→deepfilter_12dB, performance→hybrid_demucs_remix)
 python -m readingroom_audio.batch run --auto-pipeline --resume
 
-# Generate GitHub Pages reports
-python -m readingroom_audio.benchmark export
-python -m readingroom_audio.benchmark preview
+# Mux enhanced audio back into video
+python -m readingroom_audio.mux run --pipeline hybrid_demucs_df --resume
 ```
 
 ## Architecture

@@ -3,23 +3,23 @@ __pycache__/
 .venv/
 .DS_Store
 .mypy_cache/
+.ruff_cache/
+.pytest_cache/
 
-# Audio data (large, downloaded at runtime)
+# Audio/video data (large, downloaded/generated at runtime)
 data/audio/
+data/video/
 *.wav
 *.m4a
 *.flac
 *.mp3
 
-# Video data (large, downloaded at runtime)
-data/video/
-
-# ML model checkpoints
+# ML model checkpoints (downloaded at runtime)
 checkpoints/
 
 # GitHub Pages — allow docs/ assets (MP3s via LFS, PNGs direct)
 !docs/**/*.mp3
 !docs/**/*.png
 
-# Legacy
+# Legacy pilot experiments
 pilot/
